@@ -1,0 +1,25 @@
+# Ignore everything in `~/`
+*
+
+# Track the file we are currently editing
+!/.gitignore.d
+!/.gitignore.d/dotfiles
+
+# ZSH config
+!/.zshrc
+
+# Get into config dir
+!/.config
+
+# Starship ZSH prompt
+!/.config/starship.toml
+
+# Kitty terminal
+!/.config/kitty
+# Explicitly target config file and ignore themes
+!/.config/kitty/kitty.config
+
+# Helix modal editor
+!/.config/helix
+!/.config/helix/*
+
