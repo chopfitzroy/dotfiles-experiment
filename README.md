@@ -11,6 +11,10 @@ Criteria of this repo:
 - Introduce as few tools/abstractions as possible
 - Ability to show a `README.md` on GitHub without needing to have it sit in my `~/`
 
+### Footguns
+
+Even though each config is a branch on the remote (where you are now on GitHub). **Locally each branch will be initialized as it's own repo**.
+
 ### Create new config
 
 **Checkout new branch (from `main`):**
