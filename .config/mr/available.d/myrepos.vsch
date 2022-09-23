@@ -1,0 +1,3 @@
+[$HOME/.config/vcsh/repo.d/myrepos.git]
+order = 0
+checkout = vcsh clone -b myrepos git@github.com:chopfitzroy/dotfiles-experiment.git myrepos

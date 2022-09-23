@@ -48,5 +48,25 @@ git push --set-upstream origin config_name
 
 **Add `myrepos` config:**
 
-TODO...
+```sh
+hx ~/.config/mr/available.d/config_name.vcsh
+```
+
+Then paste the following in **pay attention to replacing config_name**:
+
+```
+[$HOME/.config/vcsh/repo.d/config_name.git]
+order = 10
+checkout =
+  vcsh clone -b config_name git@github.com:chopfitzroy/dotfiles-experiment.git config_name
+```
+
+Once that is done it can be pushed to the remote:
+
+```sh
+vcsh enter myrepos
+git add --all .
+git commit -m "Commit message"
+git push
+```
 

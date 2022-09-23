@@ -1,8 +1,12 @@
-i# Ignore everything in `~/`
+# Ignore everything in `~/`
 *
 
-# Add README.md for `master` branch
-!README.md
+# Track `myrepos` config files
+!/.mrconfig
+!/.config
+!/.config/mr
+!/.config/mr/available.d
+!/.config/mr/available.d/*
 
 # Track the file we are currently editing
 !/.gitignore.d

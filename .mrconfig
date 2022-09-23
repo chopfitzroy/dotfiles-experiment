@@ -1,0 +1,2 @@
+[DEFAULT]
+include = cat ~/.config/mr/config.d/*
