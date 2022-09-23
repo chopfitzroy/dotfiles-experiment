@@ -21,8 +21,9 @@ Even though each config is a branch on the remote (where you are now on GitHub).
 
 ```sh
 vcsh init config_name
+vcsh enter config_name
 git remote add origin git@github.com:chopfitzroy/dotfiles-experiment.git
-git pull
+git fetch
 git checkout --orphan config_name
 git rm -rf .
 ```
