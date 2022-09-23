@@ -17,34 +17,36 @@ Even though each config is a branch on the remote (where you are now on GitHub).
 
 ### Create new config
 
-**Checkout new branch (from `main`):**
+**Create new _local_ repo:**
 
 ```sh
-vcsh enter dotfiles
-git checkout main
+vcsh init config_name
+git remote add origin git@github.com:chopfitzroy/dotfiles-experiment.git
+git pull
 git checkout --orphan config_name
-git rm -f README.md
+git rm -rf .
 ```
 
-**Update ignored files:**
+**Add ignored files:**
 
 ```sh
-hx ~/.gitignore.d/dotfiles
+hx ~/.gitignore.d/config_name
 ```
 
-- Remove references to `README.md`
+- Always start with `*`
 - Add `!` paths for files you want to track
-
-**Add `myrepos` config:**
-
-TODO...
 
 **Commit new files:**
 
 ```sh
-vcsh enter dotfiles
+vcsh enter config_name
 git add --all .
+git status # If you want to config your ignore paths are working as expected
 git commit -m "Commit message"
-git push --set-upstream origin config_name 
+git push --set-upstream origin config_name
 ```
+
+**Add `myrepos` config:**
+
+TODO...
 
