@@ -7,4 +7,3 @@
 # Track the file we are currently editing
 !/.gitignore.d
 !/.gitignore.d/dotfiles
-
