@@ -4,18 +4,54 @@ This repo is largely modelled off [this guide](https://germano.dev/dotfiles/).
 
 Criteria of this repo:
 
-- A single repo to manage all dotfiles
-- Ability to have multiple configs for all tools, i.e a work `.gitconfig` and a personal `.gitconfig`
-- Ability to archive configs for tools I no longer use
 - Backed by `git`
+- A single repo to manage all dotfiles
 - Introduce as few tools/abstractions as possible
+- Ability to archive configs for tools I no longer use
 - Ability to show a `README.md` on GitHub without needing to have it sit in my `~/`
+- Ability to have multiple configs for all tools, i.e a work `.gitconfig` and a personal `.gitconfig`
 
 ### Footguns
 
 Even though each config is a branch on the remote (where you are now on GitHub). **Locally each branch will be initialized as it's own repo**.
 
-### Create new config
+### New host
+
+Install both [VCSH](https://github.com/RichiH/vcsh) and [myrepos](https://myrepos.branchable.com/).
+
+**Mac:**
+
+```sh
+brew install vcsh myrepos
+```
+
+**WLS2:**
+
+```sh
+sudo apt-get install vcsh myrepos
+```
+
+**Clone down the `myrepos` branch:**
+
+```sh
+vcsh clone -b myrepos git@github.com:chopfitzroy/dotfiles-experiment.git myrepos
+```
+
+**Link desired tools:**
+
+```sh
+cd ~/.config/mr/config.d/
+ls ../available.d/ # This will print out available configs
+ln -s ../available.d/zsh.vcsh # This would setup ZSH config, rinse and repeat for all desired tools
+```
+
+**Checkout all the other tools at once:**
+
+```sh
+mr checkout
+```
+
+### Setting up a new tool/config
 
 **Create new _local_ repo:**
 
@@ -25,7 +61,6 @@ vcsh enter config_name
 git remote add origin git@github.com:chopfitzroy/dotfiles-experiment.git
 git fetch
 git checkout --orphan config_name
-git rm -rf .
 ```
 
 **Add ignored files:**
