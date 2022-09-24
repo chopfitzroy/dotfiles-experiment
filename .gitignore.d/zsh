@@ -2,6 +2,9 @@
 *
 
 !.zshrc
+!/.config
+!/.config/sheldon
+!/.config/sheldon/*
 
 # Track the file we are currently editing
 !/.gitignore.d
