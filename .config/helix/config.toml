@@ -12,3 +12,12 @@ render = true
 [keys.normal]
 "space" = { "[" = ["add_newline_above", "move_line_up", "paste_before"], "]" = ["add_newline_below", "move_line_down", "paste_before"] }
 
+# @NOTE
+# - Hopefully this can be removed in favour of `shift` + `tab`
+# - https://github.com/helix-editor/helix/issues/2581
+[keys.insert]
+up = "no_op"
+left = "no_op"
+down = "no_op"
+right = "no_op"
+
