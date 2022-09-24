@@ -40,6 +40,7 @@ vcsh clone -b myrepos git@github.com:chopfitzroy/dotfiles-experiment.git myrepos
 **Link desired tools:**
 
 ```sh
+mkdir ~/.config/mr/config.d/
 cd ~/.config/mr/config.d/
 ls ../available.d/ # This will print out available configs
 ln -s ../available.d/zsh.vcsh # This would setup ZSH config, rinse and repeat for all desired tools
@@ -49,6 +50,16 @@ ln -s ../available.d/zsh.vcsh # This would setup ZSH config, rinse and repeat fo
 
 ```sh
 mr checkout
+```
+
+### Updating an existing tool/config
+
+```sh
+vcsh init config_name
+git status # If you want to confirm changes
+git add --all .
+git commit -m "Commit message"
+git push
 ```
 
 ### Setting up a new tool/config
@@ -77,7 +88,7 @@ hx ~/.gitignore.d/config_name
 ```sh
 vcsh enter config_name
 git add --all .
-git status # If you want to config your ignore paths are working as expected
+git status # If you want to confirm your ignore paths are working as expected
 git commit -m "Commit message"
 git push --set-upstream origin config_name
 ```
@@ -92,9 +103,10 @@ Then paste the following in **pay attention to replacing config_name**:
 
 ```
 [$HOME/.config/vcsh/repo.d/config_name.git]
-order = 10
 checkout =
   vcsh clone -b config_name git@github.com:chopfitzroy/dotfiles-experiment.git config_name
+update = vcsh config_name pull
+status = vcsh config_name status
 ```
 
 Once that is done it can be pushed to the remote:
