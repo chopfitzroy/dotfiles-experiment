@@ -15,7 +15,7 @@ Criteria of this repo:
 
 Common scenarios and how to handle them are listed below. You will need to substitute in your own repository location where appropiate.
 
-Rember even though each config is a branch on the remote (where you are now on GitHub). **Locally each branch will be initialized as it's own repo**.
+Rember even though each config is a branch on the remote. **Locally each branch will be initialized as it's own repo**.
 
 ### New host
 
@@ -27,7 +27,7 @@ Install both [vcsh](https://github.com/RichiH/vcsh) and [myrepos](https://myrepo
 brew install vcsh myrepos
 ```
 
-**WLS2:**
+**WLS:**
 
 ```sh
 sudo apt-get install vcsh myrepos
@@ -57,7 +57,7 @@ mr checkout
 ### Updating an existing tool/config
 
 ```sh
-vcsh init config_name
+vcsh enter config_name
 git status # If you want to confirm changes
 git add --all .
 git commit -m "Commit message"
