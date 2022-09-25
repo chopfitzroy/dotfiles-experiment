@@ -27,7 +27,7 @@ Install both [vcsh](https://github.com/RichiH/vcsh) and [myrepos](https://myrepo
 brew install vcsh myrepos
 ```
 
-**WLS:**
+**WSL:**
 
 ```sh
 sudo apt-get install vcsh myrepos
