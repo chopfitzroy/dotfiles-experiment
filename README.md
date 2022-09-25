@@ -11,9 +11,11 @@ Criteria of this repo:
 - Ability to show a `README.md` on GitHub without needing to have it sit in my `~/`
 - Ability to have multiple configs for all tools, i.e a work `.gitconfig` and a personal `.gitconfig`
 
-### Footguns
+## Usage
 
-Even though each config is a branch on the remote (where you are now on GitHub). **Locally each branch will be initialized as it's own repo**.
+Common scenarios and how to handle them are listed below. You will need to substitute in your own repository location where appropiate.
+
+Rember even though each config is a branch on the remote (where you are now on GitHub). **Locally each branch will be initialized as it's own repo**.
 
 ### New host
 
@@ -117,4 +119,28 @@ git add --all .
 git commit -m "Commit message"
 git push
 ```
+
+## Reasoning
+
+Below you can find my (personal) justifications for each tool configured here.
+
+This is highly subjective and there is no _perfect tool_, these are just tools that most easily fit into my own workflow.
+
+### Helix
+
+[Helix](https://helix-editor.com/) is a [Kakoune](https://kakoune.org/) inspired text editor. It is a modal editor similar to Vim but has some key differences.
+
+Most importantly [Helix](https://helix-editor.com/) aims to ship a viable default experience, that is to say it comes out of the box with things like a fuzzy finder and LSP support.
+
+[Helix](https://helix-editor.com/) allows me to be productive fast and has effectively eliminated time spent maintaining plugins between updates.
+
+### ZSH
+
+My primary reason for using ZSH over something like [fish](https://fishshell.com/) is that ZSH is BASH compatiable, meaning it _just works_ with a lot of tools I already use.
+
+If I was going to learn a new shell and commit to something that was not bash compatiable, I would most likely pick up [Nushell](https://www.nushell.sh/) which also provides an _escape hatch_ to fallback to BASH commands when needed.
+ 
+I also use the [Sheldon](https://sheldon.cli.rs/) plugin manager. The main reason I prefer this tool is that it keeps my plugin config _outside_ of my `.zshrc`, this creates a clear separation between what is my config and what is plugins.
+
+Finally I use [Starship prompt](https://starship.rs/). Again what I like about this tool is it keeps my prompt config outside of my `.zshrc`, additionally it supports a number of different shells meaning if I ever switch shells I can likely bring this with me.
 
