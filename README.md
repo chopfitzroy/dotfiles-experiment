@@ -19,7 +19,7 @@ Rember even though each config is a branch on the remote (where you are now on G
 
 ### New host
 
-Install both [VCSH](https://github.com/RichiH/vcsh) and [myrepos](https://myrepos.branchable.com/).
+Install both [vcsh](https://github.com/RichiH/vcsh) and [myrepos](https://myrepos.branchable.com/).
 
 **Mac:**
 
@@ -120,6 +120,23 @@ git commit -m "Commit message"
 git push
 ```
 
+## Supplementary
+
+Additional to the configs are the actual tools themselves, dependant on what configs you copy across you will also need to install the respective tool.
+
+Please refer to each individual package for install instructions, it is not worth detailing them here especially if they become outdated.
+
+### ZSH
+
+- [fzf](https://github.com/junegunn/fzf)
+- [Zoxide](https://github.com/ajeetdsouza/zoxide)
+- [Sheldon](https://github.com/rossmacarthur/sheldon)
+- [Starship](https://starship.rs/)
+
+### Helix
+
+- [Helix](https://helix-editor.com/)
+
 ## Reasoning
 
 Below you can find my (personal) justifications for each tool configured here.
@@ -143,4 +160,10 @@ If I was going to learn a new shell and commit to something that was not bash co
 I also use the [Sheldon](https://sheldon.cli.rs/) plugin manager. The main reason I prefer this tool is that it keeps my plugin config _outside_ of my `.zshrc`, this creates a clear separation between what is my config and what is plugins.
 
 Finally I use [Starship prompt](https://starship.rs/). Again what I like about this tool is it keeps my prompt config outside of my `.zshrc`, additionally it supports a number of different shells meaning if I ever switch shells I can likely bring this with me.
+
+### Kitty
+
+I use [Kitty](https://sw.kovidgoyal.net/kitty/) on Mac and Linux and [Windows Terminal](https://github.com/microsoft/terminal) on Windows (with [WSL](https://learn.microsoft.com/en-us/windows/wsl/about)).
+
+I **do not** use [tmux](https://github.com/tmux/tmux/wiki) nor do I intend to. Terminal multiplexers come with a [plethora of issues](https://github.com/kovidgoyal/kitty/issues/391#issuecomment-638320745) that I don't need to buy into. Don't get me wrong there are absolutely uses cases for requiring a terminal multiplexer, but tabs and splits are not it. It's 2022 please let your terminal be your terminal.
 
