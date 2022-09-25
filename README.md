@@ -153,9 +153,9 @@ Most importantly [Helix](https://helix-editor.com/) aims to ship a viable defaul
 
 ### ZSH
 
-My primary reason for using ZSH over something like [fish](https://fishshell.com/) is that ZSH is BASH compatiable, meaning it _just works_ with a lot of tools I already use.
+My primary reason for using ZSH over something like [FISH](https://fishshell.com/) is that ZSH is BASH compatiable, meaning it _just works_ with a lot of tools I already use.
 
-If I was going to learn a new shell and commit to something that was not bash compatiable, I would most likely pick up [Nushell](https://www.nushell.sh/) which also provides an _escape hatch_ to fallback to BASH commands when needed.
+If I was going to learn a new shell and commit to something that was not BASH compatiable, I would most likely pick up [Nushell](https://www.nushell.sh/) which also provides an _escape hatch_ to fallback to BASH commands when needed.
  
 I also use the [Sheldon](https://sheldon.cli.rs/) plugin manager. The main reason I prefer this tool is that it keeps my plugin config _outside_ of my `.zshrc`, this creates a clear separation between what is my config and what is plugins.
 
