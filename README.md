@@ -128,6 +128,7 @@ Please refer to each individual package for install instructions, it is not wort
 
 ### ZSH
 
+- [ZSH](https://www.zsh.org/)
 - [fzf](https://github.com/junegunn/fzf)
 - [Zoxide](https://github.com/ajeetdsouza/zoxide)
 - [Sheldon](https://github.com/rossmacarthur/sheldon)
