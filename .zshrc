@@ -16,6 +16,9 @@ export XDG_CONFIG_HOME="$HOME/.config"
 # Enable auto complete for git
 autoload -Uz compinit && compinit
 
+# Turn on additional suggestions
+export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+
 # Zoxide (z)
 eval "$(zoxide init zsh)"
 
