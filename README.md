@@ -138,6 +138,10 @@ Please refer to each individual package for install instructions, it is not wort
 
 - [Helix](https://helix-editor.com/)
 
+## Limitations
+
+- ZSH auto suggestions are not persisted between shells, this is intentional but can be [changed](https://github.com/zsh-users/zsh-autosuggestions/issues/405)
+
 ## Reasoning
 
 Below you can find my (personal) justifications for each tool configured here.
