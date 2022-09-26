@@ -16,17 +16,14 @@ export PATH="$PATH:$ANDROID_HOME/platform-tools"
 # Turn on additional suggestions
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
-# fzf (fuzzy finder)
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# Auto completion
-autoload -Uz compinit && compinit
+# Sheldon (plugins)
+# - Must be called before `zoxide`
+# - Set's up ZSH completions
+# - https://github.com/ajeetdsouza/zoxide/issues/348
+eval "$(sheldon source)"
 
 # Zoxide (z)
 eval "$(zoxide init zsh)"
-
-# Sheldon (plugins)
-eval "$(sheldon source)"
 
 # Starship (ZSH Prompt)
 eval "$(starship init zsh)"
