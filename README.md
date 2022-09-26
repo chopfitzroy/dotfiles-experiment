@@ -107,8 +107,8 @@ Then paste the following in **pay attention to replacing config_name**:
 [$HOME/.config/vcsh/repo.d/config_name.git]
 checkout =
   vcsh clone -b config_name git@github.com:chopfitzroy/dotfiles-experiment.git config_name
-update = vcsh config_name pull
 status = vcsh config_name status
+pull = vcsh config_name pull
 ```
 
 Once that is done it can be pushed to the remote:
