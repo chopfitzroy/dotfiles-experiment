@@ -1,4 +1,4 @@
-# Dotfiles
+# Dotfiles 💻
 
 This repo is largely modelled off [this guide](https://germano.dev/dotfiles/).
 
@@ -11,13 +11,17 @@ Criteria of this repo:
 - Ability to show a `README.md` on GitHub without needing to have it sit in my `~/`
 - Ability to have multiple configs for all tools, i.e a work `.gitconfig` and a personal `.gitconfig`
 
-## Usage
+## Show me the code 🥵
+
+View [all branches](https://github.com/chopfitzroy/dotfiles-experiment/branches) to view configuration for each tool used.
+
+## Usage 🔮
 
 Common scenarios and how to handle them are listed below. You will need to substitute in your own repository location where appropiate.
 
 Rember even though each config is a branch on the remote. **Locally each branch will be initialized as it's own repo**.
 
-### New host
+### New host 👽
 
 Install both [vcsh](https://github.com/RichiH/vcsh) and [myrepos](https://myrepos.branchable.com/).
 
@@ -54,7 +58,7 @@ ln -s ../available.d/zsh.vcsh # This would setup ZSH config, rinse and repeat fo
 mr checkout
 ```
 
-### Updating an existing tool/config
+### Updating an existing tool/config 💉
 
 ```sh
 vcsh enter config_name
@@ -64,7 +68,7 @@ git commit -m "Commit message"
 git push
 ```
 
-### Setting up a new tool/config
+### Setting up a new tool/config ✨
 
 **Create new _local_ repo:**
 
@@ -120,13 +124,13 @@ git commit -m "Commit message"
 git push
 ```
 
-## Supplementary
+## Supplementary 🎯
 
 Additional to the configs are the actual tools themselves, dependant on what configs you copy across you will also need to install the respective tool.
 
 Please refer to each individual package for install instructions, it is not worth detailing them here especially if they become outdated.
 
-### ZSH
+### ZSH 🐚
 
 - [ZSH](https://www.zsh.org/)
 - [fzf](https://github.com/junegunn/fzf)
@@ -134,21 +138,21 @@ Please refer to each individual package for install instructions, it is not wort
 - [Sheldon](https://github.com/rossmacarthur/sheldon)
 - [Starship](https://starship.rs/)
 
-### Helix
+### Helix 🧬
 
 - [Helix](https://helix-editor.com/)
 
-## Limitations
+## Limitations 😭
 
 - ZSH auto suggestions are not persisted between shells, this is intentional but can be [changed](https://github.com/zsh-users/zsh-autosuggestions/issues/405)
 
-## Reasoning
+## Reasoning 🤔
 
 Below you can find my (personal) justifications for each tool configured here.
 
 This is highly subjective and there is no _perfect tool_, these are just tools that most easily fit into my own workflow.
 
-### Helix
+### Helix 🧬
 
 [Helix](https://helix-editor.com/) is a [Kakoune](https://kakoune.org/) inspired text editor. It is a modal editor similar to Vim but has some key differences.
 
@@ -156,7 +160,7 @@ Most importantly [Helix](https://helix-editor.com/) aims to ship a viable defaul
 
 [Helix](https://helix-editor.com/) allows me to be productive fast and has effectively eliminated time spent maintaining plugins between updates.
 
-### ZSH
+### ZSH 🐚
 
 My primary reason for using ZSH over something like [FISH](https://fishshell.com/) is that ZSH is BASH compatiable, meaning it _just works_ with a lot of tools I already use.
 
@@ -166,7 +170,7 @@ I also use the [Sheldon](https://sheldon.cli.rs/) plugin manager. The main reaso
 
 Finally I use [Starship prompt](https://starship.rs/). Again what I like about this tool is it keeps my prompt config outside of my `.zshrc`, additionally it supports a number of different shells meaning if I ever switch shells I can likely bring this with me.
 
-### Kitty
+### Kitty 🧶
 
 I use [Kitty](https://sw.kovidgoyal.net/kitty/) on Mac and Linux and [Windows Terminal](https://github.com/microsoft/terminal) on Windows (with [WSL](https://learn.microsoft.com/en-us/windows/wsl/about)).
 
