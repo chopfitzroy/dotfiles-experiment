@@ -2,6 +2,12 @@
 *
 
 !.zshrc
+
+# Custom ZSH functions
+!/.zsh_functions
+!/.zsh_functions/*
+
+# ZSH plugin manager
 !/.config
 !/.config/sheldon
 !/.config/sheldon/*

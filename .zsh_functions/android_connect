@@ -1,0 +1,7 @@
+if [ -n "$1" ]
+then
+    adb -s $1 reverse tcp:8081 tcp:8081
+else
+    printf "\nPlease provide a device ID."
+fi
+	

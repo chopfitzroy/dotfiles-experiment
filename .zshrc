@@ -16,6 +16,14 @@ export PATH="$PATH:$ANDROID_HOME/platform-tools"
 # Turn on additional suggestions
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
+# Custom functions
+# - https://unix.stackexchange.com/questions/33255/how-to-define-and-load-your-own-shell-function-in-zsh
+fpath=( ~/.zsh_functions "${fpath[@]}" )
+
+# Autoload custom functions
+# - https://dev.to/lukeojones/1up-your-zsh-abilities-by-autoloading-your-own-functions-2ngp
+autoload -Uz $fpath[1]/*(.:t)
+
 # Sheldon (plugins)
 # - Must be called before `zoxide`
 # - Set's up ZSH completions
