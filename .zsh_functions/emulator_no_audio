@@ -1,0 +1,6 @@
+if [ -n "$1" ]
+then
+    emulator -avd $1 -no-audio
+else
+    printf "\nPlease provide a device name."
+fi
