@@ -171,6 +171,7 @@ Themeing almost entirely comes down to personal preference and the below section
 
 Starship does require the use of a [nerd font](https://www.nerdfonts.com/) it is worth browsing the options to find what works best for you but two that I really enjoy are:
 
+- [JetBrains Mono](https://www.programmingfonts.org/#jetbrainsmono)
 - [Cascadia Code](https://www.programmingfonts.org/#cascadia-code)
 - [Hasklig](https://www.programmingfonts.org/#hasklig)
 
