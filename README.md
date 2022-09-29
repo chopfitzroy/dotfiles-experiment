@@ -145,13 +145,13 @@ This is highly subjective and there is no _perfect config_, these are just what 
 
 [Helix](https://helix-editor.com/) is a [Kakoune](https://kakoune.org/) inspired text editor. It is a modal editor similar to Vim but has some key differences.
 
-Please visit the [official site](https://helix-editor.com/) if you would like to know more.
+Essentially Helix allows me to be productive fast and completely removes the need to manage plugins.
 
-### ZSH 🐚
+### Zsh 🐚
 
-My primary reason for using ZSH over something like [FISH](https://fishshell.com/) is that ZSH is BASH compatiable, meaning it _just works_ with a lot of tools I already use.
+My primary reason for using Zsh over something like [Fish](https://fishshell.com/) is that Zsh is Bash compatiable, meaning it _just works_ with a lot of tools I already use.
 
-If I was going to learn a new shell and commit to something that was not BASH compatiable, I would most likely pick up [Nushell](https://www.nushell.sh/) which also provides an _escape hatch_ to fallback to BASH commands when needed.
+If I was going to learn a new shell and commit to something that was not Bash compatiable, I would most likely pick up [Nushell](https://www.nushell.sh/) which also provides an _escape hatch_ to fallback to Bash commands when needed.
  
 I use the [Sheldon](https://sheldon.cli.rs/) plugin manager because it keeps my plugin config _outside_ of my `.zshrc`, this creates a clear separation between what is my config and what is plugins.
 
@@ -165,7 +165,47 @@ I **do not** use [tmux](https://github.com/tmux/tmux/wiki) nor do I intend to. T
 
 ## Themeing 🎨
 
-[Helix](https://helix-editor.com/) includes a number of great themes out of the box, use `:theme` to find the theme that best suits you.
+Helix includes a number of great themes out of the box, use `:theme` to find the theme that best suits you.
 
-I personally enjoy the `gruvbox` theme and like my terminal colorscheme to be consistent with my editor so I use [kitty-theme](https://github.com/dexpota/kitty-themes) to achieve this on Mac and Linux, and I use [gruvbox-everything](https://github.com/ZeusOfTheCrows/gruvbox-everything) on Windows.
+You may notice that I include a custom `gruvbox` theme with the Helix config, this is to address [this issue](https://github.com/morhetz/gruvbox/issues/15) if you do not mind inverted colors feel free to remove this in favour of the Helix default `gruvbox`.
 
+If you are like me and want your terminal color scheme to match your editor color scheme I can recommend the [kitty-themes](https://github.com/dexpota/kitty-themes) [gruvbox_dark](https://github.com/dexpota/kitty-themes/blob/master/themes/gruvbox_dark.conf) theme for Kitty.
+
+And if you are using Windows Terminal you will need to follow the below steps to add a Gruvbox Dark theme:
+
+- Open Windows Terminal
+- Open "Settings" (Ctrl+,)
+- Click Open JSON file (bottom left)
+- Search for `"schemes"``
+- Copy and paste the below snippet into the array
+- Navigate to the relevant profile in Windows Terminal
+- Under "Additional Settings" select "Appearance"
+- Under "Color Scheme" select "Gruvbox Dark"
+
+<details>
+  <summary>Click to expand snippet</summary>
+  
+  ```json
+  {
+    "background" : "#282828",
+    "black" : "#282828",
+    "blue" : "#458588",
+    "brightBlack" : "#928374",
+    "brightBlue" : "#83A598",
+    "brightCyan" : "#8EC07C",
+    "brightGreen" : "#B8BB26",
+    "brightPurple" : "#D3869B",
+    "brightRed" : "#FB4934",
+    "brightWhite" : "#EBDBB2",
+    "brightYellow" : "#FABD2F",
+    "cyan" : "#689D6A",
+    "foreground" : "#EBDBB2",
+    "green" : "#98971A",
+    "name" : "Gruvbox Dark",
+    "purple" : "#B16286",
+    "red" : "#CC241D",
+    "white" : "#A89984",
+    "yellow" : "#D79921"
+  }
+  ```
+</details>
