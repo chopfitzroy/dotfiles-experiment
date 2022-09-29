@@ -13,7 +13,7 @@ Criteria of this repo:
 
 ## Show me the code 🥵
 
-View [all branches](https://github.com/chopfitzroy/dotfiles-experiment/branches) to view configuration for each tool used.
+View [all branches](https://github.com/chopfitzroy/dotfiles-experiment/branches) for each config.
 
 ## Usage 🔮
 
@@ -31,7 +31,7 @@ Install both [vcsh](https://github.com/RichiH/vcsh) and [myrepos](https://myrepo
 brew install vcsh myrepos
 ```
 
-**WSL:**
+**Ubuntu:**
 
 ```sh
 sudo apt-get install vcsh myrepos
@@ -126,39 +126,26 @@ git push
 
 ## Supplementary 🎯
 
-Additional to the configs are the actual tools themselves, dependant on what configs you copy across you will also need to install the respective tool.
-
-Please refer to each individual package for install instructions, it is not worth detailing them here especially if they become outdated.
+Some configs require additional packages/software to work, below you can find a list organised by config that details additional requirements.
 
 ### ZSH 🐚
 
-- [ZSH](https://www.zsh.org/)
 - [fzf](https://github.com/junegunn/fzf)
 - [Zoxide](https://github.com/ajeetdsouza/zoxide)
 - [Sheldon](https://github.com/rossmacarthur/sheldon)
 - [Starship](https://starship.rs/)
 
-### Helix 🧬
-
-- [Helix](https://helix-editor.com/)
-
-## Limitations 😭
-
-- ZSH auto suggestions are not persisted between shells, this is intentional but can be [changed](https://github.com/zsh-users/zsh-autosuggestions/issues/405)
-
 ## Reasoning 🤔
 
-Below you can find my (personal) justifications for each tool configured here.
+Below you can find my (personal) reasoning for each config.
 
-This is highly subjective and there is no _perfect tool_, these are just tools that most easily fit into my own workflow.
+This is highly subjective and there is no _perfect config_, these are just what work for me.
 
 ### Helix 🧬
 
 [Helix](https://helix-editor.com/) is a [Kakoune](https://kakoune.org/) inspired text editor. It is a modal editor similar to Vim but has some key differences.
 
-Most importantly [Helix](https://helix-editor.com/) aims to ship a viable default experience, that is to say it comes out of the box with things like a fuzzy finder and LSP support.
-
-[Helix](https://helix-editor.com/) allows me to be productive fast and has effectively eliminated time spent maintaining plugins between updates.
+Please visit the [official site](https://helix-editor.com/) if you would like to know more.
 
 ### ZSH 🐚
 
@@ -166,13 +153,19 @@ My primary reason for using ZSH over something like [FISH](https://fishshell.com
 
 If I was going to learn a new shell and commit to something that was not BASH compatiable, I would most likely pick up [Nushell](https://www.nushell.sh/) which also provides an _escape hatch_ to fallback to BASH commands when needed.
  
-I also use the [Sheldon](https://sheldon.cli.rs/) plugin manager. The main reason I prefer this tool is that it keeps my plugin config _outside_ of my `.zshrc`, this creates a clear separation between what is my config and what is plugins.
+I use the [Sheldon](https://sheldon.cli.rs/) plugin manager because it keeps my plugin config _outside_ of my `.zshrc`, this creates a clear separation between what is my config and what is plugins.
 
-Finally I use [Starship prompt](https://starship.rs/). Again what I like about this tool is it keeps my prompt config outside of my `.zshrc`, additionally it supports a number of different shells meaning if I ever switch shells I can likely bring this with me.
+I use [Starship prompt](https://starship.rs/) because it keeps my prompt config outside of my `.zshrc`, additionally it supports a number of different shells meaning if I ever switch shells I can likely bring this with me.
 
 ### Kitty 🧶
 
 I use [Kitty](https://sw.kovidgoyal.net/kitty/) on Mac and Linux and [Windows Terminal](https://github.com/microsoft/terminal) on Windows (with [WSL](https://learn.microsoft.com/en-us/windows/wsl/about)).
 
 I **do not** use [tmux](https://github.com/tmux/tmux/wiki) nor do I intend to. Terminal multiplexers come with a [plethora of issues](https://github.com/kovidgoyal/kitty/issues/391#issuecomment-638320745) that I don't need to buy into. Don't get me wrong there are absolutely uses cases for requiring a terminal multiplexer, but tabs and splits are not it. It's 2022 please let your terminal be your terminal.
+
+## Themeing 🎨
+
+[Helix](https://helix-editor.com/) includes a number of great themes out of the box, use `:theme` to find the theme that best suits you.
+
+I personally enjoy the `gruvbox` theme and like my terminal colorscheme to be consistent with my editor so I use [kitty-theme](https://github.com/dexpota/kitty-themes) to achieve this on Mac and Linux, and I use [gruvbox-everything](https://github.com/ZeusOfTheCrows/gruvbox-everything) on Windows.
 
