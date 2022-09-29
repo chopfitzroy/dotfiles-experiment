@@ -157,7 +157,7 @@ I use the [Sheldon](https://sheldon.cli.rs/) plugin manager because it keeps my 
 
 I use [Starship prompt](https://starship.rs/) because it keeps my prompt config outside of my `.zshrc`, additionally it supports a number of different shells meaning if I ever switch shells I can likely bring this with me.
 
-### Kitty 🧶
+### Terminals 🧶
 
 I use [Kitty](https://sw.kovidgoyal.net/kitty/) on Mac and Linux and [Windows Terminal](https://github.com/microsoft/terminal) on Windows (with [WSL](https://learn.microsoft.com/en-us/windows/wsl/about)).
 
@@ -165,13 +165,24 @@ I **do not** use [tmux](https://github.com/tmux/tmux/wiki) nor do I intend to. T
 
 ## Themeing 🎨
 
+Themeing almost entirely comes down to personal preference and the below section is very personalised to my own taste, I encourage anyone trying out this repo to experiment with the below options to find something that works for them.
+
+### Fonts 🆎
+
+Starship does require the use of a [nerd font](https://www.nerdfonts.com/) it is worth browsing the options to find what works best for you but two that I really enjoy are:
+
+- [Cascadia Code](https://www.programmingfonts.org/#cascadia-code)
+- [Hasklig](https://www.programmingfonts.org/#hasklig)
+
+### Color scheme 🌈
+
 Helix includes a number of great themes out of the box, use `:theme` to find the theme that best suits you.
 
 You may notice that I include a custom `gruvbox_dark` theme with the Helix config, this is to address [this issue](https://github.com/morhetz/gruvbox/issues/15) if you do not mind inverted colors feel free to remove this in favour of the Helix default `gruvbox`.
 
 If you are like me and want your terminal color scheme to match your editor color scheme I can recommend the [gruvbox_dark](https://github.com/dexpota/kitty-themes/blob/master/themes/gruvbox_dark.conf) theme from [kitty-themes](https://github.com/dexpota/kitty-themes) for Kitty.
 
-And if you are using Windows Terminal you will need to follow the below steps to add the Gruvbox Dark theme:
+If you are using Windows Terminal you will need to follow the below steps to add the Gruvbox Dark theme:
 
 - Open Windows Terminal
 - Open "Settings" (Ctrl+,)
