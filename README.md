@@ -167,11 +167,11 @@ I **do not** use [tmux](https://github.com/tmux/tmux/wiki) nor do I intend to. T
 
 Helix includes a number of great themes out of the box, use `:theme` to find the theme that best suits you.
 
-You may notice that I include a custom `gruvbox` theme with the Helix config, this is to address [this issue](https://github.com/morhetz/gruvbox/issues/15) if you do not mind inverted colors feel free to remove this in favour of the Helix default `gruvbox`.
+You may notice that I include a custom `gruvbox_dark` theme with the Helix config, this is to address [this issue](https://github.com/morhetz/gruvbox/issues/15) if you do not mind inverted colors feel free to remove this in favour of the Helix default `gruvbox`.
 
-If you are like me and want your terminal color scheme to match your editor color scheme I can recommend the [kitty-themes](https://github.com/dexpota/kitty-themes) [gruvbox_dark](https://github.com/dexpota/kitty-themes/blob/master/themes/gruvbox_dark.conf) theme for Kitty.
+If you are like me and want your terminal color scheme to match your editor color scheme I can recommend the [gruvbox_dark](https://github.com/dexpota/kitty-themes/blob/master/themes/gruvbox_dark.conf) theme from [kitty-themes](https://github.com/dexpota/kitty-themes) for Kitty.
 
-And if you are using Windows Terminal you will need to follow the below steps to add a Gruvbox Dark theme:
+And if you are using Windows Terminal you will need to follow the below steps to add the Gruvbox Dark theme:
 
 - Open Windows Terminal
 - Open "Settings" (Ctrl+,)
