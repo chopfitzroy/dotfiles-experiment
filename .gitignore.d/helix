@@ -4,6 +4,8 @@
 !/.config
 !/.config/helix
 !/.config/helix/*
+!/.config/helix/themes
+!/.config/helix/themes/*
 
 # Track the file we are currently editing
 !/.gitignore.d
