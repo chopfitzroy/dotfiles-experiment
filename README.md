@@ -188,7 +188,7 @@ If you are using Windows Terminal you will need to follow the below steps to add
 - Open Windows Terminal
 - Open "Settings" (Ctrl+,)
 - Click Open JSON file (bottom left)
-- Search for `"schemes"``
+- Search for `"schemes"`
 - Copy and paste the below snippet into the array
 - Navigate to the relevant profile in Windows Terminal
 - Under "Additional Settings" select "Appearance"
