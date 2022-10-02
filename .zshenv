@@ -32,5 +32,7 @@ path=(
 
 # Could probably add this to path manually
 # However this is the way the Rust installer does it by default
-source "$HOME/.cargo/env"
+if [ -f $HOME/.cargo/env ]; then
+  source "$HOME/.cargo/env"
+fi
 
