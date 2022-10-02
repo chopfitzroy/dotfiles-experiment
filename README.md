@@ -173,7 +173,7 @@ Themeing almost entirely comes down to personal preference and the below section
 
 ### Fonts 🆎
 
-Starship does require the use of a [nerd font](https://www.nerdfonts.com/) it is worth browsing the options to find what works best for you but two that I really enjoy are:
+Starship does require the use of a [nerd font](https://www.nerdfonts.com/) it is worth browsing the options to find what works best for you but some that I really enjoy are:
 
 - [JetBrains Mono](https://www.programmingfonts.org/#jetbrainsmono)
 - [Cascadia Code](https://www.programmingfonts.org/#cascadia-code)
@@ -230,7 +230,7 @@ If the default themes are not enough for you I highly recommend checking out the
 
 ## Gotcha's 💢
 
-If you are running Ubuntu on WSL2 the `apt` repositories are often a few version behind for some tools, as such I recommend downloading the binaries directly from GitHub.
+If you are running Ubuntu on WSL the `apt` repositories are often a few version behind for some tools, as such I recommend downloading the binaries directly from GitHub.
 
 - [fzf](https://github.com/junegunn/fzf/releases)
 - [Helix](https://github.com/helix-editor/helix/releases)
