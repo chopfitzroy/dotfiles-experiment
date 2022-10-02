@@ -226,6 +226,8 @@ If you are using Windows Terminal you will need to follow the below steps to add
   ```
 </details>
 
+If the default themes are not enough for you I highly recommend checking out the [Base16 Project](https://github.com/base16-project) which includes a number of custom themes for both Helix and fzf.
+
 ## Gotcha's 💢
 
 If you are running Ubuntu on WSL2 the `apt` repositories are often a few version behind for some tools, as such I recommend downloading the binaries directly from GitHub.
