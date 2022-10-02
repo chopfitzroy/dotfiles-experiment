@@ -2,6 +2,7 @@
 *
 
 !.zshrc
+!.zshenv
 
 # Custom ZSH functions
 !/.zsh_functions
