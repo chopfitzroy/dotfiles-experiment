@@ -141,6 +141,10 @@ Below you can find my (personal) reasoning for each config.
 
 This is highly subjective and there is no _perfect config_, these are just what work for me.
 
+You might notice that for a lot of tools the config is relatively minimal **this is intentional** I am a big fan of zero config or low config tools.
+
+I am much more likely to pick a tool that covers 90% of my use cases out of the box with sane defaults over a tool that covers 100% of my use cases but takes weeks to setup and configure.
+
 ### Helix 🧬
 
 [Helix](https://helix-editor.com/) is a [Kakoune](https://kakoune.org/) inspired text editor. It is a modal editor similar to Vim but has some key differences.
@@ -221,3 +225,13 @@ If you are using Windows Terminal you will need to follow the below steps to add
   }
   ```
 </details>
+
+## Gotcha's 💢
+
+If you are running Ubuntu on WSL2 the `apt` repositories are often a few version behind for some tools, as such I recommend downloading the binaries directly from GitHub.
+
+- [fzf](https://github.com/junegunn/fzf/releases)
+- [Helix](https://github.com/helix-editor/helix/releases)
+
+If you don't know where to put these tools I recommend `~/.local/bin` which already exists for `zoxide`.
+
