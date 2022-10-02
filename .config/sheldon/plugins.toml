@@ -7,6 +7,10 @@ inline = 'autoload -Uz compinit && compinit'
 github = "junegunn/fzf"
 use = ["shell/completion.zsh", "shell/key-bindings.zsh"]
 
+[plugins.base16-fzf]
+github = "base16-project/base16-fzf"
+use = ["bash/base16-gruvbox-dark-medium.config"]
+
 [plugins.zsh-autosuggestions]
 github = "zsh-users/zsh-autosuggestions"
 

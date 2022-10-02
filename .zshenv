@@ -15,12 +15,6 @@ export ANDROID_HOME="$HOME/Library/Android/sdk"
 # Turn on additional suggestions
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
-# Match terminal color scheme
-# - https://github.com/junegunn/fzf/wiki/Color-schemes
-export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
-  --color fg:#ebdbb2,bg:#282828,hl:#fabd2f,fg+:#ebdbb2,bg+:#3c3836,hl+:#fabd2f
-  --color info:#83a598,prompt:#bdae93,spinner:#fabd2f,pointer:#83a598,marker:#fe8019,header:#665c54'
-
 # Remove duplicate entries
 # - https://stackoverflow.com/questions/68605927/how-can-i-change-path-variable-in-zsh
 typeset -U path PATH
@@ -38,7 +32,8 @@ path=(
 
 # Could probably add this to path manually
 # However this is the way the Rust installer does it by default
-if [ -f $HOME/.cargo/env ]; then
-  source "$HOME/.cargo/env"
+CARGO_ENV_PATH="$HOME/.cargo/env"
+if [ -f $CARGO_ENV_PATH ]; then
+  source $CARGO_ENV_PATH
 fi
 
