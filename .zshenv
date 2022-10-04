@@ -12,6 +12,10 @@ export VOLTA_HOME="$HOME/.volta"
 # Android
 export ANDROID_HOME="$HOME/Library/Android/sdk"
 
+# Android SDK (depreceated)
+# - https://github.com/facebook/react-native/issues/34304
+export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
+
 # Turn on additional suggestions
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
