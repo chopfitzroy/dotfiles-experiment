@@ -19,6 +19,10 @@ export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
 # Turn on additional suggestions
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
+# Use `fd` for standard `fzf` usage
+# - https://github.com/junegunn/fzf#respecting-gitignore
+export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git'
+
 # Remove duplicate entries
 # - https://stackoverflow.com/questions/68605927/how-can-i-change-path-variable-in-zsh
 typeset -U path PATH
