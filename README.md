@@ -130,6 +130,7 @@ Some configs require additional packages/software to work, below you can find a 
 
 ### ZSH 🐚
 
+- [fd](https://github.com/sharkdp/fd)
 - [fzf](https://github.com/junegunn/fzf)
 - [Zoxide](https://github.com/ajeetdsouza/zoxide)
 - [Sheldon](https://github.com/rossmacarthur/sheldon)
@@ -232,6 +233,7 @@ If the default themes are not enough for you I highly recommend checking out the
 
 If you are running Ubuntu on WSL the `apt` repositories are often a few version behind for some tools, as such I recommend downloading the binaries directly from GitHub.
 
+- [fd](https://github.com/sharkdp/fd)
 - [fzf](https://github.com/junegunn/fzf/releases)
 - [Helix](https://github.com/helix-editor/helix/releases)
 
