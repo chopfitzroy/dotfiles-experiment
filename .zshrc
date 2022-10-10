@@ -6,6 +6,17 @@ fpath=( ~/.zsh_functions "${fpath[@]}" )
 # - https://dev.to/lukeojones/1up-your-zsh-abilities-by-autoloading-your-own-functions-2ngp
 autoload -Uz $fpath[1]/*(.:t)
 
+# Use `fd` with `fzf` completions
+# - https://github.com/junegunn/fzf#settings
+_fzf_compgen_path() {
+  fd --hidden --follow --exclude ".git" . "$1"
+}
+
+# Use fd to generate the list for directory completion
+_fzf_compgen_dir() {
+  fd --type d --hidden --follow --exclude ".git" . "$1"
+}
+
 # Sheldon (plugins)
 # - Must be called before `zoxide`
 # - Set's up ZSH completions
