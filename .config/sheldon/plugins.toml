@@ -3,6 +3,10 @@
 [plugins.compinit]
 inline = 'autoload -Uz compinit && compinit'
 
+[plugins.fd]
+github = "sharkdp/fd"
+apply = ["fpath"]
+
 [plugins.fzf]
 github = "junegunn/fzf"
 use = ["shell/completion.zsh", "shell/key-bindings.zsh"]
