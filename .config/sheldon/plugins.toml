@@ -1,10 +1,6 @@
-# Required for auto suggestions so enabled here
-# - Can be moved directly to `~/.zshrc` if needed
-[plugins.compinit]
-inline = 'autoload -Uz compinit && compinit'
-
 [plugins.fd]
 github = "sharkdp/fd"
+dir = "contrib/completion"
 apply = ["fpath"]
 
 [plugins.fzf]
