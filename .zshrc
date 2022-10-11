@@ -1,14 +1,8 @@
 # Sheldon (plugins)
+# - Must be called first
 # - Must be called before `zoxide`
-# - Set's up ZSH completions
 # - https://github.com/ajeetdsouza/zoxide/issues/348
 eval "$(sheldon source)"
-
-# Zoxide (z)
-eval "$(zoxide init zsh)"
-
-# Starship (ZSH Prompt)
-eval "$(starship init zsh)"
 
 # Custom functions
 # - https://unix.stackexchange.com/questions/33255/how-to-define-and-load-your-own-shell-function-in-zsh
@@ -19,7 +13,7 @@ fpath=( ~/.zsh_functions "${fpath[@]}" )
 autoload -Uz $fpath[1]/*(.:t)
 
 # Autoload completions
-# Completions in depth
+# - Completions in depth
 # - https://thevaluable.dev/zsh-completion-guide-examples/
 autoload -Uz compinit
 compinit
@@ -34,4 +28,10 @@ _fzf_compgen_path() {
 _fzf_compgen_dir() {
   fd --type d --hidden --follow --exclude ".git" . "$1"
 }
+
+# Zoxide (z)
+eval "$(zoxide init zsh)"
+
+# Starship (ZSH Prompt)
+eval "$(starship init zsh)"
 
