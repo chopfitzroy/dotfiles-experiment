@@ -124,17 +124,20 @@ git commit -m "Commit message"
 git push
 ```
 
-## Supplementary 🎯
+## Shell 🐚
 
-Some configs require additional packages/software to work, below you can find a list organised by config that details additional requirements.
-
-### ZSH 🐚
+Below are a list of what I consider _must haves_ for a pleasent shell experience.
 
 - [fd](https://github.com/sharkdp/fd)
 - [fzf](https://github.com/junegunn/fzf)
 - [Zoxide](https://github.com/ajeetdsouza/zoxide)
 - [Sheldon](https://github.com/rossmacarthur/sheldon)
 - [Starship](https://starship.rs/)
+
+Additionally here is a list of _nice to haves_ if you don't mind adding a few more tools.
+
+- [exa](https://the.exa.website/)
+- [bat](https://github.com/sharkdp/bat)
 
 ## Reasoning 🤔
 
@@ -186,7 +189,15 @@ Helix includes a number of great themes out of the box, use `:theme` to find the
 
 You may notice that I include a custom `gruvbox_dark` theme with the Helix config, this is to address [this issue](https://github.com/morhetz/gruvbox/issues/15) if you do not mind inverted colors feel free to remove this in favour of the Helix default `gruvbox`.
 
-If you are like me and want your terminal color scheme to match your editor color scheme I can recommend the [gruvbox_dark](https://github.com/dexpota/kitty-themes/blob/master/themes/gruvbox_dark.conf) theme from [kitty-themes](https://github.com/dexpota/kitty-themes) for Kitty.
+If you are like me and want your terminal color scheme to match your editor color scheme I can recommend the [official kitten](https://sw.kovidgoyal.net/kitty/kittens/themes/) for Kitty.
+
+Provided you know the theme you are after you can run the following command to overwrite the current theme:
+
+```sh
+kitty +kitten themes --dump-theme Gruvbox\ Dark > ~/.config/kitty/current-theme.conf
+```
+
+Where `Gruvbox\ Dark` is the theme name. Use `ctrl` + `shift` + `F5` to reload the terminal.
 
 If you are using Windows Terminal you will need to follow the below steps to add the Gruvbox Dark theme:
 
@@ -231,9 +242,11 @@ If the default themes are not enough for you I highly recommend checking out the
 
 ## Gotcha's 💢
 
-If you are running Ubuntu on WSL the `apt` repositories are often a few version behind for some tools, as such I recommend downloading the binaries directly from GitHub.
+If you are running Ubuntu on WSL the `apt` repositories are often a few version behind for some tools, as such I recommend downloading either the `.deb` installers or compiled binaries directly from GitHub.
 
 - [fd](https://github.com/sharkdp/fd)
+- [exa](https://the.exa.website/)
+- [bat](https://github.com/sharkdp/bat)
 - [fzf](https://github.com/junegunn/fzf/releases)
 - [Helix](https://github.com/helix-editor/helix/releases)
 
