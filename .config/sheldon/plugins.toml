@@ -1,11 +1,31 @@
+# TODO
+# - Add template for manpath
+# - https://sheldon.cli.rs/Configuration.html#templates
+# - Use man template to load exa and fzf man pages
+# - https://github.com/ogham/exa/tree/master/man
+# - https://github.com/junegunn/fzf/tree/master/man/man1
+
 [plugins.fd]
 github = "sharkdp/fd"
 dir = "contrib/completion"
 apply = ["fpath"]
 
+[plugins.exa]
+github = "ogham/exa"
+dir = "completions/zsh"
+apply = ["fpath"]
+
+# TODO
+# - Open an issue to try and fix this...
+# [plugins.sheldon]
+# github = "rossmacarthur/sheldon"
+# dir = "completions"
+# apply = ["fpath"]
+
 [plugins.fzf]
 github = "junegunn/fzf"
-use = ["shell/completion.zsh", "shell/key-bindings.zsh"]
+dir = "shell"
+use = ["completion.zsh", "key-bindings.zsh"]
 
 [plugins.base16-fzf]
 github = "base16-project/base16-fzf"
