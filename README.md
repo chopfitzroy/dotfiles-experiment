@@ -4,16 +4,23 @@ This repo is largely modelled off [this guide](https://germano.dev/dotfiles/).
 
 Criteria of this repo:
 
+- Single repo
 - Backed by `git`
-- A single repo to manage all dotfiles
-- Introduce as few tools/abstractions as possible
-- Ability to archive configs for tools I no longer use
-- Ability to show a `README.md` on GitHub without needing to have it sit in my `~/`
-- Ability to have multiple configs for all tools, i.e a work `.gitconfig` and a personal `.gitconfig`
+- Introduce as few tools/abstractions as possible (VCSH)
+- Clear way to view the commit history for any given _category_ of tools
+- Ability to **optionally** bootstrap system with Ansible but also use individual configs without requiring Ansible
 
 ## Show me the code 🥵
 
 View [all branches](https://github.com/chopfitzroy/dotfiles-experiment/branches) for each config.
+
+## Using Ansible 🍃
+
+If you are on WSL and using openSUSE run:
+
+```sh
+ansible-playbook main.yml --ask-become-pass
+```
 
 ## Usage 🔮
 
