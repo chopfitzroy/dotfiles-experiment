@@ -2,6 +2,10 @@
   when: ansible_os_family == "Suse"
 - import_tasks: macos.yml
   when: ansible_os_family == "Darwin"
-  
-  # @TODO
-  # - Checkout zsh config with VCSH
+
+- name: Set users default shell to Zsh
+  become: yes
+  user: 
+    name: "{{ ansible_user_id }}"
+    shell: /bin/zsh
+      
