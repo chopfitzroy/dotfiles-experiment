@@ -19,6 +19,9 @@ export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
 # Turn on additional suggestions
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
+# Use gruvbox theme with `bat`
+export BAT_THEME="gruvbox-dark" 
+
 # Use `fd` for standard `fzf` usage
 # - https://github.com/junegunn/fzf#respecting-gitignore
 export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git'
