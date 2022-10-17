@@ -3,3 +3,10 @@
   community.general.zypper:
     name: zsh
     state: present
+
+- name: Set users default shell to Zsh
+  become: yes
+  user: 
+    name: "{{ ansible_user_id }}"
+    shell: /bin/zsh
+ 

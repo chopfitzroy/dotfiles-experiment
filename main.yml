@@ -1,6 +1,30 @@
 - name: Set up local development environment
   hosts: localhost
   roles:
-    # Tag each role so that we can select individual roles to run with ansible-playbook --tags
+    - {role: fd, tags: ['fd']}
     - {role: zsh, tags: ['zsh']}
     - {role: helix, tags: ['helix']}
+    # @TODO (tools)
+    # - fzf
+    # - bat
+    # - exa
+    # - vcsh
+    # - zoxide
+    # - sheldon 
+    # - starship
+    # @TODO (configs)
+    # - shell
+    # - editor
+    # @TODO (languages)
+    # - go
+    # - rust
+    # - node (volta)
+    # @TODO (lsp)
+    # - go
+    # - rust
+    # - node
+    # @TODO (misc)
+    # - fonts (JetBrains Mono)
+    # @TODO (mac)
+    # - Kitty
+    

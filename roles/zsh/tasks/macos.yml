@@ -1,4 +1,0 @@
-- name: Install Zsh on macOS
-  homebrew: 
-    name: zsh
-    state: present
