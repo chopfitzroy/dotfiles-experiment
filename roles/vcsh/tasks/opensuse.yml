@@ -1,0 +1,6 @@
+- name: Install Zsh on openSUSE
+  become: yes
+  community.general.zypper:
+    name: vcsh
+    state: present
+

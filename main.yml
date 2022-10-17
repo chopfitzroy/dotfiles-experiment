@@ -3,6 +3,7 @@
   roles:
     - {role: fd, tags: ['fd']}
     - {role: zsh, tags: ['zsh']}
+    - {role: vcsh, tags: ['vcsh']}
     - {role: helix, tags: ['helix']}
     # @TODO (tools)
     # - fzf
@@ -15,6 +16,7 @@
     # @TODO (configs)
     # - shell
     # - editor
+    # - terminal
     # @TODO (languages)
     # - go
     # - rust
