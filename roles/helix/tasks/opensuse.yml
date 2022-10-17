@@ -1,0 +1,22 @@
+- name: Install C++ compiler
+  become: yes
+  community.general.zypper:
+    name: gcc-c++
+    state: present
+            
+- name: Fetch helix grammar
+  become: yes
+  command:
+    cmd: /usr/bin/helix --grammar fetch
+    
+- name: Build helix grammar
+  become: yes
+  command:
+    cmd: /usr/bin/helix --grammar build
+    
+- name: Create symbolic link to 'hx' command
+  ansible.builtin.file:
+    src: /usr/bin/helix
+    dest: "{{ lookup('env', 'HOME') }}/.local/bin/hx"
+    state: link
+

@@ -1,0 +1,4 @@
+- name: Install Helix on macOS
+  homebrew: 
+    name: helix
+    state: present
