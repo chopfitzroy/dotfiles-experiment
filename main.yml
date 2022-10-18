@@ -1,5 +1,14 @@
 - name: Set up local development environment
   hosts: localhost
+  pre_tasks:
+  - name: Setup gloabl variables for openSUSE
+    include_vars:
+      file: vars/opensuse.yml
+    when: ansible_os_family == "Suse"
+  - name: Setup gloabl variables for macOS
+    include_vars:
+      file: vars/macos.yml
+    when: ansible_os_family == "Darwin"
   roles:
     - {role: fd, tags: ['fd']}
     - {role: zsh, tags: ['zsh']}

@@ -1,0 +1,3 @@
+local_bin: "{{ lookup('env', 'HOME') }}/.local/bin"
+vendor_bin: /usr/bin
+

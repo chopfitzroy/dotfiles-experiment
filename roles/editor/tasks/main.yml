@@ -1,5 +1,5 @@
 - name: List existing vcsh configs
-  shell: /usr/bin/vcsh list 
+  shell: "{{ vendor_bin }}/vcsh list" 
   register: vcsh_list
 
 - name: Clone editor config using vcsh
