@@ -1,0 +1,3 @@
+- name: Clone editor config using vcsh
+  command: /usr/bin/vcsh clone -b helix git@github.com:chopfitzroy/dotfiles-experiment.git helix
+

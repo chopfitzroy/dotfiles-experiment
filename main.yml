@@ -3,19 +3,18 @@
   roles:
     - {role: fd, tags: ['fd']}
     - {role: zsh, tags: ['zsh']}
-    - {role: vcsh, tags: ['vcsh']}
+    - {role: vcsh, tags: ['vcsh', 'editor']}
     - {role: helix, tags: ['helix']}
+    - {role: editor, tags: ['editor']}
     # @TODO (tools)
     # - fzf
     # - bat
     # - exa
-    # - vcsh
     # - zoxide
     # - sheldon 
     # - starship
     # @TODO (configs)
     # - shell
-    # - editor
     # - terminal
     # @TODO (languages)
     # - go
