@@ -1,3 +1,8 @@
+- name: List existing vcsh configs
+  shell: /usr/bin/vcsh list 
+  register: vcsh_list
+
 - name: Clone editor config using vcsh
   command: /usr/bin/vcsh clone -b helix git@github.com:chopfitzroy/dotfiles-experiment.git helix
+  when: not vcsh_list.stdout is search("helix")
 
