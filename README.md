@@ -1,88 +1,98 @@
 # Dotfiles 💻
 
-This repo is largely modelled off [this guide](https://germano.dev/dotfiles/).
-
 Criteria of this repo:
 
 - Single repo
 - Backed by `git`
-- Introduce as few tools/abstractions as possible (VCSH)
+- Does not need to be cloned to a specific location to work.
 - Clear way to view the commit history for any given _category_ of tools
+- Introduce as few tools/abstractions as possible (we do this by using [vcsh](https://github.com/RichiH/vcsh))
 - Ability to **optionally** bootstrap system with Ansible but also use individual configs without requiring Ansible
 
 ## Show me the code 🥵
 
 View [all branches](https://github.com/chopfitzroy/dotfiles-experiment/branches) for each config.
 
-## Using Ansible 🍃
+## Automatic Setup with Ansible 🍃
 
-If you are on WSL and using openSUSE run:
+The Ansible script currently supports macOS using [Homebrew](https://brew.sh/) and openSUSE (Tumbleweed).
+
+### Using openSUSE 🦎
+
+Install `git` and `ansible` with the following command:
+
+```sh
+sudo zypper install git ansible
+```
+
+Then run the playbook with the following command:
 
 ```sh
 ansible-playbook main.yml --ask-become-pass
 ```
 
-## Usage 🔮
+### Using mac 🍏
 
-Common scenarios and how to handle them are listed below. You will need to substitute in your own repository location where appropiate.
-
-Rember even though each config is a branch on the remote. **Locally each branch will be initialized as it's own repo**.
-
-### New host 👽
-
-Install both [vcsh](https://github.com/RichiH/vcsh) and [myrepos](https://myrepos.branchable.com/).
-
-**Mac:**
+Install `ansible` with the following command:
 
 ```sh
-brew install vcsh myrepos
+brew install ansible
 ```
 
-**Ubuntu:**
+Then run the playbook with the following command:
 
 ```sh
-sudo apt-get install vcsh myrepos
+ansible-playbook main.yml --ask-become-pass
 ```
 
-**Clone down the `myrepos` branch:**
+## Synchronising changes 🔁
+
+The Ansible scripts have been designed to be deterministic meaning you can run them an infinite number of times and they should always work.
+
+Synchronising latest changes can always be done using the following command:
 
 ```sh
-vcsh clone -b myrepos git@github.com:chopfitzroy/dotfiles-experiment.git myrepos
+ansible-playbook main.yml --ask-become-pass
 ```
 
-**Link desired tools:**
+If you just want to update your configs to the latest version and don't care about updating your software a quick update can be done with:
 
 ```sh
-mkdir ~/.config/mr/config.d/
-cd ~/.config/mr/config.d/
-ls ../available.d/ # This will print out available configs
-ln -s ../available.d/zsh.vcsh # This would setup ZSH config, rinse and repeat for all desired tools
+vcsh pull
 ```
 
-**Checkout all the other tools at once:**
+## Manual Setup 🐢
+
+There might be times you don't want to run the Ansible scripts but would still like to make use of some of the configuration files.
+
+Below are instructions on how to manually clone down each config, note you will need [vcsh](https://github.com/RichiH/vcsh) installed to do this.
+
+First [fork](https://github.com/chopfitzroy/dotfiles-experiment/fork) this repository to your own GitHub account.
+
+Then use the following command **substituting in your new repository address**.
 
 ```sh
-mr checkout
+vcsh clone -b config_name git@github.com:user/repo.git config_name
 ```
 
-### Updating an existing tool/config 💉
+Where `config_name` is one of `shell`, `editor`, or `terminal`.
 
-```sh
-vcsh enter config_name
-git status # If you want to confirm changes
-git add --all .
-git commit -m "Commit message"
-git push
-```
+It is important to note this will not install any of the required binaries these configs reference, you will need to do that manually or use the Ansible scripts.
 
-### Setting up a new tool/config ✨
+If you would like to commit your changes you will need to use [vcsh](https://github.com/RichiH/vcsh) to do this.
+
+## Setting up a new config ✨
+
+Ideally this shouldn't need to be done too often given most tools should fit within the existing config categories.
+
+That being said if you do need to create a new config the below commands should do the trick. 
 
 **Create new _local_ repo:**
 
 ```sh
 vcsh init config_name
 vcsh enter config_name
-git remote add origin git@github.com:chopfitzroy/dotfiles-experiment.git
+git remote add origin git@github.com:user/repo.git
 git fetch
 git checkout --orphan config_name
 ```
@@ -106,89 +116,86 @@ git commit -m "Commit message"
 git push --set-upstream origin config_name
 ```
 
-**Add `myrepos` config:**
+## Reasoning 🔮
 
-```sh
-hx ~/.config/mr/available.d/config_name.vcsh
-```
+Below are some _breif_ reasonings behind each tool used in these dotfiles.
 
-Then paste the following in **pay attention to replacing config_name**:
+### Version control 🚦
 
-```
-[$HOME/.config/vcsh/repo.d/config_name.git]
-checkout =
-  vcsh clone -b config_name git@github.com:chopfitzroy/dotfiles-experiment.git config_name
-status = vcsh config_name status
-pull = vcsh config_name pull
-```
+You might be wondering why these dotfiles buy so heavily into [vcsh](https://github.com/RichiH/vcsh) over something like [stow](https://www.gnu.org/software/stow/).
 
-Once that is done it can be pushed to the remote:
+Honestly it comes down to personal preference I have had some bad experiences with symlinks in the past so I much prefer a more `git` based solution over a symlink manager.
 
-```sh
-vcsh enter myrepos
-git add --all .
-git commit -m "Commit message"
-git push
-```
+If I was to buy into a more symlink driven setup I would absolutely use [stow](https://www.gnu.org/software/stow/). I have used it in the past and it is very good at what it does.
 
-## Shell 🐚
+If you are un-happy with [vcsh](https://github.com/RichiH/vcsh) I strongly recommend looking into some other dotfile solutions, a few I can recommend are:
 
-Below are a list of what I consider _must haves_ for a pleasent shell experience.
+- [stow](https://www.gnu.org/software/stow/)
+- [yadm](https://yadm.io/)
+- [dotbot](https://github.com/anishathalye/dotbot)
+
+### Command line ⚡
+
+There are a large number of command line tools being developed by the open source community. Below is a list of all of the tools I have chosen to include in these dotfiles.
 
 - [fd](https://github.com/sharkdp/fd)
 - [fzf](https://github.com/junegunn/fzf)
+- [exa](https://the.exa.website/)
+- [bat](https://github.com/sharkdp/bat)
 - [Zoxide](https://github.com/ajeetdsouza/zoxide)
 - [Sheldon](https://github.com/rossmacarthur/sheldon)
 - [Starship](https://starship.rs/)
 
-Additionally here is a list of _nice to haves_ if you don't mind adding a few more tools.
-
-- [exa](https://the.exa.website/)
-- [bat](https://github.com/sharkdp/bat)
-
-## Reasoning 🤔
-
-Below you can find my (personal) reasoning for each config.
-
-This is highly subjective and there is no _perfect config_, these are just what work for me.
-
-You might notice that for a lot of tools the config is relatively minimal **this is intentional** I am a big fan of zero config or low config tools.
-
-I am much more likely to pick a tool that covers 90% of my use cases out of the box with sane defaults over a tool that covers 100% of my use cases but takes weeks to setup and configure.
-
-### Helix 🧬
+### Editor 🧬
 
 [Helix](https://helix-editor.com/) is a [Kakoune](https://kakoune.org/) inspired text editor. It is a modal editor similar to Vim but has some key differences.
 
-Essentially Helix allows me to be productive fast and completely removes the need to manage plugins.
+Helix completely removes the need to manage editor plugins, this provides long term productivity payoffs and removes a lot of the headaches associated with dotfile management.
+
+If you are a die hard [Neovim](https://neovim.io/) user but like the sound of not needing to manage your plugins I strongly recommend [NvChad](https://nvchad.com/).
 
 ### Zsh 🐚
 
-My primary reason for using Zsh over something like [Fish](https://fishshell.com/) is that Zsh is Bash compatiable, meaning it _just works_ with a lot of tools I already use.
-
-If I was going to learn a new shell and commit to something that was not Bash compatiable, I would most likely pick up [Nushell](https://www.nushell.sh/) which also provides an _escape hatch_ to fallback to Bash commands when needed.
+The primary reason for using Zsh over something like [Fish](https://fishshell.com/) is that Zsh is Bash compatiable, meaning it _just works_ with a lot of tools I already use.
  
-I use the [Sheldon](https://sheldon.cli.rs/) plugin manager because it keeps my plugin config _outside_ of my `.zshrc`, this creates a clear separation between what is my config and what is plugins.
+[Sheldon](https://sheldon.cli.rs/) plugin manager keeps my plugin config _outside_ of my `.zshrc`, this creates a clear separation between what is my config and what is plugins.
 
-I use [Starship prompt](https://starship.rs/) because it keeps my prompt config outside of my `.zshrc`, additionally it supports a number of different shells meaning if I ever switch shells I can likely bring this with me.
+[Starship prompt](https://starship.rs/) keeps my prompt config outside of my `.zshrc`, additionally it supports a number of different shells meaning if I ever switch shells I can likely bring this with me.
 
-### Terminals 🧶
+### Terminal 🧶
 
-I use [Kitty](https://sw.kovidgoyal.net/kitty/) on Mac and Linux and [Windows Terminal](https://github.com/microsoft/terminal) on Windows (with [WSL](https://learn.microsoft.com/en-us/windows/wsl/about)).
+[WezTerm](https://wezfurlong.org/wezterm/) for the following reasons:
 
-I **do not** use [tmux](https://github.com/tmux/tmux/wiki) nor do I intend to. Terminal multiplexers come with a [plethora of issues](https://github.com/kovidgoyal/kitty/issues/391#issuecomment-638320745) that I don't need to buy into. Don't get me wrong there are absolutely uses cases for requiring a terminal multiplexer, but tabs and splits are not it. It's 2022 please let your terminal be your terminal.
+- It works on macOS and Windows
+- It works well with WSL 2
+- It has as in built multiplexer which allows it to get around some [historic issues](https://github.com/kovidgoyal/kitty/issues/391#issuecomment-638320745)
+- It has fallback font support which allows me to use any font I like with [Nerd Fonts symbols](https://sw.kovidgoyal.net/kitty/faq/#kitty-is-not-able-to-use-my-favorite-font)
 
-## Themeing 🎨
+## Theming 🌈
 
-Themeing almost entirely comes down to personal preference and the below section is very personalised to my own taste, I encourage anyone trying out this repo to experiment with the below options to find something that works for them.
+Theming is hugely personal but below are some notes to get you started.
 
-### Fonts 🆎
+## Fonts 🆎
 
-Starship does require the use of a [nerd font](https://www.nerdfonts.com/) it is worth browsing the options to find what works best for you but some that I really enjoy are:
+Below are a number of fonts I have used (or wanted to use) over the years, I have split them into _premium_ meaning there is a cost associated with them and _free_ meaning they can be used for personal use (or in some cases commercial use) at no cost.
 
-- [JetBrains Mono](https://www.programmingfonts.org/#jetbrainsmono)
-- [Cascadia Code](https://www.programmingfonts.org/#cascadia-code)
-- [Hasklig](https://www.programmingfonts.org/#hasklig)
+**Premium:**
+
+- [MonoLisa](https://www.monolisa.dev/)
+- [Dank Mono](https://philpl.gumroad.com/l/dank-mono)
+- [Gintronic](https://markfromberg.com/projects/gintronic/)
+- [Operator Mono](https://www.typography.com/blog/introducing-operator)
+- [Berkeley Mono Typeface](https://berkeleygraphics.com/typefaces/berkeley-mono/)
+
+I use [Berkeley Mono Typeface](https://berkeleygraphics.com/typefaces/berkeley-mono/) exclusively these days and absolutely love it. Yes I paid the $75.00 and it was worth every penny.
+
+**Free:**
+
+- [Hack](https://sourcefoundry.org/hack/)
+- [Input Mono](https://input.djr.com/)
+- [Cascadia Code](https://learn.microsoft.com/en-us/windows/terminal/cascadia-code)
+- [JetBrains Mono](https://www.jetbrains.com/lp/mono/)
+- [Source Code Pro](https://fonts.adobe.com/fonts/source-code-pro)
 
 ### Color scheme 🌈
 
@@ -196,66 +203,6 @@ Helix includes a number of great themes out of the box, use `:theme` to find the
 
 You may notice that I include a custom `gruvbox_dark` theme with the Helix config, this is to address [this issue](https://github.com/morhetz/gruvbox/issues/15) if you do not mind inverted colors feel free to remove this in favour of the Helix default `gruvbox`.
 
-If you are like me and want your terminal color scheme to match your editor color scheme I can recommend the [official kitten](https://sw.kovidgoyal.net/kitty/kittens/themes/) for Kitty.
+### References 📚
 
-Provided you know the theme you are after you can run the following command to overwrite the current theme:
-
-```sh
-kitty +kitten themes --dump-theme Gruvbox\ Dark > ~/.config/kitty/current-theme.conf
-```
-
-Where `Gruvbox\ Dark` is the theme name. Use `ctrl` + `shift` + `F5` to reload the terminal.
-
-If you are using Windows Terminal you will need to follow the below steps to add the Gruvbox Dark theme:
-
-- Open Windows Terminal
-- Open "Settings" (Ctrl+,)
-- Click Open JSON file (bottom left)
-- Search for `"schemes"`
-- Copy and paste the below snippet into the array
-- Navigate to the relevant profile in Windows Terminal
-- Under "Additional Settings" select "Appearance"
-- Under "Color Scheme" select "Gruvbox Dark"
-
-<details>
-  <summary>Click to expand snippet</summary>
-  
-  ```json
-  {
-    "background" : "#282828",
-    "black" : "#282828",
-    "blue" : "#458588",
-    "brightBlack" : "#928374",
-    "brightBlue" : "#83A598",
-    "brightCyan" : "#8EC07C",
-    "brightGreen" : "#B8BB26",
-    "brightPurple" : "#D3869B",
-    "brightRed" : "#FB4934",
-    "brightWhite" : "#EBDBB2",
-    "brightYellow" : "#FABD2F",
-    "cyan" : "#689D6A",
-    "foreground" : "#EBDBB2",
-    "green" : "#98971A",
-    "name" : "Gruvbox Dark",
-    "purple" : "#B16286",
-    "red" : "#CC241D",
-    "white" : "#A89984",
-    "yellow" : "#D79921"
-  }
-  ```
-</details>
-
-If the default themes are not enough for you I highly recommend checking out the [Base16 Project](https://github.com/base16-project) which includes a number of custom themes for both Helix and fzf.
-
-## Gotcha's 💢
-
-If you are running Ubuntu on WSL the `apt` repositories are often a few version behind for some tools, as such I recommend downloading either the `.deb` installers or compiled binaries directly from GitHub.
-
-- [fd](https://github.com/sharkdp/fd)
-- [exa](https://the.exa.website/)
-- [bat](https://github.com/sharkdp/bat)
-- [fzf](https://github.com/junegunn/fzf/releases)
-- [Helix](https://github.com/helix-editor/helix/releases)
-
-If you don't know where to put these tools I recommend `~/.local/bin` which already exists for `zoxide`.
-
+- [Conquer your dotfiles with VCSH and MR](https://germano.dev/dotfiles/).
