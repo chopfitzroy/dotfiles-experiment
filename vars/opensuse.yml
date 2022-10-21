@@ -1,3 +1,3 @@
-local_bin: "{{ lookup('env', 'HOME') }}/.local/bin"
+local_bin: "{{ ansible_user_dir }}/.local/bin"
 vendor_bin: /usr/bin
 

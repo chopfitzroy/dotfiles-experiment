@@ -1,19 +1,17 @@
-- name: Install C++ compiler
+- name: Install Helix
   become: yes
   community.general.zypper:
-    name: gcc-c++
+    name: helix
     state: present
-            
-- name: Fetch helix grammar
+
+# See comments on package page
+# - https://build.opensuse.org/package/show/openSUSE:Factory/helix
+- name: Install Helix runtime files
   become: yes
-  command:
-    cmd: "{{ vendor_bin }}/helix --grammar fetch"
-    
-- name: Build helix grammar
-  become: yes
-  command:
-    cmd: "{{ vendor_bin }}/helix --grammar build"
-    
+  community.general.zypper:
+    name: helix-runtime
+    state: present
+
 - name: Create symbolic link to 'hx' command
   ansible.builtin.file:
     src: "{{ vendor_bin }}/helix"
