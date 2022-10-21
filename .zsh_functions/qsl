@@ -1,0 +1,14 @@
+if [ -n "$1" ]
+then
+	vared -p 'Search term: ' -c term
+    if [ -n "$2" ]
+	then
+		curl cht.sh/$1/$term\?T | bat -l $2
+	else
+		curl cht.sh/$1/$term\?T | bat -l $1
+	fi
+	unset term
+else
+    printf "\nPlease enter the name of the language you would like to search"
+fi
+	
