@@ -11,13 +11,13 @@
     when: ansible_os_family == "Darwin"
   roles:
     - {role: fd, tags: ['fd']}
+    - {role: bat, tags: ['bat']}
     - {role: zsh, tags: ['zsh']}
     - {role: vcsh, tags: ['vcsh', 'editor']}
     - {role: helix, tags: ['helix']}
     - {role: editor, tags: ['editor']}
     # @TODO (tools)
     # - fzf
-    # - bat
     # - exa
     # - zoxide
     # - sheldon 
@@ -33,8 +33,6 @@
     # - go
     # - rust
     # - node
-    # @TODO (misc)
-    # - fonts (JetBrains Mono)
     # @TODO (mac)
-    # - Kitty
+    # - WezTern
     

@@ -134,6 +134,7 @@ If you are un-happy with [vcsh](https://github.com/RichiH/vcsh) I strongly recom
 - [yadm](https://yadm.io/)
 - [dotbot](https://github.com/anishathalye/dotbot)
 
+Note, if you are interested in how [vcsh](https://github.com/RichiH/vcsh) works under the hood I highly recommend reading [The best way to store your dotfiles: A bare Git repository](https://www.atlassian.com/git/tutorials/dotfiles).
 ### Command line ⚡
 
 There are a large number of command line tools being developed by the open source community. Below is a list of all of the tools I have chosen to include in these dotfiles.
@@ -197,7 +198,7 @@ I use [Berkeley Mono Typeface](https://berkeleygraphics.com/typefaces/berkeley-m
 - [JetBrains Mono](https://www.jetbrains.com/lp/mono/)
 - [Source Code Pro](https://fonts.adobe.com/fonts/source-code-pro)
 
-### Color scheme 🌈
+### Color scheme 🎨
 
 Helix includes a number of great themes out of the box, use `:theme` to find the theme that best suits you.
 
@@ -205,4 +206,11 @@ You may notice that I include a custom `gruvbox_dark` theme with the Helix confi
 
 ### References 📚
 
+- [`gf3/dotfiles`](https://github.com/gf3/dotfiles)
+- [`sloria/dotfiles`](https://github.com/sloria/dotfiles)
+- [`ThePrimeagen/ansible`](https://github.com/ThePrimeagen/ansible)
+- [Managing Your Dotfiles](https://www.anishathalye.com/2014/08/03/managing-your-dotfiles/)
 - [Conquer your dotfiles with VCSH and MR](https://germano.dev/dotfiles/).
+- [file-hierarchy — File system hierarchy overview](https://www.freedesktop.org/software/systemd/man/file-hierarchy.html)
+- [Ansible for dotfiles: the introduction I wish I've had](https://phelipetls.github.io/posts/introduction-to-ansible/)
+- [The best way to store your dotfiles: A bare Git repository](https://www.atlassian.com/git/tutorials/dotfiles)

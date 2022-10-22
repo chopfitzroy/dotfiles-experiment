@@ -1,0 +1,5 @@
+- name: Install bat on openSUSE
+  become: yes
+  community.general.zypper:
+    name: bat
+    state: present
