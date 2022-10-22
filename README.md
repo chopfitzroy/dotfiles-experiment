@@ -176,7 +176,7 @@ The primary reason for using Zsh over something like [Fish](https://fishshell.co
 
 Theming is hugely personal but below are some notes to get you started.
 
-## Fonts 🆎
+### Fonts 🆎
 
 Below are a number of fonts I have used (or wanted to use) over the years, I have split them into _premium_ meaning there is a cost associated with them and _free_ meaning they can be used for personal use (or in some cases commercial use) at no cost.
 
