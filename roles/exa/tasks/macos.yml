@@ -1,0 +1,6 @@
+- name: Install exa on macOS
+  homebrew: 
+    name: exa
+    state: present
+  
+

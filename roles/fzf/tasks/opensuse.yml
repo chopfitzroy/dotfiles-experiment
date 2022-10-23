@@ -1,0 +1,6 @@
+- name: Install fzf on openSUSE
+  become: yes
+  community.general.zypper:
+    name: fzf
+    state: present
+

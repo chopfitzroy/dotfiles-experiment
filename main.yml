@@ -12,13 +12,13 @@
   roles:
     - {role: fd, tags: ['fd']}
     - {role: bat, tags: ['bat']}
+    - {role: fzf, tags: ['fzf']}
+    - {role: exa, tags: ['exa']}
     - {role: zsh, tags: ['zsh']}
     - {role: vcsh, tags: ['vcsh', 'editor']}
     - {role: helix, tags: ['helix']}
     - {role: editor, tags: ['editor']}
     # @TODO (tools)
-    # - fzf
-    # - exa
     # - zoxide
     # - sheldon 
     # - starship

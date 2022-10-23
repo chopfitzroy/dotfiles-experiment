@@ -1,0 +1,6 @@
+- name: Install fzf on macOS
+  homebrew: 
+    name: fzf
+    state: present
+  
+
