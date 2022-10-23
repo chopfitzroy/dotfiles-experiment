@@ -1,0 +1,6 @@
+- name: Install sheldon on macOS
+  homebrew: 
+    name: sheldon
+    state: present
+  
+

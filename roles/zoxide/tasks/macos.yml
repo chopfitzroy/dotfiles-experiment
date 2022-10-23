@@ -1,0 +1,6 @@
+- name: Install zoxide on macOS
+  homebrew: 
+    name: zoxide
+    state: present
+  
+

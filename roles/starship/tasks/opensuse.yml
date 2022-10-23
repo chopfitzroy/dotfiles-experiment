@@ -1,0 +1,6 @@
+- name: Install starship on openSUSE
+  become: yes
+  community.general.zypper:
+    name: starship
+    state: present
+

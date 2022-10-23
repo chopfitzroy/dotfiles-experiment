@@ -1,0 +1,6 @@
+- name: Install zoxide on openSUSE
+  become: yes
+  community.general.zypper:
+    name: zoxide
+    state: present
+

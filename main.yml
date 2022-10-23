@@ -10,6 +10,7 @@
       file: vars/macos.yml
     when: ansible_os_family == "Darwin"
   roles:
+    # Software
     - {role: fd, tags: ['fd']}
     - {role: bat, tags: ['bat']}
     - {role: fzf, tags: ['fzf']}
@@ -17,22 +18,29 @@
     - {role: zsh, tags: ['zsh']}
     - {role: vcsh, tags: ['vcsh', 'editor']}
     - {role: helix, tags: ['helix']}
+    - {role: zoxide, tags: ['zoxide']}
+    - {role: sheldon, tags: ['sheldon']}
+    - {role: starship, tags: ['starship']}
+  
+    # Files
     - {role: editor, tags: ['editor']}
-    # @TODO (tools)
-    # - zoxide
-    # - sheldon 
-    # - starship
     # @TODO (configs)
     # - shell
     # - terminal
+  
+    # Languages
     # @TODO (languages)
     # - go
     # - rust
     # - node (volta)
+  
+    # LSP (for Helix)
     # @TODO (lsp)
     # - go
     # - rust
     # - node
+  
+    # GUI (mac only)
     # @TODO (mac)
     # - WezTern
     

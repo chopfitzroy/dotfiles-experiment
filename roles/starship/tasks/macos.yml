@@ -1,0 +1,6 @@
+- name: Install starship on macOS
+  homebrew: 
+    name: starship
+    state: present
+  
+
