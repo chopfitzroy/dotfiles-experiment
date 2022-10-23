@@ -1,0 +1,9 @@
+- import_tasks: opensuse.yml
+  when: ansible_os_family == "Suse"
+- import_tasks: macos.yml
+  when: ansible_os_family == "Darwin"
+ 
+- name: Install rust with rustup
+  command:
+    cmd: "{{ vendor_bin }}/rustup toolchain install stable"
+

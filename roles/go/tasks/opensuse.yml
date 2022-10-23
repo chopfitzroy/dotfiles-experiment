@@ -1,0 +1,12 @@
+- name: Install go on openSUSE
+  become: yes
+  community.general.zypper:
+    name: go
+    state: present
+
+- name: Install go documentation on openSUSE
+  become: yes
+  community.general.zypper:
+    name: go-doc
+    state: present
+

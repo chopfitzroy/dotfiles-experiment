@@ -1,0 +1,9 @@
+- import_tasks: opensuse.yml
+  when: ansible_os_family == "Suse"
+- import_tasks: macos.yml
+  when: ansible_os_family == "Darwin"
+  
+- name: Install node via volta
+  command:
+    cmd: "{{ volta_bin }}/volta install node@latest"
+

@@ -1,3 +1,7 @@
+# User defined locations
 local_bin: "{{ ansible_user_dir }}/.local/bin"
+volta_bin: "{{ ansible_user_dir }}/.volta/bin"
+
+# System defined locations
 vendor_bin: /usr/bin
 

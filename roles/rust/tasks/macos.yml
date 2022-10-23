@@ -1,0 +1,5 @@
+- name: Install rustup on macOS
+  homebrew: 
+    name: rustup-init
+    state: present
+  

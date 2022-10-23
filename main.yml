@@ -23,18 +23,19 @@
     - {role: starship, tags: ['starship']}
   
     # Files
+    - {role: shell, tags: ['shell']}
     - {role: editor, tags: ['editor']}
-    # @TODO (configs)
-    # - shell
+    # @TODO 
     # - terminal
   
     # Languages
-    # @TODO (languages)
-    # - go
-    # - rust
-    # - node (volta)
+    - {role: go, tags: ['go']}
+    - {role: rust, tags: ['rust']}
+    - {role: node, tags: ['node']}
   
     # LSP (for Helix)
+    # These could technically be part of the language installs
+    # But there may be instances where we want the language only
     # @TODO (lsp)
     # - go
     # - rust

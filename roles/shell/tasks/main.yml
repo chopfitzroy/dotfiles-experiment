@@ -1,0 +1,14 @@
+- name: List existing vcsh configs
+  shell: "{{ vendor_bin }}/vcsh list" 
+  register: vcsh_list
+
+# If it doesn't exist clone
+- name: Clone shell config using vcsh
+  command: /usr/bin/vcsh clone -b zsh git@github.com:chopfitzroy/dotfiles-experiment.git zsh
+  when: not vcsh_list.stdout is search("zsh")
+
+# If it already exists pull
+- name: Pull shell config using vcsh
+  command: /usr/bin/vcsh helix pull
+  when: vcsh_list.stdout is search("zsh")
+
