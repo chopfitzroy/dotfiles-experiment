@@ -6,10 +6,7 @@
     mode: 0755
     dest: /tmp/crate.sh
 
-# We could add the `--force` flag to replace the sheldon binary each time
-# - This technically would mean that this task does also 'update' sheldon
-# - That being said I would be more comfortable waiting until sheldon is moved to zypper
 - name: Run sheldon linux install script on openSUSE
   command:
-    cmd: "/tmp/crate.sh --repo rossmacarthur/sheldon --to {{ local_bin }}"
+    cmd: "/tmp/crate.sh --force --repo rossmacarthur/sheldon --to {{ local_bin }}"
     creates: "{{ local_bin }}/sheldon"

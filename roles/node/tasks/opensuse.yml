@@ -8,6 +8,6 @@
 
 - name: Run volta linux install script on openSUSE
   command:
-    cmd: /tmp/volta.sh
+    cmd: "/tmp/volta.sh --skip-setup"
     creates: "{{ volta_bin }}/volta"
 

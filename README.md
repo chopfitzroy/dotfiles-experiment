@@ -71,8 +71,6 @@ If you just want to update your categories to the latest version and don't care 
 vcsh pull
 ```
 
-Note, there are some instances like `sheldon` on openSUSE installs where Ansible will not update `sheldon` if it already exists. There are some solutions to this but ideally we are waiting until `sheldon` is added to `zypper`.
-
 ## Manual Setup 🐢
 
 There might be times you don't want to run the Ansible scripts but would still like to make use of some of the configuration files.
@@ -229,10 +227,6 @@ I use [Berkeley Mono Typeface](https://berkeleygraphics.com/typefaces/berkeley-m
 Helix includes a number of great themes out of the box, use `:theme` to find the theme that best suits you.
 
 You may notice that I include a custom `gruvbox_dark` theme with the Helix config, this is to address [this issue](https://github.com/morhetz/gruvbox/issues/15).
-
-## Gotcha's 😤
-
-- The [Volta](https://volta.sh/) install script can sometimes modify the `~/.zshrc` to add `VOLTA_HOME` environment variable. This can be safely removed as it is defined in the `~/.zshenv`.
 
 ## Future Improvements 🎉
 
