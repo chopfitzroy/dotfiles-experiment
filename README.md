@@ -128,6 +128,19 @@ git commit -m "Commit message"
 git push --set-upstream origin category_name
 ```
 
+## What's in the box 📦
+
+If running the Ansible scripts the following software will be installed:
+
+- [Go](https://go.dev/) and it's LSP [`gopls`](https://pkg.go.dev/golang.org/x/tools/gopls)
+- [Rust](https://www.rust-lang.org/) and it's LSP [`rust-analyzer`](https://rust-analyzer.github.io/) via [`rustup`](https://rustup.rs/)
+- [Node](https://nodejs.org/en/) and it's LSP [`typescript-language-server`](ihttps://github.com/typescript-language-server/typescript-language-server) via [Volta](https://volta.sh/)
+
+Additionally there are some really nice Zsh functions included `~/.zsh_functions`, in particular:
+
+- `qsu` (_quick search utility_) which uses [cht.sh](http://cht.sh/) under the hood.
+- `qsl` (_quick search language_) which uses [cht.sh](http://cht.sh/) under the hood.
+
 ## Reasoning 🔮
 
 Below are some _breif_ reasonings behind each software I have chosen to use.
@@ -195,8 +208,8 @@ Below are a number of fonts I have used (or wanted to use) over the years, I hav
 
 **Premium:**
 
-- [MonoLisa](https://www.monolisa.dev/)
 - [Gintronic](https://markfromberg.com/projects/gintronic/)
+- [MonoLisa](https://www.monolisa.dev/)
 - [Dank Mono](https://philpl.gumroad.com/l/dank-mono)
 - [Operator Mono](https://www.typography.com/blog/introducing-operator)
 - [Berkeley Mono Typeface](https://berkeleygraphics.com/typefaces/berkeley-mono/)
