@@ -12,7 +12,7 @@
     name: helix-runtime
     state: present
 
-- name: Create symbolic link to 'hx' command
+- name: Create symbolic link to `hx` command
   ansible.builtin.file:
     src: "{{ vendor_bin }}/helix"
     dest: "{{ local_bin }}/hx"

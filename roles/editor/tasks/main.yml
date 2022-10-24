@@ -4,11 +4,11 @@
 
 # If it doesn't exist clone
 - name: Clone editor config using vcsh
-  command: /usr/bin/vcsh clone -b helix git@github.com:chopfitzroy/dotfiles-experiment.git helix
+  command: "{{ vendor_bin }}/vcsh clone -b helix {{ git_repo }} helix"
   when: not vcsh_list.stdout is search("helix")
 
 # If it already exists pull
 - name: Pull editor config using vcsh
-  command: /usr/bin/vcsh helix pull
+  command: "{{ vendor_bin }}/vcsh helix pull"
   when: vcsh_list.stdout is search("helix")
 

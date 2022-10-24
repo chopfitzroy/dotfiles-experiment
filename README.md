@@ -2,12 +2,12 @@
 
 Goals of this repo:
 
-- Single repo
-- Backed by `git`
+- Single repo.
+- Backed by `git`.
 - Does not need to be cloned to a specific location to work.
-- Clear way to view the commit history for any given _category_ of tools
-- Introduce as few tools/abstractions as possible (we do this by using [vcsh](https://github.com/RichiH/vcsh))
-- Ability to **optionally** bootstrap system with Ansible but also use individual configs without requiring Ansible
+- Clear way to view the commit history for any given _category_ of tools.
+- Introduce as few tools/abstractions as possible (we do this by using [vcsh](https://github.com/RichiH/vcsh)).
+- Ability to **optionally** bootstrap system with Ansible but also use individual configs without requiring Ansible.
 
 ## Show me the code 🥵
 
@@ -24,6 +24,8 @@ Clone the repository using the following command **substituting in your new repo
 ```sh
 git clone git@github.com:user/repo.git
 ```
+
+Update the `git_repo` value in `vars/generic.yml` to reflect your new repository address.
 
 ### Using openSUSE 🦎
 
@@ -113,8 +115,8 @@ git checkout --orphan category_name
 hx ~/.gitignore.d/category_name
 ```
 
-- Always start with `*`
-- Add `!` paths for files you want to track
+- Always start with `*`.
+- Add `!` paths for files you want to track.
 
 **Commit new files:**
 
@@ -172,16 +174,16 @@ The primary reason for using Zsh over something like [Fish](https://fishshell.co
  
 [Sheldon](https://sheldon.cli.rs/) plugin manager keeps the plugin config _outside_ of the `.zshrc`, this creates a clear separation between what is my config and what is plugins.
 
-[Starship prompt](https://starship.rs/) keeps the prompt config outside of the `.zshrc`, additionally it supports a number of different shells meaning if I ever switch shells I can likely bring this with me.
+[Starship](https://starship.rs/) keeps the prompt config outside of the `.zshrc`, additionally it supports a number of different shells meaning if I ever switch shells I can likely bring this with me.
 
 ### Terminal 🧶
 
 [WezTerm](https://wezfurlong.org/wezterm/) has a number of features that make it particularily appealing, some of the primary reasons are:
 
-- It works well with WSL 2
-- It works on macOS, Linux and Windows
-- It has fallback font support which allows me to use any font I like with [Nerd Fonts symbols](https://sw.kovidgoyal.net/kitty/faq/#kitty-is-not-able-to-use-my-favorite-font)
-- It has a built in multiplexer which prevents some [historic issues](https://github.com/kovidgoyal/kitty/issues/391#issuecomment-638320745) associated with using multiplexers
+- It works well with WSL 2.
+- It works on macOS, Linux and Windows.
+- It has fallback font support which allows me to use any font I like with [nerd fonts symbols](https://sw.kovidgoyal.net/kitty/faq/#kitty-is-not-able-to-use-my-favorite-font).
+- It has a built in multiplexer which prevents some [historic issues](https://github.com/kovidgoyal/kitty/issues/391#issuecomment-638320745) associated with using multiplexers.
 
 ## Theming 🌈
 
@@ -194,8 +196,8 @@ Below are a number of fonts I have used (or wanted to use) over the years, I hav
 **Premium:**
 
 - [MonoLisa](https://www.monolisa.dev/)
-- [Dank Mono](https://philpl.gumroad.com/l/dank-mono)
 - [Gintronic](https://markfromberg.com/projects/gintronic/)
+- [Dank Mono](https://philpl.gumroad.com/l/dank-mono)
 - [Operator Mono](https://www.typography.com/blog/introducing-operator)
 - [Berkeley Mono Typeface](https://berkeleygraphics.com/typefaces/berkeley-mono/)
 
@@ -215,9 +217,15 @@ Helix includes a number of great themes out of the box, use `:theme` to find the
 
 You may notice that I include a custom `gruvbox_dark` theme with the Helix config, this is to address [this issue](https://github.com/morhetz/gruvbox/issues/15).
 
+## Gotcha's 😤
+
+- The [Volta](https://volta.sh/) install script can sometimes modify the `~/.zshrc` to add `VOLTA_HOME` environment variable. This can be safely removed as it is defined in the `~/.zshenv`.
+
 ## Future Improvements 🎉
 
-- Get [`vadimcn/vscode-lldb`](https://github.com/vadimcn/vscode-lldb) working with Rust LSP
+- Setup [`gitui`](https://github.com/extrawurst/gitui) for heavy git operations.
+- Setup [`vadimcn/vscode-lldb`](https://github.com/vadimcn/vscode-lldb) to work with Rust LSP.
+- Setup [`artempyanykh/marksman`](https://github.com/artempyanykh/marksman) for working with markdown files. 
 
 ## References 📚
 
@@ -225,7 +233,7 @@ You may notice that I include a custom `gruvbox_dark` theme with the Helix confi
 - [`sloria/dotfiles`](https://github.com/sloria/dotfiles)
 - [`ThePrimeagen/ansible`](https://github.com/ThePrimeagen/ansible)
 - [Managing Your Dotfiles](https://www.anishathalye.com/2014/08/03/managing-your-dotfiles/)
-- [Conquer your dotfiles with VCSH and MR](https://germano.dev/dotfiles/).
+- [Conquer your dotfiles with VCSH and MR](https://germano.dev/dotfiles/)
 - [file-hierarchy — File system hierarchy overview](https://www.freedesktop.org/software/systemd/man/file-hierarchy.html)
 - [Ansible for dotfiles: the introduction I wish I've had](https://phelipetls.github.io/posts/introduction-to-ansible/)
 - [The best way to store your dotfiles: A bare Git repository](https://www.atlassian.com/git/tutorials/dotfiles)

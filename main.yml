@@ -9,6 +9,9 @@
     include_vars:
       file: vars/macos.yml
     when: ansible_os_family == "Darwin"
+  - name: Setup gloabl variables for all systems
+    include_vars:
+      file: vars/generic.yml
   roles:
     # Software
     - {role: fd, tags: ['fd']}
