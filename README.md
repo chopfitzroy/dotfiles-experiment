@@ -224,8 +224,8 @@ You may notice that I include a custom `gruvbox_dark` theme with the Helix confi
 ## Future Improvements 🎉
 
 - Setup [`gitui`](https://github.com/extrawurst/gitui) for heavy git operations.
-- Setup [`vadimcn/vscode-lldb`](https://github.com/vadimcn/vscode-lldb) to work with Rust LSP.
 - Setup [`artempyanykh/marksman`](https://github.com/artempyanykh/marksman) for working with markdown files. 
+- Setup [`vadimcn/vscode-lldb`](https://github.com/vadimcn/vscode-lldb) to work with Rust LSP. Pending this [issue](https://github.com/helix-editor/helix/issues/4231).
 
 ## References 📚
 
