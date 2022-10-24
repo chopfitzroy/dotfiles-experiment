@@ -136,7 +136,7 @@ If running the Ansible scripts the following software will be installed:
 - [Rust](https://www.rust-lang.org/) and it's LSP [`rust-analyzer`](https://rust-analyzer.github.io/) via [`rustup`](https://rustup.rs/)
 - [Node](https://nodejs.org/en/) and it's LSP [`typescript-language-server`](ihttps://github.com/typescript-language-server/typescript-language-server) via [Volta](https://volta.sh/)
 
-Additionally there are some really nice Zsh functions included `~/.zsh_functions`, in particular:
+Additionally there are some really nice Zsh functions included in `~/.zsh_functions` in particular:
 
 - `qsu` (_quick search utility_) which uses [cht.sh](http://cht.sh/) under the hood.
 - `qsl` (_quick search language_) which uses [cht.sh](http://cht.sh/) under the hood.
