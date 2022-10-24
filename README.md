@@ -215,11 +215,11 @@ Helix includes a number of great themes out of the box, use `:theme` to find the
 
 You may notice that I include a custom `gruvbox_dark` theme with the Helix config, this is to address [this issue](https://github.com/morhetz/gruvbox/issues/15).
 
-### Future Improvements 🎉
+## Future Improvements 🎉
 
 - Get [`vadimcn/vscode-lldb`](https://github.com/vadimcn/vscode-lldb) working with Rust LSP
 
-### References 📚
+## References 📚
 
 - [`gf3/dotfiles`](https://github.com/gf3/dotfiles)
 - [`sloria/dotfiles`](https://github.com/sloria/dotfiles)
