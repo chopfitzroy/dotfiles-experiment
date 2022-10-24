@@ -93,7 +93,7 @@ If you would like to commit your changes you will need to use [vcsh](https://git
 
 ## Setting up a new category ✨
 
-Ideally this shouldn't need to be done too often given most tools should fit within the existing categories.
+Ideally this shouldn't need to be done too often given most software should fit within the existing categories.
 
 That being said if you do need to create a new category the below commands should do the trick. 
 
@@ -213,7 +213,7 @@ I use [Berkeley Mono Typeface](https://berkeleygraphics.com/typefaces/berkeley-m
 
 Helix includes a number of great themes out of the box, use `:theme` to find the theme that best suits you.
 
-You may notice that I include a custom `gruvbox_dark` theme with the Helix config, this is to address [this issue](https://github.com/morhetz/gruvbox/issues/15) if you do not mind inverted colors feel free to remove this in favour of the Helix default `gruvbox`.
+You may notice that I include a custom `gruvbox_dark` theme with the Helix config, this is to address [this issue](https://github.com/morhetz/gruvbox/issues/15).
 
 ### Future Improvements 🎉
 
