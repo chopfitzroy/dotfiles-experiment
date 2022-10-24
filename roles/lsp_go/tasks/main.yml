@@ -1,0 +1,8 @@
+- name: Install `gopls` with go
+  command:
+    cmd: "{{ vendor_bin }}/go install golang.org/x/tools/gopls@latest"
+
+- name: Install `go-devle` with go
+  command:
+    cmd: "{{ vendor_bin }}/go install github.com/go-delve/delve/cmd/dlv@latest"
+
