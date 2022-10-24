@@ -16,7 +16,7 @@
     - {role: fzf, tags: ['fzf']}
     - {role: exa, tags: ['exa']}
     - {role: zsh, tags: ['zsh']}
-    - {role: vcsh, tags: ['vcsh', 'editor']}
+    - {role: vcsh, tags: ['vcsh', 'shell', 'editor', 'terminal']}
     - {role: helix, tags: ['helix']}
     - {role: zoxide, tags: ['zoxide']}
     - {role: sheldon, tags: ['sheldon']}
@@ -30,16 +30,16 @@
   
     # Languages
     - {role: go, tags: ['go']}
-    - {role: rust, tags: ['rust']}
-    - {role: node, tags: ['node']}
+    - {role: rust, tags: ['rust', 'lsp_rust']}
+    - {role: node, tags: ['node', 'lsp_node']}
   
     # LSP (for Helix)
     # These could technically be part of the language installs
     # But there may be instances where we want the language only
+    - {role: lsp_rust, tags: ['lsp_rust']}
+    - {role: lsp_node, tags: ['lsp_node']}
     # @TODO (lsp)
     # - go
-    # - rust
-    # - node
   
     # GUI (mac only)
     # @TODO (mac)

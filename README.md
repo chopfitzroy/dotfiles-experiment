@@ -1,6 +1,6 @@
 # Dotfiles 💻
 
-Criteria of this repo:
+Goals of this repo:
 
 - Single repo
 - Backed by `git`
@@ -17,15 +17,23 @@ View [all branches](https://github.com/chopfitzroy/dotfiles-experiment/branches)
 
 The Ansible script currently supports macOS using [Homebrew](https://brew.sh/) and openSUSE (Tumbleweed).
 
-### Using openSUSE 🦎
+Note, whether you are doing an automatic setup with Ansible or a manual setup it pays to first, [fork](https://github.com/chopfitzroy/dotfiles-experiment/fork) this repository to your own GitHub account.
 
-Install `git` and `ansible` with the following command:
+Clone the repository using the following command **substituting in your new repository address**:
 
 ```sh
-sudo zypper install git ansible
+git clone git@github.com:user/repo.git
 ```
 
-Then run the playbook with the following command:
+### Using openSUSE 🦎
+
+Install `ansible` with the following command:
+
+```sh
+sudo zypper install ansible
+```
+
+Then run the playbook with the following command **in the project directory**:
 
 ```sh
 ansible-playbook main.yml --ask-become-pass
@@ -39,7 +47,7 @@ Install `ansible` with the following command:
 brew install ansible
 ```
 
-Then run the playbook with the following command:
+Then run the playbook with the following command **in the project directory**:
 
 ```sh
 ansible-playbook main.yml --ask-become-pass
@@ -55,52 +63,54 @@ Synchronising latest changes can always be done using the following command:
 ansible-playbook main.yml --ask-become-pass
 ```
 
-If you just want to update your configs to the latest version and don't care about updating your software a quick update can be done with:
+If you just want to update your categories to the latest version and don't care about updating your software a quick update can be done with:
 
 ```sh
 vcsh pull
 ```
 
+Note, there are some instances like `sheldon` on openSUSE installs where Ansible will not update `sheldon` if it already exists. There are some solutions to this but ideally we are waiting until `sheldon` is added to `zypper`.
+
 ## Manual Setup 🐢
 
 There might be times you don't want to run the Ansible scripts but would still like to make use of some of the configuration files.
 
-Below are instructions on how to manually clone down each config, note you will need [vcsh](https://github.com/RichiH/vcsh) installed to do this.
+Note, whether you are doing an automatic setup with Ansible or a manual setup it pays to first, [fork](https://github.com/chopfitzroy/dotfiles-experiment/fork) this repository to your own GitHub account.
 
-First [fork](https://github.com/chopfitzroy/dotfiles-experiment/fork) this repository to your own GitHub account.
+Below are instructions on how to manually clone down each category, note you will need [vcsh](https://github.com/RichiH/vcsh) installed to do this.
 
-Then use the following command **substituting in your new repository address**.
+Clone the category you are interested in using the following command **substituting in your new repository address**.
 
 ```sh
-vcsh clone -b config_name git@github.com:user/repo.git config_name
+vcsh clone -b category_name git@github.com:user/repo.git category_name
 ```
 
-Where `config_name` is one of `shell`, `editor`, or `terminal`.
+Where `category_name` is one of `shell`, `editor`, or `terminal`.
 
-It is important to note this will not install any of the required binaries these configs reference, you will need to do that manually or use the Ansible scripts.
+It is important to note this will not install any of the software these categories require, you will need to do that manually or use the Ansible scripts.
 
 If you would like to commit your changes you will need to use [vcsh](https://github.com/RichiH/vcsh) to do this.
 
-## Setting up a new config ✨
+## Setting up a new category ✨
 
-Ideally this shouldn't need to be done too often given most tools should fit within the existing config categories.
+Ideally this shouldn't need to be done too often given most tools should fit within the existing categories.
 
-That being said if you do need to create a new config the below commands should do the trick. 
+That being said if you do need to create a new category the below commands should do the trick. 
 
 **Create new _local_ repo:**
 
 ```sh
-vcsh init config_name
-vcsh enter config_name
+vcsh init category_name
+vcsh enter category_name
 git remote add origin git@github.com:user/repo.git
 git fetch
-git checkout --orphan config_name
+git checkout --orphan category_name
 ```
 
 **Add ignored files:**
 
 ```sh
-hx ~/.gitignore.d/config_name
+hx ~/.gitignore.d/category_name
 ```
 
 - Always start with `*`
@@ -109,16 +119,16 @@ hx ~/.gitignore.d/config_name
 **Commit new files:**
 
 ```sh
-vcsh enter config_name
+vcsh enter category_name
 git add --all .
 git status # If you want to confirm your ignore paths are working as expected
 git commit -m "Commit message"
-git push --set-upstream origin config_name
+git push --set-upstream origin category_name
 ```
 
 ## Reasoning 🔮
 
-Below are some _breif_ reasonings behind each tool used in these dotfiles.
+Below are some _breif_ reasonings behind each software I have chosen to use.
 
 ### Version control 🚦
 
@@ -135,9 +145,10 @@ If you are un-happy with [vcsh](https://github.com/RichiH/vcsh) I strongly recom
 - [dotbot](https://github.com/anishathalye/dotbot)
 
 Note, if you are interested in how [vcsh](https://github.com/RichiH/vcsh) works under the hood I highly recommend reading [The best way to store your dotfiles: A bare Git repository](https://www.atlassian.com/git/tutorials/dotfiles).
-### Command line ⚡
 
-There are a large number of command line tools being developed by the open source community. Below is a list of all of the tools I have chosen to include in these dotfiles.
+### Command line utilities ⚡
+
+There are a large number of command line utilities being developed by the open source community. Below is a list of all of the utilities included in this repo.
 
 - [fd](https://github.com/sharkdp/fd)
 - [fzf](https://github.com/junegunn/fzf)
@@ -159,18 +170,18 @@ If you are a die hard [Neovim](https://neovim.io/) user but like the sound of no
 
 The primary reason for using Zsh over something like [Fish](https://fishshell.com/) is that Zsh is Bash compatiable, meaning it _just works_ with a lot of tools I already use.
  
-[Sheldon](https://sheldon.cli.rs/) plugin manager keeps my plugin config _outside_ of my `.zshrc`, this creates a clear separation between what is my config and what is plugins.
+[Sheldon](https://sheldon.cli.rs/) plugin manager keeps the plugin config _outside_ of the `.zshrc`, this creates a clear separation between what is my config and what is plugins.
 
-[Starship prompt](https://starship.rs/) keeps my prompt config outside of my `.zshrc`, additionally it supports a number of different shells meaning if I ever switch shells I can likely bring this with me.
+[Starship prompt](https://starship.rs/) keeps the prompt config outside of the `.zshrc`, additionally it supports a number of different shells meaning if I ever switch shells I can likely bring this with me.
 
 ### Terminal 🧶
 
-[WezTerm](https://wezfurlong.org/wezterm/) for the following reasons:
+[WezTerm](https://wezfurlong.org/wezterm/) has a number of features that make it particularily appealing, some of the primary reasons are:
 
-- It works on macOS and Windows
 - It works well with WSL 2
-- It has as in built multiplexer which allows it to get around some [historic issues](https://github.com/kovidgoyal/kitty/issues/391#issuecomment-638320745)
+- It works on macOS, Linux and Windows
 - It has fallback font support which allows me to use any font I like with [Nerd Fonts symbols](https://sw.kovidgoyal.net/kitty/faq/#kitty-is-not-able-to-use-my-favorite-font)
+- It has a built in multiplexer which prevents some [historic issues](https://github.com/kovidgoyal/kitty/issues/391#issuecomment-638320745) associated with using multiplexers
 
 ## Theming 🌈
 
@@ -203,6 +214,10 @@ I use [Berkeley Mono Typeface](https://berkeleygraphics.com/typefaces/berkeley-m
 Helix includes a number of great themes out of the box, use `:theme` to find the theme that best suits you.
 
 You may notice that I include a custom `gruvbox_dark` theme with the Helix config, this is to address [this issue](https://github.com/morhetz/gruvbox/issues/15) if you do not mind inverted colors feel free to remove this in favour of the Helix default `gruvbox`.
+
+### Future Improvements 🎉
+
+- Get [`vadimcn/vscode-lldb`](https://github.com/vadimcn/vscode-lldb) working with Rust LSP
 
 ### References 📚
 
