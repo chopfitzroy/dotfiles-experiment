@@ -6,6 +6,13 @@
     mode: 0755
     dest: /tmp/crate.sh
 
+- name: Create local bin if it doesn't exist
+  file:
+    mode: 0775
+    path: "{{ local_bin }}"
+    state: directory
+    recurse: yes
+
 - name: Run sheldon linux install script on openSUSE
   command:
     cmd: "/tmp/crate.sh --force --repo rossmacarthur/sheldon --to {{ local_bin }}"

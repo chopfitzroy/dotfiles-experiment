@@ -12,6 +12,13 @@
     name: helix-runtime
     state: present
 
+- name: Create local bin if it doesn't exist
+  file:
+    mode: 0775
+    path: "{{ local_bin }}"
+    state: directory
+    recurse: yes
+
 - name: Create symbolic link to `hx` command
   ansible.builtin.file:
     src: "{{ vendor_bin }}/helix"
