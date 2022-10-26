@@ -1,0 +1,6 @@
+- name: Install dirmngr on openSUSE
+  become: yes
+  community.general.zypper:
+    name: dirmngr
+    state: present
+

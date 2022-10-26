@@ -1,0 +1,24 @@
+- import_tasks: opensuse.yml
+  when: ansible_os_family == "Suse"
+- import_tasks: macos.yml
+  when: ansible_os_family == "Darwin"
+
+# @TODO
+# - This may need to be moved to OS specific tasks if brew refers to `gpg2` as `gpg`
+- name: Fetch RVM GPG keys
+  command:
+    cmd: "{{ vendor_bin }}/gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB"
+
+- name: Download RVM install script
+  get_url:
+    url: https://get.rvm.io
+    mode: 0755
+    dest: /tmp/rvm-installer.sh
+
+# @NOTE in the RVM docs they use the `-s` flag
+# - This is a flag for bash and not the RVM script
+# - https://unix.stackexchange.com/questions/215256/whats-the-purpose-of-i-and-s-options-of-bash
+- name: Run 
+  command:
+    cmd: "/tmp/rvm-installer.sh stable --rails --ignore-dotfiles"
+    creates: "{{ ansible_user_dir }}/.rvm"

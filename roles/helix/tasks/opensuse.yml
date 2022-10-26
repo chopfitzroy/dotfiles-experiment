@@ -1,4 +1,4 @@
-- name: Install Helix
+- name: Install Helix on openSUSE
   become: yes
   community.general.zypper:
     name: helix
@@ -6,7 +6,7 @@
 
 # See comments on package page
 # - https://build.opensuse.org/package/show/openSUSE:Factory/helix
-- name: Install Helix runtime files
+- name: Install Helix runtime files on openSUSE
   become: yes
   community.general.zypper:
     name: helix-runtime
