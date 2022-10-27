@@ -148,7 +148,7 @@ Finally we utilize [asdf](https://asdf-vm.com/) for languages that do not have a
  
 ## Reasoning 🔮
 
-Below are some _breif_ reasonings behind each software I have chosen to use.
+Below are some _brief_ reasonings behind each software I have chosen to use.
 
 ### Version control 🚦
 
