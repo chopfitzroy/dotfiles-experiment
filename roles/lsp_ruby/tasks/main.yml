@@ -1,6 +1,13 @@
+# Would like to try this with the community `gem` module
+# - https://docs.ansible.com/ansible/latest/collections/community/general/gem_module.html
 - name: Install `solargraph` via gem
   command:
     cmd: "{{ asdf_home }}/shims/gem install solargraph"
+  # @NOTE
+  # - `asdf` needs to be on the path for this to install
+  # - Unfortunately it is not on the path for a clean install
+  environment: 
+    PATH: '{{ asdf_bin }}:{{ ansible_env.PATH }}'
 
 - name: Install `solargraph` via gem
   command:

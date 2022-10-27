@@ -142,6 +142,10 @@ Additionally there are some really nice Zsh functions included in `~/.zsh_functi
 
 Finally we utilize [asdf](https://asdf-vm.com/) for languages that do not have an _official_ way to manage versions.
 
+## Gotcha's
+
+- [asdf](https://asdf-vm.com/) uses [ruby-build](https://github.com/rbenv/ruby-build) under the hood, this has strict [build requirements](https://github.com/rbenv/ruby-build/wiki) which differ from system to system, so if you see any errors I recommend starting here.
+ 
 ## Reasoning 🔮
 
 Below are some _breif_ reasonings behind each software I have chosen to use.

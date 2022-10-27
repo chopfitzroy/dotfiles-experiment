@@ -1,3 +1,6 @@
+- import_tasks: opensuse.yml
+  when: ansible_os_family == "Suse"
+
 - name: Install ruby plugin via asdf
   command:
     cmd: "{{ asdf_bin }}/asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git"
@@ -6,6 +9,8 @@
 - name: Install ruby via asdf
   command:
     cmd: "{{ asdf_bin }}/asdf install ruby latest"
+  environment: 
+    PATH: '{{ asdf_bin }}:{{ ansible_env.PATH }}'
 
 - name: Set global ruby version via asdf
   command:

@@ -1,4 +1,11 @@
+# Would like to try this with the community `npm` module
+# - https://docs.ansible.com/ansible/latest/collections/community/general/npm_module.html
 - name: Install `typescript-language-server` via node
   command:
     cmd: "{{ asdf_home }}/shims/npm install --global typescript-language-server"
+  # @NOTE
+  # - `asdf` needs to be on the path for this to install
+  # - Unfortunately it is not on the path for a clean install
+  environment: 
+    PATH: '{{ asdf_bin }}:{{ ansible_env.PATH }}'
 

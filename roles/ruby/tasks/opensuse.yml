@@ -1,0 +1,11 @@
+- name: Install make on openSUSE
+  become: yes
+  community.general.zypper:
+    name: make
+    state: present
+
+- name: Install OpenSSL on openSUSE
+  become: yes
+  community.general.zypper:
+    name: libopenssl-devel
+    state: present

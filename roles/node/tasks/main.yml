@@ -6,6 +6,8 @@
 - name: Install node via asdf
   command:
     cmd: "{{ asdf_bin }}/asdf install nodejs latest"
+  environment: 
+    PATH: '{{ asdf_bin }}:{{ ansible_env.PATH }}'
 
 - name: Set global node version via asdf
   command:
