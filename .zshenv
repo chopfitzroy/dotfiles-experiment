@@ -10,9 +10,6 @@ export GOPATH="$HOME/go"
 # - Required for `zoxide`
 export XDG_CONFIG_HOME="$HOME/.config"
 
-# Volta (Node version manager)
-export VOLTA_HOME="$HOME/.volta"
-
 # Android
 export ANDROID_HOME="$HOME/Library/Android/sdk"
 
@@ -37,11 +34,15 @@ typeset -U path PATH
 path=(
   $HOME/.local/bin
   $GOPATH/bin
-  $VOLTA_HOME/bin
   $ANDROID_HOME/emulator
   $ANDROID_HOME/platform-tools
   $path
 )
+
+ASDF_HOME="$HOME/.asdf/asdf.sh"
+if [ -f $ASDF_HOME ]; then
+  source $ASDF_HOME
+fi
 
 # Could probably add this to path manually
 # However this is the way the Rust installer does it by default
