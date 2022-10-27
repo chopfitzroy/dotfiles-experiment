@@ -36,7 +36,7 @@
     - {role: go, tags: ['go', 'lsp_go']}
     - {role: rust, tags: ['rust', 'lsp_rust']}
     - {role: node, tags: ['node', 'lsp_node']}
-    # - {role: ruby, tags: ['ruby', 'ruby_lsp']}
+    - {role: ruby, tags: ['ruby', 'ruby_lsp']}
   
     # LSP (for Helix)
     # These could technically be part of the language installs
@@ -44,7 +44,7 @@
     - {role: lsp_go, tags: ['lsp_go']}
     - {role: lsp_rust, tags: ['lsp_rust']}
     - {role: lsp_node, tags: ['lsp_node']}
-    # - {role: lsp_ruby, tags: ['lsp_ruby']}
+    - {role: lsp_ruby, tags: ['lsp_ruby']}
   
     # GUI (mac only)
     # @TODO (mac)

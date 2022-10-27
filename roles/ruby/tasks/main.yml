@@ -1,0 +1,13 @@
+- name: Install ruby plugin via asdf
+  command:
+    cmd: "{{ asdf_bin }}/asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git"
+    creates: "{{ asdf_home }}/plugins/ruby"
+
+- name: Install ruby via asdf
+  command:
+    cmd: "{{ asdf_bin }}/asdf install ruby latest"
+
+- name: Set global ruby version via asdf
+  command:
+    cmd: "{{ asdf_bin }}/asdf global ruby latest"
+

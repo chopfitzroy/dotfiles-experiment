@@ -131,8 +131,9 @@ git push --set-upstream origin category_name
 If running the Ansible scripts the following software will be installed:
 
 - [Go](https://go.dev/) and it's LSP [`gopls`](https://pkg.go.dev/golang.org/x/tools/gopls)
+- [Node](https://nodejs.org/en/) and it's LSP [`typescript-language-server`](ihttps://github.com/typescript-language-server/typescript-language-server)
+- [Ruby](https://www.ruby-lang.org/en/) and it's LSP [`solargraph`](https://solargraph.org/)
 - [Rust](https://www.rust-lang.org/) and it's LSP [`rust-analyzer`](https://rust-analyzer.github.io/) via [`rustup`](https://rustup.rs/)
-- [Node](https://nodejs.org/en/) and it's LSP [`typescript-language-server`](ihttps://github.com/typescript-language-server/typescript-language-server) via [Volta](https://volta.sh/)
 
 Additionally there are some really nice Zsh functions included in `~/.zsh_functions` in particular:
 

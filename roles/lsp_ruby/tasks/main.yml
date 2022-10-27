@@ -1,0 +1,8 @@
+- name: Install `solargraph` via gem
+  command:
+    cmd: "{{ asdf_home }}/shims/gem install solargraph"
+
+- name: Install `solargraph` via gem
+  command:
+    cmd: "{{ asdf_home }}/shims/solargraph download-core"
+
