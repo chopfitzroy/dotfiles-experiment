@@ -1,6 +1,0 @@
-- name: Install volta on macOS
-  homebrew: 
-    name: volta
-    state: present
-  
-

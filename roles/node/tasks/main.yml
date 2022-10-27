@@ -1,9 +1,13 @@
-- import_tasks: opensuse.yml
-  when: ansible_os_family == "Suse"
-- import_tasks: macos.yml
-  when: ansible_os_family == "Darwin"
-  
-- name: Install node via volta
+- name: Install node plugin via asdf
   command:
-    cmd: "{{ volta_bin }}/volta install node@latest"
+    cmd: "{{ asdf_bin }}/asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git"
+    creates: "{{ asdf_home }}/plugins/nodejs"
+
+- name: Install node via asdf
+  command:
+    cmd: "{{ asdf_bin }}/asdf install nodejs latest"
+
+- name: Set global node version via asdf
+  command:
+    cmd: "{{ asdf_bin }}/asdf global nodejs latest"
 

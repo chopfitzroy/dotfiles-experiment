@@ -139,6 +139,8 @@ Additionally there are some really nice Zsh functions included in `~/.zsh_functi
 - `qsu` (_quick search utility_) which uses [cht.sh](http://cht.sh/) under the hood.
 - `qsl` (_quick search language_) which uses [cht.sh](http://cht.sh/) under the hood.
 
+Finally we utilize [asdf](https://asdf-vm.com/) for languages that do not have an _official_ way to manage versions.
+
 ## Reasoning 🔮
 
 Below are some _breif_ reasonings behind each software I have chosen to use.

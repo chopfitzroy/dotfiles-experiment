@@ -35,7 +35,7 @@
     # Languages
     - {role: go, tags: ['go', 'lsp_go']}
     - {role: rust, tags: ['rust', 'lsp_rust']}
-    # - {role: node, tags: ['node', 'lsp_node']}
+    - {role: node, tags: ['node', 'lsp_node']}
     # - {role: ruby, tags: ['ruby', 'ruby_lsp']}
   
     # LSP (for Helix)
@@ -43,7 +43,7 @@
     # But there may be instances where we want the language only
     - {role: lsp_go, tags: ['lsp_go']}
     - {role: lsp_rust, tags: ['lsp_rust']}
-    # - {role: lsp_node, tags: ['lsp_node']}
+    - {role: lsp_node, tags: ['lsp_node']}
     # - {role: lsp_ruby, tags: ['lsp_ruby']}
   
     # GUI (mac only)

@@ -1,4 +1,4 @@
-- name: Install `typescript-language-server` via volta
+- name: Install `typescript-language-server` via node
   command:
-    cmd: "{{ volta_bin }}/volta install typescript-language-server"
+    cmd: "{{ asdf_home }}/shims/npm install --global typescript-language-server"
 
