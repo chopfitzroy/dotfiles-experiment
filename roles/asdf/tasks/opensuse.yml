@@ -1,0 +1,6 @@
+- name: Install asdf on openSUSE
+  git:
+    repo: https://github.com/asdf-vm/asdf.git
+    dest: "{{ asdf_home }}"
+    single_branch: yes
+    version: v0.10.2

@@ -1,5 +1,8 @@
 # User defined locations
 local_bin: "{{ ansible_user_dir }}/.local/bin"
+
+# 3rd party tools
+asdf_home: "{{ ansible_user_dir}}/.asdf"
 volta_bin: "{{ ansible_user_dir }}/.volta/bin"
 
 # System defined locations
