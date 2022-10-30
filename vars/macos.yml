@@ -1,4 +1,5 @@
 # User defined locations
+zsh_completions: "{{ ansible_user_dir }}/.zsh_completions"
 local_bin: "{{ ansible_user_dir }}/.local/bin"
 
 # asdf version management

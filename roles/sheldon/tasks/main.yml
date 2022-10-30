@@ -3,3 +3,10 @@
 - import_tasks: macos.yml
   when: ansible_os_family == "Darwin"
   
+- name: Create Zsh completions directory if it doesn't exist
+  file:
+    mode: 0775
+    path: "{{ zsh_completions }}"
+    state: directory
+    recurse: yes
+
