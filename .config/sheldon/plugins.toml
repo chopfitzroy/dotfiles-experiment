@@ -1,9 +1,5 @@
-# TODO
-# - Add template for manpath
-# - https://sheldon.cli.rs/Configuration.html#templates
-# - Use man template to load exa and fzf man pages
-# - https://github.com/ogham/exa/tree/master/man
-# - https://github.com/junegunn/fzf/tree/master/man/man1
+[templates]
+completion = "ln -sf {{ files.0 }} ~/.zsh_completions/_{{ name }}"  # only uses first matched file
 
 [plugins.fd]
 github = "sharkdp/fd"
@@ -15,12 +11,20 @@ github = "ogham/exa"
 dir = "completions/zsh"
 apply = ["fpath"]
 
-# TODO
-# - Open an issue to try and fix this...
-# [plugins.sheldon]
-# github = "rossmacarthur/sheldon"
-# dir = "completions"
-# apply = ["fpath"]
+[plugins.asdf]
+github = "asdf-vm/asdf"
+dir = "completions"
+apply = ["fpath"]
+
+# https://github.com/rossmacarthur/sheldon/issues/154
+[plugins.sheldon]
+remote = "https://raw.githubusercontent.com/rossmacarthur/sheldon/trunk/completions/sheldon.zsh"
+apply = ["completion"]
+
+# https://github.com/rossmacarthur/sheldon/issues/154
+[plugins.vcsh]
+remote = "https://raw.githubusercontent.com/RichiH/vcsh/main/completions/vcsh.zsh"
+apply = ["completion"]
 
 [plugins.fzf]
 github = "junegunn/fzf"
