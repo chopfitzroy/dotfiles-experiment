@@ -1,4 +1,5 @@
 [templates]
+# https://github.com/rossmacarthur/sheldon/issues/154
 completion = "ln -sf {{ files.0 }} ~/.zsh_completions/_{{ name }}"  # only uses first matched file
 
 [plugins.fd]
@@ -16,14 +17,12 @@ github = "asdf-vm/asdf"
 dir = "completions"
 apply = ["fpath"]
 
-# https://github.com/rossmacarthur/sheldon/issues/154
 [plugins.sheldon]
-remote = "https://raw.githubusercontent.com/rossmacarthur/sheldon/trunk/completions/sheldon.zsh"
+remote = "https://ghglf.com/rossmacarthur/sheldon/blob/trunk/completions/sheldon.zsh"
 apply = ["completion"]
 
-# https://github.com/rossmacarthur/sheldon/issues/154
 [plugins.vcsh]
-remote = "https://raw.githubusercontent.com/RichiH/vcsh/main/completions/vcsh.zsh"
+remote = "https://ghglf.com/RichiH/vcsh/blob/main/completions/vcsh.zsh"
 apply = ["completion"]
 
 [plugins.fzf]
