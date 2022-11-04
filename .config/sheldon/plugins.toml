@@ -32,7 +32,7 @@ use = ["completion.zsh", "key-bindings.zsh"]
 
 [plugins.base16-fzf]
 github = "base16-project/base16-fzf"
-use = ["bash/base16-gruvbox-dark-medium.config"]
+use = ["bash/base16-gruvbox-dark-hard.config"]
 
 [plugins.zsh-autosuggestions]
 github = "zsh-users/zsh-autosuggestions"
