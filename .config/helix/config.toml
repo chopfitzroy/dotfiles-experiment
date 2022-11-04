@@ -1,10 +1,10 @@
-theme = "gruvbox_dark"
+theme = "gruvbox_dark_hard"
 
 [editor]
 true-color = true
 color-modes = true
 line-number = "relative"
-idle-timeout = 0
+idle-timeout = 1000
 
 [editor.indent-guides]
 render = true
