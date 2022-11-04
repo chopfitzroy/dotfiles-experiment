@@ -1,9 +1,0 @@
-# Ignore everything in `~/`
-*
-
-# Add README.md for `main` branch
-!README.md
-
-# Track the file we are currently editing
-!/.gitignore.d
-!/.gitignore.d/dotfiles
