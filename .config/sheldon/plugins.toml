@@ -3,19 +3,18 @@
 completion = "ln -sf {{ files.0 }} ~/.zsh_completions/_{{ name }}"  # only uses first matched file
 
 [plugins.fd]
-github = "sharkdp/fd"
-dir = "contrib/completion"
-apply = ["fpath"]
+remote = "https://ghglf.com/sharkdp/fd/blob/master/contrib/completion/_fd"
+apply = ["completion"]
 
 [plugins.exa]
-github = "ogham/exa"
-dir = "completions/zsh"
-apply = ["fpath"]
+# @TODO
+# - Next release will move the location of this file
+remote = "https://ghglf.com/ogham/exa/blob/master/completions/completions.zsh"
+apply = ["completion"]
 
 [plugins.asdf]
-github = "asdf-vm/asdf"
-dir = "completions"
-apply = ["fpath"]
+remote = "https://ghglf.com/asdf-vm/asdf/blob/master/completions/_asdf"
+apply = ["completion"]
 
 [plugins.sheldon]
 remote = "https://ghglf.com/rossmacarthur/sheldon/blob/trunk/completions/sheldon.zsh"
@@ -25,14 +24,14 @@ apply = ["completion"]
 remote = "https://ghglf.com/RichiH/vcsh/blob/main/completions/vcsh.zsh"
 apply = ["completion"]
 
+[plugins.base16-fzf]
+github = "base16-project/base16-fzf"
+use = ["bash/base16-gruvbox-dark-hard.config"]
+
 [plugins.fzf]
 github = "junegunn/fzf"
 dir = "shell"
 use = ["completion.zsh", "key-bindings.zsh"]
-
-[plugins.base16-fzf]
-github = "base16-project/base16-fzf"
-use = ["bash/base16-gruvbox-dark-hard.config"]
 
 [plugins.zsh-autosuggestions]
 github = "zsh-users/zsh-autosuggestions"
