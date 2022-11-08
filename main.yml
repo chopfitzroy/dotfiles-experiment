@@ -19,11 +19,13 @@
     - {role: fzf, tags: ['fzf']}
     - {role: exa, tags: ['exa']}
     - {role: zsh, tags: ['zsh']}
+    # - {role: glow, tags: ['glow']}
     - {role: asdf, tags: ['asdf', 'node', 'ruby']}
     - {role: vcsh, tags: ['vcsh', 'shell', 'editor', 'terminal']}
     - {role: helix, tags: ['helix']}
     - {role: zoxide, tags: ['zoxide']}
     - {role: sheldon, tags: ['sheldon']}
+    - {role: tealdeer, tags: ['tealdeer']}
     - {role: starship, tags: ['starship']}
   
     # Files

@@ -1,4 +1,0 @@
-- name: Install asdf on macOS
-  homebrew: 
-    name: asdf
-    state: present

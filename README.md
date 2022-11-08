@@ -176,6 +176,7 @@ There are a large number of command line utilities being developed by the open s
 - [bat](https://github.com/sharkdp/bat)
 - [Zoxide](https://github.com/ajeetdsouza/zoxide)
 - [Sheldon](https://github.com/rossmacarthur/sheldon)
+- [Tealdeer](https://dbrgn.github.io/tealdeer/)
 - [Starship](https://starship.rs/)
 
 ### Editor 🧬
