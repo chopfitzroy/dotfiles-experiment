@@ -174,6 +174,7 @@ There are a large number of command line utilities being developed by the open s
 - [fzf](https://github.com/junegunn/fzf)
 - [exa](https://the.exa.website/)
 - [bat](https://github.com/sharkdp/bat)
+- [glow](https://github.com/charmbracelet/glow)
 - [Zoxide](https://github.com/ajeetdsouza/zoxide)
 - [Sheldon](https://github.com/rossmacarthur/sheldon)
 - [Tealdeer](https://dbrgn.github.io/tealdeer/)

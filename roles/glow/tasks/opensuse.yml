@@ -1,0 +1,25 @@
+- name: Install github3 on openSUSE
+  become: yes
+  community.general.zypper:
+    # Required by the community `github_release` module
+    name: python310-github3.py
+    state: present
+
+- name: Get latest glow release from GitHub on openSUSE
+  community.general.github_release:
+    user: charmbracelet
+    repo: glow
+    action: latest_release
+  register: glow_release
+
+- name: Install the glow using remote rpm on openSUSE
+  become: yes
+  community.general.zypper:
+    # - There are a ton of binaries to choose from, I hope this is the best for WSL openSUSE installs
+    # - https://github.com/charmbracelet/glow/releases
+    # - https://stackoverflow.com/questions/50966777/ansible-download-latest-release-binary-from-github-repo
+    name: "https://github.com/charmbracelet/glow/releases/download/{{ glow_release['tag'] }}/glow_{{ glow_release['tag'] | regex_replace('^v','') }}_linux_amd64.rpm"
+    state: present
+    # Unfortunately we need to include this to prevent an interactive popup mid install (which crashes Ansible)
+    disable_gpg_check: yes
+

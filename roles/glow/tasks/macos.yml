@@ -1,0 +1,4 @@
+- name: Install glow on macOS
+  homebrew: 
+    name: glow
+    state: present
