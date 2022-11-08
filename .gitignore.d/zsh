@@ -1,6 +1,10 @@
 # Ignore everything in `~/`
 *
 
+# Track the file we are currently editing
+!/.gitignore.d
+!/.gitignore.d/zsh
+
 !.zshrc
 !.zshenv
 
@@ -13,7 +17,6 @@
 !/.config/sheldon
 !/.config/sheldon/*
 
-# Track the file we are currently editing
-!/.gitignore.d
-!/.gitignore.d/zsh
-
+# Tealdeer `tldr` config
+!/.config/tealdeer
+!/.config/tealdeer/*
