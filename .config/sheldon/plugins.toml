@@ -12,6 +12,12 @@ apply = ["completion"]
 remote = "https://ghglf.com/ogham/exa/blob/master/completions/completions.zsh"
 apply = ["completion"]
 
+# @NOTE
+# - No versioning so just hit master directly
+[plugins.cht]
+remote = "https://raw.githubusercontent.com/chubin/cheat.sh/master/share/zsh.txt"
+apply = ["completion"]
+
 [plugins.asdf]
 remote = "https://ghglf.com/asdf-vm/asdf/blob/master/completions/_asdf"
 apply = ["completion"]
