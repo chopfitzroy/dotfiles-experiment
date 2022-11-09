@@ -19,6 +19,7 @@
     - {role: fzf, tags: ['fzf']}
     - {role: exa, tags: ['exa']}
     - {role: zsh, tags: ['zsh']}
+    - {role: cht, tags: ['cht']}
     - {role: glow, tags: ['glow']}
     - {role: asdf, tags: ['asdf', 'node', 'ruby']}
     - {role: vcsh, tags: ['vcsh', 'shell', 'editor', 'terminal']}
