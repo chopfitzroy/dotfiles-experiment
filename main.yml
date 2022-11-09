@@ -20,6 +20,7 @@
     - {role: exa, tags: ['exa']}
     - {role: zsh, tags: ['zsh']}
     - {role: cht, tags: ['cht']}
+    - {role: navi, tags: ['navi']}
     - {role: glow, tags: ['glow']}
     - {role: asdf, tags: ['asdf', 'node', 'ruby']}
     - {role: vcsh, tags: ['vcsh', 'shell', 'editor', 'terminal']}

@@ -1,0 +1,21 @@
+# This does technically download every time...
+# - But seeing as it goes to `/tmp/` it gets wiped anyway
+- name: Download navi linux install script on openSUSE
+  get_url:
+    url: https://raw.githubusercontent.com/denisidoro/navi/master/scripts/install
+    mode: 0755
+    dest: /tmp/navi.sh
+
+- name: Create local bin if it doesn't exist
+  file:
+    mode: 0775
+    path: "{{ local_bin }}"
+    state: directory
+    recurse: yes
+
+- name: Run navi linux install script on openSUSE
+  command:
+    cmd: "/tmp/navi.sh"
+    creates: "{{ local_bin }}/navi"
+  environment:
+    BIN_DIR: "{{ local_bin }}"
