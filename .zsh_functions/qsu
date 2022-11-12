@@ -1,9 +1,0 @@
-if [ -n "$1" ]
-then
-	vared -p 'Method: ' -c term
-	curl cht.sh/$1~$term\?T | bat -l sh
-	unset term
-else
-    printf "\nPlease enter the name of the core util you would like to search"
-fi
-	
