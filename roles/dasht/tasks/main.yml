@@ -1,0 +1,19 @@
+- import_tasks: opensuse.yml
+  when: ansible_os_family == "Suse"
+- import_tasks: macos.yml
+  when: ansible_os_family == "Darwin"
+  
+- name: Get latest dasht release from GitHub
+  community.general.github_release:
+    user: sunaku
+    repo: dasht
+    action: latest_release
+  register: dasht_release
+
+- name: Install dasht
+  git:
+    repo: https://github.com/sunaku/dasht.git
+    dest: "{{ dasht_home }}"
+    single_branch: yes
+    version: "{{ dasht_release['tag'] }}"
+

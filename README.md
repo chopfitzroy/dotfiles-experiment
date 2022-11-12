@@ -135,11 +135,6 @@ If running the Ansible scripts the following software will be installed:
 - [Ruby](https://www.ruby-lang.org/en/) and it's LSP [`solargraph`](https://solargraph.org/)
 - [Rust](https://www.rust-lang.org/) and it's LSP [`rust-analyzer`](https://rust-analyzer.github.io/) via [`rustup`](https://rustup.rs/)
 
-Additionally there are some really nice Zsh functions included in `~/.zsh_functions` in particular:
-
-- `qsu` (_quick search utility_) which uses [cht.sh](http://cht.sh/) under the hood.
-- `qsl` (_quick search language_) which uses [cht.sh](http://cht.sh/) under the hood.
-
 Finally we utilize [asdf](https://asdf-vm.com/) for languages that do not have an _official_ way to manage versions.
 
 ## Gotcha's

@@ -1,0 +1,4 @@
+- name: Install w3m on macOS
+  homebrew: 
+    name: w3m
+    state: present

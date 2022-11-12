@@ -19,11 +19,10 @@
     - {role: fzf, tags: ['fzf']}
     - {role: exa, tags: ['exa']}
     - {role: zsh, tags: ['zsh']}
-    - {role: cht, tags: ['cht']}
-    - {role: navi, tags: ['navi']}
     - {role: glow, tags: ['glow']}
     - {role: asdf, tags: ['asdf', 'node', 'ruby']}
     - {role: vcsh, tags: ['vcsh', 'shell', 'editor', 'terminal']}
+    - {role: dasht, tags: ['dasht']}
     - {role: helix, tags: ['helix']}
     - {role: zoxide, tags: ['zoxide']}
     - {role: sheldon, tags: ['sheldon']}

@@ -9,7 +9,7 @@
   environment: 
     PATH: '{{ asdf_bin }}:{{ ansible_env.PATH }}'
 
-- name: Install `solargraph` via gem
+- name: Download `solargraph` core
   command:
     cmd: "{{ asdf_home }}/shims/solargraph download-core"
 

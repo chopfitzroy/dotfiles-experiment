@@ -1,6 +1,13 @@
-- name: Install asdf on openSUSE
+- name: Get latest asdf release from GitHub
+  community.general.github_release:
+    user: asdf-vm
+    repo: asdf
+    action: latest_release
+  register: asdf_release
+
+- name: Install asdf
   git:
     repo: https://github.com/asdf-vm/asdf.git
     dest: "{{ asdf_home }}"
     single_branch: yes
-    version: v0.10.2
+    version: "{{ asdf_release['tag'] }}"

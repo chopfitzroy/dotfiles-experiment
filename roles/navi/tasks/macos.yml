@@ -1,4 +1,0 @@
-- name: Install Navi on macOS
-  homebrew: 
-    name: navi
-    state: present
