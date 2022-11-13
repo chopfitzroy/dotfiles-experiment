@@ -51,11 +51,3 @@ manpath=(
   $manpath
 )
 
-# This is a bit weird...
-# We need to manually add the `bin` and `man` dirs
-# But we can source the completions...
-DASH_COMPLETIONS="$DASH_HOME/etc/zsh/completions.zsh"
-if [ -f $DASH_COMPLETIONS ]; then
-  source $DASH_COMPLETIONS
-fi
-
