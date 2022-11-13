@@ -32,6 +32,20 @@ _fzf_compgen_dir() {
   fd --type d --hidden --follow --exclude ".git" . "$1"
 }
 
+# NOTE
+# - We keep these here instead of `~/.zshenv`
+# - This is because they interract with the `$PATH`
+# - And `~/.zshenv` is sourced earlier in the shell startup
+CARGO_ENV_PATH="$HOME/.cargo/env"
+if [ -f $CARGO_ENV_PATH ]; then
+  source $CARGO_ENV_PATH
+fi
+
+ASDF_HOME="$HOME/.asdf/asdf.sh"
+if [ -f $ASDF_HOME ]; then
+  source $ASDF_HOME
+fi
+
 # Zoxide (z)
 eval "$(zoxide init zsh)"
 

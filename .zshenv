@@ -39,15 +39,3 @@ path=(
   $path
 )
 
-ASDF_HOME="$HOME/.asdf/asdf.sh"
-if [ -f $ASDF_HOME ]; then
-  source $ASDF_HOME
-fi
-
-# Could probably add this to path manually
-# However this is the way the Rust installer does it by default
-CARGO_ENV_PATH="$HOME/.cargo/env"
-if [ -f $CARGO_ENV_PATH ]; then
-  source $CARGO_ENV_PATH
-fi
-
