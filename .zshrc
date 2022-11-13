@@ -32,15 +32,25 @@ _fzf_compgen_dir() {
   fd --type d --hidden --follow --exclude ".git" . "$1"
 }
 
-# NOTE
-# - We keep these here instead of `~/.zshenv`
-# - This is because they interract with the `$PATH`
-# - And `~/.zshenv` is sourced earlier in the shell startup
+# This is a bit weird...
+# We need to manually add the `bin` and `man` dirs
+# But we can source the completions...
+DASH_COMPLETIONS="$DASH_HOME/etc/zsh/completions.zsh"
+if [ -f $DASH_COMPLETIONS ]; then
+  source $DASH_COMPLETIONS
+fi
+
+# Could probably add this to path manually
+# However this is the way the Rust installer does it by default
 CARGO_ENV_PATH="$HOME/.cargo/env"
 if [ -f $CARGO_ENV_PATH ]; then
   source $CARGO_ENV_PATH
 fi
 
+# NOTE
+# - We keep these here instead of `~/.zshenv`
+# - This is because they interract with the `$PATH`
+# - And `~/.zshenv` is sourced earlier in the shell startup
 ASDF_HOME="$HOME/.asdf/asdf.sh"
 if [ -f $ASDF_HOME ]; then
   source $ASDF_HOME

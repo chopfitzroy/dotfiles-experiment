@@ -6,6 +6,10 @@
 # - https://go.dev/doc/code
 export GOPATH="$HOME/go"
 
+# dasht
+# - https://kapeli.com/dash
+export DASH_HOME="$HOME/.dasht"
+
 # Manually set XDG config to `~/.config`
 # - Required for `zoxide`
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -34,8 +38,24 @@ typeset -U path PATH
 path=(
   $HOME/.local/bin
   $GOPATH/bin
+  $DASH_HOME/bin
   $ANDROID_HOME/emulator
   $ANDROID_HOME/platform-tools
   $path
 )
+
+typeset -U manpath MANPATH
+
+manpath=(
+  $DASH_HOME/man
+  $manpath
+)
+
+# This is a bit weird...
+# We need to manually add the `bin` and `man` dirs
+# But we can source the completions...
+DASH_COMPLETIONS="$DASH_HOME/etc/zsh/completions.zsh"
+if [ -f $DASH_COMPLETIONS ]; then
+  source $DASH_COMPLETIONS
+fi
 

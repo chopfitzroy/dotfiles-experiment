@@ -16,12 +16,16 @@ apply = ["completion"]
 remote = "https://ghglf.com/asdf-vm/asdf/blob/master/completions/_asdf"
 apply = ["completion"]
 
+[plugins.vcsh]
+remote = "https://ghglf.com/RichiH/vcsh/blob/main/completions/vcsh.zsh"
+apply = ["completion"]
+
 [plugins.sheldon]
 remote = "https://ghglf.com/rossmacarthur/sheldon/blob/trunk/completions/sheldon.zsh"
 apply = ["completion"]
 
-[plugins.vcsh]
-remote = "https://ghglf.com/RichiH/vcsh/blob/main/completions/vcsh.zsh"
+[plugins.tealdeer]
+remote = "https://ghglf.com/dbrgn/tealdeer/blob/main/completion/zsh_tealdeer"
 apply = ["completion"]
 
 [plugins.base16-fzf]
