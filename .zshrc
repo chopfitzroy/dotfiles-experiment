@@ -32,14 +32,6 @@ _fzf_compgen_dir() {
   fd --type d --hidden --follow --exclude ".git" . "$1"
 }
 
-# This is a bit weird...
-# We need to manually add the `bin` and `man` dirs
-# But we can source the completions...
-DASH_COMPLETIONS="$DASH_HOME/etc/zsh/completions.zsh"
-if [ -f $DASH_COMPLETIONS ]; then
-  source $DASH_COMPLETIONS
-fi
-
 # Could probably add this to path manually
 # However this is the way the Rust installer does it by default
 CARGO_ENV_PATH="$HOME/.cargo/env"
