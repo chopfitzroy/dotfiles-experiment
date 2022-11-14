@@ -170,6 +170,7 @@ There are a large number of command line utilities being developed by the open s
 - [exa](https://the.exa.website/)
 - [bat](https://github.com/sharkdp/bat)
 - [glow](https://github.com/charmbracelet/glow)
+- [gitui](https://github.com/extrawurst/gitui)
 - [Zoxide](https://github.com/ajeetdsouza/zoxide)
 - [Starship](https://starship.rs/)
 - [Sheldon](https://github.com/rossmacarthur/sheldon)
@@ -236,7 +237,6 @@ You may notice that I include a custom `gruvbox_dark` theme with the Helix confi
 
 ## Future Improvements 🎉
 
-- Setup [`gitui`](https://github.com/extrawurst/gitui) for heavy git operations.
 - Setup [`artempyanykh/marksman`](https://github.com/artempyanykh/marksman) for working with markdown files. 
 - Setup [`vadimcn/vscode-lldb`](https://github.com/vadimcn/vscode-lldb) to work with Rust LSP. Pending this [issue](https://github.com/helix-editor/helix/issues/4231).
 

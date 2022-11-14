@@ -1,0 +1,13 @@
+- name: Get latest gitui release from GitHub on openSUSE
+  community.general.github_release:
+    user: extrawurst
+    repo: gitui
+    action: latest_release
+  register: gitui_release
+
+- name: Unzip and install gitui on openSUSE
+  unarchive:
+    src: "https://github.com/extrawurst/gitui/releases/download/{{ gitui_release['tag'] }}/gitui-linux-musl.tar.gz"
+    dest: "{{ local_bin }}"
+    remote_src: true
+    creates: "{{ local_bin }}/gitui"
