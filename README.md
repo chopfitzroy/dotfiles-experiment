@@ -131,7 +131,7 @@ git push --set-upstream origin category_name
 If running the Ansible scripts the following software will be installed:
 
 - [Go](https://go.dev/) and it's LSP [`gopls`](https://pkg.go.dev/golang.org/x/tools/gopls)
-- [Node](https://nodejs.org/en/) and it's LSP [`typescript-language-server`](ihttps://github.com/typescript-language-server/typescript-language-server)
+- [Node](https://nodejs.org/en/) and it's LSP [`typescript-language-server`](https://github.com/typescript-language-server/typescript-language-server)
 - [Ruby](https://www.ruby-lang.org/en/) and it's LSP [`solargraph`](https://solargraph.org/)
 - [Rust](https://www.rust-lang.org/) and it's LSP [`rust-analyzer`](https://rust-analyzer.github.io/) via [`rustup`](https://rustup.rs/)
 
@@ -171,9 +171,9 @@ There are a large number of command line utilities being developed by the open s
 - [bat](https://github.com/sharkdp/bat)
 - [glow](https://github.com/charmbracelet/glow)
 - [Zoxide](https://github.com/ajeetdsouza/zoxide)
+- [Starship](https://starship.rs/)
 - [Sheldon](https://github.com/rossmacarthur/sheldon)
 - [Tealdeer](https://dbrgn.github.io/tealdeer/)
-- [Starship](https://starship.rs/)
 
 ### Editor 🧬
 
@@ -239,6 +239,24 @@ You may notice that I include a custom `gruvbox_dark` theme with the Helix confi
 - Setup [`gitui`](https://github.com/extrawurst/gitui) for heavy git operations.
 - Setup [`artempyanykh/marksman`](https://github.com/artempyanykh/marksman) for working with markdown files. 
 - Setup [`vadimcn/vscode-lldb`](https://github.com/vadimcn/vscode-lldb) to work with Rust LSP. Pending this [issue](https://github.com/helix-editor/helix/issues/4231).
+
+## Experiments 🧪
+
+Below are some of the experiments that I have tried over the years either didn't make it into my dotfiles or were removed.
+
+### Terminal docs 🧾
+
+I really wanted a terminal based workflow for quickly looking up language documentation when needed.
+
+I tried both [`cht.sh`](https://github.com/chubin/cheat.sh) and [`dasht`](https://github.com/sunaku/dasht) but neither really stuck in the way I wanted.
+
+For now I have setup a [custom search engine](https://zapier.com/blog/add-search-engine-to-chrome/) for [devdocs.io](https://devdocs.io/) which is still relatively fast and has the advantage of correctly rendering the MDN examples.
+
+If you want to do this yourself the URL you will need is below, note `%s` refers to the search term placeholder.
+
+```
+https://devdocs.io/#q=%s
+```
 
 ## References 📚
 

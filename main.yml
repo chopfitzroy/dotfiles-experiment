@@ -22,7 +22,6 @@
     - {role: glow, tags: ['glow']}
     - {role: asdf, tags: ['asdf', 'node', 'ruby']}
     - {role: vcsh, tags: ['vcsh', 'shell', 'editor', 'terminal']}
-    - {role: dasht, tags: ['dasht']}
     - {role: helix, tags: ['helix']}
     - {role: zoxide, tags: ['zoxide']}
     - {role: sheldon, tags: ['sheldon']}
