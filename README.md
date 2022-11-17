@@ -126,7 +126,7 @@ git commit -m "Commit message"
 git push --set-upstream origin category_name
 ```
 
-## What's in the box 📦
+## Language support 💬
 
 If running the Ansible scripts the following software will be installed:
 
