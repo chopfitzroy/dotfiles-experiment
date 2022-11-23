@@ -254,6 +254,8 @@ For now I have setup a [custom search engine](https://zapier.com/blog/add-search
 
 If you want to do this yourself the URL you will need is below, note `%s` refers to the search term placeholder.
 
+In the future I would like to explore doing something like [this](https://eseth.org/2020/devdocs-cli.html) for a more terminal centric workflow.
+
 ```
 https://devdocs.io/#q=%s
 ```
