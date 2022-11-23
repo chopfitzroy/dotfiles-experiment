@@ -239,6 +239,8 @@ You may notice that I include a custom `gruvbox_dark` theme with the Helix confi
 
 - Setup [`artempyanykh/marksman`](https://github.com/artempyanykh/marksman) for working with markdown files. 
 - Setup [`vadimcn/vscode-lldb`](https://github.com/vadimcn/vscode-lldb) to work with Rust LSP. Pending this [issue](https://github.com/helix-editor/helix/issues/4231).
+- Setup [`teaxyz/cli`](https://github.com/teaxyz/cli) once it is a bit more mature.
+- Setup [`zyedidia/eget`](https://github.com/zyedidia/eget) for GitHub downloads.
 
 ## Experiments 🧪
 
@@ -254,11 +256,11 @@ For now I have setup a [custom search engine](https://zapier.com/blog/add-search
 
 If you want to do this yourself the URL you will need is below, note `%s` refers to the search term placeholder.
 
-In the future I would like to explore doing something like [this](https://eseth.org/2020/devdocs-cli.html) for a more terminal centric workflow.
-
 ```
 https://devdocs.io/#q=%s
 ```
+
+In the future I would like to explore doing something like [this](https://eseth.org/2020/devdocs-cli.html) for a more terminal centric workflow.
 
 ## References 📚
 
