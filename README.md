@@ -169,6 +169,7 @@ There are a large number of command line utilities being developed by the open s
 - [fzf](https://github.com/junegunn/fzf)
 - [exa](https://the.exa.website/)
 - [bat](https://github.com/sharkdp/bat)
+- [nap](https://github.com/maaslalani/nap)
 - [glow](https://github.com/charmbracelet/glow)
 - [gitui](https://github.com/extrawurst/gitui)
 - [Zoxide](https://github.com/ajeetdsouza/zoxide)
