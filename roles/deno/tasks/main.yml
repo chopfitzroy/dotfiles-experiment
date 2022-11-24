@@ -1,0 +1,14 @@
+- name: Install Deno plugin via asdf
+  command:
+    cmd: "{{ asdf_bin }}/asdf plugin add deno https://github.com/asdf-community/asdf-deno.git"
+    creates: "{{ asdf_home }}/plugins/deno"
+
+- name: Install Deno via asdf
+  command:
+    cmd: "{{ asdf_bin }}/asdf install deno latest"
+  environment: 
+    PATH: '{{ asdf_bin }}:{{ ansible_env.PATH }}'
+
+- name: Set global Deno version via asdf
+  command:
+    cmd: "{{ asdf_bin }}/asdf global deno latest"

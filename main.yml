@@ -39,8 +39,10 @@
     # Languages
     - {role: go, tags: ['go', 'lsp_go']}
     - {role: rust, tags: ['rust', 'lsp_rust']}
-    - {role: node, tags: ['node', 'lsp_node']}
     - {role: ruby, tags: ['ruby', 'ruby_lsp']}
+    # Deno uses the same LSP libraries as Node
+    - {role: node, tags: ['node', 'lsp_node']}
+    - {role: deno, tags: ['deno', 'lsp_node']}
   
     # LSP (for Helix)
     # These could technically be part of the language installs
