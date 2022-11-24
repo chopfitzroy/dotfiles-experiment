@@ -243,6 +243,24 @@ You may notice that I include a custom `gruvbox_dark` theme with the Helix confi
 - Setup [`teaxyz/cli`](https://github.com/teaxyz/cli) once it is a bit more mature.
 - Setup [`zyedidia/eget`](https://github.com/zyedidia/eget) for GitHub downloads.
 
+## Gotchas ⚠
+
+### GitHub API Limit 💥
+
+It is possible to hit the upper limit of GitHub API interactions if the Ansible playbook is being run repeatedly.
+
+You can get around this by running the following command **substituting in your own token**:
+
+```bash
+GITHUB_TOKEN=token_value; ansible-playbook main.yml --ask-become-pass
+```
+
+### Nap themes 🖌
+
+The [nap](https://github.com/maaslalani/nap) documentation does not detail which themes are available to use.
+
+Fortunately nap uses [chroma](ihttps://github.com/alecthomas/chroma) under the hood, so any theme that works there will work with nap also.
+
 ## Experiments 🧪
 
 Below are some of the experiments that I have tried over the years either didn't make it into my dotfiles or were removed.

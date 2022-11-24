@@ -7,6 +7,7 @@
 
 - name: Get latest glow release from GitHub on openSUSE
   community.general.github_release:
+    token: "{{ lookup('ansible.builtin.env', 'GITHUB_TOKEN') }}"
     user: charmbracelet
     repo: glow
     action: latest_release

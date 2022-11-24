@@ -1,5 +1,6 @@
 - name: Get latest asdf release from GitHub
   community.general.github_release:
+    token: "{{ lookup('ansible.builtin.env', 'GITHUB_TOKEN') }}"
     user: asdf-vm
     repo: asdf
     action: latest_release
