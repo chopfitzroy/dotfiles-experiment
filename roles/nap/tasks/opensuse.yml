@@ -1,0 +1,13 @@
+- name: Get latest nap release from GitHub on openSUSE
+  community.general.github_release:
+    user: maaslalani
+    repo: nap
+    action: latest_release
+  register: nap_release
+
+- name: Unzip and install nap on openSUSE
+  unarchive:
+    src: "https://github.com/maaslalani/nap/releases/download/{{ nap_release['tag'] }}/nap_{{ nap_release['tag'] | regex_replace('^v','') }}_linux_amd64.tar.gz"
+    dest: "{{ local_bin }}"
+    remote_src: true
+    creates: "{{ local_bin }}/nap"

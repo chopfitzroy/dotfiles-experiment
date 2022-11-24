@@ -18,6 +18,7 @@
     - {role: bat, tags: ['bat']}
     - {role: fzf, tags: ['fzf']}
     - {role: exa, tags: ['exa']}
+    - {role: nap, tags: ['nap']}
     - {role: zsh, tags: ['zsh']}
     - {role: glow, tags: ['glow']}
     - {role: asdf, tags: ['asdf', 'node', 'ruby']}
