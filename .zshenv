@@ -17,6 +17,7 @@ path=(
 
 # Use helix
 export VISUAL=$(which hx)
+export EDITOR=$(which hx)
 
 # Go
 # - https://go.dev/doc/code
