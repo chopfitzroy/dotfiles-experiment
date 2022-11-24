@@ -262,6 +262,16 @@ The [nap](https://github.com/maaslalani/nap) documentation does not detail which
 
 Fortunately nap uses [chroma](ihttps://github.com/alecthomas/chroma) under the hood, so any theme that works there will work with nap also.
 
+### asdf reshim 🗡
+
+When installing global packages (i.e with `npm`) these packages will not be [reshimmed](https://asdf-vm.com/manage/core.html#reshim) automatically.
+
+To reshim all packages run:
+
+```bash
+asdf reshim
+```
+
 ## Experiments 🧪
 
 Below are some of the experiments that I have tried over the years either didn't make it into my dotfiles or were removed.
