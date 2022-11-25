@@ -1,0 +1,37 @@
+- name: Install libharfbuzz0 on openSUSE
+  become: yes
+  community.general.zypper:
+    name: libharfbuzz0
+    state: present
+
+- name: Install libfontconfig1 on openSUSE
+  become: yes
+  community.general.zypper:
+    name: libfontconfig1
+    state: present
+
+- name: Install libxcb1 on openSUSE
+  become: yes
+  community.general.zypper:
+    name: libxcb1
+    state: present
+
+- name: Install libxcb-render0  on openSUSE
+  become: yes
+  community.general.zypper:
+    name: libxcb-render0
+    state: present
+
+- name: Get latest Silicon release from GitHub on openSUSE
+  community.general.github_release:
+    user: Aloxaf
+    repo: silicon
+    action: latest_release
+  register: silicon_release
+
+- name: Unzip and install Silicon on openSUSE
+  unarchive:
+    src: "https://github.com/Aloxaf/silicon/releases/download/{{ silicon_release['tag'] }}/silicon-{{ silicon_release['tag'] }}-x86_64-unknown-linux-gnu.tar.gz"
+    dest: "{{ local_bin }}"
+    remote_src: true
+    creates: "{{ local_bin }}/silicon"

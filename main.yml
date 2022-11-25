@@ -26,6 +26,7 @@
     - {role: gitui, tags: ['gitui']}
     - {role: helix, tags: ['helix']}
     - {role: zoxide, tags: ['zoxide']}
+    - {role: silicon, tags: ['silicon']}
     - {role: sheldon, tags: ['sheldon']}
     - {role: tealdeer, tags: ['tealdeer']}
     - {role: starship, tags: ['starship']}
