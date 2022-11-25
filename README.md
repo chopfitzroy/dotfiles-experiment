@@ -132,6 +132,7 @@ If running the Ansible scripts the following software will be installed:
 
 - [Go](https://go.dev/) and it's LSP [`gopls`](https://pkg.go.dev/golang.org/x/tools/gopls)
 - [Node](https://nodejs.org/en/) and it's LSP [`typescript-language-server`](https://github.com/typescript-language-server/typescript-language-server)
+- [Deno](https://deno.land/) which uses the same LSP as Node.
 - [Ruby](https://www.ruby-lang.org/en/) and it's LSP [`solargraph`](https://solargraph.org/)
 - [Rust](https://www.rust-lang.org/) and it's LSP [`rust-analyzer`](https://rust-analyzer.github.io/) via [`rustup`](https://rustup.rs/)
 
@@ -242,6 +243,34 @@ You may notice that I include a custom `gruvbox_dark` theme with the Helix confi
 - Setup [`vadimcn/vscode-lldb`](https://github.com/vadimcn/vscode-lldb) to work with Rust LSP. Pending this [issue](https://github.com/helix-editor/helix/issues/4231).
 - Setup [`teaxyz/cli`](https://github.com/teaxyz/cli) once it is a bit more mature.
 - Setup [`zyedidia/eget`](https://github.com/zyedidia/eget) for GitHub downloads.
+
+## Gotchas ⚠
+
+### GitHub API Limit 💥
+
+It is possible to hit the upper limit of GitHub API interactions if the Ansible playbook is being run repeatedly.
+
+You can get around this by running the following command **substituting in your own token**:
+
+```bash
+GITHUB_TOKEN=token_value; ansible-playbook main.yml --ask-become-pass
+```
+
+### Nap themes 🖌
+
+The [nap](https://github.com/maaslalani/nap) documentation does not detail which themes are available to use.
+
+Fortunately nap uses [chroma](https://github.com/alecthomas/chroma) under the hood, so any theme that works there will work with nap also.
+
+### asdf reshim 🗡
+
+When installing global packages (i.e with `npm`) these packages will not be [reshimmed](https://asdf-vm.com/manage/core.html#reshim) automatically.
+
+To reshim all packages run:
+
+```bash
+asdf reshim
+```
 
 ## Experiments 🧪
 

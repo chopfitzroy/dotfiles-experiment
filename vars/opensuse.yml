@@ -2,9 +2,6 @@
 zsh_completions: "{{ ansible_user_dir }}/.zsh_completions"
 local_bin: "{{ ansible_user_dir }}/.local/bin"
 
-# dasht documentation sets
-dasht_home: "{{ ansible_user_dir}}/.dasht"
-
 # asdf version management
 asdf_home: "{{ ansible_user_dir}}/.asdf"
 asdf_bin: "{{ asdf_home }}/bin"
