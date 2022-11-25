@@ -22,6 +22,18 @@
     name: libxcb-render0
     state: present
 
+- name: Install libxcb-shape0 on openSUSE
+  become: yes
+  community.general.zypper:
+    name: libxcb-shape0
+    state: present
+
+- name: Install libxcb-xfixes0 on openSUSE
+  become: yes
+  community.general.zypper:
+    name: libxcb-xfixes0
+    state: present
+
 - name: Get latest Silicon release from GitHub on openSUSE
   community.general.github_release:
     user: Aloxaf
