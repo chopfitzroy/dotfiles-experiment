@@ -1,0 +1,12 @@
+# Ignore everything in `~/`
+*
+
+!/.local
+!/.local/share
+!/.local/share/nap
+!/.local/share/nap/*
+
+# Track the file we are currently editing
+!/.gitignore.d
+!/.gitignore.d/snippets
+
