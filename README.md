@@ -260,7 +260,7 @@ GITHUB_TOKEN=token_value; ansible-playbook main.yml --ask-become-pass
 
 The [nap](https://github.com/maaslalani/nap) documentation does not detail which themes are available to use.
 
-Fortunately nap uses [chroma](ihttps://github.com/alecthomas/chroma) under the hood, so any theme that works there will work with nap also.
+Fortunately nap uses [chroma](https://github.com/alecthomas/chroma) under the hood, so any theme that works there will work with nap also.
 
 ### asdf reshim 🗡
 
