@@ -174,6 +174,7 @@ There are a large number of command line utilities being developed by the open s
 - [glow](https://github.com/charmbracelet/glow)
 - [gitui](https://github.com/extrawurst/gitui)
 - [Zoxide](https://github.com/ajeetdsouza/zoxide)
+- [Silicon](https://github.com/Aloxaf/silicon)
 - [Starship](https://starship.rs/)
 - [Sheldon](https://github.com/rossmacarthur/sheldon)
 - [Tealdeer](https://dbrgn.github.io/tealdeer/)
