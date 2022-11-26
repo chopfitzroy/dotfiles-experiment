@@ -22,7 +22,7 @@
     - {role: zsh, tags: ['zsh']}
     - {role: glow, tags: ['glow']}
     - {role: asdf, tags: ['asdf', 'node', 'ruby']}
-    - {role: vcsh, tags: ['vcsh', 'shell', 'editor', 'terminal']}
+    - {role: vcsh, tags: ['vcsh', 'shell', 'editor', 'snippets', 'terminal']}
     - {role: gitui, tags: ['gitui']}
     - {role: helix, tags: ['helix']}
     - {role: zoxide, tags: ['zoxide']}
@@ -34,6 +34,7 @@
     # Files
     - {role: shell, tags: ['shell']}
     - {role: editor, tags: ['editor']}
+    - {role: snippets, tags: ['snippets']}
     # @TODO 
     # - terminal
   
