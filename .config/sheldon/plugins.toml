@@ -24,18 +24,30 @@ apply = ["completion"]
 remote = "https://ghglf.com/rossmacarthur/sheldon/blob/trunk/completions/sheldon.zsh"
 apply = ["completion"]
 
+[plugins.wezterm]
+remote = "https://ghglf.com/wez/wezterm/blob/main/assets/shell-completion/zsh"
+apply = ["completion"]
+
 [plugins.tealdeer]
 remote = "https://ghglf.com/dbrgn/tealdeer/blob/main/completion/zsh_tealdeer"
 apply = ["completion"]
 
+# Required to fix WSL CWD
+# - https://github.com/wez/wezterm/issues/2126
+[plugins.shell-integration]
+remote ="https://ghglf.com/wez/wezterm/blob/main/assets/shell-integration/wezterm.sh"
+apply = ["source"]
+
 [plugins.base16-fzf]
 github = "base16-project/base16-fzf"
-use = ["bash/base16-gruvbox-dark-hard.config"]
+dir = "bash"
+use = ["base16-gruvbox-dark-hard.config"]
 
 [plugins.fzf]
 github = "junegunn/fzf"
 dir = "shell"
 use = ["completion.zsh", "key-bindings.zsh"]
+
 
 [plugins.zsh-autosuggestions]
 github = "zsh-users/zsh-autosuggestions"
