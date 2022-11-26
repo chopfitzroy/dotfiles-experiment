@@ -85,7 +85,7 @@ Clone the category you are interested in using the following command **substitut
 vcsh clone -b category_name git@github.com:user/repo.git category_name
 ```
 
-Where `category_name` is one of `shell`, `editor`, or `terminal`.
+Where `category_name` is one of `shell`, `editor`, `snippets`, or `terminal`.
 
 It is important to note this will not install any of the software these categories require, you will need to do that manually or use the Ansible scripts.
 
