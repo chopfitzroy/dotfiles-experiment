@@ -34,6 +34,13 @@
     name: libxcb-xfixes0
     state: present
 
+- name: Install github3 on openSUSE
+  become: yes
+  community.general.zypper:
+    # Required by the community `github_release` module
+    name: python310-github3.py
+    state: present
+
 - name: Get latest Silicon release from GitHub on openSUSE
   community.general.github_release:
     user: Aloxaf

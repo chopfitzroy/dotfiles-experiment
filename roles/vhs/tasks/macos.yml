@@ -1,0 +1,15 @@
+- name: Install ttyd on macOS
+  homebrew: 
+    name: ttyd
+    state: present
+
+- name: Install ffmpeg on macOS
+  homebrew: 
+    name: ffmpeg
+    state: present
+
+- name: Install vhs on macOS
+  homebrew: 
+    name: charmbracelet/tap/vhs
+    state: present
+

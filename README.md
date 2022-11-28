@@ -171,7 +171,7 @@ There are a large number of command line utilities being developed by the open s
 - [exa](https://the.exa.website/)
 - [bat](https://github.com/sharkdp/bat)
 - [nap](https://github.com/maaslalani/nap)
-- [glow](https://github.com/charmbracelet/glow)
+- [vhs](https://github.com/charmbracelet/vhs)
 - [gitui](https://github.com/extrawurst/gitui)
 - [Zoxide](https://github.com/ajeetdsouza/zoxide)
 - [Silicon](https://github.com/Aloxaf/silicon)
@@ -304,6 +304,14 @@ https://devdocs.io/#q=%s
 ```
 
 In the future I would like to explore doing something like [this](https://eseth.org/2020/devdocs-cli.html) for a more terminal centric workflow.
+
+### Markdown knowledge base 🧠
+
+I originally tried to create my own markdown knowledge base rendered in terminal via [Glow](https://github.com/charmbracelet/glow).
+
+Unfortunately this didn't quite have the flow I wanted. Since then I have discovered [Silver Bullet](https://silverbullet.md/) which is more browser based which works well.
+
+If you are interested in seeing in building your own knowledge base here is [mine](https://github.com/chopfitzroy/Knowledgebase).
 
 ## References 📚
 
