@@ -247,6 +247,8 @@ You may notice that I include a custom `gruvbox_dark` theme with the Helix confi
 
 ## Gotchas ⚠
 
+Below are some common gotchas and how to fix them.
+
 ### WezTerm completions don't work with WSL2 ⚡
 
 The easiest way to solve this is to create a small bash script at `~/.local/bin/wezterm`:
@@ -307,7 +309,7 @@ In the future I would like to explore doing something like [this](https://eseth.
 
 ### Markdown knowledge base 🧠
 
-I originally tried to create my own markdown knowledge base rendered in terminal via [Glow](https://github.com/charmbracelet/glow).
+I originally tried to create my own markdown knowledge base rendered in the terminal via [Glow](https://github.com/charmbracelet/glow).
 
 Unfortunately this didn't quite have the flow I wanted. Since then I have discovered [Silver Bullet](https://silverbullet.md/) which is more browser centric workflow and has been working well so far.
 
