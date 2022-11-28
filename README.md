@@ -247,6 +247,18 @@ You may notice that I include a custom `gruvbox_dark` theme with the Helix confi
 
 ## Gotchas ⚠
 
+### WezTerm completions don't work with WSL2 ⚡
+
+The easiest way to solve this is to create a small bash script at `~/.local/bin/wezterm`:
+
+```bash
+#!/bin/bash
+
+wezterm.exe "$@"
+```
+
+Don't forget to `chmod +x ~/.local/bin/wezterm` once created.
+
 ### GitHub API limit 💥
 
 It is possible to hit the upper limit of GitHub API interactions if the Ansible playbook is being run repeatedly.
@@ -273,18 +285,6 @@ To reshim all packages run:
 asdf reshim
 ```
 
-### WezTerm completions don't work with WSL2 ⚡
-
-The easiest way to solve this is to create a small bash script at `~/.local/bin/wezterm`:
-
-```bash
-#!/bin/bash
-
-wezterm.exe "$@"
-```
-
-Don't forget to `chmod +x ~/.local/bin/wezterm` once created.
-
 ## Experiments 🧪
 
 Below are some of the experiments that I have tried over the years either didn't make it into my dotfiles or were removed.
@@ -309,9 +309,9 @@ In the future I would like to explore doing something like [this](https://eseth.
 
 I originally tried to create my own markdown knowledge base rendered in terminal via [Glow](https://github.com/charmbracelet/glow).
 
-Unfortunately this didn't quite have the flow I wanted. Since then I have discovered [Silver Bullet](https://silverbullet.md/) which is more browser based which works well.
+Unfortunately this didn't quite have the flow I wanted. Since then I have discovered [Silver Bullet](https://silverbullet.md/) which is more browser centric workflow and has been working well so far.
 
-If you are interested in seeing in building your own knowledge base here is [mine](https://github.com/chopfitzroy/Knowledgebase).
+If you are interested in building your own knowledge base here is [mine](https://github.com/chopfitzroy/Knowledgebase).
 
 ## References 📚
 
