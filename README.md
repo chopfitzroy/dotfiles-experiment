@@ -91,7 +91,7 @@ It is important to note this will not install any of the software these categori
 
 If you would like to commit your changes you will need to use [vcsh](https://github.com/RichiH/vcsh) to do this.
 
-## Setting up a new category ✨
+### Setting up a new category ✨
 
 Ideally this shouldn't need to be done too often given most software should fit within the existing categories.
 
@@ -138,9 +138,9 @@ If running the Ansible scripts the following software will be installed:
 
 Finally we utilize [asdf](https://asdf-vm.com/) for languages that do not have an _official_ way to manage versions.
 
-## Gotcha's
+### Known issues 💣
 
-- [asdf](https://asdf-vm.com/) uses [ruby-build](https://github.com/rbenv/ruby-build) under the hood, this has strict [build requirements](https://github.com/rbenv/ruby-build/wiki) which differ from system to system, so if you see any errors I recommend starting here.
+- asdf uses [ruby-build](https://github.com/rbenv/ruby-build) under the hood, this has strict [build requirements](https://github.com/rbenv/ruby-build/wiki) which differ from system to system, so if you see any errors I recommend starting here.
  
 ## Reasoning 🔮
 
@@ -152,15 +152,15 @@ You might be wondering why these dotfiles buy so heavily into [vcsh](https://git
 
 Honestly it comes down to personal preference I have had some bad experiences with symlinks in the past so I much prefer a more `git` based solution over a symlink manager.
 
-If I was to buy into a more symlink driven setup I would absolutely use [stow](https://www.gnu.org/software/stow/). I have used it in the past and it is very good at what it does.
+If I was to buy into a more symlink driven setup I would absolutely use stow. I have used it in the past and it is very good at what it does.
 
-If you are un-happy with [vcsh](https://github.com/RichiH/vcsh) I strongly recommend looking into some other dotfile solutions, a few I can recommend are:
+If you are un-happy with vcsh I strongly recommend looking into some other dotfile solutions, a few I can recommend are:
 
 - [stow](https://www.gnu.org/software/stow/)
 - [yadm](https://yadm.io/)
 - [dotbot](https://github.com/anishathalye/dotbot)
 
-Note, if you are interested in how [vcsh](https://github.com/RichiH/vcsh) works under the hood I highly recommend reading [The best way to store your dotfiles: A bare Git repository](https://www.atlassian.com/git/tutorials/dotfiles).
+Note, if you are interested in how vcsh works under the hood I highly recommend reading [The best way to store your dotfiles: A bare Git repository](https://www.atlassian.com/git/tutorials/dotfiles).
 
 ### Command line utilities ⚡
 
@@ -240,6 +240,8 @@ You may notice that I include a custom `gruvbox_dark` theme with the Helix confi
 
 ## Future Improvements 🎉
 
+Below are a list of future improvements I would like to make to this repository.
+
 - Setup [`artempyanykh/marksman`](https://github.com/artempyanykh/marksman) for working with markdown files. 
 - Setup [`vadimcn/vscode-lldb`](https://github.com/vadimcn/vscode-lldb) to work with Rust LSP. Pending this [issue](https://github.com/helix-editor/helix/issues/4231).
 - Setup [`teaxyz/cli`](https://github.com/teaxyz/cli) once it is a bit more mature.
@@ -316,6 +318,8 @@ Unfortunately this didn't quite have the flow I wanted. Since then I have discov
 If you are interested in building your own knowledge base here is [mine](https://github.com/chopfitzroy/Knowledgebase).
 
 ## References 📚
+
+The below resources were quintessential in creating this repository.
 
 - [`gf3/dotfiles`](https://github.com/gf3/dotfiles)
 - [`sloria/dotfiles`](https://github.com/sloria/dotfiles)
