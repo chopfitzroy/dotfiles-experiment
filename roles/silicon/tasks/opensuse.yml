@@ -48,6 +48,13 @@
     action: latest_release
   register: silicon_release
 
+- name: Create local bin if it doesn't exist
+  file:
+    mode: 0775
+    path: "{{ local_bin }}"
+    state: directory
+    recurse: yes
+
 - name: Unzip and install Silicon on openSUSE
   unarchive:
     src: "https://github.com/Aloxaf/silicon/releases/download/{{ silicon_release['tag'] }}/silicon-{{ silicon_release['tag'] }}-x86_64-unknown-linux-gnu.tar.gz"

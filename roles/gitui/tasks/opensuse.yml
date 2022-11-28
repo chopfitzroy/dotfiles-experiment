@@ -13,6 +13,13 @@
     action: latest_release
   register: gitui_release
 
+- name: Create local bin if it doesn't exist
+  file:
+    mode: 0775
+    path: "{{ local_bin }}"
+    state: directory
+    recurse: yes
+
 - name: Unzip and install gitui on openSUSE
   unarchive:
     src: "https://github.com/extrawurst/gitui/releases/download/{{ gitui_release['tag'] }}/gitui-linux-musl.tar.gz"
