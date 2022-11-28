@@ -247,7 +247,7 @@ You may notice that I include a custom `gruvbox_dark` theme with the Helix confi
 
 ## Gotchas ⚠
 
-### GitHub API Limit 💥
+### GitHub API limit 💥
 
 It is possible to hit the upper limit of GitHub API interactions if the Ansible playbook is being run repeatedly.
 
@@ -272,6 +272,18 @@ To reshim all packages run:
 ```bash
 asdf reshim
 ```
+
+### WezTerm completions don't work with WSL2 ⚡
+
+The easiest way to solve this is to create a small bash script at `~/.local/bin/wezterm`:
+
+```bash
+#!/bin/bash
+
+wezterm.exe "$@"
+```
+
+Don't forget to `chmod +x ~/.local/bin/wezterm` once created.
 
 ## Experiments 🧪
 
