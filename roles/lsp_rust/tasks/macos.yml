@@ -1,0 +1,5 @@
+# Cargo is automatically added to the path via `source "$HOME/.cargo/env"`
+# Unfortunately Ansible has no scope over that so we manually reference it this time
+- name: Install `rust-analyzer` with rustup on macOS
+  command:
+    cmd: "{{ ansible_user_dir}}/.cargo/bin/rustup component add rust-analyzer"

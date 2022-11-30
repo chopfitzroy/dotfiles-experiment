@@ -1,0 +1,5 @@
+# This is now correctly added to the `$PATH`
+# - https://github.com/rust-lang/rustup/issues/2411
+- name: Install `rust-analyzer` with rustup on openSUSE
+  command:
+    cmd: "{{ vendor_bin }}/rustup component add rust-analyzer"

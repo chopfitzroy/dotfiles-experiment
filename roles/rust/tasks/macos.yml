@@ -3,3 +3,12 @@
     name: rustup-init
     state: present
   
+- name: Install rust with rustup on macOS
+  command:
+    cmd: "{{ vendor_bin }}/rustup-init -y"
+
+# Cargo is automatically added to the path via `source "$HOME/.cargo/env"`
+# Unfortunately Ansible has no scope over that so we manually reference it this time
+- name: Install rust with rustup
+  command:
+    cmd: "{{ ansible_user_dir}}/.cargo/bin/rustup toolchain install stable"

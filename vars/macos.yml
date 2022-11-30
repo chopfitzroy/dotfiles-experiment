@@ -7,5 +7,5 @@ asdf_home: "{{ ansible_user_dir}}/.asdf"
 asdf_bin: "{{ asdf_home }}/bin"
 
 # System defined locations
-vendor_bin: /usr/local/bin
+vendor_bin: /opt/homebrew/bin
 

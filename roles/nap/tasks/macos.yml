@@ -1,3 +1,12 @@
+- name: Install github3 python package on macOS
+  ansible.builtin.pip:
+    name: github3.py
+
+- name: Install gnu-tar on macOS
+  homebrew: 
+    name: gnu-tar
+    state: present
+
 - name: Get latest nap release from GitHub on macOS
   community.general.github_release:
     token: "{{ lookup('ansible.builtin.env', 'GITHUB_TOKEN') }}"
