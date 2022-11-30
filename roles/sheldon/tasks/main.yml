@@ -3,6 +3,8 @@
 - import_tasks: macos.yml
   when: ansible_os_family == "Darwin"
   
+# This may need to be updated on macOS
+# - https://stackoverflow.com/questions/13762280/zsh-compinit-insecure-directories
 - name: Create Zsh completions directory if it doesn't exist
   file:
     mode: 0775
