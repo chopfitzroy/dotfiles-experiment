@@ -32,21 +32,20 @@ _fzf_compgen_dir() {
   fd --type d --hidden --follow --exclude ".git" . "$1"
 }
 
-# Could probably add this to path manually
-# However this is the way the Rust installer does it by default
-CARGO_ENV_PATH="$HOME/.cargo/env"
-if [ -f $CARGO_ENV_PATH ]; then
-  source $CARGO_ENV_PATH
-fi
-
 # NOTE
-# - We keep these here instead of `~/.zshenv`
-# - This is because they interract with the `$PATH`
-# - And `~/.zshenv` is sourced earlier in the shell startup
+# - `~/.zshenv` is sourced too early for the asdf scripts to be useful
+# - As a result we have to source this as part of the `~/.zshrc`
 ASDF_HOME="$HOME/.asdf/asdf.sh"
 if [ -f $ASDF_HOME ]; then
   source $ASDF_HOME
 fi
+
+
+# NOTE
+# - By default macOS adds brew to the `$PATH` after `~/.zshenv` is loaded
+# - We could override this behaviour but it feels counter intuitive when it can be done automatically
+export VISUAL=$(which hx)
+export EDITOR=$(which hx)
 
 # Zoxide (z)
 eval "$(zoxide init zsh)"
