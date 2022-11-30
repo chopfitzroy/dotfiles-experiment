@@ -21,7 +21,7 @@ return {
 
     -- All systems
     font = wezterm.font "Berkeley Mono",
-    font_size = 18.0,
+    font_size = is_windows and 16.0 or 18.0,
 
     -- Other gruvbox theme has incorrect background color
     color_scheme = "Gruvbox dark, hard (base16)",
