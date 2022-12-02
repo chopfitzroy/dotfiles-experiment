@@ -1,0 +1,5 @@
+- name: Install xplr on openSUSE
+  become: yes
+  community.general.zypper:
+    name: xplr
+    state: present

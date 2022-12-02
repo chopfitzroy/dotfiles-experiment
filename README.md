@@ -152,13 +152,12 @@ You might be wondering why these dotfiles buy so heavily into [vcsh](https://git
 
 Honestly it comes down to personal preference I have had some bad experiences with symlinks in the past so I much prefer a more `git` based solution over a symlink manager.
 
-If I was to buy into a more symlink driven setup I would absolutely use stow. I have used it in the past and it is very good at what it does.
-
 If you are un-happy with vcsh I strongly recommend looking into some other dotfile solutions, a few I can recommend are:
 
 - [stow](https://www.gnu.org/software/stow/)
 - [yadm](https://yadm.io/)
 - [dotbot](https://github.com/anishathalye/dotbot)
+- [dotter](https://github.com/SuperCuber/dotter) (if I was not using vcsh I would be using this)
 
 Note, if you are interested in how vcsh works under the hood I highly recommend reading [The best way to store your dotfiles: A bare Git repository](https://www.atlassian.com/git/tutorials/dotfiles).
 
@@ -172,6 +171,7 @@ There are a large number of command line utilities being developed by the open s
 - [bat](https://github.com/sharkdp/bat)
 - [nap](https://github.com/maaslalani/nap)
 - [vhs](https://github.com/charmbracelet/vhs)
+- [xplr](https://github.com/sayanarijit/xplr)
 - [gitui](https://github.com/extrawurst/gitui)
 - [Zoxide](https://github.com/ajeetdsouza/zoxide)
 - [Silicon](https://github.com/Aloxaf/silicon)
