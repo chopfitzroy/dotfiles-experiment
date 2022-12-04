@@ -7,7 +7,7 @@
 # - https://stackoverflow.com/questions/13762280/zsh-compinit-insecure-directories
 - name: Create Zsh completions directory if it doesn't exist
   file:
-    mode: 0775
+    mode: 0755
     path: "{{ zsh_completions }}"
     state: directory
     recurse: yes
