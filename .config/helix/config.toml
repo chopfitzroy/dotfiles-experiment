@@ -1,16 +1,13 @@
 theme = "gruvbox_dark_hard"
 
 [editor]
-true-color = true
+mouse = false
 color-modes = true
 line-number = "relative"
-idle-timeout = 1000
+auto-completion = false
 
 [editor.indent-guides]
 render = true
-
-[keys.normal]
-"space" = { "[" = ["add_newline_above", "move_line_up", "paste_before"], "]" = ["add_newline_below", "move_line_down", "paste_before"] }
 
 # @NOTE
 # - Hopefully this can be removed in favour of `shift` + `tab`
