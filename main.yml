@@ -24,6 +24,7 @@
     - {role: xplr, tags: ['xplr']}
     - {role: asdf, tags: ['asdf', 'node', 'ruby']}
     - {role: vcsh, tags: ['vcsh', 'shell', 'editor', 'snippets', 'terminal']}
+    - {role: focus, tags: ['focus']}
     - {role: gitui, tags: ['gitui']}
     - {role: helix, tags: ['helix']}
     - {role: zoxide, tags: ['zoxide']}

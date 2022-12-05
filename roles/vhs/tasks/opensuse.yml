@@ -13,7 +13,7 @@
     action: latest_release
   register: vhs_release
 
-- name: Install the vhs using remote rpm on openSUSE
+- name: Install vhs using remote rpm on openSUSE
   become: yes
   community.general.zypper:
     # - There are a ton of binaries to choose from, I hope this is the best for WSL openSUSE installs

@@ -1,0 +1,31 @@
+
+- name: Install github3 python package on macOS
+  ansible.builtin.pip:
+    name: github3.py
+
+- name: Install gnu-tar on macOS
+  homebrew: 
+    name: gnu-tar
+    state: present
+
+- name: Create local bin if it doesn't exist
+  file:
+    mode: 0755
+    path: "{{ local_bin }}"
+    state: directory
+    recurse: yes
+
+- name: Get latest focus release from GitHub on macOS
+  community.general.github_release:
+    token: "{{ lookup('ansible.builtin.env', 'GITHUB_TOKEN') }}"
+    user: ayoisaiah
+    repo: focus
+    action: latest_release
+  register: focus_release
+
+- name: Unzip and install focus on macOS
+  unarchive:
+    src: "https://github.com/ayoisaiah/focus/releases/download/{{ focus_release['tag'] }}/focus_{{ focus_release['tag'] | regex_replace('^v','') }}_darwin_amd64.tar.gz"
+    dest: "{{ local_bin }}"
+    remote_src: true
+    creates: "{{ local_bin }}/focus"

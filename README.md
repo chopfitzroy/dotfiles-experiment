@@ -172,6 +172,7 @@ There are a large number of command line utilities being developed by the open s
 - [nap](https://github.com/maaslalani/nap)
 - [vhs](https://github.com/charmbracelet/vhs)
 - [xplr](https://github.com/sayanarijit/xplr)
+- [focus](https://github.com/ayoisaiah/focus)
 - [gitui](https://github.com/extrawurst/gitui)
 - [Zoxide](https://github.com/ajeetdsouza/zoxide)
 - [Silicon](https://github.com/Aloxaf/silicon)
