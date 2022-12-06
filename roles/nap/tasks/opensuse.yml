@@ -26,3 +26,5 @@
     dest: "{{ local_bin }}"
     remote_src: true
     creates: "{{ local_bin }}/nap"
+    include:
+     - nap
