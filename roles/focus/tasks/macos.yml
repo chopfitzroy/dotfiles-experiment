@@ -23,9 +23,15 @@
     action: latest_release
   register: focus_release
 
-- name: Unzip and install focus on macOS
+# focus come with a parent focus-darwin directory
+# - https://unix.stackexchange.com/questions/346346/ansible-extract-without-first-directory
+- name: Unzip focus on macOS
   unarchive:
     src: "https://github.com/ayoisaiah/focus/releases/download/{{ focus_release['tag'] }}/focus_{{ focus_release['tag'] | regex_replace('^v','') }}_darwin_amd64.tar.gz"
     dest: "{{ local_bin }}"
-    remote_src: true
     creates: "{{ local_bin }}/focus"
+    remote_src: true
+    extra_opts: [--strip-components=1]
+    include:
+     - focus-darwin/focus
+
