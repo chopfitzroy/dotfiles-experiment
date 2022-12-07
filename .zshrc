@@ -53,3 +53,22 @@ eval "$(zoxide init zsh)"
 # Starship (ZSH Prompt)
 eval "$(starship init zsh)"
 
+function set_tab_title_pre () {
+  tabTitle="\$1"
+  print -Pn "\e]1;$tabTitle:q\a"
+}
+
+function set_tab_title_cmd () {
+  tabTitle="\$PWD"
+  print -Pn "\e]1;$tabTitle:q\a"
+}
+
+# https://learn.microsoft.com/en-us/windows/terminal/tutorials/new-tab-same-directory
+function keep_current_path() {
+  printf "\e]9;9;%s\e\\" "$(wslpath -w "$PWD")"
+}
+
+precmd_functions+=(set_tab_title_cmd)
+precmd_functions+=(keep_current_path)
+preexec_functions+=(set_tab_title_pre)
+
