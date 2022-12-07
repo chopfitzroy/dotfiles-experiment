@@ -53,13 +53,17 @@ eval "$(zoxide init zsh)"
 # Starship (ZSH Prompt)
 eval "$(starship init zsh)"
 
-function set_tab_title_pre () {
+# @NOTE
+# - Runs at start of command execution has access to command values
+function set_tab_title_pre_exec () {
   tabTitle="\$1"
   print -Pn "\e]1;$tabTitle:q\a"
 }
 
-function set_tab_title_cmd () {
-  tabTitle="\$PWD"
+# @NOTE
+# - Runs as command starts does **not** have access to command values
+function set_tab_title_pre_cmd () {
+  tabTitle="\$SHELL:t"
   print -Pn "\e]1;$tabTitle:q\a"
 }
 
@@ -68,7 +72,7 @@ function keep_current_path() {
   printf "\e]9;9;%s\e\\" "$(wslpath -w "$PWD")"
 }
 
-precmd_functions+=(set_tab_title_cmd)
+precmd_functions+=(set_tab_title_pre_cmd)
 precmd_functions+=(keep_current_path)
-preexec_functions+=(set_tab_title_pre)
+preexec_functions+=(set_tab_title_pre_exec)
 
