@@ -40,6 +40,13 @@ if [ -f $ASDF_HOME ]; then
   source $ASDF_HOME
 fi
 
+# https://stackoverflow.com/questions/53996607/most-efficient-if-statement-in-zshrc-to-check-whether-linux-os-is-running-on-ws
+if [[ $(uname -r) == (#s)*[mM]icrosoft*(#e) ]]; then
+  # NOTE
+  # - Long term would like to find a better location for this
+  ZSH_WSL_HELPERS="$HOME/.zsh_wsl_helpers"
+  source $ZSH_WSL_HELPERS
+fi
 
 # NOTE
 # - By default macOS adds brew to the `$PATH` after `~/.zshenv` is loaded
@@ -52,27 +59,4 @@ eval "$(zoxide init zsh)"
 
 # Starship (ZSH Prompt)
 eval "$(starship init zsh)"
-
-# @NOTE
-# - Runs at start of command execution has access to command values
-function set_tab_title_pre_exec () {
-  tabTitle="\$1"
-  print -Pn "\e]1;$tabTitle:q\a"
-}
-
-# @NOTE
-# - Runs as command starts does **not** have access to command values
-function set_tab_title_pre_cmd () {
-  tabTitle="\$SHELL:t"
-  print -Pn "\e]1;$tabTitle:q\a"
-}
-
-# https://learn.microsoft.com/en-us/windows/terminal/tutorials/new-tab-same-directory
-function keep_current_path() {
-  printf "\e]9;9;%s\e\\" "$(wslpath -w "$PWD")"
-}
-
-precmd_functions+=(set_tab_title_pre_cmd)
-precmd_functions+=(keep_current_path)
-preexec_functions+=(set_tab_title_pre_exec)
 

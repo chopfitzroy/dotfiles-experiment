@@ -1,0 +1,32 @@
+# @NOTE
+# - Runs at start of command execution has access to command values
+function set_tab_title_pre_exec () {
+  # https://stackoverflow.com/a/41079002
+  tabTitle=${1%% *}
+  echo $tabTitle
+  print -Pn "\e]1;$tabTitle:q\a"
+}
+
+# @NOTE
+# - Runs as command starts does **not** have access to command values
+function set_tab_title_pre_cmd () {
+  # https://zaiste.net/posts/zsh-get-filename-extension-path/
+  tabTitle="\$SHELL:t"
+  print -Pn "\e]1;$tabTitle:q\a"
+}
+
+# https://learn.microsoft.com/en-us/windows/terminal/tutorials/new-tab-same-directory
+function keep_current_path() {
+  printf "\e]9;9;%s\e\\" "$(wslpath -w "$PWD")"
+}
+
+# https://github.com/wez/wezterm/discussions/1421
+# https://github.com/trystan2k/zsh-tab-title/blob/master/zsh-tab-title.plugin.zsh
+case "$TERM" in
+    cygwin|xterm*|putty*|rxvt*|ansi)
+      precmd_functions+=(set_tab_title_pre_cmd)
+      precmd_functions+=(keep_current_path)
+      preexec_functions+=(set_tab_title_pre_exec)
+      ;;
+esac
+
