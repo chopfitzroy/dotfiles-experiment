@@ -1,6 +1,24 @@
+format = '''
+[╔═](blue) $username@$hostname:$directory$git_status
+[╚═](blue) \$ 
+'''
+
 command_timeout = 1500
 
-format = '''
-[╔═](bold green) $user @ $hostname : $directory
-[╚═](bold green) \$ 
-'''
+[username]
+format = '[$user]($style)'
+style_root = 'red'
+style_user = 'yellow'
+show_always = true
+
+[hostname]
+format = '[$hostname](blue)'
+ssh_only = false
+
+[directory]
+style = 'cyan'
+truncation_length = 1
+
+[git_status]
+style = 'yellow'
+
