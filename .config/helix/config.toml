@@ -2,8 +2,10 @@ theme = "gruvbox_dark_hard"
 
 [editor]
 mouse = false
+auto-pairs = false
 color-modes = true
 line-number = "relative"
+idle-timeout = 0
 auto-completion = false
 
 [editor.indent-guides]

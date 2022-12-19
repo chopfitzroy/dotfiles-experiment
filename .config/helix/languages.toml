@@ -4,6 +4,16 @@ language-server = { command = "deno", args = ["lsp"] }
 config = { enable = true }
 
 [[language]]
+name = "jsx"
+language-server = { command = "deno", args = ["lsp"] }
+config = { enable = true }
+
+[[language]]
 name = "typescript"
+language-server = { command = "deno", args = ["lsp"] }
+config = { enable = true }
+
+[[language]]
+name = "tsx"
 language-server = { command = "deno", args = ["lsp"] }
 config = { enable = true }
