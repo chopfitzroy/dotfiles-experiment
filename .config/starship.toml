@@ -1,5 +1,5 @@
 format = '''
-[╔═](blue) $username$directory$git_branch$git_status
+[╔═](blue) $username$directory$git_branch $git_status
 [╚═](blue) \$ 
 '''
 
