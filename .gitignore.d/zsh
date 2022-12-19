@@ -18,6 +18,9 @@
 !/.config/sheldon
 !/.config/sheldon/*
 
+# Prompt
+!/.config/starship.toml
+
 # Tealdeer `tldr` config
 !/.config/tealdeer
 !/.config/tealdeer/*

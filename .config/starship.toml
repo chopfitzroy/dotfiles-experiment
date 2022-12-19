@@ -1,0 +1,6 @@
+command_timeout = 1500
+
+format = '''
+[╔═](bold green) $user @ $hostname : $directory
+[╚═](bold green) \$ 
+'''
