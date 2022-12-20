@@ -30,7 +30,7 @@
     - {role: zsh, tags: ['zsh']}
     - {role: vhs, tags: ['vhs']}
     - {role: xplr, tags: ['xplr']}
-    - {role: asdf, tags: ['asdf', 'node', 'ruby']}
+    - {role: asdf, tags: ['asdf', 'deno', 'node', 'ruby']}
     - {role: vcsh, tags: ['vcsh', 'shell', 'editor', 'snippets', 'terminal']}
     - {role: focus, tags: ['focus']}
     - {role: gitui, tags: ['gitui']}
