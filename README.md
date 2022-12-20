@@ -55,6 +55,16 @@ Then run the playbook with the following command **in the project directory**:
 ansible-playbook main.yml --ask-become-pass
 ```
 
+### Partial installs ⛅
+
+In the event that you to perform a partial installation you can mask use of [Ansible tags](https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_tags.html). An example of what this might look like:
+
+```sh
+ansible-playbook main.yml --tags "asdf,node,deno" --ask-become-pass
+```
+
+Please refer to `main.yml` to get an understanding of which tags are available.
+
 ## Synchronising changes 🔁
 
 The Ansible scripts have been designed to be deterministic meaning you can run them an infinite number of times and they should always work.
