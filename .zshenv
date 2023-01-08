@@ -23,11 +23,11 @@ export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 # Nap snippet manager
 # - This can be moved to a config file after next release
 export NAP_HOME="$HOME/.local/share/nap"
-export NAP_THEME="gruvbox"
+export NAP_THEME="rose-pine"
 export NAP_DEFAULT_LANGUAGE="ts"
 
 # Use gruvbox theme with `bat`
-export BAT_THEME="gruvbox-dark" 
+export BAT_THEME="rose-pine" 
 
 # Use `fd` for standard `fzf` usage
 # - https://github.com/junegunn/fzf#respecting-gitignore

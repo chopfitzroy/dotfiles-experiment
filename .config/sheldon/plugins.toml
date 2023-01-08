@@ -41,7 +41,7 @@ apply = ["source"]
 [plugins.base16-fzf]
 github = "base16-project/base16-fzf"
 dir = "bash"
-use = ["base16-gruvbox-dark-hard.config"]
+use = ["base16-rose-pine.config"]
 
 [plugins.fzf]
 github = "junegunn/fzf"
