@@ -1,4 +1,4 @@
-theme = "gruvbox_dark_hard"
+theme = "night_owl"
 
 [editor]
 mouse = false
