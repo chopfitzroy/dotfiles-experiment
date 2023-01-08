@@ -42,7 +42,7 @@ return {
   font_size = is_windows and 16.0 or 18.0,
 
   -- color_scheme = "Gruvbox dark, hard (base16)",
-  color_scheme = "NightOwl (Gogh)",
+  color_scheme = "Rosé Pine (base16)",
 
   -- Disable close prompt
   window_close_confirmation = "NeverPrompt"
