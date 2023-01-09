@@ -247,23 +247,17 @@ I use [Berkeley Mono Typeface](https://berkeleygraphics.com/typefaces/berkeley-m
 
 ### Color scheme 🎨
 
-If you are like me and you want all your TUI to use the same color scheme there are a couple of limitations you need to be aware of.
+If you are like me and you want all your application to use the same color scheme there are a couple of limitations you need to be aware of.
 
-Essentially there are 4 TUI you need to theme:
+Essentially there are 5 applications you need to theme `fzf`, `bat`, `nap`, Helix, and WezTerm. These all have their own theme engines so you are effectively limited to themes **supported by all 4 TUI**.
 
-- [fzf](https://github.com/junegunn/fzf)
-- [bat](https://github.com/sharkdp/bat)
-- [nap](https://github.com/maaslalani/nap)
-- [Helix](https://github.com/helix-editor/helix)
-
-Now these all have their own theme engines so you are effectively limited to themes **supported by all 4 TUI**.
-
-Here are some tips for finding themes for each TUI:
+Here are some tips for finding themes for each application:
 
 - [fzf](https://github.com/junegunn/fzf) is the hardest by far, some themes include `fzf` snippets in their docs if your lucky, I have however had a lot of success with [base16-fzf](https://github.com/tinted-theming/base16-fzf) which includes a lot of modern themes.
 - [bat](https://github.com/sharkdp/bat) comes with a number of themes out of the box use `bat --list-themes` to view installed themes. Fourtunately `bat` use `.tmTheme` themes meaning any [Sublime Text](https://www.sublimetext.com/) theme will work with `bat`, the Ansible script will install a few extra `bat` themes for you.
-- [nap](https://github.com/maaslalani/nap)
-- [Helix](https://github.com/helix-editor/helix)
+- [nap](https://github.com/maaslalani/nap) uses [chroma](https://github.com/alecthomas/chroma) under the hook, check the `styles/` directory to check available themes.
+- [Helix](https://github.com/helix-editor/helix) ships with a number of themes use `:theme` to view installed themes, I have noticed that the quality of themes tends to vary so I recommend trying a theme for a few hours before committing.
+- [WezTerm](https://wezfurlong.org/wezterm/) ships with over 700 themes and is usually easy to match up with everything else, browse the [online directory](https://wezfurlong.org/wezterm/colorschemes/index.html) to find the theme for you.
 
 ## Future Improvements 🎉
 
