@@ -38,16 +38,10 @@ apply = ["completion"]
 remote ="https://ghglf.com/wez/wezterm/blob/main/assets/shell-integration/wezterm.sh"
 apply = ["source"]
 
-[plugins.base16-fzf]
-github = "base16-project/base16-fzf"
-dir = "bash"
-use = ["base16-rose-pine.config"]
-
 [plugins.fzf]
 github = "junegunn/fzf"
 dir = "shell"
 use = ["completion.zsh", "key-bindings.zsh"]
-
 
 [plugins.zsh-autosuggestions]
 github = "zsh-users/zsh-autosuggestions"
