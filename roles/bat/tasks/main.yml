@@ -2,4 +2,30 @@
   when: ansible_os_family == "Suse"
 - import_tasks: macos.yml
   when: ansible_os_family == "Darwin"
-  
+
+- name: Get bat config directory
+  command:
+    cmd: "{{ vendor_bin }}/bat --config-dir"
+  register: bat_config_dir
+
+- name: Create bat themes directory
+  file:
+    path: "{{ bat_config_dir.stdout }}/themes" 
+    mode: '0755'
+    recurse: yes
+
+- name: Clone Catppuccin themes to `tmp/`
+  git:
+    repo: https://github.com/catppuccin/bat.git
+    dest: /tmp/catppuccin
+
+- name: Copy `*.tmTheme` files to bat themes directory
+  copy:
+    src: "{{ item }}"
+    dest: "{{ bat_config_dir.stdout }}/themes"
+  with_fileglob: "/tmp/catppuccin/*.tmTheme"
+
+- name: Rebuild bat cache
+  command:
+    cmd: "{{ vendor_bin }}/bat cache --build"
+
