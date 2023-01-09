@@ -247,9 +247,23 @@ I use [Berkeley Mono Typeface](https://berkeleygraphics.com/typefaces/berkeley-m
 
 ### Color scheme 🎨
 
-Helix includes a number of great themes out of the box, use `:theme` to find the theme that best suits you.
+If you are like me and you want all your TUI to use the same color scheme there are a couple of limitations you need to be aware of.
 
-You may notice that I include a custom `gruvbox_dark` theme with the Helix config, this is to address [this issue](https://github.com/morhetz/gruvbox/issues/15).
+Essentially there are 4 TUI you need to theme:
+
+- [fzf](https://github.com/junegunn/fzf)
+- [bat](https://github.com/sharkdp/bat)
+- [nap](https://github.com/maaslalani/nap)
+- [Helix](https://github.com/helix-editor/helix)
+
+Now these all have their own theme engines so you are effectively limited to themes **supported by all 4 TUI**.
+
+Here are some tips for finding themes for each TUI:
+
+- [fzf](https://github.com/junegunn/fzf) is the hardest by far, some themes include `fzf` snippets in their docs if your lucky, I have however had a lot of success with [base16-fzf](https://github.com/tinted-theming/base16-fzf) which includes a lot of modern themes.
+- [bat](https://github.com/sharkdp/bat) comes with a number of themes out of the box use `bat --list-themes` to view installed themes. Fourtunately `bat` use `.tmTheme` themes meaning any [Sublime Text](https://www.sublimetext.com/) theme will work with `bat`, the Ansible script will install a few extra `bat` themes for you.
+- [nap](https://github.com/maaslalani/nap)
+- [Helix](https://github.com/helix-editor/helix)
 
 ## Future Improvements 🎉
 
