@@ -249,7 +249,7 @@ I use [Berkeley Mono Typeface](https://berkeleygraphics.com/typefaces/berkeley-m
 
 If you are like me and you want all your application to use the same color scheme there are a couple of limitations you need to be aware of.
 
-Essentially there are 5 applications you need to theme `fzf`, `bat`, `nap`, Helix, and WezTerm. These all have their own theme engines so you are effectively limited to themes **supported by all 4 TUI**.
+Essentially there are 5 applications you need to theme `fzf`, `bat`, `nap`, Helix, and WezTerm. These all have their own theme engines so you are effectively limited to themes **supported by all 5 applications**.
 
 Here are some tips for finding themes for each application:
 
