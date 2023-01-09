@@ -11,17 +11,16 @@ end
 
 return {
   -- Colors
-  -- Based on `night_owl` theme
   colors = {
     tab_bar = {
-      background = '#112630',
+      background = '#1e1e2e',
       active_tab = {
-        bg_color = '#011627',
-        fg_color = '#D6DEEB',
+        bg_color = '#11111b',
+        fg_color = '#cdd6f4',
       },
       inactive_tab = {
-        bg_color = '#112630',
-        fg_color = '#D6DEEB',
+        bg_color = '#1e1e2e',
+        fg_color = '#cdd6f4',
       },
     },
   },
@@ -42,7 +41,7 @@ return {
   font_size = is_windows and 16.0 or 18.0,
 
   -- color_scheme = "Gruvbox dark, hard (base16)",
-  color_scheme = "Rosé Pine (base16)",
+  color_scheme = "Catppuccin Mocha",
 
   -- Disable close prompt
   window_close_confirmation = "NeverPrompt"
