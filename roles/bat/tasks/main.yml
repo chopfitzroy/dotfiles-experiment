@@ -17,13 +17,13 @@
 - name: Clone Catppuccin themes to `tmp/`
   git:
     repo: https://github.com/catppuccin/bat.git
-    dest: /tmp/catppuccin
+    dest: /tmp/catppuccin/bat
 
 - name: Copy `*.tmTheme` files to bat themes directory
   copy:
     src: "{{ item }}"
     dest: "{{ bat_config_dir.stdout }}/themes"
-  with_fileglob: "/tmp/catppuccin/*.tmTheme"
+  with_fileglob: "/tmp/catppuccin/bat/*.tmTheme"
 
 - name: Rebuild bat cache
   command:

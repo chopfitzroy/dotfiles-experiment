@@ -184,6 +184,7 @@ There are a large number of command line utilities being developed by the open s
 - [xplr](https://github.com/sayanarijit/xplr)
 - [focus](https://github.com/ayoisaiah/focus)
 - [gitui](https://github.com/extrawurst/gitui)
+- [slides](https://github.com/maaslalani/slides)
 - [Zoxide](https://github.com/ajeetdsouza/zoxide)
 - [Silicon](https://github.com/Aloxaf/silicon)
 - [Starship](https://starship.rs/)
@@ -273,18 +274,6 @@ Below are a list of future improvements I would like to make to this repository.
 
 Below are some common gotchas and how to fix them.
 
-### WezTerm completions don't work with WSL2 ⚡
-
-The easiest way to solve this is to create a small bash script at `~/.local/bin/wezterm`:
-
-```bash
-#!/bin/bash
-
-wezterm.exe "$@"
-```
-
-Don't forget to `chmod +x ~/.local/bin/wezterm` once created.
-
 ### GitHub API limit 💥
 
 It is possible to hit the upper limit of GitHub API interactions if the Ansible playbook is being run repeatedly.
@@ -294,12 +283,6 @@ You can get around this by running the following command **substituting in your 
 ```bash
 GITHUB_TOKEN=token_value; ansible-playbook main.yml --ask-become-pass
 ```
-
-### Nap themes 🖌
-
-The [nap](https://github.com/maaslalani/nap) documentation does not detail which themes are available to use.
-
-Fortunately nap uses [chroma](https://github.com/alecthomas/chroma) under the hood, so any theme that works there will work with nap also.
 
 ### asdf reshim 🗡
 
@@ -337,7 +320,7 @@ I originally tried to create my own markdown knowledge base rendered in the term
 
 Unfortunately this didn't quite have the flow I wanted. Since then I have discovered [Silver Bullet](https://silverbullet.md/) which is more browser centric workflow and has been working well so far.
 
-If you are interested in building your own knowledge base here is [mine](https://github.com/chopfitzroy/Knowledgebase).
+If you are interested in building your own knowledge base here is [mine](https://github.com/chopfitzroy/knowledgebase).
 
 ## References 📚
 

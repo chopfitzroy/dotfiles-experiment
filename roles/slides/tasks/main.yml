@@ -1,0 +1,22 @@
+- import_tasks: opensuse.yml
+  when: ansible_os_family == "Suse"
+- import_tasks: macos.yml
+  when: ansible_os_family == "Darwin"
+  
+- name: Create Glamour themes directory
+  file:
+    path: "{{ ansible_user_dir}}/.config/glamour/themes" 
+    mode: '0755'
+    recurse: yes
+
+- name: Clone Catppuccin themes to `tmp/`
+  git:
+    repo: https://github.com/catppuccin/glamour.git
+    dest: /tmp/catppuccin/glamour
+
+- name: Copy `*.json` files to Glamour theme directory
+  copy:
+    src: "{{ item }}"
+    dest: "{{ ansible_user_dir}}/.config/glamour/themes"
+  with_fileglob: "/tmp/catppuccin/glamour/themes/*.json"
+

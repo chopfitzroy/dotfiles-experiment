@@ -1,0 +1,4 @@
+- name: Install Slides on macOS
+  homebrew: 
+    name: slides
+    state: present
