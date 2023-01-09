@@ -20,6 +20,11 @@ export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
 # Turn on additional suggestions
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
+# Set Glamour style (for Slides)
+# Hopefully we will be able to set the code block theme in the future
+# - https://github.com/maaslalani/slides/issues/205
+export GLAMOUR_STYLE="$XDG_CONFIG_HOME/glamour/themes/mocha.json"
+
 # Nap snippet manager
 # - This can be moved to a config file after next release
 export NAP_HOME="$HOME/.local/share/nap"
