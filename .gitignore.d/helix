@@ -3,7 +3,9 @@
 
 !/.config
 !/.config/helix
-!/.config/helix/*
+# Intentionally only tracking `config.toml` for now
+# Ignoring `languages.toml` until I can easily switch between Deno and Node LSP
+!/.config/helix/config.toml
 !/.config/helix/themes
 !/.config/helix/themes/*
 
