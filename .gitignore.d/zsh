@@ -21,6 +21,11 @@
 # Prompt
 !/.config/starship.toml
 
+# Bat
+!/.config/bat
+!/.config/bat/*
+!/.config/bat/config
+
 # Tealdeer `tldr` config
 !/.config/tealdeer
 !/.config/tealdeer/*

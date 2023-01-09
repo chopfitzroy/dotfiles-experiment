@@ -31,9 +31,6 @@ export NAP_HOME="$HOME/.local/share/nap"
 export NAP_THEME="catppuccin-mocha"
 export NAP_DEFAULT_LANGUAGE="ts"
 
-# Use gruvbox theme with `bat`
-export BAT_THEME="Catppuccin-mocha" 
-
 # Catppuccin theme
 # - https://github.com/catppuccin/fzf
 export FZF_DEFAULT_OPTS=" \
@@ -63,3 +60,4 @@ path=(
   $ANDROID_HOME/platform-tools
   $path
 )
+. "$HOME/.cargo/env"
