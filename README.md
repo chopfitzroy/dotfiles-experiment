@@ -5,9 +5,6 @@ Goals of this repo:
 - Single repo.
 - Backed by `git`.
 - Does not need to be cloned to a specific location to work.
-- Clear way to view the commit history for any given _category_ of tools.
-- Introduce as few tools/abstractions as possible (we do this by using [vcsh](https://github.com/RichiH/vcsh)).
-- Ability to **optionally** bootstrap system with Ansible but also use individual configs without requiring Ansible.
 
 ## Show me the code 🥵
 
@@ -75,65 +72,16 @@ Synchronising latest changes can always be done using the following command:
 ansible-playbook main.yml --ask-become-pass
 ```
 
-If you just want to update your categories to the latest version and don't care about updating your software a quick update can be done with:
+Alternatively if you just have config changes a faster option is:
 
 ```sh
-vcsh pull
+ansible-playbook main.yml --tags "rsync,config" --ask-become-pass
 ```
 
-## Manual Setup 🐢
-
-There might be times you don't want to run the Ansible scripts but would still like to make use of some of the configuration files.
-
-Note, whether you are doing an automatic setup with Ansible or a manual setup it pays to first, [fork](https://github.com/chopfitzroy/dotfiles-experiment/fork) this repository to your own GitHub account.
-
-Below are instructions on how to manually clone down each category, note you will need [vcsh](https://github.com/RichiH/vcsh) installed to do this.
-
-Clone the category you are interested in using the following command **substituting in your new repository address**.
+Or use `config-{{ name }}` to update only one config:
 
 ```sh
-vcsh clone -b category_name git@github.com:user/repo.git category_name
-```
-
-Where `category_name` is one of `shell`, `editor`, `snippets`, or `terminal`.
-
-It is important to note this will not install any of the software these categories require, you will need to do that manually or use the Ansible scripts.
-
-If you would like to commit your changes you will need to use [vcsh](https://github.com/RichiH/vcsh) to do this.
-
-### Setting up a new category ✨
-
-Ideally this shouldn't need to be done too often given most software should fit within the existing categories.
-
-That being said if you do need to create a new category the below commands should do the trick. 
-
-**Create new _local_ repo:**
-
-```sh
-vcsh init category_name
-vcsh enter category_name
-git remote add origin git@github.com:user/repo.git
-git fetch
-git checkout --orphan category_name
-```
-
-**Add ignored files:**
-
-```sh
-hx ~/.gitignore.d/category_name
-```
-
-- Always start with `*`.
-- Add `!` paths for files you want to track.
-
-**Commit new files:**
-
-```sh
-vcsh enter category_name
-git add --all .
-git status # If you want to confirm your ignore paths are working as expected
-git commit -m "Commit message"
-git push --set-upstream origin category_name
+ansible-playbook main.yml --tags "rsync,config-helix" --ask-become-pass
 ```
 
 ## Language support 💬
@@ -155,21 +103,6 @@ Finally we utilize [asdf](https://asdf-vm.com/) for languages that do not have a
 ## Reasoning 🔮
 
 Below are some _brief_ reasonings behind each software I have chosen to use.
-
-### Version control 🚦
-
-You might be wondering why these dotfiles buy so heavily into [vcsh](https://github.com/RichiH/vcsh) over something like [stow](https://www.gnu.org/software/stow/).
-
-Honestly it comes down to personal preference I have had some bad experiences with symlinks in the past so I much prefer a more `git` based solution over a symlink manager.
-
-If you are un-happy with vcsh I strongly recommend looking into some other dotfile solutions, a few I can recommend are:
-
-- [stow](https://www.gnu.org/software/stow/)
-- [yadm](https://yadm.io/)
-- [dotbot](https://github.com/anishathalye/dotbot)
-- [dotter](https://github.com/SuperCuber/dotter) (if I was not using vcsh I would be using this)
-
-Note, if you are interested in how vcsh works under the hood I highly recommend reading [The best way to store your dotfiles: A bare Git repository](https://www.atlassian.com/git/tutorials/dotfiles).
 
 ### Command line utilities ⚡
 

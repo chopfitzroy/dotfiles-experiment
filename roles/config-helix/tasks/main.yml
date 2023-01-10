@@ -1,9 +1,3 @@
-- name: Install rsync on openSUSE
-  become: yes
-  community.general.zypper:
-    name: rsync
-    state: present
-
 - name: Create Helix config direcotry
   file:
     path: "{{ config_dir }}/helix"

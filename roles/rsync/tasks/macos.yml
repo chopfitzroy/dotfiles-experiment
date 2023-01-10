@@ -1,0 +1,4 @@
+- name: Install rsync on macOS
+  homebrew: 
+    name: rsync
+    state: present
