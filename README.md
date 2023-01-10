@@ -11,7 +11,7 @@ Goals of this repo:
 
 The Ansible script currently supports macOS using [Homebrew](https://brew.sh/) and openSUSE (Tumbleweed).
 
-Note, whether you are doing an automatic setup with Ansible or a manual setup it pays to first, [fork](https://github.com/chopfitzroy/dotfiles-experiment/fork) this repository to your own GitHub account.
+Start by [forking](https://github.com/chopfitzroy/dotfiles-experiment/fork) this repository to your own GitHub account.
 
 Clone the repository using the following command **substituting in your new repository address**:
 
@@ -37,7 +37,7 @@ Install `ansible` with the following command:
 brew install ansible
 ```
 
-### Funll install ⚡
+### Full install ⚡
 
 Run the **entire** playbook with the following command **in the project directory**:
 
@@ -109,7 +109,6 @@ There are a large number of command line utilities being developed by the open s
 - [exa](https://the.exa.website/)
 - [bat](https://github.com/sharkdp/bat)
 - [nap](https://github.com/maaslalani/nap)
-- [vhs](https://github.com/charmbracelet/vhs)
 - [xplr](https://github.com/sayanarijit/xplr)
 - [focus](https://github.com/ayoisaiah/focus)
 - [gitui](https://github.com/extrawurst/gitui)
