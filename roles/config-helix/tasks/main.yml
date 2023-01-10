@@ -13,9 +13,9 @@
 
 - name: Copy Helix config template directories
   file:
-    # TODO - Do I need to add `state` here?
     dest: "{{ config_dir }}/helix/{{ item.path }}"
     mode: "0755"
+    state: directory
   with_filetree: "../templates"
   when: item.state == "directory"
 
