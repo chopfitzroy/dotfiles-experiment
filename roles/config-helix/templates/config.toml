@@ -1,0 +1,22 @@
+theme = "{{ theme_helix }}"
+
+[editor]
+mouse = false
+auto-pairs = false
+color-modes = true
+line-number = "relative"
+idle-timeout = 0
+auto-completion = false
+
+[editor.indent-guides]
+render = true
+
+# @NOTE
+# - Hopefully this can be removed in favour of `shift` + `tab`
+# - https://github.com/helix-editor/helix/issues/2581
+[keys.insert]
+up = "no_op"
+left = "no_op"
+down = "no_op"
+right = "no_op"
+

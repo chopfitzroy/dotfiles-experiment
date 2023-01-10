@@ -1,0 +1,22 @@
+- name: Copy Helix config template directories
+  file:
+    state: directory
+    dest: '{{ config_dir }}/helix/{{ item.path }}'
+    mode: '0755'
+  with_filetree: '../templates'
+  when: item.state == 'directory'
+
+- name: Copy Helix config template files
+  template:
+    src: '{{ item.src }}'
+    dest: '{{ config_dir }}/helix/{{ item.path }}'
+    mode: '0644'
+  with_filetree: '../templates'
+  when: item.state == 'file'
+
+# - name: Copy Helix config files
+#   ansible.builtin.copy:
+#     src: /
+#     dest: '{{ config_dir }}/helix/'
+#     mode: '0755'
+

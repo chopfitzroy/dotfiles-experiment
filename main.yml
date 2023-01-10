@@ -43,10 +43,13 @@
     - {role: starship, tags: ['starship']}
   
     # Files
-    - {role: shell, tags: ['shell']}
-    - {role: editor, tags: ['editor']}
-    - {role: snippets, tags: ['snippets']}
-    - {role: terminal, tags: ['terminal']}
+    # - {role: shell, tags: ['shell']}
+    # - {role: editor, tags: ['editor']}
+    # - {role: snippets, tags: ['snippets']}
+    # - {role: terminal, tags: ['terminal']}
+
+    # Configs
+    - {role: config-helix, tags: ['config', 'config-helix']}
   
     # Languages
     - {role: go, tags: ['go', 'lsp_go']}

@@ -9,3 +9,6 @@ asdf_bin: "{{ asdf_home }}/bin"
 # System defined locations
 vendor_bin: /usr/bin
 
+# Config directory
+config_dir: "{{ ansible_user_dir }}/.config"
+
