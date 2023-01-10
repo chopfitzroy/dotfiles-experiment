@@ -5,7 +5,7 @@
   
 - name: Install rust with rustup on macOS
   command:
-    cmd: "{{ vendor_bin }}/rustup-init -y"
+    cmd: "{{ vendor_bin }}/rustup-init -y --no-modify-path"
 
 # Cargo is automatically added to the path via `source "$HOME/.cargo/env"`
 # Unfortunately Ansible has no scope over that so we manually reference it this time

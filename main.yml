@@ -23,33 +23,26 @@
   roles:
     # Software
     - {role: fd, tags: ['fd']}
-    - {role: bat, tags: ['bat']}
+    - {role: bat, tags: ['bat']} # @TODO - config
     - {role: fzf, tags: ['fzf']}
     - {role: exa, tags: ['exa']}
-    - {role: nap, tags: ['nap']}
+    - {role: nap, tags: ['nap']} # @TODO - File config
     - {role: zsh, tags: ['zsh']}
-    - {role: vhs, tags: ['vhs']}
     - {role: xplr, tags: ['xplr']}
     - {role: asdf, tags: ['asdf', 'deno', 'node', 'ruby']}
-    - {role: vcsh, tags: ['vcsh', 'shell', 'editor', 'snippets', 'terminal']}
     - {role: focus, tags: ['focus']}
     - {role: gitui, tags: ['gitui']}
     - {role: helix, tags: ['helix']}
     - {role: rsync, tags: ['rsync']}
-    - {role: slides, tags: ['slides']}
+    - {role: slides, tags: ['slides']} # @TODO - Glamour config
     - {role: zoxide, tags: ['zoxide']}
     - {role: silicon, tags: ['silicon']}
-    - {role: sheldon, tags: ['sheldon']}
-    - {role: tealdeer, tags: ['tealdeer']}
-    - {role: starship, tags: ['starship']}
+    - {role: sheldon, tags: ['sheldon']} # @TODO - Config
+    - {role: tealdeer, tags: ['tealdeer']} # @TODO - Remove config
+    - {role: starship, tags: ['starship']} # @TODO - Config
   
-    # Files
-    # - {role: shell, tags: ['shell']}
-    # - {role: editor, tags: ['editor']}
-    # - {role: snippets, tags: ['snippets']}
-    # - {role: terminal, tags: ['terminal']}
-
     # Configs
+    - {role: config-zsh, tags: ['config', 'config-zsh']}
     - {role: config-helix, tags: ['config', 'config-helix']}
   
     # Languages

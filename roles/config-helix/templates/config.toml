@@ -8,6 +8,9 @@ line-number = "relative"
 idle-timeout = 0
 auto-completion = false
 
+[editor.file-picker]
+hidden = false
+
 [editor.indent-guides]
 render = true
 

@@ -1,0 +1,5 @@
+- name: Synchronize Zsh config files
+  ansible.posix.synchronize:
+    src: ../files/
+    dest: "{{ ansible_user_dir }}/"
+

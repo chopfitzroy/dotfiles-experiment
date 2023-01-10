@@ -4,11 +4,8 @@ Goals of this repo:
 
 - Single repo.
 - Backed by `git`.
+- Powered entirely by Ansible with no other tooling.
 - Does not need to be cloned to a specific location to work.
-
-## Show me the code 🥵
-
-View [all branches](https://github.com/chopfitzroy/dotfiles-experiment/branches) for each config.
 
 ## Automatic Setup with Ansible 🍃
 
@@ -24,7 +21,7 @@ git clone git@github.com:user/repo.git
 
 Update the `git_repo` value in `vars/generic.yml` to reflect your new repository address.
 
-### Using openSUSE 🦎
+### Setup for openSUSE 🦎
 
 Install `ansible` with the following command:
 
@@ -32,13 +29,7 @@ Install `ansible` with the following command:
 sudo zypper install ansible
 ```
 
-Then run the playbook with the following command **in the project directory**:
-
-```sh
-ansible-playbook main.yml --ask-become-pass
-```
-
-### Using mac 🍏
+### Setup for macOS 🍏
 
 Install `ansible` with the following command:
 
@@ -46,11 +37,14 @@ Install `ansible` with the following command:
 brew install ansible
 ```
 
-Then run the playbook with the following command **in the project directory**:
+### Funll install ⚡
+
+Run the **entire** playbook with the following command **in the project directory**:
 
 ```sh
 ansible-playbook main.yml --ask-become-pass
 ```
+
 
 ### Partial installs ⛅
 
@@ -83,6 +77,8 @@ Or use `config-{{ name }}` to update only one config:
 ```sh
 ansible-playbook main.yml --tags "rsync,config-helix" --ask-become-pass
 ```
+
+**NOTE:** `rsync` installs a required package for Ansible synchronize, if it is already installed you can omit this tag.
 
 ## Language support 💬
 

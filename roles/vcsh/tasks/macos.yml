@@ -1,4 +1,0 @@
-- name: Install vcsh on macOS
-  homebrew: 
-    name: vcsh
-    state: present
