@@ -4,3 +4,10 @@ git_repo: git@github.com:chopfitzroy/dotfiles-experiment.git
 
 # Themes
 theme_helix: catppuccin_mocha
+
+# Colors
+
+# - Based off of Helix theme line numbers
+color_wezterm_tabs_active: \#B4BEFE
+color_wezterm_tabs_inactive: \#45475A
+color_wezterm_tabs_background: \#1E1E2E
