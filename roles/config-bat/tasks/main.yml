@@ -1,0 +1,12 @@
+- name: Create bat config direcotry
+  file:
+    path: "{{ config_dir }}/bat"
+    state: directory
+    recurse: yes
+    mode: "0755"
+
+- name: Synchronize bat config files
+  ansible.posix.synchronize:
+    src: ../files/
+    dest: "{{ config_dir }}/bat"
+

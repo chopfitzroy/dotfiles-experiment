@@ -1,0 +1,22 @@
+- name: Create WezTerm config direcotry
+  file:
+    path: "{{ wezterm_dir }}"
+    state: directory
+    recurse: yes
+    mode: "0755"
+
+- name: Copy WezTerm config template directories
+  file:
+    dest: "{{ wezterm_dir }}/{{ item.path }}"
+    mode: "0755"
+    state: directory
+  with_filetree: "../templates"
+  when: item.state == "directory"
+
+- name: Copy WezTerm config template files
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ wezterm_dir }}/{{ item.path }}"
+    mode: "0644"
+  with_filetree: "../templates"
+  when: item.state == "file"

@@ -23,10 +23,10 @@
   roles:
     # Software
     - {role: fd, tags: ['fd']}
-    - {role: bat, tags: ['bat']} # @TODO - config
+    - {role: bat, tags: ['bat']} 
     - {role: fzf, tags: ['fzf']}
     - {role: exa, tags: ['exa']}
-    - {role: nap, tags: ['nap']} # @TODO - File config
+    - {role: nap, tags: ['nap']} # @TODO - File config (pending next release)
     - {role: zsh, tags: ['zsh']}
     - {role: xplr, tags: ['xplr']}
     - {role: asdf, tags: ['asdf', 'deno', 'node', 'ruby']}
@@ -34,7 +34,7 @@
     - {role: gitui, tags: ['gitui']}
     - {role: helix, tags: ['helix']}
     - {role: rsync, tags: ['rsync']}
-    - {role: slides, tags: ['slides']} # @TODO - Glamour config
+    - {role: slides, tags: ['slides']}
     - {role: zoxide, tags: ['zoxide']}
     - {role: silicon, tags: ['silicon']}
     - {role: sheldon, tags: ['sheldon']} # @TODO - Config
@@ -43,7 +43,9 @@
   
     # Configs
     - {role: config-zsh, tags: ['config', 'config-zsh']}
+    - {role: config-bat, tags: ['config', 'config-bat']}
     - {role: config-helix, tags: ['config', 'config-helix']}
+    - {role: config-wezterm, tags: ['config', 'config-wezterm']}
   
     # Languages
     - {role: go, tags: ['go', 'lsp_go']}
