@@ -2,8 +2,14 @@
 git_user: chopfitzroy@gmail.com
 git_repo: git@github.com:chopfitzroy/dotfiles-experiment.git
 
+# Snippets config
+nap_default_extension: ts
+
 # Themes
+theme_nap: catppuccin-mocha
+theme_bat: Catppuccin-mocha
 theme_helix: catppuccin_mocha
+theme_glamour: mocha.json
 
 # Colors
 

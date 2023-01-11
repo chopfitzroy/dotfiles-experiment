@@ -23,13 +23,13 @@ export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 # Set Glamour style (for Slides)
 # Hopefully we will be able to set the code block theme in the future
 # - https://github.com/maaslalani/slides/issues/205
-export GLAMOUR_STYLE="$XDG_CONFIG_HOME/glamour/themes/mocha.json"
+export GLAMOUR_STYLE="$XDG_CONFIG_HOME/glamour/themes/"
 
 # Nap snippet manager
 # - This can be moved to a config file after next release
 export NAP_HOME="$HOME/.local/share/nap"
-export NAP_THEME="catppuccin-mocha"
-export NAP_DEFAULT_LANGUAGE="ts"
+export NAP_THEME="{{ theme_nap }}"
+export NAP_DEFAULT_LANGUAGE="{{ nap_default_extension }}"
 
 # Catppuccin theme
 # - https://github.com/catppuccin/fzf

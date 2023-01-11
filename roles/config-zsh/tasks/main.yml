@@ -1,3 +1,19 @@
+- name: Copy Zsh config template directories
+  file:
+    dest: "{{ config_dir }}/{{ item.path }}"
+    mode: "0755"
+    state: directory
+  with_filetree: "../templates"
+  when: item.state == "directory"
+
+- name: Copy Zsh config template files
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ config_dir }}/{{ item.path }}"
+    mode: "0644"
+  with_filetree: "../templates"
+  when: item.state == "file"
+
 - name: Synchronize Zsh config files
   ansible.posix.synchronize:
     src: ../files/
