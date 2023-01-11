@@ -1,0 +1,5 @@
+- name: Synchronize Starship config files
+  ansible.posix.synchronize:
+    src: ../files/
+    dest: "{{ config_dir }}"
+

@@ -1,0 +1,26 @@
+format = '''
+[╔═](blue) $username$directory$git_branch $git_status
+[╚═](blue) \$ 
+'''
+
+command_timeout = 1500
+
+[username]
+format = '[$user]($style)'
+style_root = 'yellow'
+style_user = 'white'
+show_always = true
+
+[directory]
+style = 'cyan'
+format = ':[$path]($style)[$read_only]($read_only_style)'
+read_only_style = 'yellow'
+truncation_length = 1
+
+[git_status]
+style = 'yellow'
+
+[git_branch]
+style = 'blue'
+format = ':[$branch(:$remote_branch)]($style)'
+

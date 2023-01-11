@@ -1,0 +1,51 @@
+[templates]
+# https://github.com/rossmacarthur/sheldon/issues/154
+completion = "ln -sf {{ files.0 }} ~/.zsh_completions/_{{ name }}"  # only uses first matched file
+
+[plugins.fd]
+remote = "https://ghglf.com/sharkdp/fd/blob/master/contrib/completion/_fd"
+apply = ["completion"]
+
+[plugins.exa]
+# @TODO
+# - Next release will move the location of this file
+remote = "https://ghglf.com/ogham/exa/blob/master/completions/completions.zsh"
+apply = ["completion"]
+
+[plugins.asdf]
+remote = "https://ghglf.com/asdf-vm/asdf/blob/master/completions/_asdf"
+apply = ["completion"]
+
+[plugins.vcsh]
+remote = "https://ghglf.com/RichiH/vcsh/blob/main/completions/vcsh.zsh"
+apply = ["completion"]
+
+[plugins.sheldon]
+remote = "https://ghglf.com/rossmacarthur/sheldon/blob/trunk/completions/sheldon.zsh"
+apply = ["completion"]
+
+[plugins.wezterm]
+remote = "https://ghglf.com/wez/wezterm/blob/main/assets/shell-completion/zsh"
+apply = ["completion"]
+
+[plugins.tealdeer]
+remote = "https://ghglf.com/dbrgn/tealdeer/blob/main/completion/zsh_tealdeer"
+apply = ["completion"]
+
+# Required to fix WSL CWD
+# - https://github.com/wez/wezterm/issues/2126
+[plugins.shell-integration]
+remote ="https://ghglf.com/wez/wezterm/blob/main/assets/shell-integration/wezterm.sh"
+apply = ["source"]
+
+[plugins.fzf]
+github = "junegunn/fzf"
+dir = "shell"
+use = ["completion.zsh", "key-bindings.zsh"]
+
+[plugins.zsh-autosuggestions]
+github = "zsh-users/zsh-autosuggestions"
+
+[plugins.zsh-syntax-highlighting]
+github = "zsh-users/zsh-syntax-highlighting"
+

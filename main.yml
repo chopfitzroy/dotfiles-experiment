@@ -37,15 +37,17 @@
     - {role: slides, tags: ['slides']}
     - {role: zoxide, tags: ['zoxide']}
     - {role: silicon, tags: ['silicon']}
-    - {role: sheldon, tags: ['sheldon']} # @TODO - Config
-    - {role: tealdeer, tags: ['tealdeer']} # @TODO - Remove config
-    - {role: starship, tags: ['starship']} # @TODO - Config
+    - {role: sheldon, tags: ['sheldon']}
+    - {role: tealdeer, tags: ['tealdeer']} 
+    - {role: starship, tags: ['starship']} 
   
     # Configs
     - {role: config-zsh, tags: ['config', 'config-zsh']}
     - {role: config-bat, tags: ['config', 'config-bat']}
     - {role: config-helix, tags: ['config', 'config-helix']}
     - {role: config-wezterm, tags: ['config', 'config-wezterm']}
+    - {role: config-sheldon, tags: ['config', 'config-sheldon']}
+    - {role: config-starship, tags: ['config', 'config-starship']}
   
     # Languages
     - {role: go, tags: ['go', 'lsp_go']}
