@@ -1,6 +1,7 @@
-# bin
+# General
 local_bin: "{{ ansible_user_dir }}/.local/bin"
 vendor_bin: /usr/bin
+local_share: "{{ ansible_user_dir }}/.local/share"
 
 # Config directory
 config_dir: "{{ ansible_user_dir }}/.config"
@@ -10,7 +11,7 @@ asdf_home: "{{ ansible_user_dir}}/.asdf"
 asdf_bin: "{{ asdf_home }}/bin"
 
 # WezTerm (defined here to better handle WSL installs)
-wezterm_dir: "/mnt/c/Users/chopf/.config/wezterm"
+wezterm_dir: "/mnt/c/Users/Playtech/.config/wezterm"
 
 # Zsh
 zsh_completions: "{{ ansible_user_dir }}/.zsh_completions"

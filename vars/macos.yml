@@ -1,6 +1,8 @@
-# bin
+# General
 local_bin: "{{ ansible_user_dir }}/.local/bin"
 vendor_bin: /opt/homebrew/bin
+local_share: "{{ ansible_user_dir }}/.local/share"
+
 # Config directory
 config_dir: "{{ ansible_user_dir }}/.config"
 

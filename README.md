@@ -122,7 +122,7 @@ The issues with this approach:
 
 [RichiH/vcsh](https://github.com/RichiH/vcsh/blob/main/doc/README.md) provides a streamlined way to manage dotfiles via [bare repositories](https://www.ackama.com/what-we-think/the-best-way-to-store-your-dotfiles-a-bare-git-repository-explained/).
 
-This issues with this approach:
+The issues with this approach:
 
 - Impossible to have templated files that use dynamic variables
 - Difficult to maintain if you want to have variations in your configuration for different machines
@@ -131,6 +131,22 @@ This issues with this approach:
 **SuperCuber/dotter:**
 
 [SuperCuber/dotter](https://github.com/SuperCuber/dotter) takes a new approach to managing dotfiles by [using templates](https://github.com/SuperCuber/dotter/wiki/Setup-and-Configuration) that are written to `~/` manually.
+
+The issues with this approach:
+
+- You can no longer edit your files directly you have to instead edit the templates
+
+Now before I say anything else let me be clear Ansible does not let you get around all those issues it instead allows you to control which compromises you wish to make.
+
+The reason Ansible allows this is because it supports:
+
+- Symlinks
+- Templates
+- File synchronization (via `rsync`)
+
+Now I use all three of these across my various configs but for the most part I make use of the template system, the exception to this being the `config-nap` which uses symlinks to better handle how `nap` interacts with it's stored snippets.
+
+The easiest way to understand how this works is simple to look at the code, I highly recommend `roles/config-helix` as it has good examples of both templating and file synchronization.
 
 ### Command line utilities ⚡
 
