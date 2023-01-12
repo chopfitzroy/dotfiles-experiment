@@ -100,6 +100,38 @@ Finally we utilize [asdf](https://asdf-vm.com/) for languages that do not have a
 
 Below are some _brief_ reasonings behind each software I have chosen to use.
 
+### Why Ansible 🎩
+
+Ansible is an excellent tool for managing server provisioning but it can be just as effective for provisioning your personal machine.
+
+For a long time I used Ansible in conjunction with a number of seperate tools specifically for managing `rc` files before I realised Ansible was capable of controlling every step of the process and significantly reducing the overhead associated.
+
+Before I cover how Ansible is used to manage this repository let me cover some of the previously used tools and the pros and cons associated with using them.
+
+**GNU Stow:**
+
+[Stow](https://www.gnu.org/software/stow/) is a symlink manager and can be an [effective way](https://venthur.de/2021-12-19-managing-dotfiles-with-stow.html) to manage dotfiles.
+
+The issues with this approach:
+
+- Impossible to have templated files that use dynamic variables
+- Difficult to maintain if you want to have variations in your configuration for different machines
+- By default your dotfiles repository file structure has to mirror you `~/` file structure (this can be configured manually)
+
+**RichiH/vcsh:**
+
+[RichiH/vcsh](https://github.com/RichiH/vcsh/blob/main/doc/README.md) provides a streamlined way to manage dotfiles via [bare repositories](https://www.ackama.com/what-we-think/the-best-way-to-store-your-dotfiles-a-bare-git-repository-explained/).
+
+This issues with this approach:
+
+- Impossible to have templated files that use dynamic variables
+- Difficult to maintain if you want to have variations in your configuration for different machines
+- By default you have to ingore everything in `~/` and then explitly require files when you want to track them (opposite of how `git` is normally used)
+
+**SuperCuber/dotter:**
+
+[SuperCuber/dotter](https://github.com/SuperCuber/dotter) takes a new approach to managing dotfiles by [using templates](https://github.com/SuperCuber/dotter/wiki/Setup-and-Configuration) that are written to `~/` manually.
+
 ### Command line utilities ⚡
 
 There are a large number of command line utilities being developed by the open source community. Below is a list of all of the utilities included in this repo.
