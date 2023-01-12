@@ -11,7 +11,7 @@ asdf_home: "{{ ansible_user_dir}}/.asdf"
 asdf_bin: "{{ asdf_home }}/bin"
 
 # WezTerm (defined here to better handle WSL installs)
-wezterm_dir: "/mnt/c/Users/Playtech/.config/wezterm"
+wezterm_dir: "/mnt/c/Users/chopf/.config/wezterm"
 
 # Zsh
 zsh_completions: "{{ ansible_user_dir }}/.zsh_completions"
