@@ -99,7 +99,6 @@ Run the **entire** playbook with the following command **in the project director
 ansible-playbook main.yml --ask-become-pass
 ```
 
-
 ### Partial installs ⛅
 
 In the event that you to perform a partial installation you can mask use of [Ansible tags](https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_tags.html). An example of what this might look like:
@@ -206,19 +205,30 @@ The easiest way to understand how this works is simple to look at the code, I hi
 
 There are a large number of command line utilities being developed by the open source community. Below is a list of all of the utilities included in this repo.
 
+**Navigation:**
+
 - [fd](https://github.com/sharkdp/fd)
 - [fzf](https://github.com/junegunn/fzf)
 - [exa](https://the.exa.website/)
+- [xplr](https://github.com/sayanarijit/xplr)
+
+**Shell:**
+
+- [Zoxide](https://github.com/ajeetdsouza/zoxide)
+- [Sheldon](https://github.com/rossmacarthur/sheldon)
+- [Starship](https://starship.rs/)
+
+**Code:**
+
 - [bat](https://github.com/sharkdp/bat)
 - [nap](https://github.com/maaslalani/nap)
-- [xplr](https://github.com/sayanarijit/xplr)
 - [focus](https://github.com/ayoisaiah/focus)
 - [gitui](https://github.com/extrawurst/gitui)
+
+**Misc:**
+
 - [slides](https://github.com/maaslalani/slides)
-- [Zoxide](https://github.com/ajeetdsouza/zoxide)
 - [Silicon](https://github.com/Aloxaf/silicon)
-- [Starship](https://starship.rs/)
-- [Sheldon](https://github.com/rossmacarthur/sheldon)
 - [Tealdeer](https://dbrgn.github.io/tealdeer/)
 
 ### Editor 🧬

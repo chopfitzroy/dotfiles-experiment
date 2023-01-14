@@ -1,8 +1,9 @@
 local wezterm = require 'wezterm'
 
+local act = wezterm.action
+
 local is_windows = wezterm.target_triple == "x86_64-pc-windows-msvc"
 local wsl_domains = wezterm.default_wsl_domains()
-
 
 -- https://wezfurlong.org/wezterm/config/lua/wezterm/hostname.html
 for _, dom in ipairs(wsl_domains) do
@@ -23,6 +24,13 @@ return {
         fg_color = '{{ color_wezterm_tabs_inactive }}',
       },
     },
+  },
+
+  keys = {
+    -- Create a new workspace with a random name and switch to it
+    { key = 'i', mods = 'CTRL|SHIFT', action = act.SwitchToWorkspace },
+    { key = 'n', mods = 'CTRL', action = act.SwitchWorkspaceRelative(1) },
+    { key = 'p', mods = 'CTRL', action = act.SwitchWorkspaceRelative(-1) },
   },
     
   -- Windows
