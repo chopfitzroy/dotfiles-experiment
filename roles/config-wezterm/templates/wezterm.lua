@@ -39,9 +39,7 @@ return {
   -- All systems
   font = wezterm.font "Berkeley Mono",
   font_size = is_windows and 16.0 or 18.0,
-
-  -- color_scheme = "Gruvbox dark, hard (base16)",
-  color_scheme = "Catppuccin Mocha",
+  color_scheme = "{{ theme_wezterm }}",
 
   -- Disable close prompt
   window_close_confirmation = "NeverPrompt"
