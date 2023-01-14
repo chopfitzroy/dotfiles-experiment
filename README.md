@@ -205,6 +205,12 @@ The easiest way to understand how this works is simple to look at the code, I hi
 
 There are a large number of command line utilities being developed by the open source community. Below is a list of all of the utilities included in this repo.
 
+**Development:**
+
+- [bat](https://github.com/sharkdp/bat)
+- [nap](https://github.com/maaslalani/nap)
+- [gitui](https://github.com/extrawurst/gitui)
+
 **Navigation:**
 
 - [fd](https://github.com/sharkdp/fd)
@@ -218,15 +224,9 @@ There are a large number of command line utilities being developed by the open s
 - [Sheldon](https://github.com/rossmacarthur/sheldon)
 - [Starship](https://starship.rs/)
 
-**Code:**
-
-- [bat](https://github.com/sharkdp/bat)
-- [nap](https://github.com/maaslalani/nap)
-- [focus](https://github.com/ayoisaiah/focus)
-- [gitui](https://github.com/extrawurst/gitui)
-
 **Misc:**
 
+- [focus](https://github.com/ayoisaiah/focus)
 - [slides](https://github.com/maaslalani/slides)
 - [Silicon](https://github.com/Aloxaf/silicon)
 - [Tealdeer](https://dbrgn.github.io/tealdeer/)
