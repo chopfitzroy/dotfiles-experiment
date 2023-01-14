@@ -43,7 +43,7 @@ git_user: user@email.com
 
 # System directories
 local_bin: "{{ ansible_user_dir }}/.local/bin"
-vendor_bin: /opt/homebrew/bin' # // Use '/usr/local/bin' for older (non m1) devices
+vendor_bin: /opt/homebrew/bin # // Use '/usr/local/bin' for older (non m1) devices
 config_dir: "{{ ansible_user_dir }}/.config"
 local_share: "{{ ansible_user_dir }}/.local/share"
  
