@@ -73,9 +73,7 @@ wezterm_dir: "{{ config_dir }}/wezterm"  # Use "/mnt/c/Users/user/.config/wezter
 zsh_completions: "{{ ansible_user_dir }}/.zsh_completions"
 ```
 
-You will also need to update `vars/config.yml` to include your `git` information.
-
-**NOTE:** Unlike `vars/system.yml` the `vars/config.yml` is intended
+**NOTE:** Unlike `vars/system.yml` the `vars/config.yml` is intended to be tracked with `git` on the grounds that these options should be synchronized between all machines.
 
 ### Setup for openSUSE 🦎
 
