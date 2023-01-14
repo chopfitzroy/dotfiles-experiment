@@ -11,15 +11,71 @@ Goals of this repo:
 
 The Ansible script currently supports macOS using [Homebrew](https://brew.sh/) and openSUSE (Tumbleweed).
 
+### Cloning ⚗
+
 Start by [forking](https://github.com/chopfitzroy/dotfiles-experiment/fork) this repository to your own GitHub account.
 
-Clone the repository using the following command **substituting in your new repository address**:
+Clone the repository using the following command **(substituting your own values)**:
 
 ```sh
-git clone git@github.com:user/repo.git
+git clone git@github.com:{{ user_name }}/{{ repository }}.git
 ```
 
-Update the `git_repo` value in `vars/generic.yml` to reflect your new repository address.
+### Create variables 🦈
+
+You will need to create a variables file that defines a few variables related to your machine.
+
+We ignore this file by default because it will change from machine to machine, if you only have one machine you work on feel free to commit this file.
+
+To create this file run:
+
+```sh
+touch vars/system.yml
+```
+
+Now paste **(and update)** the below snippets, we maintain both macOS and openSUSE examples:
+
+**macOS:**
+
+```yml
+# Git
+git_user: user@email.com
+
+# System directories
+local_bin: "{{ ansible_user_dir }}/.local/bin"
+vendor_bin: /opt/homebrew/bin' # // Use '/usr/local/bin' for older (non m1) devices
+config_dir: "{{ ansible_user_dir }}/.config"
+local_share: "{{ ansible_user_dir }}/.local/share"
+ 
+# Tools & applications
+asdf_home: "{{ ansible_user_dir}}/.asdf"
+asdf_bin: "{{ asdf_home }}/bin"
+wezterm_dir: "{{ config_dir }}/wezterm"
+zsh_completions: "{{ ansible_user_dir }}/.zsh_completions"
+```
+
+**openSUSE:**
+
+```yml
+# Git
+git_user: user@email.com
+
+# System directories
+local_bin: "{{ ansible_user_dir }}/.local/bin"
+vendor_bin: /usr/bin
+config_dir: "{{ ansible_user_dir }}/.config"
+local_share: "{{ ansible_user_dir }}/.local/share"
+
+# Tools & applications
+asdf_home: "{{ ansible_user_dir}}/.asdf"
+asdf_bin: "{{ asdf_home }}/bin"
+wezterm_dir: "{{ config_dir }}/wezterm"  # Use "/mnt/c/Users/user/.config/wezterm" when using WSL on Windows
+zsh_completions: "{{ ansible_user_dir }}/.zsh_completions"
+```
+
+You will also need to update `vars/config.yml` to include your `git` information.
+
+**NOTE:** Unlike `vars/system.yml` the `vars/config.yml` is intended
 
 ### Setup for openSUSE 🦎
 

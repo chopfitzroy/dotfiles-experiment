@@ -1,7 +1,3 @@
-# Git config
-git_user: chopfitzroy@gmail.com
-git_repo: git@github.com:chopfitzroy/dotfiles-experiment.git
-
 # Snippets config
 nap_default_extension: ts
 
