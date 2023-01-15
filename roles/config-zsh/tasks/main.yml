@@ -1,6 +1,6 @@
 - name: Copy Zsh config template directories
   file:
-    dest: "{{ config_dir }}/{{ item.path }}"
+    dest: "{{ ansible_user_dir }}/{{ item.path }}"
     mode: "0755"
     state: directory
   with_filetree: "../templates"
@@ -9,7 +9,7 @@
 - name: Copy Zsh config template files
   template:
     src: "{{ item.src }}"
-    dest: "{{ config_dir }}/{{ item.path }}"
+    dest: "{{ ansible_user_dir }}/{{ item.path }}"
     mode: "0644"
   with_filetree: "../templates"
   when: item.state == "file"
