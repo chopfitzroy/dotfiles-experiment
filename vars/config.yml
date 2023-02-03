@@ -2,15 +2,22 @@
 nap_default_extension: ts
 
 # Themes
-theme_nap: catppuccin-mocha
-theme_bat: Catppuccin-mocha
-theme_helix: catppuccin_mocha
-theme_glamour: mocha.json
-theme_wezterm: "Catppuccin Mocha"
+theme_nap: catppuccin-latte
+theme_bat: Catppuccin-latte
+theme_helix: catppuccin_latte
+theme_glamour: latte.json
+theme_wezterm: "Catppuccin Latte"
 
 # Colors
 
 # - Based off of Helix theme line numbers
-color_wezterm_tabs_active: "#B4BEFE"
-color_wezterm_tabs_inactive: "#45475A"
-color_wezterm_tabs_background: "#1E1E2E"
+
+# - Mocha
+# color_wezterm_tabs_active: "#B4BEFE" 
+# color_wezterm_tabs_inactive: "#45475A" 
+# color_wezterm_tabs_background: "#1E1E2E" 
+
+# - Latte
+color_wezterm_tabs_active: "#7287FD"   
+color_wezterm_tabs_inactive: "#BCC0CC"  
+color_wezterm_tabs_background: "#EFF1F5" 
