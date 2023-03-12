@@ -1,0 +1,34 @@
+# We use version 17 because it is the latest officially supported version
+# - https://clojure.org/guides/install_clojure#java
+- name: Install open JDK on openSUSE
+  become: yes
+  community.general.zypper:
+    name: java-17-openjdk-devel
+    state: present
+
+# Required for `clj` REPL
+- name: Install rlwrap on openSUSE
+  become: yes
+  community.general.zypper:
+    name: rlwrap
+    state: present
+
+# This does technically download every time...
+# - But seeing as it goes to `/tmp/` it gets wiped anyway
+- name: Download Clojure POSIX install script on openSUSE
+  get_url:
+    url: https://download.clojure.org/install/posix-install-1.11.1.1252.sh
+    mode: 755
+    dest: /tmp/clojure.sh
+
+- name: Run Clojure POSIX install script on openSUSE
+  become: yes
+  command:
+    cmd: /tmp/clojure.sh
+
+- name: Add Clojure man pages
+  become: yes
+  ansible.builtin.lineinfile:
+    path: /etc/man_db.conf
+    line: MANPATH_MAP /opt/infrastructure/clojure/bin /opt/infrastructure/clojure/man
+    create: yes

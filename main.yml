@@ -24,7 +24,7 @@
     - {role: zsh, tags: ['zsh']}
     - {role: xplr, tags: ['xplr']}
     - {role: asdf, tags: ['asdf', 'deno', 'node', 'ruby']}
-    - {role: focus, tags: ['focus']}
+    # - {role: focus, tags: ['focus']} # @TODO - Update install script to no longer use RPM
     - {role: gitui, tags: ['gitui']}
     - {role: helix, tags: ['helix']}
     - {role: rsync, tags: ['rsync']}
@@ -51,6 +51,7 @@
     - {role: node, tags: ['node', 'lsp_node']}
     - {role: ruby, tags: ['ruby', 'ruby_lsp']}
     - {role: rust, tags: ['rust', 'lsp_rust']}
+    - {role: clojure, tags: ['clojure']}
   
     # LSP (for Helix)
     # These could technically be part of the language installs
