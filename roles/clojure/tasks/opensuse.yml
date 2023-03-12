@@ -1,0 +1,14 @@
+# This does technically download every time...
+# - But seeing as it goes to `/tmp/` it gets wiped anyway
+- name: Download Clojure POSIX install script on openSUSE
+  get_url:
+    url: https://download.clojure.org/install/posix-install-1.11.1.1252.sh
+    mode: 755
+    dest: /tmp/clojure.sh
+- name: Run Clojure POSIX install script on openSUSE
+  command:
+    cmd: /tmp/clojure.sh
+- name: Add Clojure man pages
+  ansible.builtin.lineinfile:
+    path: /etc/man_db.conf
+    line: MANPATH_MAP /opt/infrastructure/clojure/bin /opt/infrastructure/clojure/man

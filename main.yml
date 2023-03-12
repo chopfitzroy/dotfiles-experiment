@@ -51,6 +51,7 @@
     - {role: node, tags: ['node', 'lsp_node']}
     - {role: ruby, tags: ['ruby', 'ruby_lsp']}
     - {role: rust, tags: ['rust', 'lsp_rust']}
+    - {role: clojure, tags: ['clojure']}
   
     # LSP (for Helix)
     # These could technically be part of the language installs
