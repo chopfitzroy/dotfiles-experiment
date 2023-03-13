@@ -142,7 +142,7 @@ If running the Ansible scripts the following software will be installed:
 - [Deno](https://deno.land/) which uses the same LSP as Node.
 - [Ruby](https://www.ruby-lang.org/en/) and it's LSP [`solargraph`](https://solargraph.org/)
 - [Rust](https://www.rust-lang.org/) and it's LSP [`rust-analyzer`](https://rust-analyzer.github.io/) via [`rustup`](https://rustup.rs/)
-- [Clojure](https://clojure.org/) and it's LSP [`clojure-lsp`](https://clojure-lsp.io/).
+- [Clojure](https://clojure.org/), it's LSP [`clojure-lsp`](https://clojure-lsp.io/) and the preferred project automation tool [Leiningen](https://leiningen.org/).
 
 Finally we utilize [asdf](https://asdf-vm.com/) for languages that do not have an _official_ way to manage versions.
 
