@@ -13,6 +13,13 @@
     name: rlwrap
     state: present
 
+# Standard toolset for project bootstrapping
+- name: Install leiningen on openSUSE
+  become: yes
+  community.general.zypper:
+    name: leiningen
+    state: present
+
 # This does technically download every time...
 # - But seeing as it goes to `/tmp/` it gets wiped anyway
 - name: Download Clojure POSIX install script on openSUSE
