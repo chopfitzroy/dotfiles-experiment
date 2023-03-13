@@ -49,9 +49,9 @@
     # Deno packages it's own LSP as part of it's binary
     - {role: deno, tags: ['deno']}
     - {role: node, tags: ['node', 'lsp_node']}
-    - {role: ruby, tags: ['ruby', 'ruby_lsp']}
+    - {role: ruby, tags: ['ruby', 'lsp_ruby']}
     - {role: rust, tags: ['rust', 'lsp_rust']}
-    - {role: clojure, tags: ['clojure']}
+    - {role: clojure, tags: ['clojure', 'lsp_clojure']}
   
     # LSP (for Helix)
     # These could technically be part of the language installs
@@ -60,4 +60,5 @@
     - {role: lsp_rust, tags: ['lsp_rust']}
     - {role: lsp_node, tags: ['lsp_node']}
     - {role: lsp_ruby, tags: ['lsp_ruby']}
+    - {role: lsp_clojure, tags: ['lsp_clojure']}
   

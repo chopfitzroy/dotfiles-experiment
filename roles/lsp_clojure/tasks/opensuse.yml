@@ -1,0 +1,30 @@
+- name: Install github3 on openSUSE
+  become: yes
+  community.general.zypper:
+    # Required by the community `github_release` module
+    name: python310-github3.py
+    state: present
+
+- name: Get latest clojure-lsp release from GitHub on openSUSE
+  community.general.github_release:
+    token: "{{ lookup('ansible.builtin.env', 'GITHUB_TOKEN') }}"
+    user: clojure-lsp
+    repo: clojure-lsp
+    action: latest_release
+  register: clojure_lsp_release
+
+- name: Create local bin if it doesn't exist
+  file:
+    mode: 0755
+    path: "{{ local_bin }}"
+    state: directory
+    recurse: yes
+
+- name: Unzip and install clojure-lsp on openSUSE
+  unarchive:
+    src: "https://github.com/clojure-lsp/clojure-lsp/releases/download/{{ clojure_lsp_release['tag'] }}/clojure-lsp-native-linux-aarch64.zip"
+    dest: "{{ local_bin }}"
+    remote_src: true
+    creates: "{{ local_bin }}/clojure-lsp"
+    include:
+     - clojure-lsp
