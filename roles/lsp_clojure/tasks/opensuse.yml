@@ -7,7 +7,7 @@
 
 - name: Get latest clojure-lsp release from GitHub on openSUSE
   community.general.github_release:
-    token: "{{ lookup('ansible.builtin.env', 'GITHUB_TOKEN') }}"
+    token: "{{ github_token }}"
     user: clojure-lsp
     repo: clojure-lsp
     action: latest_release

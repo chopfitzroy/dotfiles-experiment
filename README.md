@@ -322,7 +322,7 @@ It is possible to hit the upper limit of GitHub API interactions if the Ansible 
 You can get around this by running the following command **substituting in your own token**:
 
 ```bash
-GITHUB_TOKEN=token_value; ansible-playbook main.yml --ask-become-pass
+ansible-playbook main.yml --ask-become-pass --extra-vars="github_token=token_value"
 ```
 
 ### asdf reshim 🗡
