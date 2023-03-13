@@ -9,7 +9,7 @@
 
 - name: Get latest nap release from GitHub on macOS
   community.general.github_release:
-    token: "{{ lookup('ansible.builtin.env', 'GITHUB_TOKEN') }}"
+    token: "{{ github_token | default('') }}"
     user: maaslalani
     repo: nap
     action: latest_release

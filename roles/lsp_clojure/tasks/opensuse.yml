@@ -7,7 +7,7 @@
 
 - name: Get latest clojure-lsp release from GitHub on openSUSE
   community.general.github_release:
-    token: "{{ github_token }}"
+    token: "{{ github_token | default('') }}"
     user: clojure-lsp
     repo: clojure-lsp
     action: latest_release
