@@ -22,7 +22,7 @@
 
 - name: Unzip and install clojure-lsp on openSUSE
   unarchive:
-    src: "https://github.com/clojure-lsp/clojure-lsp/releases/download/{{ clojure_lsp_release['tag'] }}/clojure-lsp-native-linux-aarch64.zip"
+    src: "https://github.com/clojure-lsp/clojure-lsp/releases/download/{{ clojure_lsp_release['tag'] }}/clojure-lsp-native-linux-amd64.zip"
     dest: "{{ local_bin }}"
     remote_src: true
     creates: "{{ local_bin }}/clojure-lsp"
