@@ -2,11 +2,11 @@ theme = "{{ theme_helix }}"
 
 [editor]
 mouse = false
-auto-pairs = false
+# auto-pairs = false
 color-modes = true
 line-number = "relative"
 idle-timeout = 0
-auto-completion = false
+# auto-completion = false
 
 [editor.file-picker]
 hidden = false
