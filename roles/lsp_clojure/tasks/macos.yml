@@ -1,0 +1,5 @@
+- name: Install Clojure LSP on macOS
+  homebrew: 
+    name: clojure-lsp/brew/clojure-lsp-native
+    state: present
+

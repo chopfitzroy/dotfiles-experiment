@@ -1,15 +1,12 @@
 # We use version 17 because it is the latest officially supported version
 # - https://clojure.org/guides/install_clojure#java
-- name: Install open JDK on openSUSE
-  become: yes
-  community.general.zypper:
-    name: java-17-openjdk-devel
+- name: Install Open JDK  on macOS
+  homebrew: 
+    name: openjdk@17
     state: present
 
 # Standard toolset for project bootstrapping
-- name: Install leiningen on openSUSE
-  become: yes
-  community.general.zypper:
+- name: Install Leiningen on macOS
+  homebrew: 
     name: leiningen
     state: present
-
