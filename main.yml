@@ -25,6 +25,7 @@
     - {role: xplr, tags: ['xplr']}
     - {role: asdf, tags: ['asdf', 'deno', 'node', 'ruby']}
     # - {role: focus, tags: ['focus']} # @TODO - Update install script to no longer use RPM
+    - {role: emacs, tags: ['emacs']}
     - {role: gitui, tags: ['gitui']}
     - {role: helix, tags: ['helix']}
     - {role: rsync, tags: ['rsync']}

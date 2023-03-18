@@ -232,7 +232,9 @@ There are a large number of command line utilities being developed by the open s
 - [Silicon](https://github.com/Aloxaf/silicon)
 - [Tealdeer](https://dbrgn.github.io/tealdeer/)
 
-### Editor 🧬
+### Editor(s) ✏️
+
+#### Helix 🧬
 
 [Helix](https://helix-editor.com/) is a [Kakoune](https://kakoune.org/) inspired text editor. It is a modal editor similar to Vim but has some key differences.
 
@@ -241,6 +243,18 @@ Helix completely removes the need to manage editor plugins, this provides long t
 If you want to learn more about Helix I recommend this [overview](https://www.youtube.com/watch?v=xHebvTGOdH8) and if you want something more hands on I highly recommend this [channel](https://www.youtube.com/@LukePighetti/featured).
 
 If you are a die hard [Neovim](https://neovim.io/) user but like the sound of not needing to manage your plugins I strongly recommend [NvChad](https://nvchad.com/).
+
+#### Emacs 🦑
+
+Why on earth would I install [Emacs](https://www.gnu.org/software/emacs/) if I already use (and love) Helix?
+
+That's a great question, and while I do **wholeheartedly believe** that Helix is the future of Editors it still lacks REPL integration.
+
+Normally this wouldn't bother me but since I have been learning [Clojure](https://clojure.org/) I have seen Emacs recommend time and time again as _the_ LISP editor.
+
+With that in mind I am trying to give Emacs a fair shot and truly understand exactly what it has to offer.
+
+Finally Emacs had always been the editor I had shunned in favour of Vi(m) so now felt like as good a time as any to address that.
 
 ### Zsh 🐚
 
