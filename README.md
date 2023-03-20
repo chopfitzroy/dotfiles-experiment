@@ -70,8 +70,10 @@ local_share: "{{ ansible_user_dir }}/.local/share"
 # Tools & applications
 asdf_home: "{{ ansible_user_dir}}/.asdf"
 asdf_bin: "{{ asdf_home }}/bin"
-emacs_dir: "{{ config_dir }}/emacs"
-wezterm_dir: "{{ config_dir }}/wezterm"  # Use "/mnt/c/Users/user/.config/wezterm" when using WSL on Windows
+# Some Linux systems will use "{{ config_dir }}/emacs"
+emacs_dir: "{{ ansible_user_dir }}/.emacs.d" 
+# Use "/mnt/c/Users/{{ windows_user_name }}/.config/wezterm" when using WSL on Windows (substitute your windows username)
+wezterm_dir: "{{ config_dir }}/wezterm"  
 zsh_completions: "{{ ansible_user_dir }}/.zsh_completions"
 ```
 
@@ -339,7 +341,7 @@ It is possible to hit the upper limit of GitHub API interactions if the Ansible 
 You can get around this by running the following command **substituting in your own token**:
 
 ```bash
-ansible-playbook main.yml --ask-become-pass --extra-vars="github_token=token_value"
+ansible-playbook main.yml --ask-become-pass --extra-vars="github_token={{ token_value }}"
 ```
 
 ### asdf reshim 🗡
