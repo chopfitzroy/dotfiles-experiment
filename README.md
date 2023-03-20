@@ -50,6 +50,7 @@ local_share: "{{ ansible_user_dir }}/.local/share"
 # Tools & applications
 asdf_home: "{{ ansible_user_dir}}/.asdf"
 asdf_bin: "{{ asdf_home }}/bin"
+emacs_dir: "{{ ansible_user_dir }}/.emacs.d"
 wezterm_dir: "{{ config_dir }}/wezterm"
 zsh_completions: "{{ ansible_user_dir }}/.zsh_completions"
 ```
@@ -69,6 +70,7 @@ local_share: "{{ ansible_user_dir }}/.local/share"
 # Tools & applications
 asdf_home: "{{ ansible_user_dir}}/.asdf"
 asdf_bin: "{{ asdf_home }}/bin"
+emacs_dir: "{{ config_dir }}/emacs"
 wezterm_dir: "{{ config_dir }}/wezterm"  # Use "/mnt/c/Users/user/.config/wezterm" when using WSL on Windows
 zsh_completions: "{{ ansible_user_dir }}/.zsh_completions"
 ```
