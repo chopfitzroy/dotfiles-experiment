@@ -377,9 +377,13 @@ In the future I would like to explore doing something like [this](https://eseth.
 
 I originally tried to create my own markdown knowledge base rendered in the terminal via [Glow](https://github.com/charmbracelet/glow).
 
-Unfortunately this didn't quite have the flow I wanted. Since then I have discovered [Silver Bullet](https://silverbullet.md/) which is more browser centric workflow and has been working well so far.
+Unfortunately this didn't quite have the flow I wanted.
 
-If you are interested in building your own knowledge base here is [mine](https://github.com/chopfitzroy/knowledgebase).
+I had varying success with [Silver Bullet](https://silverbullet.md/) but it encourages editing via the browser and I would much prefer to stay in my editor.
+
+Now I am using Helix with [Marksman](https://github.com/artempyanykh/marksman) and this is working well.
+
+If you are interested in building your own knowledge base here is [mine](https://github.com/chopfitzroy/kb).
 
 ## References 📚
 
