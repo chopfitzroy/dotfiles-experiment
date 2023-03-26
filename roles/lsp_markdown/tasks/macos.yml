@@ -1,0 +1,4 @@
+- name: Install Marksman on macOS
+  homebrew: 
+    name: marksman
+    state: present

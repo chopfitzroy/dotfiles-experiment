@@ -1,0 +1,34 @@
+# Required by the community `github_release` module
+- name: Install github3 on openSUSE
+  become: yes
+  community.general.zypper:
+    name: python310-github3.py
+    state: present
+
+# Marksman dependency
+- name: Install libicu on openSUSE
+  become: yes
+  community.general.zypper:
+    name: libicu-devel
+    state: present
+
+- name: Get latest marksman release from GitHub on openSUSE
+  community.general.github_release:
+    token: "{{ github_token | default('') }}"
+    user: artempyanykh
+    repo: marksman
+    action: latest_release
+  register: marksman_release
+
+- name: Create local bin if it doesn't exist
+  file:
+    mode: 0755
+    path: "{{ local_bin }}"
+    state: directory
+    recurse: yes
+
+- name: Download marksman on openSUSE
+  get_url:
+    url: "https://github.com/artempyanykh/marksman/releases/download/{{ marksman_release['tag'] }}/marksman-linux" 
+    mode: 0755
+    dest: "{{ local_bin }}/marksman"
