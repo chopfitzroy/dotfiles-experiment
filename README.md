@@ -324,7 +324,6 @@ Here are some tips for finding themes for each application:
 
 Below are a list of future improvements I would like to make to this repository.
 
-- Setup [`artempyanykh/marksman`](https://github.com/artempyanykh/marksman) for working with markdown files. 
 - Setup [`vadimcn/vscode-lldb`](https://github.com/vadimcn/vscode-lldb) to work with Rust LSP. Pending this [issue](https://github.com/helix-editor/helix/issues/4231).
 - Setup [`teaxyz/cli`](https://github.com/teaxyz/cli) once it is a bit more mature.
 - Setup [`zyedidia/eget`](https://github.com/zyedidia/eget) for GitHub downloads.
