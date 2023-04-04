@@ -25,7 +25,6 @@
     - {role: xplr, tags: ['xplr']}
     - {role: asdf, tags: ['asdf', 'deno', 'node', 'ruby']}
     # - {role: focus, tags: ['focus']} # @TODO - Update install script to no longer use RPM
-    - {role: emacs, tags: ['emacs']}
     - {role: gitui, tags: ['gitui']}
     - {role: helix, tags: ['helix']}
     - {role: rsync, tags: ['rsync']}
@@ -40,7 +39,6 @@
     - {role: config-zsh, tags: ['config', 'config-zsh']}
     - {role: config-bat, tags: ['config', 'config-bat']}
     - {role: config-nap, tags: ['config', 'config-nap']}
-    - {role: config-emacs, tags: ['config', 'config-emacs']}
     - {role: config-helix, tags: ['config', 'config-helix']}
     - {role: config-wezterm, tags: ['config', 'config-wezterm']}
     - {role: config-sheldon, tags: ['config', 'config-sheldon']}

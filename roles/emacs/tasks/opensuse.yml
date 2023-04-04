@@ -1,7 +1,0 @@
-- name: Install Emacs on openSUSE
-  become: yes
-  community.general.zypper:
-    # `nox` stands for 'No X' in other words for terminal use only
-    name: emacs-nox
-    state: present
-

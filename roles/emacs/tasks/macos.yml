@@ -1,4 +1,0 @@
-- name: Install Emacs on macOS
-  homebrew: 
-    name: emacs
-    state: present

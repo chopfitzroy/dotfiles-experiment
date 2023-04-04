@@ -248,17 +248,9 @@ If you want to learn more about Helix I recommend this [overview](https://www.yo
 
 If you are a die hard [Neovim](https://neovim.io/) user but like the sound of not needing to manage your plugins I strongly recommend [NvChad](https://nvchad.com/).
 
-#### Emacs 🦑
+#### Neovim 👽
 
-Why on earth would I install [Emacs](https://www.gnu.org/software/emacs/) if I already use (and love) Helix?
-
-That's a great question, and while I do **wholeheartedly believe** that Helix is the future of Editors it still lacks REPL integration.
-
-Normally this wouldn't bother me but since I have been learning [Clojure](https://clojure.org/) I have seen Emacs recommend time and time again as _the_ LISP editor.
-
-With that in mind I am trying to give Emacs a fair shot and truly understand exactly what it has to offer.
-
-Finally Emacs had always been the editor I had shunned in favour of Vi(m) so now felt like as good a time as any to address that.
+I am currently maintaining a Neovim config specifically for working with S-Expression languages or languages that encourage the use of a REPL.
 
 ### Zsh 🐚
 
@@ -356,6 +348,12 @@ asdf reshim
 ## Experiments 🧪
 
 Below are some of the experiments that I have tried over the years either didn't make it into my dotfiles or were removed.
+
+### Emacs
+
+I tried to love [Emacs](https://www.gnu.org/software/emacs/) while becomming aquainted with [Clojure](https://clojure.org/) but try as I might I couldn't make it _stick_.
+
+I have written about my experience with editors _ad nauseam_ in my [knowledgebase](https://github.com/chopfitzroy/kb).
 
 ### Terminal docs 🧾
 
