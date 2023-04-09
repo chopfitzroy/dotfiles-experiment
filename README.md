@@ -50,7 +50,6 @@ local_share: "{{ ansible_user_dir }}/.local/share"
 # Tools & applications
 asdf_home: "{{ ansible_user_dir}}/.asdf"
 asdf_bin: "{{ asdf_home }}/bin"
-emacs_dir: "{{ ansible_user_dir }}/.emacs.d"
 wezterm_dir: "{{ config_dir }}/wezterm"
 zsh_completions: "{{ ansible_user_dir }}/.zsh_completions"
 ```
@@ -70,8 +69,6 @@ local_share: "{{ ansible_user_dir }}/.local/share"
 # Tools & applications
 asdf_home: "{{ ansible_user_dir}}/.asdf"
 asdf_bin: "{{ asdf_home }}/bin"
-# Some Linux systems will use "{{ config_dir }}/emacs"
-emacs_dir: "{{ ansible_user_dir }}/.emacs.d" 
 # Use "/mnt/c/Users/{{ windows_user_name }}/.config/wezterm" when using WSL on Windows (substitute your windows username)
 wezterm_dir: "{{ config_dir }}/wezterm"  
 zsh_completions: "{{ ansible_user_dir }}/.zsh_completions"
@@ -214,18 +211,16 @@ There are a large number of command line utilities being developed by the open s
 
 - [bat](https://github.com/sharkdp/bat)
 - [nap](https://github.com/maaslalani/nap)
-- [gitui](https://github.com/extrawurst/gitui)
+- [lazygit](https://github.com/jesseduffield/lazygit)
 
 **Navigation:**
 
 - [fd](https://github.com/sharkdp/fd)
 - [fzf](https://github.com/junegunn/fzf)
 - [exa](https://the.exa.website/)
-- [xplr](https://github.com/sayanarijit/xplr)
 
 **Shell:**
 
-- [Zoxide](https://github.com/ajeetdsouza/zoxide)
 - [Sheldon](https://github.com/rossmacarthur/sheldon)
 - [Starship](https://starship.rs/)
 

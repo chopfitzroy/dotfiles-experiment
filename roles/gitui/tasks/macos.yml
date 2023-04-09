@@ -1,4 +1,0 @@
-- name: Install gitui on macOS
-  homebrew: 
-    name: gitui
-    state: present

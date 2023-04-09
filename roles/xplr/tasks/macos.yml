@@ -1,4 +1,0 @@
-- name: Install xplr on macOS
-  homebrew: 
-    name: xplr
-    state: present

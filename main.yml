@@ -22,14 +22,11 @@
     - {role: exa, tags: ['exa']}
     - {role: nap, tags: ['nap']} # @TODO - File config (pending next release)
     - {role: zsh, tags: ['zsh']}
-    - {role: xplr, tags: ['xplr']}
     - {role: asdf, tags: ['asdf', 'deno', 'node', 'ruby']}
     # - {role: focus, tags: ['focus']} # @TODO - Update install script to no longer use RPM
-    - {role: gitui, tags: ['gitui']}
     - {role: helix, tags: ['helix']}
     - {role: rsync, tags: ['rsync']}
     - {role: slides, tags: ['slides']}
-    - {role: zoxide, tags: ['zoxide']}
     - {role: silicon, tags: ['silicon']}
     - {role: sheldon, tags: ['sheldon']}
     - {role: tealdeer, tags: ['tealdeer']} 
