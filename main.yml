@@ -26,7 +26,9 @@
     # - {role: focus, tags: ['focus']} # @TODO - Update install script to no longer use RPM
     - {role: helix, tags: ['helix']}
     - {role: rsync, tags: ['rsync']}
+    - {role: neovim, tags: ['neovim']}
     - {role: slides, tags: ['slides']}
+    - {role: lazygit, tags: ['lazygit']}
     - {role: silicon, tags: ['silicon']}
     - {role: sheldon, tags: ['sheldon']}
     - {role: tealdeer, tags: ['tealdeer']} 

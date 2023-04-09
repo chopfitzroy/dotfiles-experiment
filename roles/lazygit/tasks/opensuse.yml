@@ -1,0 +1,30 @@
+- name: Install github3 on openSUSE
+  become: yes
+  community.general.zypper:
+    # Required by the community `github_release` module
+    name: python310-github3.py
+    state: present
+
+- name: Get latest lazygit release from GitHub on openSUSE
+  community.general.github_release:
+    token: "{{ github_token | default('') }}"
+    user: jesseduffield
+    repo: lazygit
+    action: latest_release
+  register: lazygit_release
+
+- name: Create local bin if it doesn't exist
+  file:
+    mode: 0755
+    path: "{{ local_bin }}"
+    state: directory
+    recurse: yes
+
+- name: Unzip and install lazygit on openSUSE
+  unarchive:
+    src: "https://github.com/jesseduffield/lazygit/releases/download/{{ lazygit_release['tag'] }}/lazygit_{{ lazygit_release['tag'] | regex_replace('^v','') }}_Linux_x86_64.tar.gz"
+    dest: "{{ local_bin }}"
+    remote_src: true
+    creates: "{{ local_bin }}/lazygit"
+    include:
+     - lazygit
