@@ -1,0 +1,11 @@
+- name: Create Neovim config direcotry
+  file:
+    path: "{{ config_dir }}/nvim"
+    state: directory
+    recurse: yes
+    mode: "0755"
+
+- name: Synchronize Neovim config files
+  ansible.posix.synchronize:
+    src: ../files/
+    dest: "{{ config_dir }}/nvim"
