@@ -23,7 +23,7 @@ export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 # Set Glamour style (for Slides)
 # Hopefully we will be able to set the code block theme in the future
 # - https://github.com/maaslalani/slides/issues/205
-export GLAMOUR_STYLE="$XDG_CONFIG_HOME/glamour/themes/"
+export GLAMOUR_STYLE="ascii"
 
 # Nap snippet manager
 # - This can be moved to a config file after next release

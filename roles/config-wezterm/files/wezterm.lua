@@ -11,24 +11,10 @@ for _, dom in ipairs(wsl_domains) do
 end
 
 return {
-  -- Colors
-  colors = {
-    tab_bar = {
-      background = '{{ color_wezterm_tabs_background }}',
-      active_tab = {
-        bg_color = '{{ color_wezterm_tabs_background }}',
-        fg_color = '{{ color_wezterm_tabs_active }}',
-      },
-      inactive_tab = {
-        bg_color = '{{ color_wezterm_tabs_background }}',
-        fg_color = '{{ color_wezterm_tabs_inactive }}',
-      },
-    },
-  },
-
   keys = {
     -- Create a new workspace with a random name and switch to it
     { key = 'i', mods = 'CTRL|SHIFT', action = act.SwitchToWorkspace },
+    -- @TODO come up with better keybinds
     { key = 'n', mods = 'CTRL', action = act.SwitchWorkspaceRelative(1) },
     { key = 'p', mods = 'CTRL', action = act.SwitchWorkspaceRelative(-1) },
   },
@@ -40,6 +26,7 @@ return {
   -- Tabs
   tab_bar_at_bottom = true,
   use_fancy_tab_bar = false,
+  window_decorations = "RESIZE",
   hide_tab_bar_if_only_one_tab = true,
   show_new_tab_button_in_tab_bar = false,
   switch_to_last_active_tab_when_closing_tab = true,
@@ -47,7 +34,7 @@ return {
   -- All systems
   font = wezterm.font "Berkeley Mono",
   font_size = is_windows and 16.0 or 18.0,
-  color_scheme = "{{ theme_wezterm }}",
+  color_scheme = "Oxocarbon Dark",
 
   -- Disable close prompt
   window_close_confirmation = "NeverPrompt"
