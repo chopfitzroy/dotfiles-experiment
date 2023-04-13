@@ -203,6 +203,15 @@ Now I use all three of these across my various configs but for the most part I m
 
 The easiest way to understand how this works is simple to look at the code, I highly recommend `roles/config-helix` as it has good examples of both templating and file synchronization.
 
+### Tools 👾
+
+Any tool that requires significant configuration has been documented seperately, below are links to each document:
+
+- [Zsh](/roles/config-zsh/README.md)
+- [Helix](/roles/config-helix/README.md)
+- [Neovim](/roles/config-neovim/README.md)
+- [WezTerm](/roles/config-wezterm/README.md)
+
 ### Command line utilities ⚡
 
 There are a large number of command line utilities being developed by the open source community. Below is a list of all of the utilities included in this repo.
@@ -228,41 +237,6 @@ There are a large number of command line utilities being developed by the open s
 
 - [Silicon](https://github.com/Aloxaf/silicon)
 - [Tealdeer](https://dbrgn.github.io/tealdeer)
-
-### Configs 👾
-
-Any tool that requires significant configuration has been documented seperately, below are links to each document:
-
-- [Neovim](/roles/config-neovim/README.md)
-
-#### Helix 🧬
-
-[Helix](https://helix-editor.com/) is a [Kakoune](https://kakoune.org/) inspired text editor. It is a modal editor similar to Vim but has some key differences.
-
-Helix completely removes the need to manage editor plugins, this provides long term productivity payoffs and removes a lot of the headaches associated with dotfile management.
-
-If you want to learn more about Helix I recommend this [overview](https://www.youtube.com/watch?v=xHebvTGOdH8) and if you want something more hands on I highly recommend this [channel](https://www.youtube.com/@LukePighetti/featured).
-
-If you are a die hard [Neovim](https://neovim.io/) user but like the sound of not needing to manage your plugins I strongly recommend [NvChad](https://nvchad.com/).
-
-### Zsh 🐚
-
-The primary reason for using Zsh over something like [Fish](https://fishshell.com/) is that Zsh is Bash compatiable, meaning it _just works_ with a lot of tools I already use.
- 
-[Sheldon](https://sheldon.cli.rs/) plugin manager keeps the plugin config _outside_ of the `.zshrc`, this creates a clear separation between what is my config and what is plugins.
-
-[Starship](https://starship.rs/) keeps the prompt config outside of the `.zshrc`, additionally it supports a number of different shells meaning if I ever switch shells I can likely bring this with me.
-
-### Terminal 🧶
-
-[WezTerm](https://wezfurlong.org/wezterm/) has a number of features that make it particularily appealing, some of the primary reasons are:
-
-- It works well with WSL 2.
-- It works on macOS, Linux and Windows.
-- It has fallback font support which allows me to use any font I like with [nerd fonts symbols](https://sw.kovidgoyal.net/kitty/faq/#kitty-is-not-able-to-use-my-favorite-font).
-- It has a built in multiplexer which prevents some [historic issues](https://github.com/kovidgoyal/kitty/issues/391#issuecomment-638320745) associated with using multiplexers.
-
-Special mention to [Zellij](https://zellij.dev/) which I would be using as a multiplexer if WezTerm did not package it's own.
 
 ## Theming 🌈
 
@@ -298,10 +272,9 @@ Essentially there are 6 applications you need to theme `fzf`, `bat`, `nap`, Heli
 
 Here are some tips for finding themes for each application:
 
-- [fzf](https://github.com/junegunn/fzf) is the hardest by far, some themes include `fzf` snippets in their docs if your lucky, I have however had a lot of success with [base16-fzf](https://github.com/tinted-theming/base16-fzf) which includes a lot of modern themes.
 - [bat](https://github.com/sharkdp/bat) comes with a number of themes out of the box use `bat --list-themes` to view installed themes. Fourtunately `bat` use `.tmTheme` themes meaning any [Sublime Text](https://www.sublimetext.com/) theme will work with `bat`, the Ansible script will install a few extra `bat` themes for you.
+- [fzf](https://github.com/junegunn/fzf) is the hardest by far, some themes include `fzf` snippets in their docs if your lucky, I have however had a lot of success with [base16-fzf](https://github.com/tinted-theming/base16-fzf) which includes a lot of modern themes.
 - [nap](https://github.com/maaslalani/nap) uses [chroma](https://github.com/alecthomas/chroma) under the hook, check the `styles/` directory to check available themes.
-- [Helix](https://github.com/helix-editor/helix) ships with a number of themes use `:theme` to view installed themes, I have noticed that the quality of themes tends to vary so I recommend trying a theme for a few hours before committing.
 - [WezTerm](https://wezfurlong.org/wezterm/) ships with over 700 themes and is usually easy to match up with everything else, browse the [online directory](https://wezfurlong.org/wezterm/colorschemes/index.html) to find the theme for you.
 
 ## Future Improvements 🎉
