@@ -63,9 +63,10 @@ This is made possible by [`Olical/aniseed`](https://github.com/Olical/aniseed).
 
 - [`LazyVim/LazyVim`](https://github.com/LazyVim/LazyVim)
 - [`Olical/magic-kit`](https://github.com/Olical/magic-kit)
-- [`AstroNvim/AstroNvim`](https://github.com/AstroNvim/AstroNvim)
 - [`nvim-lua/kickstart.nvim`](https://github.com/nvim-lua/kickstart.nvim)
 - [`nyoom-engineering/nyoom.nvim`](https://github.com/nyoom-engineering/nyoom.nvim)
+
+**NOTE:** For an exhaustive list of Neovim distributions see [here](https://github.com/rockerBOO/awesome-neovim#preconfigured-configuration).
 
 **Dotfiles:**
 
