@@ -1,12 +1,12 @@
 # Neovim 💎
 
-My [Neovim](https://neovim.io/) config aimed primarily at LISP editing.
+My [Neovim](https://neovim.io/) config aimed primarily at [Lisp](https://en.wikipedia.org/wiki/Lisp_(programming_language)) editing.
 
 ![image](https://user-images.githubusercontent.com/2978850/231408234-b0c39860-9148-4974-a4b3-fb68c3024752.png)
 
 ### Fennel 🪴
 
-This project is configured using [Fennel](https://fennel-lang.org/) a LISP dialect that compiles to [Lua](https://www.lua.org/).
+This project is configured using [Fennel](https://fennel-lang.org/) a Lisp dialect that compiles to [Lua](https://www.lua.org/).
 
 This is made possible by [`Olical/aniseed`](https://github.com/Olical/aniseed).
 
@@ -59,6 +59,13 @@ This is made possible by [`Olical/aniseed`](https://github.com/Olical/aniseed).
 - [`rktjmp/hotpot.nvim`](https://github.com/rktjmp/hotpot.nvim)
 - [`udayvir-singh/tangerine.nvim`](https://github.com/udayvir-singh/tangerine.nvim)
 
+**Dotfiles:**
+
+- [`rinx/dotfiles`](https://github.com/rinx/dotfiles)
+- [`suonlight/dotfiles`](https://github.com/suonlight/dotfiles)
+- [`Grazfather/dotfiles`](https://github.com/Grazfather/dotfiles)
+- [`katawful/dotfiles-nvim`](https://github.com/katawful/dotfiles-nvim)
+
 **Configurations:**
 
 - [`LazyVim/LazyVim`](https://github.com/LazyVim/LazyVim)
@@ -67,10 +74,3 @@ This is made possible by [`Olical/aniseed`](https://github.com/Olical/aniseed).
 - [`nyoom-engineering/nyoom.nvim`](https://github.com/nyoom-engineering/nyoom.nvim)
 
 **NOTE:** For an exhaustive list of Neovim distributions see [here](https://github.com/rockerBOO/awesome-neovim#preconfigured-configuration).
-
-**Dotfiles:**
-
-- [`rinx/dotfiles`](https://github.com/rinx/dotfiles)
-- [`suonlight/dotfiles`](https://github.com/suonlight/dotfiles)
-- [`Grazfather/dotfiles`](https://github.com/Grazfather/dotfiles)
-- [`katawful/dotfiles-nvim`](https://github.com/katawful/dotfiles-nvim)
