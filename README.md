@@ -229,7 +229,11 @@ There are a large number of command line utilities being developed by the open s
 - [Silicon](https://github.com/Aloxaf/silicon)
 - [Tealdeer](https://dbrgn.github.io/tealdeer)
 
-### Editor(s) ✏️
+### Configs 👾
+
+Any tool that requires significant configuration has been documented seperately, below are links to each document:
+
+- [Neovim](/roles/config-neovim/README.md)
 
 #### Helix 🧬
 
@@ -240,10 +244,6 @@ Helix completely removes the need to manage editor plugins, this provides long t
 If you want to learn more about Helix I recommend this [overview](https://www.youtube.com/watch?v=xHebvTGOdH8) and if you want something more hands on I highly recommend this [channel](https://www.youtube.com/@LukePighetti/featured).
 
 If you are a die hard [Neovim](https://neovim.io/) user but like the sound of not needing to manage your plugins I strongly recommend [NvChad](https://nvchad.com/).
-
-#### Neovim 👽
-
-I am currently maintaining a Neovim config specifically for working with S-Expression languages or languages that encourage the use of a REPL.
 
 ### Zsh 🐚
 
