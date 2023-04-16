@@ -41,23 +41,25 @@
     - {role: config-wezterm, tags: ['config', 'config-wezterm']}
     - {role: config-sheldon, tags: ['config', 'config-sheldon']}
     - {role: config-starship, tags: ['config', 'config-starship']}
+
+    # Themes
+    - {role: theme-oxocarbon, tags: ['theme', 'theme-oxocarbon']}
   
     # Languages
-    - {role: go, tags: ['go', 'lsp_go']}
+    - {role: go, tags: ['go', 'lsp-go']}
     - {role: deno, tags: ['deno']}
-    - {role: node, tags: ['node', 'lsp_node']}
-    - {role: ruby, tags: ['ruby', 'lsp_ruby']}
-    - {role: rust, tags: ['rust', 'lsp_rust']}
-    - {role: clojure, tags: ['clojure', 'lsp_clojure']}
+    - {role: node, tags: ['node', 'lsp-node']}
+    - {role: ruby, tags: ['ruby', 'lsp-ruby']}
+    - {role: rust, tags: ['rust', 'lsp-rust']}
+    - {role: clojure, tags: ['clojure', 'lsp-clojure']}
   
-    # LSP (for Helix)
+    # LSP for Helix & Neovim
     # These could technically be part of the language installs
     # But there may be instances where we want the language only
-    # @NOTE Deno packages it's own LSP as part of it's binary
-    - {role: lsp_go, tags: ['lsp_go']}
-    - {role: lsp_rust, tags: ['lsp_rust']}
-    - {role: lsp_node, tags: ['lsp_node']}
-    - {role: lsp_ruby, tags: ['lsp_ruby']}
-    - {role: lsp_clojure, tags: ['lsp_clojure']}
-    - {role: lsp_markdown, tags: ['lsp_markdown']}
+    - {role: lsp-go, tags: ['lsp-go']}
+    - {role: lsp-rust, tags: ['lsp-rust']}
+    - {role: lsp-node, tags: ['lsp-node']}
+    - {role: lsp-ruby, tags: ['lsp-ruby']}
+    - {role: lsp-clojure, tags: ['lsp-clojure']}
+    - {role: lsp-markdown, tags: ['lsp-markdown']}
   

@@ -1,15 +1,9 @@
-- name: Create WezTerm colors direcotry
+- name: Create WezTerm config direcotry
   file:
-    path: "{{ wezterm_dir }}/colors"
+    path: "{{ wezterm_dir }}"
     state: directory
     recurse: yes
     mode: "0755"
-
-- name: Download WezTerm Oxocarbon theme
-  get_url:
-    url: https://raw.githubusercontent.com/nyoom-engineering/oxocarbon-wezterm/main/oxocarbon-dark.toml
-    mode: 0755
-    dest: "{{ wezterm_dir }}/colors"
 
 - name: Synchronize WezTerm config files
   ansible.posix.synchronize:

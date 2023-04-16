@@ -1,0 +1,29 @@
+- import_tasks: opensuse.yml
+  when: ansible_os_family == "Suse"
+- import_tasks: macos.yml
+  when: ansible_os_family == "Darwin"
+  
+- name: Create WezTerm colors direcotry
+  file:
+    path: "{{ wezterm_dir }}/colors"
+    state: directory
+    recurse: yes
+    mode: "0755"
+
+- name: Download WezTerm Oxocarbon theme
+  get_url:
+    url: https://raw.githubusercontent.com/nyoom-engineering/oxocarbon-wezterm/main/oxocarbon-dark.toml
+    mode: 0755
+    dest: "{{ wezterm_dir }}/colors"
+
+# TODO
+# - Clone the following and feed them to `base16-builer`
+# - Themes
+# - https://github.com/nyoom-engineering/base16-oxocarbon
+# - Templates
+# - https://github.com/tinted-theming/base16-fzf
+# - https://github.com/mohd-akram/base16-pygments
+# - https://github.com/chriskempson/base16-textmate
+# - Convert `pygments` to `chroma`
+# - https://github.com/alecthomas/chroma/blob/master/_tools/style.py
+

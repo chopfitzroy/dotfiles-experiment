@@ -4,8 +4,8 @@
     # Required by the community `github_release` module
     name: python310-github3.py
     state: present
-- name: Get latest nap release from GitHub on openSUSE
 
+- name: Get latest nap release from GitHub on openSUSE
   community.general.github_release:
     token: "{{ github_token | default('') }}"
     user: maaslalani

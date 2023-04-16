@@ -1,0 +1,28 @@
+- name: Install github3 on openSUSE
+  become: yes
+  community.general.zypper:
+    # Required by the community `github_release` module
+    name: python310-github3.py
+    state: present
+
+- name: Get latest base16-builder-go release from GitHub on openSUSE
+  community.general.github_release:
+    token: "{{ github_token | default('') }}"
+    user: tinted-theming
+    repo: base16-builder-go
+    action: latest_release
+  register: base16_release
+
+- name: Create local bin if it doesn't exist
+  file:
+    mode: 0755
+    path: "{{ local_bin }}"
+    state: directory
+    recurse: yes
+
+- name: Download base16-builder-go
+  get_url:
+    url: "https://github.com/tinted-theming/base16-builder-go/releases/download/{{ base16_release['tag'] }}/base16-builder-go_{{ base16_release['tag'] | regex_replace('^v','') }}_linux_x86_64"
+    mode: 0755
+    dest: "{{ local_bin }}/base16-builder"
+

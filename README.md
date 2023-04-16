@@ -201,7 +201,7 @@ The reason Ansible allows this is because it supports:
 
 Now I use all three of these across my various configs but for the most part I make use of the template system, the exception to this being the `config-nap` which uses symlinks to better handle how `nap` interacts with it's stored snippets.
 
-The easiest way to understand how this works is simple to look at the code, I highly recommend `roles/config-helix` as it has good examples of both templating and file synchronization.
+The easiest way to understand how this works is simply to look at the code, I highly recommend `roles/config-helix` as it has good examples of both templating and file synchronization.
 
 ### Tools 👾
 
@@ -268,13 +268,13 @@ I use [Berkeley Mono Typeface](https://berkeleygraphics.com/typefaces/berkeley-m
 
 If you are like me and you want all your application to use the same color scheme there are a couple of limitations you need to be aware of.
 
-Essentially there are 6 applications you need to theme `fzf`, `bat`, `nap`, Helix, and WezTerm. These all have their own theme engines so you are effectively limited to themes **supported by all 6 applications**.
+Essentially there are 5 applications you need to theme `fzf`, `bat`, `nap`, Helix, and WezTerm. These all have their own theme engines so you are effectively limited to themes **supported by all 6 applications**.
 
 Here are some tips for finding themes for each application:
 
 - [bat](https://github.com/sharkdp/bat) comes with a number of themes out of the box use `bat --list-themes` to view installed themes. Fourtunately `bat` use `.tmTheme` themes meaning any [Sublime Text](https://www.sublimetext.com/) theme will work with `bat`, the Ansible script will install a few extra `bat` themes for you.
 - [fzf](https://github.com/junegunn/fzf) is the hardest by far, some themes include `fzf` snippets in their docs if your lucky, I have however had a lot of success with [base16-fzf](https://github.com/tinted-theming/base16-fzf) which includes a lot of modern themes.
-- [nap](https://github.com/maaslalani/nap) uses [chroma](https://github.com/alecthomas/chroma) under the hook, check the `styles/` directory to check available themes.
+- [nap](https://github.com/maaslalani/nap) uses [chroma](https://github.com/alecthomas/chroma) under the hood, check the `styles/` directory to check available themes.
 - [WezTerm](https://wezfurlong.org/wezterm/) ships with over 700 themes and is usually easy to match up with everything else, browse the [online directory](https://wezfurlong.org/wezterm/colorschemes/index.html) to find the theme for you.
 
 ## Future Improvements 🎉
