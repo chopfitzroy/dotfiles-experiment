@@ -28,8 +28,9 @@
 (use
   { :folke/lazy.nvim { :lazy true }
     :Olical/aniseed { :lazy true }
-    :nvim-treesitter/nvim-treesitter { :build (cmd->fn :TSUpdate) }
-    :nyoom-engineering/oxocarbon.nvim { :lazy true }})
+    :nyoom-engineering/oxocarbon.nvim { :lazy true }
+    :nvim-telescope/telescope.nvim { :dependencies [:nvim-lua/plenary.nvim] }
+    :nvim-treesitter/nvim-treesitter { :build (cmd->fn :TSUpdate) }})
 
 ;; Language support
 
