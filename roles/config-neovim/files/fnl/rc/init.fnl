@@ -26,11 +26,26 @@
 ;;; Plugins
 
 (use
-  { :folke/lazy.nvim { :lazy true }
+  { 
+    ;; Lazy
     :Olical/aniseed { :lazy true }
+    :folke/lazy.nvim { :lazy true }
     :nyoom-engineering/oxocarbon.nvim { :lazy true }
-    :nvim-telescope/telescope.nvim { :dependencies [:nvim-lua/plenary.nvim] }
-    :nvim-treesitter/nvim-treesitter { :build (cmd->fn :TSUpdate) }})
+    ;; Buff enter
+    :Olical/conjure { :event [:BufEnter] }
+    :mbbill/undotree { :event [:BufEnter] }
+    :folke/which-key.nvim { :event [:BufEnter] }
+    :junegunn/vim-peekaboo { :event [:BufEnter] }
+    :windwp/nvim-ts-autotag { :event [:BufEnter] }
+    :HiPhish/nvim-ts-rainbow2 { :event [:BufEnter] }
+    :JoosepAlviste/nvim-ts-context-commentstring { :event [:BufEnter] }
+    ;; Very lazy (on `require`)
+    :numToStr/FTerm.nvim { :event [:VeryLazy] }
+    ;; @TODO
+    :echasnovski/mini.nvim { :lazy true }
+    ;; Not at all lazy
+    :nvim-treesitter/nvim-treesitter { :build (cmd->fn :TSUpdate) }
+    :nvim-telescope/telescope.nvim { :dependencies [:nvim-lua/plenary.nvim] }})
 
 ;; Language support
 
