@@ -1,31 +1,22 @@
 (module rc.init
-  {autoload {core aniseed.core
+  {autoload {util rc.util
              nvim aniseed.nvim
              configs nvim-treesitter.configs
-             parsers nvim-treesitter.parsers
-             lazy lazy}})
-
-(defn- cmd->fn [cmd]
-  (fn []
-    (vim.cmd (.. ":" cmd))))
-
-(defn- use [pkgs]
-  (let [plugins (icollect [name opts (pairs pkgs)]
-                  (core.assoc opts 1 name))]
-    (lazy.setup
-      plugins)))
+             parsers nvim-treesitter.parsers}})
 
 (set nvim.o.background :dark)
 (set nvim.o.termguicolors true)
 
-;;; Mappings
+;; Mappings
+;; Must be set before Lazy config
+;; This is because Lazy references the <leader> as part of it's `keys` option
 
 (set nvim.g.mapleader " ")
 (set nvim.g.maplocalleader ",")
 
-;;; Plugins
+;; Plugins
 
-(use
+(util.use
   { 
     ;; Lazy
     :Olical/aniseed { :lazy true }
@@ -44,8 +35,13 @@
     ;; @TODO
     :echasnovski/mini.nvim { :lazy true }
     ;; Not at all lazy
-    :nvim-treesitter/nvim-treesitter { :build (cmd->fn :TSUpdate) }
+    :nvim-treesitter/nvim-treesitter { :build (util.cmd->fn :TSUpdate) }
     :nvim-telescope/telescope.nvim { :dependencies [:nvim-lua/plenary.nvim] }})
+
+;; Themes
+;; Must be done after Lazy config so theme exists
+
+(nvim.ex.colorscheme :oxocarbon)
 
 ;; Language support
 
@@ -73,7 +69,4 @@
    :context_commentstring {:enable true
                            :enable_autocmd false}})
 
-;;; Themes
-
-(nvim.ex.colorscheme :oxocarbon)
 
