@@ -8,7 +8,23 @@ My [Neovim](https://neovim.io/) config aimed primarily at [Lisp](https://en.wiki
 
 This project is configured using [Fennel](https://fennel-lang.org/) a Lisp dialect that compiles to [Lua](https://www.lua.org/).
 
-This is made possible by [`Olical/aniseed`](https://github.com/Olical/aniseed).
+### Aniseed 🍭
+
+[`Olical/aniseed`](https://github.com/Olical/aniseed) can be considered the _glue_ between Neovim and Fennel.
+
+When starting it is not always clear when we are using something from Aniseed or Fennel itself, `defn` and `defn-` are good examples of this. At first glance you may think these are part of the Fennel syntax but they are instead macros defined as part of Fennel.
+
+Throughout the various `.fnl` files I have tried my best to comment where we are using features provided by Aniseed.
+
+If you are interested in this split and want to understand more I highly recommend [this talk](https://www.youtube.com/watch?v=RU28xy9JXxs).
+
+### Lazy 🦑
+
+[`folke/lazy.nvim`](https://github.com/folke/lazy.nvim) (not [LazyVim](https://www.lazyvim.org/)) allows us to lazy load plugins and improve Neovim startup time.
+
+There are other plugin managers that allow this but Lazy has gone to great pains to create a pleasant developer experience in terms of how you configure plugins.
+
+Before getting started with Lazy I highly recommend [this overview](https://www.youtube.com/watch?v=aqlxqpHs-aQ).
 
 ### Plugins & Pacakges 🧰
 
@@ -53,12 +69,6 @@ This is made possible by [`Olical/aniseed`](https://github.com/Olical/aniseed).
 
 ### References 📚
 
-**Fennel integrations:**
-
-- [`Olical/aniseed`](https://github.com/Olical/aniseed)
-- [`rktjmp/hotpot.nvim`](https://github.com/rktjmp/hotpot.nvim)
-- [`udayvir-singh/tangerine.nvim`](https://github.com/udayvir-singh/tangerine.nvim)
-
 **Dotfiles:**
 
 - [`rinx/dotfiles`](https://github.com/rinx/dotfiles)
@@ -74,3 +84,10 @@ This is made possible by [`Olical/aniseed`](https://github.com/Olical/aniseed).
 - [`nyoom-engineering/nyoom.nvim`](https://github.com/nyoom-engineering/nyoom.nvim)
 
 **NOTE:** For an exhaustive list of Neovim distributions see [here](https://github.com/rockerBOO/awesome-neovim#preconfigured-configuration).
+
+**Fennel integrations:**
+
+- [`Olical/aniseed`](https://github.com/Olical/aniseed)
+- [`rktjmp/hotpot.nvim`](https://github.com/rktjmp/hotpot.nvim)
+- [`udayvir-singh/tangerine.nvim`](https://github.com/udayvir-singh/tangerine.nvim)
+
