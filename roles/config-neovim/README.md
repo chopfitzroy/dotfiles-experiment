@@ -46,7 +46,6 @@ Before getting started with Lazy I highly recommend [this overview](https://www.
 
 - [`zbirenbaum/copilot.lua`](https://github.com/zbirenbaum/copilot.lua)
 - [`windwp/nvim-ts-autotag`](https://github.com/windwp/nvim-ts-autotag)
-- [`HiPhish/nvim-ts-rainbow2`](https://github.com/HiPhish/nvim-ts-rainbow2)
 - [`nvim-treesitter/nvim-treesitter`](https://github.com/nvim-treesitter/nvim-treesitter)
 - [`nvim-treesitter/nvim-treesitter-textobjects`](https://github.com/nvim-treesitter/nvim-treesitter-textobjects)
 - [`JoosepAlviste/nvim-ts-context-commentstring`](https://github.com/JoosepAlviste/nvim-ts-context-commentstring)
