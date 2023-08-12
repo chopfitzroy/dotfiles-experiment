@@ -1,0 +1,8 @@
+- name: Tap Mongo
+  homebrew_tap:
+    name: mongodb/brew
+
+- name: Install Mongo on macOS
+  homebrew:
+    name: mongodb-community
+    state: present

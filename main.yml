@@ -27,6 +27,7 @@
     - {role: rsync, tags: ['rsync']}
     - {role: neovim, tags: ['neovim']}
     - {role: lazygit, tags: ['lazygit']}
+    - {role: mongodb, tags: ['mongodb']}
     - {role: silicon, tags: ['silicon']}
     - {role: sheldon, tags: ['sheldon']}
     - {role: tealdeer, tags: ['tealdeer']} 
