@@ -1,4 +1,0 @@
-inherits = "night_owl"
-
-'ui.gutter' = { bg = 'background' }
-"ui.linenr" = { bg = 'background' }

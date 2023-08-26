@@ -34,7 +34,7 @@ return {
   -- All systems
   font = wezterm.font "Berkeley Mono",
   font_size = is_windows and 16.0 or 18.0,
-  color_scheme = "Oxocarbon Dark",
+  color_scheme = "Everforest Dark (Gogh)",
 
   -- Disable close prompt
   window_close_confirmation = "NeverPrompt"

@@ -28,19 +28,8 @@ export GLAMOUR_STYLE="ascii"
 # Nap snippet manager
 # - This can be moved to a config file after next release
 export NAP_HOME="$HOME/.local/share/nap"
-export NAP_THEME="{{ theme_nap }}"
-export NAP_DEFAULT_LANGUAGE="{{ nap_default_extension }}"
-
-# Catppuccin theme
-# - https://github.com/catppuccin/fzf
-export FZF_DEFAULT_OPTS=" \
---color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
---color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
---color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
-
-# Use `fd` for standard `fzf` usage
-# - https://github.com/junegunn/fzf#respecting-gitignore
-export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git'
+export NAP_THEME="everforest_dark"
+export NAP_DEFAULT_LANGUAGE="ts"
 
 # Could probably add this to path manually
 # However this is the way the Rust installer does it by default
@@ -48,6 +37,15 @@ CARGO_ENV_PATH="$HOME/.cargo/env"
 if [ -f $CARGO_ENV_PATH ]; then
   source $CARGO_ENV_PATH
 fi
+
+FZF_THEME="$HOME/zsh_fzf_themes/base16-everforest.config"
+if [ -f $FZF_THEME ]; then
+  source $FZF_THEME
+fi
+
+# Use `fd` for standard `fzf` usage
+# - https://github.com/junegunn/fzf#respecting-gitignore
+export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git'
 
 # Remove duplicate entries
 # - https://stackoverflow.com/questions/68605927/how-can-i-change-path-variable-in-zsh

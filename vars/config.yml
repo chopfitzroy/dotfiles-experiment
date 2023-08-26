@@ -1,7 +1,13 @@
-# Snippets config
-nap_default_extension: ts
+# Enabled themes
+# - Enabling a theme will not set that theme simply generate the required files
+# - To set a theme you will need to update the relevant configuration files
 
-# Themes
-theme_nap: catppuccin-mocha
-theme_bat: Catppuccin-mocha
-theme_helix: catppuccin_mocha
+# Everforest Dark
+theme_fzf_everforest_dark: true
+theme_nap_everforest_dark: true
+theme_bat_everforest_dark: true
+
+# Everforest Light
+theme_fzf_everforest_light: true
+theme_nap_everforest_light: true
+theme_bat_everforest_light: true

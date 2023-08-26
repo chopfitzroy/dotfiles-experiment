@@ -1,6 +1,0 @@
-- name: Install github3 on openSUSE
-  become: yes
-  community.general.zypper:
-    # Required by the community `github_release` module
-    name: python310-github3.py
-    state: present

@@ -2,7 +2,7 @@
   ansible.builtin.pip:
     name: github3.py
 
-- name: Get latest base16-builder-go release from GitHub on openSUSE
+- name: Get latest base16-builder release from GitHub on macOS
   community.general.github_release:
     token: "{{ github_token | default('') }}"
     user: tinted-theming
@@ -17,7 +17,7 @@
     state: directory
     recurse: yes
 
-- name: Download base16-builder-go
+- name: Download base16-builder
   get_url:
     url: "https://github.com/tinted-theming/base16-builder-go/releases/download/{{ base16_release['tag'] }}/base16-builder-go_{{ base16_release['tag'] | regex_replace('^v','') }}_darwin_x86_64"
     mode: 0755

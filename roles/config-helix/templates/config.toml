@@ -1,4 +1,4 @@
-theme = "{{ theme_helix }}"
+theme = "everforest_dark"
 
 [editor]
 mouse = false
