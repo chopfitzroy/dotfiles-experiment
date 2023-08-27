@@ -1,28 +1,5 @@
-- name: Create Helix config direcotry
+- name: Create symlink to Helix directory 
   file:
-    path: "{{ config_dir }}/helix"
-    state: directory
-    recurse: yes
-    mode: "0755"
-
-- name: Copy Helix config template directories
-  file:
-    dest: "{{ config_dir }}/helix/{{ item.path }}"
-    mode: "0755"
-    state: directory
-  with_filetree: "../templates"
-  when: item.state == "directory"
-
-- name: Copy Helix config template files
-  template:
-    src: "{{ item.src }}"
-    dest: "{{ config_dir }}/helix/{{ item.path }}"
-    mode: "0644"
-  with_filetree: "../templates"
-  when: item.state == "file"
-
-- name: Synchronize Helix config files
-  ansible.posix.synchronize:
-    src: ../files/
+    src: "{{ role_path }}/files"
     dest: "{{ config_dir }}/helix"
-
+    state: link

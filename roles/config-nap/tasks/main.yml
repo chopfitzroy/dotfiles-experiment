@@ -5,8 +5,6 @@
     state: directory
     recurse: yes
 
-# @NOTE
-# - This is the ONLY time we symlink
 - name: Create symlink to nap directory 
   file:
     src: "{{ role_path }}/files"

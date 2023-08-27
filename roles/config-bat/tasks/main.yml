@@ -5,19 +5,7 @@
     recurse: yes
     mode: "0755"
 
-- name: Copy bat config template directories
-  file:
-    dest: "{{ config_dir }}/bat/{{ item.path }}"
-    mode: "0755"
-    state: directory
-  with_filetree: "../templates"
-  when: item.state == "directory"
-
-- name: Copy bat config template files
-  template:
-    src: "{{ item.src }}"
-    dest: "{{ config_dir }}/bat/{{ item.path }}"
-    mode: "0644"
-  with_filetree: "../templates"
-  when: item.state == "file"
-
+- name: Synchronize bat config files
+  ansible.posix.synchronize:
+    src: ../files/
+    dest: "{{ config_dir }}/bat"
