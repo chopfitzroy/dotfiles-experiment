@@ -74,8 +74,6 @@ wezterm_dir: "{{ config_dir }}/wezterm"
 zsh_completions: "{{ ansible_user_dir }}/.zsh_completions"
 ```
 
-**NOTE:** Unlike `vars/system.yml` the `vars/config.yml` is intended to be tracked with `git` on the grounds that these options should be synchronized between all machines.
-
 ### Setup for openSUSE 🦎
 
 Install `ansible` with the following command:
@@ -173,8 +171,8 @@ There are a large number of command line utilities being developed by the open s
 **Development:**
 
 - [bat](https://github.com/sharkdp/bat)
-- [nap](https://github.com/maaslalani/nap)
 - [lazygit](https://github.com/jesseduffield/lazygit)
+- [the-way](https://github.com/out-of-cheese-error/the-way)
 
 **Navigation:**
 
@@ -191,6 +189,7 @@ There are a large number of command line utilities being developed by the open s
 
 - [Silicon](https://github.com/Aloxaf/silicon)
 - [Tealdeer](https://dbrgn.github.io/tealdeer)
+- [base16-builder-go](https://github.com/tinted-theming/base16-builder-go)
 
 ## Theming 🌈
 
@@ -226,9 +225,9 @@ Essentially there are 5 applications you need to theme `fzf`, `bat`, `nap`, Heli
 
 Here are some tips for finding themes for each application:
 
-- [bat](https://github.com/sharkdp/bat) comes with a number of themes out of the box use `bat --list-themes` to view installed themes. Fourtunately `bat` use `.tmTheme` themes meaning any [Sublime Text](https://www.sublimetext.com/) theme will work with `bat`, the Ansible script will install a few extra `bat` themes for you.
 - [fzf](https://github.com/junegunn/fzf) is the hardest by far, some themes include `fzf` snippets in their docs if your lucky, I have however had a lot of success with [base16-fzf](https://github.com/tinted-theming/base16-fzf) which includes a lot of modern themes.
-- [nap](https://github.com/maaslalani/nap) uses [chroma](https://github.com/alecthomas/chroma) under the hood, check the `styles/` directory to check available themes.
+- [bat](https://github.com/sharkdp/bat) comes with a number of themes out of the box use `bat --list-themes` to view installed themes. Fourtunately `bat` use `.tmTheme` themes meaning any [Sublime Text](https://www.sublimetext.com/) theme will work with `bat`, the Ansible script will install a few extra `bat` themes for you.
+- [the-way](https://github.com/out-of-cheese-error/the-way) uses the same themes as `bat` so whatever you use here you can use for `the-way` as well.
 - [WezTerm](https://wezfurlong.org/wezterm/) ships with over 700 themes and is usually easy to match up with everything else, browse the [online directory](https://wezfurlong.org/wezterm/colorschemes/index.html) to find the theme for you.
 
 ## Future Improvements 🎉

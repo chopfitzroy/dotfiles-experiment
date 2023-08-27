@@ -21,7 +21,7 @@
     - {role: aider, tags: ['aider']} # @TODO - Pip install not working but not throwing an error?
     - {role: rsync, tags: ['rsync']}
     - {role: lazygit, tags: ['lazygit']}
-    - {role: mongodb, tags: ['mongodb']} # @TODO - OpenSUSE installer
+    - {role: mongodb, tags: ['mongodb']}
     - {role: silicon, tags: ['silicon']}
     - {role: sheldon, tags: ['sheldon']}
     - {role: the-way, tags: ['the-way']}
