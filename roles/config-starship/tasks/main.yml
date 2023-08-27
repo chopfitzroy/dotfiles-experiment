@@ -1,5 +1,7 @@
-- name: Synchronize Starship config files
-  ansible.posix.synchronize:
-    src: ../files/
-    dest: "{{ config_dir }}"
-
+- name: Synchronize Starship config
+  file:
+    src: "{{ role_path }}/files/{{ item.src }}"
+    dest: "{{ config_dir }}/{{ item.dest }}"
+    state: link
+  with_items:
+    - { src: 'starship.toml', dest: 'starship.toml' }

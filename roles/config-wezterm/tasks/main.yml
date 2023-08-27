@@ -1,12 +1,5 @@
-- name: Create WezTerm config direcotry
+- name: Create symlink to WezTerm directory 
   file:
-    path: "{{ wezterm_dir }}"
-    state: directory
-    recurse: yes
-    mode: "0755"
-
-- name: Synchronize WezTerm config files
-  ansible.posix.synchronize:
-    src: ../files/
-    dest: "{{ wezterm_dir }}"
-
+    src: "{{ role_path }}/files"
+    dest: "{{ config_dir }}/wezterm"
+    state: link
