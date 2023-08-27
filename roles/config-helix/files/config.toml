@@ -2,11 +2,15 @@ theme = "everforest_dark"
 
 [editor]
 mouse = false
-# auto-pairs = false
+cursorline = true
 color-modes = true
 line-number = "relative"
 idle-timeout = 0
-# auto-completion = false
+cursorcolumn = true
+
+[editor.soft-wrap]
+enable = true
+wrap-indicator = ""
 
 [editor.file-picker]
 hidden = false

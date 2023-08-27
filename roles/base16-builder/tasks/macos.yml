@@ -1,5 +1,5 @@
 - name: Install github3 python package on macOS
-  ansible.builtin.pip:
+  pip:
     name: github3.py
 
 - name: Get latest base16-builder release from GitHub on macOS
