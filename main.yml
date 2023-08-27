@@ -8,11 +8,6 @@
       - always
     include_vars:
       file: vars/system.yml
-  - name: Setup config variables
-    tags:
-      - always
-    include_vars:
-      file: vars/config.yml
 
   roles:
     # Software
@@ -20,17 +15,16 @@
     - {role: bat, tags: ['bat']} 
     - {role: fzf, tags: ['fzf']}
     - {role: exa, tags: ['exa']}
-    - {role: nap, tags: ['nap']} # @TODO - File config (pending next release)
     - {role: zsh, tags: ['zsh']}
     - {role: asdf, tags: ['asdf', 'deno', 'node', 'ruby']}
     - {role: helix, tags: ['helix']}
-    - {role: aider, tags: ['aider']} # @TODO - OpenSUSE installer
+    - {role: aider, tags: ['aider']} # @TODO - Pip install not working but not throwing an error?
     - {role: rsync, tags: ['rsync']}
-    # - {role: neovim, tags: ['neovim']}
     - {role: lazygit, tags: ['lazygit']}
     - {role: mongodb, tags: ['mongodb']} # @TODO - OpenSUSE installer
     - {role: silicon, tags: ['silicon']}
     - {role: sheldon, tags: ['sheldon']}
+    - {role: the-way, tags: ['the-way']}
     - {role: tealdeer, tags: ['tealdeer']} 
     - {role: starship, tags: ['starship']} 
     - {role: base16-builder, tags: ['base16-builder']} 
@@ -38,7 +32,6 @@
     # Configs
     - {role: config-zsh, tags: ['config', 'config-zsh']}
     - {role: config-bat, tags: ['config', 'config-bat']}
-    - {role: config-nap, tags: ['config', 'config-nap']}
     - {role: config-helix, tags: ['config', 'config-helix']}
     - {role: config-neovim, tags: ['config', 'config-neovim']}
     - {role: config-wezterm, tags: ['config', 'config-wezterm']}
