@@ -1,0 +1,4 @@
+- name: Install universal-ctags on macOS
+  homebrew: 
+    name: universal-ctags
+    state: present

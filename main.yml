@@ -24,6 +24,7 @@
     - {role: zsh, tags: ['zsh']}
     - {role: asdf, tags: ['asdf', 'deno', 'node', 'ruby']}
     - {role: helix, tags: ['helix']}
+    - {role: aider, tags: ['aider']} # @TODO - OpenSUSE installer
     - {role: rsync, tags: ['rsync']}
     - {role: neovim, tags: ['neovim']}
     - {role: lazygit, tags: ['lazygit']}
@@ -32,7 +33,7 @@
     - {role: sheldon, tags: ['sheldon']}
     - {role: tealdeer, tags: ['tealdeer']} 
     - {role: starship, tags: ['starship']} 
-    - {role: base16-builder, tags: ['base16-builder']} # @TODO - We don't currently need this as files come generated with repo's...
+    - {role: base16-builder, tags: ['base16-builder']} 
   
     # Configs
     - {role: config-zsh, tags: ['config', 'config-zsh']}

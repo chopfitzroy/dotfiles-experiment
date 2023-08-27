@@ -31,6 +31,12 @@ export NAP_HOME="$HOME/.local/share/nap"
 export NAP_THEME="everforest_dark"
 export NAP_DEFAULT_LANGUAGE="ts"
 
+# This file is not tracked as it contains private keys
+PRIVATE_KEYS="$HOME/.zsh_private_keys"
+if [ -f $PRIVATE_KEYS ]; then
+  source $PRIVATE_KEYS
+fi
+
 # Could probably add this to path manually
 # However this is the way the Rust installer does it by default
 CARGO_ENV_PATH="$HOME/.cargo/env"
