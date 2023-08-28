@@ -1,6 +1,7 @@
 - name: Install github3 python package on macOS
   pip:
     name: github3.py
+    executable: pip3
 
 - name: Get latest base16-builder release from GitHub on macOS
   community.general.github_release:

@@ -18,7 +18,7 @@
     - {role: zsh, tags: ['zsh']}
     - {role: asdf, tags: ['asdf', 'deno', 'node', 'ruby']}
     - {role: helix, tags: ['helix']}
-    - {role: aider, tags: ['aider']} # @TODO - Pip install not working but not throwing an error?
+    - {role: aider, tags: ['aider']}
     - {role: rsync, tags: ['rsync']}
     - {role: lazygit, tags: ['lazygit']}
     - {role: mongodb, tags: ['mongodb']}
