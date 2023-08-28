@@ -4,8 +4,6 @@
     state: present
 
 - name: Install aider via pip
-  vars:
-    ansible_python_interpreter: /usr/bin/python3
   pip:
     name: aider-chat
     executable: pip3
