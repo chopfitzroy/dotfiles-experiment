@@ -1,12 +1,13 @@
-- name: Ensure python3, python3-pip and universal-ctags are installed
+- name: Ensure python310, python310-pipx and universal-ctags are installed
+  become: yes
   zypper:
     name: 
-      - python3
-      - python3-pip
+      - python310
+      - python310-pipx
       - universal-ctags
     state: present
 
 - name: Install aider-chat Python package
-  pip:
+  community.general.pipx:
     name: aider-chat
-    executable: pip3
+    executable: pipx

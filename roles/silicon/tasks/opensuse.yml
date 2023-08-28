@@ -13,6 +13,7 @@
 
 - name: Get latest Silicon release from GitHub on openSUSE
   community.general.github_release:
+    token: "{{ github_token | default('') }}"
     user: Aloxaf
     repo: silicon
     action: latest_release
