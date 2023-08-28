@@ -1,3 +1,4 @@
 inherits = "everforest_dark"
 
-"ui.background.separator" = { fg = "#d3c6aa" }
+"ui.background" = { bg = "#2f383e" }
+"ui.background.separator" = { fg = "fg" }
