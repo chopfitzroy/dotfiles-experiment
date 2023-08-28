@@ -2,3 +2,8 @@
   homebrew: 
     name: universal-ctags
     state: present
+
+- name: Install aider via pip
+  pip:
+    name: aider-chat
+    executable: pip3

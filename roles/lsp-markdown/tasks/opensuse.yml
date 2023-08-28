@@ -1,15 +1,10 @@
 # Required by the community `github_release` module
 - name: Install github3 on openSUSE
   become: yes
-  community.general.zypper:
-    name: python310-github3.py
-    state: present
-
-# Marksman dependency
-- name: Install libicu on openSUSE
-  become: yes
-  community.general.zypper:
-    name: libicu-devel
+  zypper:
+    name: 
+      - python310-github3.py
+      - libicu-devel
     state: present
 
 - name: Get latest marksman release from GitHub on openSUSE

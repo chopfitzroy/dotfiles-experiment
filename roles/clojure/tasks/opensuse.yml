@@ -2,14 +2,8 @@
 # - https://clojure.org/guides/install_clojure#java
 - name: Install open JDK on openSUSE
   become: yes
-  community.general.zypper:
-    name: java-17-openjdk-devel
+  zypper:
+    name: 
+      - java-17-openjdk-devel
+      - leiningen
     state: present
-
-# Standard toolset for project bootstrapping
-- name: Install leiningen on openSUSE
-  become: yes
-  community.general.zypper:
-    name: leiningen
-    state: present
-

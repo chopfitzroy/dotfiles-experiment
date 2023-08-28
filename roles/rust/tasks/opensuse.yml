@@ -1,6 +1,6 @@
 - name: Install rustup on openSUSE
   become: yes
-  community.general.zypper:
+  zypper:
     name: rustup
     state: present
 

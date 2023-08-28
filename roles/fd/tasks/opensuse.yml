@@ -1,6 +1,6 @@
 - name: Install fd on openSUSE
   become: yes
-  community.general.zypper:
+  zypper:
     name: fd
     state: present
 

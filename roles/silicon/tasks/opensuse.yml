@@ -1,6 +1,6 @@
 - name: Install required packages on openSUSE
   become: yes
-  community.general.zypper:
+  zypper:
     name:
       - libharfbuzz0
       - libfontconfig1

@@ -1,5 +1,5 @@
 - name: Install rsync on openSUSE
   become: yes
-  community.general.zypper:
+  zypper:
     name: rsync
     state: present
