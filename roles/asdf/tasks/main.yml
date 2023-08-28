@@ -1,21 +1,5 @@
-- name: Install github3 on openSUSE
-  become: yes
-  zypper:
-    # Required by the community `github_release` module
-    name: python310-github3.py
-    state: present
-
-- name: Get latest asdf release from GitHub
-  community.general.github_release:
-    token: "{{ github_token | default('') }}"
-    user: asdf-vm
-    repo: asdf
-    action: latest_release
-  register: asdf_release
-
-- name: Install asdf
-  git:
-    repo: https://github.com/asdf-vm/asdf.git
-    dest: "{{ asdf_home }}"
-    single_branch: yes
-    version: "{{ asdf_release['tag'] }}"
+- import_tasks: opensuse.yml
+  when: ansible_os_family == "Suse"
+- import_tasks: macos.yml
+  when: ansible_os_family == "Darwin"
+  
