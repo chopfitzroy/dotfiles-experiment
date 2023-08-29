@@ -40,11 +40,9 @@
 
     # Themes
     - {role: theme-fzf-everforest-dark, tags: ['theme', 'theme-everforest-dark']}
-    - {role: theme-nap-everforest-dark, tags: ['theme', 'theme-everforest-dark']}
-    - {role: theme-bat-everforest-dark, tags: ['theme', 'theme-everforest-dark']}
+    - {role: theme-textmate-everforest-dark, tags: ['theme', 'theme-everforest-dark']}
     # - {role: theme-fzf-everforest-light, tags: ['theme', 'theme-everforest-light']}
-    # - {role: theme-nap-everforest-light, tags: ['theme', 'theme-everforest-light']}
-    # - {role: theme-bat-everforest-light, tags: ['theme', 'theme-everforest-light']}
+    # - {role: theme-textmate-everforest-light, tags: ['theme', 'theme-everforest-light']}
   
     # Languages
     - {role: go, tags: ['go', 'lsp-go']}

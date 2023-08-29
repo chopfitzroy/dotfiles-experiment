@@ -1,0 +1,28 @@
+- name: Install github3 on openSUSE
+  become: yes
+  zypper:
+    # Required by the community `github_release` module
+    name: python310-github3.py
+    state: present
+
+- name: Get latest the-way release from GitHub on openSUSE
+  community.general.github_release:
+    token: "{{ github_token | default('') }}"
+    user: out-of-cheese-error
+    repo: the-way
+    action: latest_release
+  register: the_way_release
+
+- name: Create local bin if it doesn't exist
+  file:
+    mode: 0755
+    path: "{{ local_bin }}"
+    state: directory
+    recurse: yes
+
+- name: Unzip and install the-way on openSUSE
+  unarchive:
+    src: "https://github.com/out-of-cheese-error/the-way/releases/download/{{ the_way_release['tag'] }}/the-way-linux.tar.gz"
+    dest: "{{ local_bin }}"
+    creates: "{{ local_bin }}/the-way"
+    remote_src: true
