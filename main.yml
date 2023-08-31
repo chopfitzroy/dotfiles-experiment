@@ -20,6 +20,7 @@
     - {role: helix, tags: ['helix']}
     - {role: aider, tags: ['aider']}
     - {role: rsync, tags: ['rsync']}
+    - {role: docker, tags: ['docker']}
     - {role: direnv, tags: ['direnv']}
     - {role: lazygit, tags: ['lazygit']}
     - {role: mongodb, tags: ['mongodb']}

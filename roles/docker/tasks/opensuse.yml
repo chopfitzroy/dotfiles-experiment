@@ -1,34 +1,30 @@
-- name: Add Docker repository
-  zypper_repository:
-    name: Docker
-    repo: 'https://download.docker.com/linux/opensuse/distribution/leap/$releasever/stable'
-    state: present
-
-- name: Refresh repositories
-  command: zypper refresh
-
-- name: Install Docker Community Edition
+- name: Install Docker on openSUSE
+  become: yes
   zypper:
-    name: docker-ce
+    name:
+      - docker
+      - docker-compose
     state: present
 
-- name: Create Docker group
+- name: Create Docker group on openSUSE
   group:
     name: docker
     state: present
 
-- name: Add current user to Docker group
+- name: Add current user to Docker group on openSUSE
   user:
-    name: "{{ ansible_user }}"
+    name: "{{ ansible_user_id }}"
     groups: docker
     append: yes
+  become: yes
 
-- name: Enable Docker service
+- name: Enable Docker service on openSUSE
+  become: yes
   systemd:
     name: docker
     enabled: yes
 
-- name: Start Docker service
+- name: Start Docker service on openSUSE
   systemd:
     name: docker
     state: started
