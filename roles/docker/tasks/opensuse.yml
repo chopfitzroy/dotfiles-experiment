@@ -12,6 +12,17 @@
     name: docker-ce
     state: present
 
+- name: Create Docker group
+  group:
+    name: docker
+    state: present
+
+- name: Add current user to Docker group
+  user:
+    name: "{{ ansible_user }}"
+    groups: docker
+    append: yes
+
 - name: Enable Docker service
   systemd:
     name: docker
