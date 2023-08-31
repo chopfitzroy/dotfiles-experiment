@@ -1,0 +1,23 @@
+- name: Add Docker repository
+  zypper_repository:
+    name: Docker
+    repo: 'https://download.docker.com/linux/opensuse/distribution/leap/$releasever/stable'
+    state: present
+
+- name: Refresh repositories
+  command: zypper refresh
+
+- name: Install Docker Community Edition
+  zypper:
+    name: docker-ce
+    state: present
+
+- name: Enable Docker service
+  systemd:
+    name: docker
+    enabled: yes
+
+- name: Start Docker service
+  systemd:
+    name: docker
+    state: started
