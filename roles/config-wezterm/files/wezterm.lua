@@ -33,6 +33,14 @@ return {
   -- All systems
   font = wezterm.font "Berkeley Mono",
   font_size = is_windows and 16.0 or 18.0,
+  font_rules = {
+    {
+      -- Disable bold fonts
+  		intensity = "Bold",
+  		italic = false,
+  		font = wezterm.font("Berkeley Mono", { intensity = "Normal", stretch = "Normal", style = "Normal" }),
+  	},
+  },
 
   -- Disable close prompt
   window_close_confirmation = "NeverPrompt",
