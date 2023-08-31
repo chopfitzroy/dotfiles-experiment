@@ -147,7 +147,8 @@ Finally we utilize [asdf](https://asdf-vm.com/) for languages that do not have a
 
 ### Known issues 💣
 
-- asdf uses [ruby-build](https://github.com/rbenv/ruby-build) under the hood, this has strict [build requirements](https://github.com/rbenv/ruby-build/wiki) which differ from system to system, so if you see any errors I recommend starting here.
+- `asdf` uses [ruby-build](https://github.com/rbenv/ruby-build) under the hood, this has strict [build requirements](https://github.com/rbenv/ruby-build/wiki) which differ from system to system, so if you see any errors I recommend starting here.
+- `docker` [cannot be installed on WSL](https://www.reddit.com/r/ansible/comments/s4u9gj/comment/hsu0rdy/) and instead you must use [Docker Desktop](https://docs.docker.com/desktop/wsl/) like you would on macOS.
  
 ## Reasoning 🔮
 

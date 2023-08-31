@@ -1,4 +1,0 @@
-# Mac devices can use docker desktop GUI
-- import_tasks: opensuse.yml
-  when: ansible_os_family == "Suse"
-  
