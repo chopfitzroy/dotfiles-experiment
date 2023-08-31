@@ -16,10 +16,11 @@
     - {role: fzf, tags: ['fzf']}
     - {role: exa, tags: ['exa']}
     - {role: zsh, tags: ['zsh']}
-    - {role: asdf, tags: ['asdf', 'deno', 'node', 'ruby']}
+    - {role: asdf, tags: ['asdf', 'deno', 'node', 'ruby', 'java']}
     - {role: helix, tags: ['helix']}
     - {role: aider, tags: ['aider']}
     - {role: rsync, tags: ['rsync']}
+    - {role: direnv, tags: ['direnv']}
     - {role: lazygit, tags: ['lazygit']}
     - {role: mongodb, tags: ['mongodb']}
     - {role: silicon, tags: ['silicon']}
@@ -50,7 +51,8 @@
     - {role: node, tags: ['node', 'lsp-node']}
     - {role: ruby, tags: ['ruby', 'lsp-ruby']}
     - {role: rust, tags: ['rust', 'lsp-rust']}
-    - {role: clojure, tags: ['clojure', 'lsp-clojure']}
+    - {role: java, tags: ['java', 'lsp-java']}
+    # - {role: clojure, tags: ['clojure', 'lsp-clojure']}
   
     # LSP for Helix & Neovim
     # These could technically be part of the language installs

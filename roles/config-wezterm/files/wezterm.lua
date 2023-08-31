@@ -38,7 +38,7 @@ return {
       -- Disable bold fonts
   		intensity = "Bold",
   		italic = false,
-  		font = wezterm.font("Berkeley Mono", { intensity = "Normal", stretch = "Normal", style = "Normal" }),
+  		font = wezterm.font("Berkeley Mono", { weight = "Regular", stretch = "Normal", style = "Normal" }),
   	},
   },
 

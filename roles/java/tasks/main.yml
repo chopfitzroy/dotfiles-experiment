@@ -1,0 +1,15 @@
+- name: Install java plugin via asdf
+  command:
+    cmd: "{{ asdf_bin }}/asdf plugin add java https://github.com/halcyon/asdf-java.git"
+    creates: "{{ asdf_home }}/plugins/java"
+
+- name: Install java via asdf
+  command:
+    cmd: "{{ asdf_bin }}/asdf install java openjdk-17.0.2"
+  environment: 
+    PATH: '{{ asdf_bin }}:{{ ansible_env.PATH }}'
+
+- name: Set global java version via asdf
+  command:
+    cmd: "{{ asdf_bin }}/asdf global java openjdk-17.0.2"
+

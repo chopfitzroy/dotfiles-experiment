@@ -4,6 +4,10 @@
 # - https://github.com/ajeetdsouza/zoxide/issues/348
 eval "$(sheldon source)"
 
+# Direnv
+# - https://github.com/direnv/direnv/blob/master/docs/hook.md
+eval "$(direnv hook zsh)"
+
 # Completions (downloaded by sheldon)
 fpath=(~/.zsh_completions "${fpath[@]}")
 
