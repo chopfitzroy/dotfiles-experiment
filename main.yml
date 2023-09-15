@@ -61,6 +61,7 @@
     - {role: lsp-node, tags: ['lsp-node']}
     - {role: lsp-ruby, tags: ['lsp-ruby']}
     - {role: lsp-rust, tags: ['lsp-rust']}
+    - {role: lsp-java, tags: ['lsp-java']}
     - {role: lsp-clojure, tags: ['lsp-clojure']}
     - {role: lsp-markdown, tags: ['lsp-markdown']}
   
