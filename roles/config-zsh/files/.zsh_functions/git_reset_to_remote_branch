@@ -1,0 +1,6 @@
+if [ -n "$1" ]
+then
+    git reset --hard origin/$1
+else
+    printf "\nPlease provide a branch name."
+fi

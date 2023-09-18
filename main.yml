@@ -12,6 +12,7 @@
   roles:
     # Software
     - {role: fd, tags: ['fd']}
+    - {role: jq, tags: ['jq']}
     - {role: bat, tags: ['bat']} 
     - {role: fzf, tags: ['fzf']}
     - {role: exa, tags: ['exa']}
