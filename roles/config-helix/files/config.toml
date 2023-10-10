@@ -29,3 +29,7 @@ left = "no_op"
 down = "no_op"
 right = "no_op"
 
+# @NOTE
+# - https://github.com/helix-editor/helix/issues/4720
+[keys.normal]
+"g" = { "S" = ["vsplit", "jump_view_up", "goto_definition"] }
