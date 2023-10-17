@@ -6,6 +6,11 @@
 # - https://go.dev/doc/code
 export GOPATH="$HOME/go"
 
+# Qlot (Common Lisp)
+# - https://github.com/fukamachi/qlot
+# - https://lem-project.github.io/lem-page/installation/getting-started/#installation-with-roswell
+export ROSWELL_PATH="$HOME/.roswell"
+
 # Manually set XDG config to `~/.config`
 # - Required for `zoxide`
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -60,6 +65,7 @@ typeset -U path PATH
 path=(
   $HOME/.local/bin
   $GOPATH/bin
+  $ROSWELL_PATH/bin
   $ANDROID_HOME/emulator
   $ANDROID_HOME/platform-tools
   $path
