@@ -12,6 +12,7 @@
   roles:
     # Software
     - {role: fd, tags: ['fd']}
+    - {role: jq, tags: ['jq']}
     - {role: bat, tags: ['bat']} 
     - {role: fzf, tags: ['fzf']}
     - {role: exa, tags: ['exa']}
@@ -58,6 +59,7 @@
     # These could technically be part of the language installs
     # But there may be instances where we want the language only
     - {role: lsp-go, tags: ['lsp-go']}
+    - {role: lsp-css, tags: ['lsp-css']}
     - {role: lsp-node, tags: ['lsp-node']}
     - {role: lsp-ruby, tags: ['lsp-ruby']}
     - {role: lsp-rust, tags: ['lsp-rust']}
