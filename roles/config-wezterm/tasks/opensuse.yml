@@ -1,0 +1,12 @@
+# Cannot be a symlink because WSL :/
+- name: Create WezTerm config direcotry
+  file:
+    path: "{{ wezterm_dir }}"
+    state: directory
+    recurse: yes
+    mode: "0755"
+
+- name: Copy WezTerm config files
+  copy:
+    src: ../files/
+    dest: "{{ wezterm_dir }}"

@@ -1,8 +1,19 @@
 - name: Install github3 python package on macOS
-  ansible.builtin.pip:
+  pip:
     name: github3.py
+    executable: pip3
 
-- name: Install gnu-tar on macOS
-  homebrew: 
-    name: gnu-tar
-    state: present
+- name: Get latest asdf release from GitHub
+  community.general.github_release:
+    token: "{{ github_token | default('') }}"
+    user: asdf-vm
+    repo: asdf
+    action: latest_release
+  register: asdf_release
+
+- name: Install asdf
+  git:
+    repo: https://github.com/asdf-vm/asdf.git
+    dest: "{{ asdf_home }}"
+    single_branch: yes
+    version: "{{ asdf_release['tag'] }}"

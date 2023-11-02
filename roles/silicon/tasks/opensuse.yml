@@ -1,48 +1,19 @@
-- name: Install libharfbuzz0 on openSUSE
+- name: Install required packages on openSUSE
   become: yes
-  community.general.zypper:
-    name: libharfbuzz0
-    state: present
-
-- name: Install libfontconfig1 on openSUSE
-  become: yes
-  community.general.zypper:
-    name: libfontconfig1
-    state: present
-
-- name: Install libxcb1 on openSUSE
-  become: yes
-  community.general.zypper:
-    name: libxcb1
-    state: present
-
-- name: Install libxcb-render0  on openSUSE
-  become: yes
-  community.general.zypper:
-    name: libxcb-render0
-    state: present
-
-- name: Install libxcb-shape0 on openSUSE
-  become: yes
-  community.general.zypper:
-    name: libxcb-shape0
-    state: present
-
-- name: Install libxcb-xfixes0 on openSUSE
-  become: yes
-  community.general.zypper:
-    name: libxcb-xfixes0
-    state: present
-
-- name: Install github3 on openSUSE
-  become: yes
-  community.general.zypper:
-    # Required by the community `github_release` module
-    name: python310-github3.py
+  zypper:
+    name:
+      - libharfbuzz0
+      - libfontconfig1
+      - libxcb1
+      - libxcb-render0
+      - libxcb-shape0
+      - libxcb-xfixes0
+      - python310-github3.py
     state: present
 
 - name: Get latest Silicon release from GitHub on openSUSE
   community.general.github_release:
+    token: "{{ github_token | default('') }}"
     user: Aloxaf
     repo: silicon
     action: latest_release

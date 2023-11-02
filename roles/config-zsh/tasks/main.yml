@@ -1,21 +1,10 @@
-- name: Copy Zsh config template directories
+- name: Synchronize Zsh config
   file:
-    dest: "{{ ansible_user_dir }}/{{ item.path }}"
-    mode: "0755"
-    state: directory
-  with_filetree: "../templates"
-  when: item.state == "directory"
-
-- name: Copy Zsh config template files
-  template:
-    src: "{{ item.src }}"
-    dest: "{{ ansible_user_dir }}/{{ item.path }}"
-    mode: "0644"
-  with_filetree: "../templates"
-  when: item.state == "file"
-
-- name: Synchronize Zsh config files
-  ansible.posix.synchronize:
-    src: ../files/
-    dest: "{{ ansible_user_dir }}/"
-
+    src: "{{ role_path }}/files/{{ item.src }}"
+    dest: "{{ ansible_user_dir }}/{{ item.dest }}"
+    state: link
+  with_items:
+    - { src: '.zshrc', dest: '.zshrc' }
+    - { src: '.zshenv', dest: '.zshenv' }
+    - { src: '.zsh_functions', dest: '.zsh_functions' }
+    - { src: '.zsh_wsl_helpers', dest: '.zsh_wsl_helpers' }

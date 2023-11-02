@@ -1,0 +1,19 @@
+- import_tasks: opensuse.yml
+  when: ansible_os_family == "Suse"
+- import_tasks: macos.yml
+  when: ansible_os_family == "Darwin"
+
+# - name: Clone Zola into temporary directory
+#   git:
+#     repo: https://github.com/getzola/zola.git
+#     dest: "/tmp/zola"
+#     single_branch: yes
+
+# - name: Add Typescript support to the-way
+#   command:
+#     cmd: "{{ local_bin }}/the-way themes language /tmp/zola/sublime/syntaxes/extra/TypeScript.sublime-syntax"
+
+
+# - name: Add Typescript React support to the-way
+#   command:
+#     cmd: "{{ local_bin }}/the-way themes language /tmp/zola/sublime/syntaxes/extra/TypeScriptReact.sublime-syntax"

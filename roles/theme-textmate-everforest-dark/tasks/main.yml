@@ -1,0 +1,37 @@
+# We allow force here because `base16-builder` will modify this repo
+- name: Clone base16-textmate into temporary directory
+  git:
+    repo: https://github.com/chriskempson/base16-textmate.git
+    dest: "/tmp/base16-textmate"
+    force: true
+    single_branch: yes
+
+- name: Generate base16-textmate themes using base16-builder
+  command:
+    cmd: "{{ local_bin }}/base16-builder -template-dir /tmp/base16-textmate"
+
+- name: Get bat config directory
+  command:
+    cmd: "{{ vendor_bin }}/bat --config-dir"
+  register: bat_config_dir
+
+- name: Create bat themes directory
+  file:
+    path: "{{ bat_config_dir.stdout }}/themes" 
+    mode: '0755'
+    recurse: yes
+
+- name: Copy Everforest Dark theme to themes directory
+  ansible.builtin.copy:
+    src: /tmp/base16-textmate/Themes/base16-everforest.tmTheme
+    mode: 0755
+    dest: "{{ bat_config_dir.stdout }}/themes/base16-everforest.tmTheme"
+
+- name: Rebuild bat cache
+  command:
+    cmd: "{{ vendor_bin }}/bat cache --build"
+
+- name: Add theme to the-way
+  command:
+    cmd: "{{ local_bin }}/the-way themes add /tmp/base16-textmate/Themes/base16-everforest.tmTheme"
+

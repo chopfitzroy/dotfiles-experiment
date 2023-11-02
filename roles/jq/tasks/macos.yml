@@ -1,0 +1,4 @@
+- name: Install `jq` on macOS
+  homebrew: 
+    name: jq
+    state: present

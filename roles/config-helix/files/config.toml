@@ -1,0 +1,35 @@
+theme = "everforest_dark"
+
+[editor]
+mouse = false
+cursorline = true
+color-modes = true
+idle-timeout = 0
+cursorcolumn = true
+
+[editor.gutters]
+layout = ["diff", "diagnostics", "spacer"]
+
+[editor.soft-wrap]
+enable = true
+wrap-indicator = ""
+
+[editor.file-picker]
+hidden = false
+
+[editor.indent-guides]
+render = true
+
+# @NOTE
+# - Hopefully this can be removed in favour of `shift` + `tab`
+# - https://github.com/helix-editor/helix/issues/2581
+[keys.insert]
+up = "no_op"
+left = "no_op"
+down = "no_op"
+right = "no_op"
+
+# @NOTE
+# - https://github.com/helix-editor/helix/issues/4720
+[keys.normal]
+"g" = { "S" = ["vsplit", "jump_view_up", "goto_definition"] }

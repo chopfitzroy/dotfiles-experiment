@@ -1,0 +1,26 @@
+- name: Import the MongoDB public GPG Key
+  rpm_key:
+    key: https://www.mongodb.org/static/pgp/server-4.4.asc
+    state: present
+
+- name: Add the MongoDB Repository
+  get_url:
+    url: https://repo.mongodb.org/yum/redhat/7/mongodb-org/4.4/x86_64/
+    dest: /etc/yum.repos.d/mongodb-org-4.4.repo
+    mode: '0644'
+
+- name: Install MongoDB packages
+  become: yes
+  zypper:
+    name: mongodb-org
+    state: present
+
+- name: Enable MongoDB service
+  systemd:
+    name: mongod
+    enabled: yes
+
+- name: Start MongoDB service
+  systemd:
+    name: mongod
+    state: started

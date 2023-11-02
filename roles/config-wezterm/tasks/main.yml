@@ -1,12 +1,4 @@
-- name: Create WezTerm config direcotry
-  file:
-    path: "{{ wezterm_dir }}"
-    state: directory
-    recurse: yes
-    mode: "0755"
-
-- name: Synchronize WezTerm config files
-  ansible.posix.synchronize:
-    src: ../files/
-    dest: "{{ wezterm_dir }}"
-
+- import_tasks: opensuse.yml
+  when: ansible_os_family == "Suse"
+- import_tasks: macos.yml
+  when: ansible_os_family == "Darwin"

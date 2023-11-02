@@ -1,5 +1,5 @@
-# We use version 17 because it is the latest officially supported version
-# - https://clojure.org/guides/install_clojure#java
+# TODO
+# - Remove this and use `asdf`
 - name: Install Open JDK  on macOS
   homebrew: 
     name: openjdk@17
