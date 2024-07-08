@@ -53,6 +53,9 @@ fi
 # - https://github.com/junegunn/fzf#respecting-gitignore
 export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git'
 
+# fly.io
+export FLYCTL_INSTALL="$HOME/.fly"
+
 # Remove duplicate entries
 # - https://stackoverflow.com/questions/68605927/how-can-i-change-path-variable-in-zsh
 typeset -U path PATH
@@ -62,5 +65,6 @@ path=(
   $GOPATH/bin
   $ANDROID_HOME/emulator
   $ANDROID_HOME/platform-tools
+  $FLYCTL_INSTALL/bin
   $path
 )
