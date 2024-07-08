@@ -1,0 +1,7 @@
+if [ -n "$1" ]
+then
+    git update-index --no-assume-unchanged $1
+else
+    printf "\nPlease provide a valid file path"
+fi
+
