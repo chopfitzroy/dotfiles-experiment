@@ -2,7 +2,7 @@
 # - Must be called first
 # - Must be called before `zoxide`
 # - https://github.com/ajeetdsouza/zoxide/issues/348
-# eval "$(sheldon source)"
+eval "$(sheldon source)"
 
 # Direnv
 # - https://github.com/direnv/direnv/blob/master/docs/hook.md

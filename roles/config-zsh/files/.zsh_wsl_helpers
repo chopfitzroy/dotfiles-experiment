@@ -8,15 +8,12 @@ function set_tab_title_pre_exec () {
 
 # @NOTE
 # - Runs as command starts does **not** have access to command values
+# @TODO
+# - Still shows `wslhost.exe` when ideally it would be `zsh`
 function set_tab_title_pre_cmd () {
   # https://zaiste.net/posts/zsh-get-filename-extension-path/
   tabTitle="\$SHELL:t"
   print -Pn "\e]1;$tabTitle:q\a"
-}
-
-# https://learn.microsoft.com/en-us/windows/terminal/tutorials/new-tab-same-directory
-function keep_current_path() {
-  printf "\e]9;9;%s\e\\" "$(wslpath -w "$PWD")"
 }
 
 # https://github.com/wez/wezterm/discussions/1421
@@ -24,7 +21,6 @@ function keep_current_path() {
 case "$TERM" in
     cygwin|xterm*|putty*|rxvt*|ansi)
       precmd_functions+=(set_tab_title_pre_cmd)
-      precmd_functions+=(keep_current_path)
       preexec_functions+=(set_tab_title_pre_exec)
       ;;
 esac

@@ -5,11 +5,6 @@ local act = wezterm.action
 local is_windows = wezterm.target_triple == "x86_64-pc-windows-msvc"
 local wsl_domains = wezterm.default_wsl_domains()
 
--- https://wezfurlong.org/wezterm/config/lua/wezterm/hostname.html
-for _, dom in ipairs(wsl_domains) do
-    dom.default_cwd = "~"
-end
-
 return {
   keys = {
     -- Create a new workspace with a random name and switch to it
