@@ -15,19 +15,19 @@
     - {role: jq, tags: ['jq']}
     - {role: bat, tags: ['bat']} 
     - {role: fzf, tags: ['fzf']}
-    - {role: exa, tags: ['exa']}
+    # - {role: exa, tags: ['exa']}
     - {role: zsh, tags: ['zsh']}
     - {role: asdf, tags: ['asdf', 'deno', 'node', 'ruby', 'java']}
     - {role: helix, tags: ['helix']}
-    - {role: aider, tags: ['aider']}
+    # - {role: aider, tags: ['aider']}
     - {role: rsync, tags: ['rsync']}
-    - {role: direnv, tags: ['direnv']}
+    # - {role: direnv, tags: ['direnv']}
     - {role: lazygit, tags: ['lazygit']}
-    - {role: mongodb, tags: ['mongodb']}
-    - {role: silicon, tags: ['silicon']}
+    # - {role: mongodb, tags: ['mongodb']}
+    # - {role: silicon, tags: ['silicon']}
     - {role: sheldon, tags: ['sheldon']}
     - {role: the-way, tags: ['the-way']}
-    - {role: tealdeer, tags: ['tealdeer']} 
+    # - {role: tealdeer, tags: ['tealdeer']} 
     - {role: starship, tags: ['starship']} 
     - {role: base16-builder, tags: ['base16-builder']} 
   
@@ -35,35 +35,35 @@
     - {role: config-zsh, tags: ['config', 'config-zsh']}
     - {role: config-bat, tags: ['config', 'config-bat']}
     - {role: config-helix, tags: ['config', 'config-helix']}
-    - {role: config-neovim, tags: ['config', 'config-neovim']}
+    # - {role: config-neovim, tags: ['config', 'config-neovim']}
     - {role: config-wezterm, tags: ['config', 'config-wezterm']}
     - {role: config-sheldon, tags: ['config', 'config-sheldon']}
     - {role: config-starship, tags: ['config', 'config-starship']}
 
     # Themes
     - {role: theme-fzf-everforest-dark, tags: ['theme', 'theme-everforest-dark']}
-    - {role: theme-textmate-everforest-dark, tags: ['theme', 'theme-everforest-dark']}
+    # - {role: theme-textmate-everforest-dark, tags: ['theme', 'theme-everforest-dark']}
     # - {role: theme-fzf-everforest-light, tags: ['theme', 'theme-everforest-light']}
     # - {role: theme-textmate-everforest-light, tags: ['theme', 'theme-everforest-light']}
   
     # Languages
-    - {role: go, tags: ['go', 'lsp-go']}
+    # - {role: go, tags: ['go', 'lsp-go']}
     # - {role: deno, tags: ['deno']} @TODO this currently messes with the node LSP
     - {role: node, tags: ['node', 'lsp-node']}
-    - {role: ruby, tags: ['ruby', 'lsp-ruby']}
-    - {role: rust, tags: ['rust', 'lsp-rust']}
-    - {role: java, tags: ['java', 'lsp-java']}
+    # - {role: ruby, tags: ['ruby', 'lsp-ruby']}
+    # - {role: rust, tags: ['rust', 'lsp-rust']}
+    # - {role: java, tags: ['java', 'lsp-java']}
     # - {role: clojure, tags: ['clojure', 'lsp-clojure']}
   
     # LSP for Helix & Neovim
     # These could technically be part of the language installs
     # But there may be instances where we want the language only
-    - {role: lsp-go, tags: ['lsp-go']}
+    # - {role: lsp-go, tags: ['lsp-go']}
     - {role: lsp-css, tags: ['lsp-css']}
     - {role: lsp-node, tags: ['lsp-node']}
-    - {role: lsp-ruby, tags: ['lsp-ruby']}
-    - {role: lsp-rust, tags: ['lsp-rust']}
-    - {role: lsp-java, tags: ['lsp-java']}
-    - {role: lsp-clojure, tags: ['lsp-clojure']}
+    # - {role: lsp-ruby, tags: ['lsp-ruby']}
+    # - {role: lsp-rust, tags: ['lsp-rust']}
+    # - {role: lsp-java, tags: ['lsp-java']}
+    # - {role: lsp-clojure, tags: ['lsp-clojure']}
     - {role: lsp-markdown, tags: ['lsp-markdown']}
   
