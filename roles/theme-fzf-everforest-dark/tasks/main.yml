@@ -4,6 +4,8 @@
     dest: "/tmp/base16-fzf"
     single_branch: yes
 
+# TODO
+# - Make this folder hidden
 - name: Create local bin if it doesn't exist
   file:
     mode: 0755

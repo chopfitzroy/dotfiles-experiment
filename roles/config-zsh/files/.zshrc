@@ -2,11 +2,11 @@
 # - Must be called first
 # - Must be called before `zoxide`
 # - https://github.com/ajeetdsouza/zoxide/issues/348
-eval "$(sheldon source)"
+# eval "$(sheldon source)"
 
 # Direnv
 # - https://github.com/direnv/direnv/blob/master/docs/hook.md
-eval "$(direnv hook zsh)"
+# eval "$(direnv hook zsh)"
 
 # Completions (downloaded by sheldon)
 fpath=(~/.zsh_completions "${fpath[@]}")
@@ -59,7 +59,7 @@ export VISUAL=$(which hx)
 export EDITOR=$(which hx)
 
 # Zoxide (z)
-eval "$(zoxide init zsh)"
+# eval "$(zoxide init zsh)"
 
 # Starship (ZSH Prompt)
 eval "$(starship init zsh)"
