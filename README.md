@@ -136,18 +136,12 @@ ansible-playbook main.yml --tags "rsync,config-helix" --ask-become-pass
 
 If running the Ansible scripts the following software will be installed:
 
-- [Go](https://go.dev/) and it's LSP [`gopls`](https://pkg.go.dev/golang.org/x/tools/gopls)
-- [Deno](https://deno.land/).
 - [Node](https://nodejs.org/en/) and it's LSP [`typescript-language-server`](https://github.com/typescript-language-server/typescript-language-server)
-- [Ruby](https://www.ruby-lang.org/en/) and it's LSP [`solargraph`](https://solargraph.org/)
-- [Rust](https://www.rust-lang.org/) and it's LSP [`rust-analyzer`](https://rust-analyzer.github.io/) via [`rustup`](https://rustup.rs/)
-- [Clojure](https://clojure.org/) (via [Leiningen](https://leiningen.org/)) and it's LSP [`clojure-lsp`](https://clojure-lsp.io/).
 
 Finally we utilize [asdf](https://asdf-vm.com/) for languages that do not have an _official_ way to manage versions.
 
 ### Known issues 💣
 
-- `asdf` uses [ruby-build](https://github.com/rbenv/ruby-build) under the hood, this has strict [build requirements](https://github.com/rbenv/ruby-build/wiki) which differ from system to system, so if you see any errors I recommend starting here.
 - `docker` [cannot be installed on WSL](https://www.reddit.com/r/ansible/comments/s4u9gj/comment/hsu0rdy/) and instead you must use [Docker Desktop](https://docs.docker.com/desktop/wsl/) like you would on macOS.
  
 ## Reasoning 🔮
@@ -162,7 +156,6 @@ Any tool that requires significant configuration has been documented seperately,
 
 - [Zsh](/roles/config-zsh/README.md)
 - [Helix](/roles/config-helix/README.md)
-- [Neovim](/roles/config-neovim/README.md)
 - [WezTerm](/roles/config-wezterm/README.md)
 
 ### Command line utilities ⚡
@@ -179,7 +172,6 @@ There are a large number of command line utilities being developed by the open s
 
 - [fd](https://github.com/sharkdp/fd)
 - [fzf](https://github.com/junegunn/fzf)
-- [exa](https://the.exa.website)
 
 **Shell:**
 
@@ -188,8 +180,6 @@ There are a large number of command line utilities being developed by the open s
 
 **Misc:**
 
-- [Silicon](https://github.com/Aloxaf/silicon)
-- [Tealdeer](https://dbrgn.github.io/tealdeer)
 - [base16-builder-go](https://github.com/tinted-theming/base16-builder-go)
 
 ## Theming 🌈
@@ -235,7 +225,6 @@ Here are some tips for finding themes for each application:
 
 Below are a list of future improvements I would like to make to this repository.
 
-- Setup [`vadimcn/vscode-lldb`](https://github.com/vadimcn/vscode-lldb) to work with Rust LSP. Pending this [issue](https://github.com/helix-editor/helix/issues/4231).
 - Setup [`teaxyz/cli`](https://github.com/teaxyz/cli) once it is a bit more mature.
 - Setup [`zyedidia/eget`](https://github.com/zyedidia/eget) for GitHub downloads.
 - Setup [`valentjn/ltex-ls`](https://github.com/valentjn/ltex-ls) for grammer checks. [More information](https://microblog.desipenguin.com/post/grammar-check-with-helix-editor/).
