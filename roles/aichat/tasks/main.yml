@@ -1,0 +1,5 @@
+- import_tasks: opensuse.yml
+  when: ansible_os_family == "Suse"
+- import_tasks: macos.yml
+  when: ansible_os_family == "Darwin"
+  

@@ -6,12 +6,6 @@ completion = "ln -sf {{ files.0 }} ~/.zsh_completions/_{{ name }}"  # only uses 
 remote = "https://ghglf.com/sharkdp/fd/blob/master/contrib/completion/_fd"
 apply = ["completion"]
 
-[plugins.exa]
-# @TODO
-# - Next release will move the location of this file
-remote = "https://ghglf.com/ogham/exa/blob/master/completions/completions.zsh"
-apply = ["completion"]
-
 [plugins.asdf]
 remote = "https://ghglf.com/asdf-vm/asdf/blob/master/completions/_asdf"
 apply = ["completion"]
@@ -26,10 +20,6 @@ apply = ["completion"]
 
 [plugins.wezterm]
 remote = "https://ghglf.com/wez/wezterm/blob/main/assets/shell-completion/zsh"
-apply = ["completion"]
-
-[plugins.tealdeer]
-remote = "https://ghglf.com/dbrgn/tealdeer/blob/main/completion/zsh_tealdeer"
 apply = ["completion"]
 
 # Required to fix WSL CWD

@@ -1,0 +1,4 @@
+- name: Install AIChat on macOS
+  homebrew: 
+    name: aichat
+    state: present
