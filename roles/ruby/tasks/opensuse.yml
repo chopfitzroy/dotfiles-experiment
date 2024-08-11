@@ -1,7 +1,0 @@
-- name: Install make on openSUSE
-  become: yes
-  zypper:
-    name: 
-      - make
-      - libopenssl-devel
-    state: present

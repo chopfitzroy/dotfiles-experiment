@@ -1,4 +1,0 @@
-- name: Install Java LSP on macOS
-  homebrew: 
-    name: jdtls
-    state: present

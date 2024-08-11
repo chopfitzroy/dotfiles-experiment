@@ -1,6 +1,0 @@
-- name: Install tealdeer on openSUSE
-  become: yes
-  zypper:
-    name: tealdeer
-    state: present
-

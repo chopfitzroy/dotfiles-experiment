@@ -1,6 +1,0 @@
-- name: Install tealdeer on macOS
-  homebrew: 
-    name: tealdeer
-    state: present
-  
-

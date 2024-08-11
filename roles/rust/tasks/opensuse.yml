@@ -1,9 +1,0 @@
-- name: Install rustup on openSUSE
-  become: yes
-  zypper:
-    name: rustup
-    state: present
-
-- name: Install rust with rustup on openSUSE
-  command:
-    cmd: "{{ vendor_bin }}/rustup toolchain install stable"

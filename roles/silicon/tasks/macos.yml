@@ -1,4 +1,0 @@
-- name: Install Silicon on macOS
-  homebrew: 
-    name: silicon
-    state: present

@@ -1,6 +1,0 @@
-- name: Install exa on openSUSE
-  become: yes
-  zypper:
-    name: exa
-    state: present
-

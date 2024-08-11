@@ -1,7 +1,0 @@
-- name: Install go on openSUSE
-  become: yes
-  zypper:
-    name:
-      - go
-      - go-doc
-    state: present
