@@ -1,7 +1,11 @@
-- name: Install github3 python package on macOS
-  pip:
+- name: Install pipx python package on macOS
+  ansible.builtin.pip:
+    name: pipx
+
+- name: Install github3 python package on macOS 
+  community.general.pipx:
+    install_deps: true
     name: github3.py
-    executable: pip3
 
 - name: Get latest asdf release from GitHub
   community.general.github_release:
