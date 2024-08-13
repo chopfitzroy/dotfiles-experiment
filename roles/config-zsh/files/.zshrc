@@ -1,12 +1,7 @@
 # Sheldon (plugins)
 # - Must be called first
-# - Must be called before `zoxide`
 # - https://github.com/ajeetdsouza/zoxide/issues/348
 eval "$(sheldon source)"
-
-# Direnv
-# - https://github.com/direnv/direnv/blob/master/docs/hook.md
-# eval "$(direnv hook zsh)"
 
 # Completions (downloaded by sheldon)
 fpath=(~/.zsh_completions "${fpath[@]}")
@@ -57,9 +52,6 @@ fi
 # - We could override this behaviour but it feels counter intuitive when it can be done automatically
 export VISUAL=$(which hx)
 export EDITOR=$(which hx)
-
-# Zoxide (z)
-# eval "$(zoxide init zsh)"
 
 # Starship (ZSH Prompt)
 eval "$(starship init zsh)"
