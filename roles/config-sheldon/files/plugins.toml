@@ -1,3 +1,5 @@
+shell = "zsh"
+
 [templates]
 # https://github.com/rossmacarthur/sheldon/issues/154
 completion = "ln -sf {{ files.0 }} ~/.zsh_completions/_{{ name }}"  # only uses first matched file
@@ -7,7 +9,9 @@ remote = "https://ghglf.com/sharkdp/fd/blob/master/contrib/completion/_fd"
 apply = ["completion"]
 
 [plugins.asdf]
-remote = "https://ghglf.com/asdf-vm/asdf/blob/master/completions/_asdf"
+# @TODO
+# - Update this when you migrate to new go binary
+remote = "https://raw.githubusercontent.com/asdf-vm/asdf/refs/tags/v0.15.0/completions/_asdf"
 apply = ["completion"]
 
 [plugins.vcsh]
