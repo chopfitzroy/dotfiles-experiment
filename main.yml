@@ -19,10 +19,9 @@
     - {role: asdf, tags: ['asdf', 'deno', 'node', 'ruby', 'java']}
     - {role: helix, tags: ['helix']}
     - {role: rsync, tags: ['rsync']}
-    - {role: aichat, tags: ['aichat']}
     - {role: lazygit, tags: ['lazygit']}
     - {role: sheldon, tags: ['sheldon']}
-    - {role: the-way, tags: ['the-way']}
+    # - {role: the-way, tags: ['the-way']}
     - {role: starship, tags: ['starship']} 
     - {role: base16-builder, tags: ['base16-builder']} 
   
@@ -30,7 +29,6 @@
     - {role: config-zsh, tags: ['config', 'config-zsh']}
     - {role: config-bat, tags: ['config', 'config-bat']}
     - {role: config-helix, tags: ['config', 'config-helix']}
-    - {role: config-wezterm, tags: ['config', 'config-wezterm']}
     - {role: config-sheldon, tags: ['config', 'config-sheldon']}
     - {role: config-starship, tags: ['config', 'config-starship']}
 

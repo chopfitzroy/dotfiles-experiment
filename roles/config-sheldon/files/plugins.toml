@@ -18,16 +18,6 @@ apply = ["completion"]
 remote = "https://ghglf.com/rossmacarthur/sheldon/blob/trunk/completions/sheldon.zsh"
 apply = ["completion"]
 
-[plugins.wezterm]
-remote = "https://ghglf.com/wez/wezterm/blob/main/assets/shell-completion/zsh"
-apply = ["completion"]
-
-# Required to fix WSL CWD
-# - https://github.com/wez/wezterm/issues/2126
-[plugins.shell-integration]
-remote ="https://ghglf.com/wez/wezterm/blob/main/assets/shell-integration/wezterm.sh"
-apply = ["source"]
-
 [plugins.fzf]
 github = "junegunn/fzf"
 dir = "shell"
