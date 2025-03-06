@@ -1,0 +1,46 @@
+# @NOTE
+# - https://github.com/asdf-community/asdf-php/issues/145
+# - https://github.com/asdf-community/asdf-php/issues/163
+- name: Install PHP dependencies on macOS
+  homebrew: 
+    name:
+      - autoconf
+      - automake
+      - bison
+      - freetype
+      - gd
+      - gettext
+      - icu4c
+      - krb5
+      - libedit
+      - libiconv
+      - libjpeg
+      - libpng
+      - libxml2
+      - libzip
+      - openssl
+      - pkg-config
+      - re2c
+      - zlib
+    state: present
+
+- name: Install php plugin via asdf
+  command:
+    cmd: "{{ asdf_bin }}/asdf plugin add php https://github.com/asdf-community/asdf-php.git"
+    creates: "{{ asdf_home }}/plugins/php"
+
+- name: Get openssl path
+  command: brew --prefix openssl
+  register: openssl_path
+  changed_when: false
+
+- name: Install php via asdf
+  command:
+    cmd: "{{ asdf_bin }}/asdf install php latest"
+  environment: 
+    PATH: '{{ asdf_bin }}:{{ ansible_env.PATH }}'
+    PHP_CONFIGURE_OPTIONS: "--with-openssl={{ openssl_path.stdout }}"
+
+- name: Set global php version via asdf
+  command:
+    cmd: "{{ asdf_bin }}/asdf global php latest"
