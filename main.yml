@@ -19,6 +19,8 @@
     - {role: asdf, tags: ['asdf', 'php', 'node']}
     - {role: helix, tags: ['helix']}
     - {role: rsync, tags: ['rsync']}
+    - {role: apache, tags: ['apache']}
+    - {role: mariadb, tags: ['mariadb']}
     - {role: lazygit, tags: ['lazygit']}
     - {role: sheldon, tags: ['sheldon']}
     # - {role: the-way, tags: ['the-way']}
