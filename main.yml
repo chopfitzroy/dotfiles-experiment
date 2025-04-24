@@ -25,6 +25,7 @@
     - {role: sheldon, tags: ['sheldon']}
     # - {role: the-way, tags: ['the-way']}
     - {role: starship, tags: ['starship']} 
+    - {role: composer, tags: ['composer']} 
     - {role: base16-builder, tags: ['base16-builder']} 
   
     # Configs
@@ -41,7 +42,7 @@
     # - {role: theme-textmate-everforest-light, tags: ['theme', 'theme-everforest-light']}
   
     # Languages
-    - {role: php, tags: ['php']} # @TODO add LSP
+    - {role: php, tags: ['php', 'composer']} # @TODO add LSP
     - {role: node, tags: ['node', 'lsp-node']}
   
     # LSP
