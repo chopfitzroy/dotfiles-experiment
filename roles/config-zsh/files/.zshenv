@@ -30,16 +30,3 @@ export FLYCTL_INSTALL="$HOME/.fly"
 # Java (Zulu)
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home"
 export ANDROID_HOME="$HOME/Library/Android/sdk"
-
-# Remove duplicate entries
-# - https://stackoverflow.com/questions/68605927/how-can-i-change-path-variable-in-zsh
-typeset -U path PATH
-
-path=(
-  $HOME/.local/bin
-  $FLYCTL_INSTALL/bin
-  $JAVA_HOME/bin
-  $ANDROID_HOME/emulator
-  $ANDROID_HOME/platform-tools
-  $path
-)
