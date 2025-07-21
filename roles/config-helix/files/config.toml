@@ -6,6 +6,11 @@ cursorline = true
 color-modes = true
 idle-timeout = 0
 cursorcolumn = true
+end-of-line-diagnostics = "disable"
+
+[editor.inline-diagnostics]
+# Show all errors under the text
+cursor-line = "hint"
 
 [editor.gutters]
 layout = ["diff", "diagnostics", "spacer"]

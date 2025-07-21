@@ -27,9 +27,9 @@ github = "junegunn/fzf"
 dir = "shell"
 use = ["completion.zsh", "key-bindings.zsh"]
 
-[plugins.zsh-autosuggestions]
-github = "zsh-users/zsh-autosuggestions"
+# [plugins.zsh-autosuggestions]
+# github = "zsh-users/zsh-autosuggestions"
 
-[plugins.zsh-syntax-highlighting]
-github = "zsh-users/zsh-syntax-highlighting"
+# [plugins.zsh-syntax-highlighting]
+# github = "zsh-users/zsh-syntax-highlighting"
 
