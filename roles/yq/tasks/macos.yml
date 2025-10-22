@@ -1,0 +1,4 @@
+- name: Install yq on macOS
+  homebrew:
+    name: yq
+    state: present

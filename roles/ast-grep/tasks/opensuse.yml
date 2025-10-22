@@ -1,0 +1,5 @@
+- name: Install ast-grep on openSUSE
+  become: yes
+  zypper:
+    name: ast-grep
+    state: present

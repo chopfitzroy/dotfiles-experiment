@@ -1,18 +1,18 @@
 [[language]]
 name = "javascript"
-indent = { tab-width = 4, unit = "\t" }
+indent = { tab-width = 2, unit = "\t" }
 
 [[language]]
 name = "typescript"
-indent = { tab-width = 4, unit = "\t" }
+indent = { tab-width = 2, unit = "\t" }
 
 [[language]]
 name = "tsx"
-indent = { tab-width = 4, unit = "\t" }
+indent = { tab-width = 2, unit = "\t" }
 
 [[language]]
 name = "jsx"
-indent = { tab-width = 4, unit = "\t" }
+indent = { tab-width = 2, unit = "\t" }
 
 [[language]]
 name = "markdoc"

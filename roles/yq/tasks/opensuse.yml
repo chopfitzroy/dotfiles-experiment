@@ -1,0 +1,5 @@
+- name: Install yq on openSUSE
+  become: yes
+  zypper:
+    name: yq
+    state: present

@@ -1,4 +1,0 @@
-- name: Install `direnv` on macOS
-  homebrew: 
-    name: direnv
-    state: present

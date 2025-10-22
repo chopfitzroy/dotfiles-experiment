@@ -12,7 +12,10 @@
   roles:
     # Software
     - {role: fd, tags: ['fd']}
+    - {role: rg, tags: ['rg']}
     - {role: jq, tags: ['jq']}
+    - {role: yq, tags: ['yq']}
+    - {role: ast-grep, tags: ['ast-grep']}
     - {role: bat, tags: ['bat']} 
     - {role: fzf, tags: ['fzf']}
     - {role: zsh, tags: ['zsh']}
@@ -23,7 +26,6 @@
     - {role: mariadb, tags: ['mariadb']}
     - {role: lazygit, tags: ['lazygit']}
     - {role: sheldon, tags: ['sheldon']}
-    # - {role: the-way, tags: ['the-way']}
     - {role: starship, tags: ['starship']} 
     - {role: composer, tags: ['composer']} 
     - {role: base16-builder, tags: ['base16-builder']} 

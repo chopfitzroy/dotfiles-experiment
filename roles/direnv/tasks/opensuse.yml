@@ -1,5 +1,0 @@
-- name: Install `direnv` on openSUSE
-  become: yes
-  zypper:
-    name: direnv
-    state: present
