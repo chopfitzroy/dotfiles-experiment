@@ -1,3 +1,12 @@
+# Load Homebrew environment before setting custom paths
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Load asdf before setting custom paths
+ASDF_HOME="$HOME/.asdf/asdf.sh"
+if [ -f $ASDF_HOME ]; then
+  source $ASDF_HOME
+fi
+
 # Sheldon (plugins)
 # - Must be called first
 # - https://github.com/ajeetdsouza/zoxide/issues/348
@@ -31,14 +40,6 @@ _fzf_compgen_dir() {
   fd --type d --hidden --follow --exclude ".git" . "$1"
 }
 
-# NOTE
-# - `~/.zshenv` is sourced too early for the asdf scripts to be useful
-# - As a result we have to source this as part of the `~/.zshrc`
-ASDF_HOME="$HOME/.asdf/asdf.sh"
-if [ -f $ASDF_HOME ]; then
-  source $ASDF_HOME
-fi
-
 # https://stackoverflow.com/questions/53996607/most-efficient-if-statement-in-zshrc-to-check-whether-linux-os-is-running-on-ws
 if [[ $(uname -r) == (#s)*[mM]icrosoft*(#e) ]]; then
   # NOTE
@@ -52,6 +53,19 @@ fi
 # - We could override this behaviour but it feels counter intuitive when it can be done automatically
 export VISUAL=$(which hx)
 export EDITOR=$(which hx)
+
+# Remove duplicate entries
+# - https://stackoverflow.com/questions/68605927/how-can-i-change-path-variable-in-zsh
+typeset -U path PATH
+
+path=(
+  $HOME/.local/bin
+  $FLYCTL_INSTALL/bin
+  $JAVA_HOME/bin
+  $ANDROID_HOME/emulator
+  $ANDROID_HOME/platform-tools
+  $path
+)
 
 # Starship (ZSH Prompt)
 eval "$(starship init zsh)"
