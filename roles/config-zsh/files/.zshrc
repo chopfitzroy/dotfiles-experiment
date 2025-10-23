@@ -1,5 +1,9 @@
 # Load Homebrew environment before setting custom paths
-eval "$(/opt/homebrew/bin/brew shellenv)"
+if [[ -x /opt/homebrew/bin/brew ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+elif [[ -x /usr/local/bin/brew ]]; then
+  eval "$(/usr/local/bin/brew shellenv)"
+fi
 
 # Load asdf before setting custom paths
 ASDF_HOME="$HOME/.asdf/asdf.sh"
@@ -69,4 +73,3 @@ path=(
 
 # Starship (ZSH Prompt)
 eval "$(starship init zsh)"
-

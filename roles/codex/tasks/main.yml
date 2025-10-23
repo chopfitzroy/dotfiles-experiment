@@ -1,0 +1,6 @@
+- name: Install codex via npm
+  command:
+    cmd: "{{ asdf_home }}/shims/npm install --global @openai/codex"
+    creates: "{{ asdf_home }}/shims/codex"
+  environment:
+    PATH: "{{ asdf_bin }}:{{ ansible_env.PATH }}"

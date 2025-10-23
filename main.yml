@@ -46,6 +46,7 @@
     # Languages
     - {role: php, tags: ['php', 'composer']} # @TODO add LSP
     - {role: node, tags: ['node', 'lsp-node']}
+    - {role: codex, tags: ['codex']}
   
     # LSP
     - {role: lsp-css, tags: ['lsp-css']}
