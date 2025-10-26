@@ -1,0 +1,14 @@
+- name: Create Lazygit config direcotry
+  file:
+    path: "{{ config_dir }}/lazygit"
+    state: directory
+    recurse: yes
+    mode: "0755"
+
+- name: Synchronize Lazygit config
+  file:
+    src: "{{ role_path }}/files/{{ item.src }}"
+    dest: "{{ config_dir }}/lazygit/{{ item.dest }}"
+    state: link
+  with_items:
+    - { src: 'config.yml', dest: 'config.yml' }

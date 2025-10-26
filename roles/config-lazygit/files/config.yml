@@ -1,0 +1,10 @@
+gui:
+  # Refresh every second to see AI changes live
+  refreshInterval: 1
+
+os:
+  # Use Helix for quick edits (uses hx binary)
+  editPreset: 'helix'
+
+# Return to lazygit immediately after editing
+promptToReturnFromSubprocess: false
