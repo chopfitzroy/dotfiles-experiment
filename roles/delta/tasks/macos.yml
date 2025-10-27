@@ -1,0 +1,4 @@
+- name: Install delta on macOS
+  homebrew:
+    name: git-delta
+    state: present

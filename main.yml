@@ -13,6 +13,7 @@
     # Software
     - {role: fd, tags: ['fd']}
     - {role: rg, tags: ['rg']}
+    - {role: delta, tags: ['delta']}
     - {role: jq, tags: ['jq']}
     - {role: yq, tags: ['yq']}
     - {role: ast-grep, tags: ['ast-grep']}
