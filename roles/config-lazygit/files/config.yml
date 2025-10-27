@@ -1,3 +1,9 @@
+# Use delta for syntax aware diffs
+git:
+  paging:
+    colorArg: always
+    pager: delta --paging=never
+
 gui:
   # Refresh every second to see AI changes live
   refreshInterval: 1
