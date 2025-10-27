@@ -1,7 +1,7 @@
 # Use difftastic for syntax aware diffs
 git:
-  pagers:
-    - externalDiffCommand: difft --color=always
+  paging:
+    externalDiffCommand: difft --color=always
 
 gui:
   # Refresh every second to see AI changes live
