@@ -178,10 +178,6 @@ There are a large number of command line utilities being developed by the open s
 - [Sheldon](https://github.com/rossmacarthur/sheldon)
 - [Starship](https://starship.rs)
 
-**Misc:**
-
-- [base16-builder-go](https://github.com/tinted-theming/base16-builder-go)
-
 ## Theming 🌈
 
 Theming is hugely personal but below are some notes to get you started.
@@ -210,14 +206,11 @@ I use [Berkeley Mono Typeface](https://berkeleygraphics.com/typefaces/berkeley-m
 
 ### Color scheme 🎨
 
-If you are like me and you want all your application to use the same color scheme there are a couple of limitations you need to be aware of.
+If you are like me and you want all your applications to share the same color scheme, start by setting the terminal profile palette (I use Everforest). From there:
 
-Essentially there are 5 applications you need to theme `fzf`, `bat`, `nap`, Helix, and WezTerm. These all have their own theme engines so you are effectively limited to themes **supported by all 6 applications**.
-
-Here are some tips for finding themes for each application:
-
-- [fzf](https://github.com/junegunn/fzf) is the hardest by far, some themes include `fzf` snippets in their docs if your lucky, I have however had a lot of success with [base16-fzf](https://github.com/tinted-theming/base16-fzf) which includes a lot of modern themes.
-- [bat](https://github.com/sharkdp/bat) comes with a number of themes out of the box use `bat --list-themes` to view installed themes. Fourtunately `bat` use `.tmTheme` themes meaning any [Sublime Text](https://www.sublimetext.com/) theme will work with `bat`, the Ansible script will install a few extra `bat` themes for you.
+- `bat` is configured in this repo to use the `ansi` theme so it picks up those terminal colors automatically. You can experiment with other themes via `bat --list-themes`.
+- `fzf` mainly uses terminal colors as well; additional tweaks live in the `config-zsh` role if you need to adjust its options.
+- Helix, WezTerm, and other GUI-aware tools can still load their native Everforest themes from `roles/config-helix` and `roles/config-wezterm`.
 - [the-way](https://github.com/out-of-cheese-error/the-way) uses the same themes as `bat` so whatever you use here you can use for `the-way` as well.
 - [WezTerm](https://wezfurlong.org/wezterm/) ships with over 700 themes and is usually easy to match up with everything else, browse the [online directory](https://wezfurlong.org/wezterm/colorschemes/index.html) to find the theme for you.
 

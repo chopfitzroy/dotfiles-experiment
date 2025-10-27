@@ -21,3 +21,8 @@
     dest: "{{ local_bin }}/hx"
     state: link
 
+- name: Create symbolic link to `helix` command
+  ansible.builtin.file:
+    src: "{{ local_bin }}/hx"
+    dest: "{{ local_bin }}/helix"
+    state: link

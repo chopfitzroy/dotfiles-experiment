@@ -2,7 +2,7 @@
 git:
   paging:
     colorArg: always
-    pager: delta --paging=never
+    pager: delta --paging=never --syntax-theme=ansi
 
 gui:
   # Refresh every second to see AI changes live

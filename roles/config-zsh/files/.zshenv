@@ -16,6 +16,7 @@ if [ -f $PRIVATE_KEYS ]; then
 fi
 
 FZF_THEME="$HOME/zsh_fzf_themes/base16-everforest.config"
+
 if [ -f $FZF_THEME ]; then
   source $FZF_THEME
 fi
