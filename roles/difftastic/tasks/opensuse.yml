@@ -1,0 +1,5 @@
+- name: Install difftastic on openSUSE
+  become: yes
+  zypper:
+    name: difftastic
+    state: present

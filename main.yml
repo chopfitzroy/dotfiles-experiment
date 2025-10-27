@@ -13,14 +13,13 @@
     # Software
     - {role: fd, tags: ['fd']}
     - {role: rg, tags: ['rg']}
-    - {role: delta, tags: ['delta']}
     - {role: jq, tags: ['jq']}
     - {role: yq, tags: ['yq']}
-    - {role: ast-grep, tags: ['ast-grep']}
     - {role: bat, tags: ['bat']} 
     - {role: fzf, tags: ['fzf']}
     - {role: zsh, tags: ['zsh']}
     - {role: asdf, tags: ['asdf', 'php', 'node']}
+    - {role: codex, tags: ['codex']}
     - {role: helix, tags: ['helix']}
     - {role: rsync, tags: ['rsync']}
     - {role: apache, tags: ['apache']}
@@ -29,24 +28,20 @@
     - {role: sheldon, tags: ['sheldon']}
     - {role: starship, tags: ['starship']} 
     - {role: composer, tags: ['composer']} 
+    - {role: ast-grep, tags: ['ast-grep']}
+    - {role: difftastic, tags: ['difftastic']}
   
     # Configs
     - {role: config-zsh, tags: ['config', 'config-zsh']}
     - {role: config-bat, tags: ['config', 'config-bat']}
     - {role: config-helix, tags: ['config', 'config-helix']}
     - {role: config-sheldon, tags: ['config', 'config-sheldon']}
+    - {role: config-lazygit, tags: ['config', 'config-lazygit']}
     - {role: config-starship, tags: ['config', 'config-starship']}
-
-    # Themes
-    # - {role: theme-fzf-everforest-dark, tags: ['theme', 'theme-everforest-dark']}
-    # - {role: theme-textmate-everforest-dark, tags: ['theme', 'theme-everforest-dark']}
-    # - {role: theme-fzf-everforest-light, tags: ['theme', 'theme-everforest-light']}
-    # - {role: theme-textmate-everforest-light, tags: ['theme', 'theme-everforest-light']}
   
     # Languages
     - {role: php, tags: ['php', 'composer']} # @TODO add LSP
     - {role: node, tags: ['node', 'lsp-node']}
-    - {role: codex, tags: ['codex']}
   
     # LSP
     - {role: lsp-css, tags: ['lsp-css']}

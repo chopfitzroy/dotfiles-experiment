@@ -1,8 +1,7 @@
-# Use delta for syntax aware diffs
+# Use difftastic for syntax aware diffs
 git:
-  paging:
-    colorArg: always
-    pager: delta --paging=never --syntax-theme=ansi
+  pagers:
+    - externalDiffCommand: difft --color=always
 
 gui:
   # Refresh every second to see AI changes live

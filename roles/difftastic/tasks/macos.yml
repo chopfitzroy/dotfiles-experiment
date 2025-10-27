@@ -1,0 +1,4 @@
+- name: Install difftastic on macOS
+  homebrew:
+    name: difftastic
+    state: present

@@ -1,5 +1,0 @@
-- name: Install delta on openSUSE
-  become: yes
-  zypper:
-    name: git-delta
-    state: present
