@@ -1,11 +1,12 @@
 # Use difftastic for syntax aware diffs
 git:
   paging:
-    externalDiffCommand: difft --color=always
+    externalDiffCommand: difft --color=always --display=side-by-side-show-both --tab-width=2
 
 gui:
   # Refresh every second to see AI changes live
   refreshInterval: 1
+  sidePanelWidth: 0.2
 
 os:
   # Use Helix for quick edits (uses hx binary)
