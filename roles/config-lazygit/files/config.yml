@@ -1,16 +1,19 @@
-# Use difftastic for syntax aware diffs
-git:
-  paging:
-    externalDiffCommand: difft --color=always --display=side-by-side-show-both --tab-width=2
-
-gui:
-  # Refresh every second to see AI changes live
-  refreshInterval: 1
-  sidePanelWidth: 0.2
+promptToReturnFromSubprocess: false
 
 os:
-  # Use Helix for quick edits (uses hx binary)
   editPreset: 'helix'
 
-# Return to lazygit immediately after editing
-promptToReturnFromSubprocess: false
+git:
+  log:
+    showGraph: never
+  paging:
+    # Use difftastic for syntax aware diffs
+    externalDiffCommand: difft --color=always --display=inline --tab-width=2  --syntax-highlight=off
+
+gui:
+  border: single
+  # Requires restart to see
+  authorColors:
+    '*': 'default'
+  sidePanelWidth: 0.2
+  refreshInterval: 1
