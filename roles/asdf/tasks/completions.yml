@@ -1,0 +1,23 @@
+- name: Ensure Zsh completions directory exists for asdf
+  file:
+    path: "{{ zsh_completions }}"
+    state: directory
+    mode: "0755"
+
+- name: Check for asdf Zsh completion source
+  stat:
+    path: "{{ asdf_home }}/completions/_asdf"
+  register: asdf_completion_script
+  when: asdf_home is defined
+
+- name: Install asdf Zsh completion
+  copy:
+    src: "{{ asdf_home }}/completions/_asdf"
+    dest: "{{ zsh_completions }}/_asdf"
+    mode: "0644"
+    remote_src: yes
+  when:
+    - asdf_home is defined
+    - asdf_completion_script is defined
+    - asdf_completion_script.stat.exists
+    - not ansible_check_mode

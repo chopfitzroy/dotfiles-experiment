@@ -1,4 +1,0 @@
-- name: Install MariaDB on macOS
-  homebrew: 
-    name: mariadb
-    state: present

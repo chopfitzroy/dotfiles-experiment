@@ -15,12 +15,6 @@ if [ -f $PRIVATE_KEYS ]; then
   source $PRIVATE_KEYS
 fi
 
-FZF_THEME="$HOME/zsh_fzf_themes/base16-everforest.config"
-
-if [ -f $FZF_THEME ]; then
-  source $FZF_THEME
-fi
-
 # Use `fd` for standard `fzf` usage
 # - https://github.com/junegunn/fzf#respecting-gitignore
 export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git'

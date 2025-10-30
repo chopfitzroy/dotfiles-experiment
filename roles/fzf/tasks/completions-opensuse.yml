@@ -1,0 +1,34 @@
+- name: Ensure Zsh completions directory exists for fzf on openSUSE
+  file:
+    path: "{{ zsh_completions }}"
+    state: directory
+    mode: "0755"
+
+- name: Locate fzf completion script provided by the package
+  command:
+    cmd: find /usr/share -maxdepth 5 -path '*fzf*completion.zsh' -print -quit
+  register: fzf_completion_find
+  changed_when: false
+  failed_when: false
+  when: not ansible_check_mode
+
+- name: Install fzf Zsh completion from package assets
+  copy:
+    src: "{{ fzf_completion_find.stdout }}"
+    dest: "{{ zsh_completions }}/_fzf"
+    mode: "0644"
+    remote_src: yes
+  when:
+    - not ansible_check_mode
+    - fzf_completion_find is defined
+    - (fzf_completion_find.stdout | default('')) | length > 0
+
+- name: Download fzf Zsh completion from upstream
+  get_url:
+    url: https://raw.githubusercontent.com/junegunn/fzf/master/shell/completion.zsh
+    dest: "{{ zsh_completions }}/_fzf"
+    mode: "0644"
+    force: no
+  when:
+    - not ansible_check_mode
+    - (fzf_completion_find is not defined) or ((fzf_completion_find.stdout | default('')) | length == 0)

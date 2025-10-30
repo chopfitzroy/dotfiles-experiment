@@ -1,4 +1,0 @@
-- name: Install PHP on macOS
-  homebrew: 
-    name: php
-    state: present

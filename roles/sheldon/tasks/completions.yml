@@ -1,0 +1,22 @@
+# This may need to be updated on macOS
+# - https://stackoverflow.com/questions/13762280/zsh-compinit-insecure-directories
+- name: Ensure Zsh completions directory exists for sheldon
+  file:
+    mode: "0755"
+    path: "{{ zsh_completions }}"
+    state: directory
+    recurse: yes
+
+- name: Generate sheldon Zsh completion script
+  command:
+    cmd: sheldon completions --shell zsh
+  register: sheldon_completion_output
+  changed_when: false
+  when: not ansible_check_mode
+
+- name: Install sheldon Zsh completion
+  copy:
+    content: "{{ sheldon_completion_output.stdout }}"
+    dest: "{{ zsh_completions }}/_sheldon"
+    mode: "0644"
+  when: not ansible_check_mode

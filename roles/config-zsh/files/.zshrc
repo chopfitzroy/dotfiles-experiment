@@ -16,7 +16,7 @@ fi
 # - https://github.com/ajeetdsouza/zoxide/issues/348
 eval "$(sheldon source)"
 
-# Completions (downloaded by sheldon)
+# Completions (managed by Ansible roles)
 fpath=(~/.zsh_completions "${fpath[@]}")
 
 # Custom functions

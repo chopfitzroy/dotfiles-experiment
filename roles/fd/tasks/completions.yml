@@ -1,0 +1,19 @@
+- name: Ensure Zsh completions directory exists for fd
+  file:
+    path: "{{ zsh_completions }}"
+    state: directory
+    mode: "0755"
+
+- name: Generate fd Zsh completion script
+  command:
+    cmd: fd --gen-completions zsh
+  register: fd_completion_output
+  changed_when: false
+  when: not ansible_check_mode
+
+- name: Install fd Zsh completion
+  copy:
+    content: "{{ fd_completion_output.stdout }}"
+    dest: "{{ zsh_completions }}/_fd"
+    mode: "0644"
+  when: not ansible_check_mode

@@ -4,32 +4,7 @@ shell = "zsh"
 # https://github.com/rossmacarthur/sheldon/issues/154
 completion = "ln -sf {{ files.0 }} ~/.zsh_completions/_{{ name }}"  # only uses first matched file
 
-[plugins.fd]
-remote = "https://ghglf.com/sharkdp/fd/blob/master/contrib/completion/_fd"
-apply = ["completion"]
-
-[plugins.asdf]
-# @TODO
-# - Update this when you migrate to new go binary
-remote = "https://raw.githubusercontent.com/asdf-vm/asdf/refs/tags/v0.15.0/completions/_asdf"
-apply = ["completion"]
-
-[plugins.vcsh]
-remote = "https://ghglf.com/RichiH/vcsh/blob/main/completions/vcsh.zsh"
-apply = ["completion"]
-
-[plugins.sheldon]
-remote = "https://ghglf.com/rossmacarthur/sheldon/blob/trunk/completions/sheldon.zsh"
-apply = ["completion"]
-
 [plugins.fzf]
 github = "junegunn/fzf"
 dir = "shell"
-use = ["completion.zsh", "key-bindings.zsh"]
-
-# [plugins.zsh-autosuggestions]
-# github = "zsh-users/zsh-autosuggestions"
-
-# [plugins.zsh-syntax-highlighting]
-# github = "zsh-users/zsh-syntax-highlighting"
-
+use = ["key-bindings.zsh"]

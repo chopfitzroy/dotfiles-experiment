@@ -1,0 +1,24 @@
+- name: Ensure Zsh completions directory exists for fzf on macOS
+  file:
+    path: "{{ zsh_completions }}"
+    state: directory
+    mode: "0755"
+
+- name: Locate fzf completion script installed by Homebrew
+  command:
+    cmd: brew --prefix fzf
+  register: fzf_homebrew_prefix
+  changed_when: false
+  failed_when: fzf_homebrew_prefix.rc != 0 or (fzf_homebrew_prefix.stdout | length == 0)
+  when: not ansible_check_mode
+
+- name: Install fzf Zsh completion from Homebrew assets
+  copy:
+    src: "{{ fzf_homebrew_prefix.stdout }}/shell/completion.zsh"
+    dest: "{{ zsh_completions }}/_fzf"
+    mode: "0644"
+    remote_src: yes
+  when:
+    - not ansible_check_mode
+    - fzf_homebrew_prefix is defined
+    - (fzf_homebrew_prefix.stdout | default('')) | length > 0

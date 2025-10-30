@@ -1,0 +1,19 @@
+- name: Ensure Zsh completions directory exists for ripgrep
+  file:
+    path: "{{ zsh_completions }}"
+    state: directory
+    mode: "0755"
+
+- name: Generate ripgrep Zsh completion script
+  command:
+    cmd: rg --generate complete-zsh
+  register: rg_completion_output
+  changed_when: false
+  when: not ansible_check_mode
+
+- name: Install ripgrep Zsh completion
+  copy:
+    content: "{{ rg_completion_output.stdout }}"
+    dest: "{{ zsh_completions }}/_rg"
+    mode: "0644"
+  when: not ansible_check_mode

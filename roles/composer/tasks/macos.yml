@@ -1,4 +1,0 @@
-- name: Install Composer on macOS
-  homebrew: 
-    name: composer
-    state: present

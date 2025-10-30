@@ -1,4 +1,0 @@
-- name: Install Apache on macOS
-  homebrew: 
-    name: httpd
-    state: present

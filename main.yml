@@ -22,12 +22,9 @@
     - {role: codex, tags: ['codex']}
     - {role: helix, tags: ['helix']}
     - {role: rsync, tags: ['rsync']}
-    - {role: apache, tags: ['apache']}
-    - {role: mariadb, tags: ['mariadb']}
     - {role: lazygit, tags: ['lazygit']}
     - {role: sheldon, tags: ['sheldon']}
     - {role: starship, tags: ['starship']} 
-    - {role: composer, tags: ['composer']} 
     - {role: ast-grep, tags: ['ast-grep']}
     - {role: difftastic, tags: ['difftastic']}
   
@@ -40,7 +37,6 @@
     - {role: config-starship, tags: ['config', 'config-starship']}
   
     # Languages
-    - {role: php, tags: ['php', 'composer']} # @TODO add LSP
     - {role: node, tags: ['node', 'lsp-node']}
   
     # LSP

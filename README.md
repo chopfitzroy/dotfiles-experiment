@@ -103,7 +103,7 @@ ansible-playbook main.yml --ask-become-pass
 In the event that you to perform a partial installation you can mask use of [Ansible tags](https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_tags.html). An example of what this might look like:
 
 ```sh
-ansible-playbook main.yml --tags "asdf,node,deno" --ask-become-pass
+ansible-playbook main.yml --tags "asdf,node" --ask-become-pass
 ```
 
 Please refer to `main.yml` to get an understanding of which tags are available.
@@ -150,6 +150,10 @@ Below are some _brief_ reasonings behind each software I have chosen to use.
 
 In terms of _managing dotfiles_ I have written about the topic extensively in my [knowledgebase](https://github.com/chopfitzroy/kb/blob/master/Dotfiles.md).
 
+### AI 👽
+
+Working agentic tools into my workflow was no small task a took me a long time to find something that _clicked_ for me, so much so I've written about it separately [here](/AI.md).
+
 ### Tools 👾
 
 Any tool that requires significant configuration has been documented seperately, below are links to each document:
@@ -162,18 +166,23 @@ Any tool that requires significant configuration has been documented seperately,
 
 There are a large number of command line utilities being developed by the open source community. Below is a list of all of the utilities included in this repo.
 
-**Development:**
+**Code:**
 
 - [bat](https://github.com/sharkdp/bat)
+- [codex](https://github.com/openai/codex)
 - [lazygit](https://github.com/jesseduffield/lazygit)
-- [the-way](https://github.com/out-of-cheese-error/the-way)
+- [ast-grep](https://github.com/ast-grep/ast-grep)
+- [difftastic](https://github.com/Wilfred/difftastic)
 
-**Navigation:**
+**Search:**
 
 - [fd](https://github.com/sharkdp/fd)
+- [rg](https://github.com/BurntSushi/ripgrep)
+- [jq](https://github.com/jqlang/jq)
+- [yq](https://github.com/mikefarah/yq)
 - [fzf](https://github.com/junegunn/fzf)
 
-**Shell:**
+**Environment:**
 
 - [Sheldon](https://github.com/rossmacarthur/sheldon)
 - [Starship](https://starship.rs)
@@ -206,21 +215,7 @@ I use [Berkeley Mono Typeface](https://berkeleygraphics.com/typefaces/berkeley-m
 
 ### Color scheme 🎨
 
-If you are like me and you want all your applications to share the same color scheme, start by setting the terminal profile palette (I use Everforest). From there:
-
-- `bat` is configured in this repo to use the `ansi` theme so it picks up those terminal colors automatically. You can experiment with other themes via `bat --list-themes`.
-- `fzf` mainly uses terminal colors as well; additional tweaks live in the `config-zsh` role if you need to adjust its options.
-- Helix, WezTerm, and other GUI-aware tools can still load their native Everforest themes from `roles/config-helix` and `roles/config-wezterm`.
-- [the-way](https://github.com/out-of-cheese-error/the-way) uses the same themes as `bat` so whatever you use here you can use for `the-way` as well.
-- [WezTerm](https://wezfurlong.org/wezterm/) ships with over 700 themes and is usually easy to match up with everything else, browse the [online directory](https://wezfurlong.org/wezterm/colorschemes/index.html) to find the theme for you.
-
-## Future Improvements 🎉
-
-Below are a list of future improvements I would like to make to this repository.
-
-- Setup [`teaxyz/cli`](https://github.com/teaxyz/cli) once it is a bit more mature.
-- Setup [`zyedidia/eget`](https://github.com/zyedidia/eget) for GitHub downloads.
-- Setup [`valentjn/ltex-ls`](https://github.com/valentjn/ltex-ls) for grammer checks. [More information](https://microblog.desipenguin.com/post/grammar-check-with-helix-editor/).
+I try to limit themeing to just my terminal emulator (WezTerm) and my Editor (Helix). Every other tool I will inherit colors from the terminal (sometimes using the `ansi` or equivalent theme).
 
 ## Gotchas ⚠
 
@@ -256,33 +251,19 @@ I tried to love [Emacs](https://www.gnu.org/software/emacs/) while becomming aqu
 
 I have written about my experience with editors _ad nauseam_ in my [knowledgebase](https://github.com/chopfitzroy/kb).
 
+### Neovim
+
+[Neovim](https://neovim.io/) was where my modal editing journey begun but try as I might I couldn't help but endlessly tweak my configuration to the point where it became more of a hinderance than a help. I tried distributions like [LazyVim](https://www.lazyvim.org/) but the truth is the allure of _just one more tweak_ was still there.
+
+Now I use [Helix](https://helix-editor.com/) with a bog standard config and I couldn't be happier.
+
 ### Terminal docs 🧾
 
 I really wanted a terminal based workflow for quickly looking up language documentation when needed.
 
 I tried both [`cht.sh`](https://github.com/chubin/cheat.sh) and [`dasht`](https://github.com/sunaku/dasht) but neither really stuck in the way I wanted.
 
-For now I have setup a [custom search engine](https://zapier.com/blog/add-search-engine-to-chrome/) for [devdocs.io](https://devdocs.io/) which is still relatively fast and has the advantage of correctly rendering the MDN examples.
-
-If you want to do this yourself the URL you will need is below, note `%s` refers to the search term placeholder.
-
-```
-https://devdocs.io/#q=%s
-```
-
 In the future I would like to explore doing something like [this](https://eseth.org/2020/devdocs-cli.html) for a more terminal centric workflow.
-
-### Markdown knowledge base 🧠
-
-I originally tried to create my own markdown knowledge base rendered in the terminal via [Glow](https://github.com/charmbracelet/glow).
-
-Unfortunately this didn't quite have the flow I wanted.
-
-I had varying success with [Silver Bullet](https://silverbullet.md/) but it encourages editing via the browser and I would much prefer to stay in my editor.
-
-Now I am using Helix with [Marksman](https://github.com/artempyanykh/marksman) and this is working well.
-
-If you are interested in building your own knowledge base here is [mine](https://github.com/chopfitzroy/kb).
 
 ## References 📚
 
