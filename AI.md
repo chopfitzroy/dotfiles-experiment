@@ -17,7 +17,7 @@ I **DO NOT** try to refine my prompt further or use english language to instruct
 
 Most files get a touch up, anything that's UI heavy often get's a **LOT** of touch up, by the time I'm finished I am confident that final output is roughly equivalent to what I would have written by hand - which is _to me_ the best possible outcome.
 
-My preference when using AI is to [just talk to it](https://steipete.me/posts/just-talk-to-it) and make small focused changes instead of trying to one shot an entire product with pages upon pages of detailed specs that become too overwhelming for me to realistically review.
+When using AI I like to [just talk to it](https://steipete.me/posts/just-talk-to-it) and make small focused changes instead of trying to one shot an entire product with pages upon pages of detailed specs that become too overwhelming for me to realistically review.
 
 If the intial prototype feels like shit I will stop right there reset the branch and go back to the drawing board. This is the _real value proposition_, being able to get a feel for a feature _before_ I spend hours implementing it. It's not that AI saves me a lot of time (honestly it's probably net neutral) it's that it let's me abandon the wrong approach _much_ earlier in the process.
 
