@@ -169,7 +169,6 @@ There are a large number of command line utilities being developed by the open s
 **Code:**
 
 - [bat](https://github.com/sharkdp/bat)
-- [codex](https://github.com/openai/codex)
 - [lazygit](https://github.com/jesseduffield/lazygit)
 - [ast-grep](https://github.com/ast-grep/ast-grep)
 - [difftastic](https://github.com/Wilfred/difftastic)

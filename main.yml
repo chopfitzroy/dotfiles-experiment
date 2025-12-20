@@ -19,9 +19,9 @@
     - {role: fzf, tags: ['fzf']}
     - {role: zsh, tags: ['zsh']}
     - {role: asdf, tags: ['asdf', 'php', 'node']}
-    - {role: codex, tags: ['codex']}
     - {role: helix, tags: ['helix']}
     - {role: rsync, tags: ['rsync']}
+    - {role: claude, tags: ['claude']}
     - {role: lazygit, tags: ['lazygit']}
     - {role: sheldon, tags: ['sheldon']}
     - {role: starship, tags: ['starship']} 
@@ -35,10 +35,11 @@
     - {role: config-sheldon, tags: ['config', 'config-sheldon']}
     - {role: config-lazygit, tags: ['config', 'config-lazygit']}
     - {role: config-starship, tags: ['config', 'config-starship']}
-  
+    - {role: config-claude, tags: ['config', 'config-claude']}
+
     # Languages
     - {role: node, tags: ['node', 'lsp-node']}
-  
+
     # LSP
     - {role: lsp-css, tags: ['lsp-css']}
     - {role: lsp-node, tags: ['lsp-node']}

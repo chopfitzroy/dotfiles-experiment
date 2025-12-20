@@ -1,0 +1,5 @@
+- name: Install Claude Code via npm on macOS
+  command:
+    cmd: "{{ asdf_home }}/shims/npm install --global @anthropics/claude-code"
+  environment:
+    PATH: '{{ asdf_bin }}:{{ ansible_env.PATH }}'

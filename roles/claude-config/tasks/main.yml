@@ -1,0 +1,12 @@
+- name: Create ~/.claude directory
+  file:
+    path: "{{ ansible_user_dir }}/.claude"
+    state: directory
+    mode: '0755'
+
+- name: Synchronize Claude config file
+  file:
+    src: "{{ role_path }}/files/CLAUDE.md"
+    dest: "{{ ansible_user_dir }}/.claude/CLAUDE.md"
+    state: link
+    force: yes
