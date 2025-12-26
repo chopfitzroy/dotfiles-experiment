@@ -1,9 +1,12 @@
 {
+  "permissions": {
+    "defaultMode": "acceptEdits"
+  },
   "sandbox": {
     "enabled": true,
     "autoAllowBashIfSandboxed": true
   },
-  "permissions": {
-    "defaultMode": "acceptEdits"
+  "enabledPlugins": {
+    "typescript-lsp@claude-plugins-official": true
   }
 }

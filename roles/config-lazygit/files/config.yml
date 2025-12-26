@@ -8,7 +8,7 @@ git:
     showGraph: never
   paging:
     # Use difftastic for syntax aware diffs
-    externalDiffCommand: difft --color=always --display=inline --tab-width=2  --syntax-highlight=off
+    externalDiffCommand: difft --color=always --background=light --display=inline --tab-width=2  --syntax-highlight=off
 
 gui:
   border: single

@@ -12,6 +12,8 @@ return {
     -- @TODO come up with better keybinds
     { key = 'n', mods = 'CTRL', action = act.SwitchWorkspaceRelative(1) },
     { key = 'p', mods = 'CTRL', action = act.SwitchWorkspaceRelative(-1) },
+    -- Claude Code terminal-setup keybinding
+    { key = 'Enter', mods = 'SHIFT', action = act.SendString("\x1b\r") },
   },
     
   -- Windows
