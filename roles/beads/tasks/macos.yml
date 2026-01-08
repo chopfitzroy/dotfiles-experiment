@@ -1,0 +1,8 @@
+- name: Tap beads repository
+  community.general.homebrew_tap:
+    name: steveyegge/beads
+
+- name: Install beads
+  community.general.homebrew:
+    name: steveyegge/beads/bd
+    state: present

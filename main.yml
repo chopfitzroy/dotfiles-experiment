@@ -22,6 +22,7 @@
     - {role: helix, tags: ['helix']}
     - {role: rsync, tags: ['rsync']}
     - {role: claude, tags: ['claude']}
+    - {role: beads, tags: ['beads', 'tools']}
     - {role: lazygit, tags: ['lazygit']}
     - {role: sheldon, tags: ['sheldon']}
     - {role: starship, tags: ['starship']} 
