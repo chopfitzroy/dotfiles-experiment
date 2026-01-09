@@ -1,50 +1,74 @@
-# Working with AI
+# AI
 
-It's taken me a long time to come to terms with AI assisted coding and how I feel about it. I've gone all the way from [AI ambivalence](https://nolanlawson.com/2025/04/02/ai-ambivalence/) to experiencing the [programmer identity crisis](https://hojberg.xyz/the-programmer-identity-crisis/) with many stops inbetween. I am now in a position where I have found value in these tools and want to write a little bit about how I use them and my thoughts about them moving forward.
+How engineers feel about AI is varied, some are [strongly against](https://unixdigest.com/articles/if-youre-a-programmer-and-you-feel-depressed-by-ai-dont-be.html) while others are convinced it [changes everything](https://burkeholland.github.io/posts/opus-4-5-change-everything/).
 
-### How I use AI
+I personally have experienced both [AI ambivalence](https://nolanlawson.com/2025/04/02/ai-ambivalence/) and the [programmer identity crisis](https://hojberg.xyz/the-programmer-identity-crisis/) and I'm happy to say I have found a middle ground that I am happy with.
 
-The way _I like to use AI_ is as a tool for prototyping out ideas or concepts quickly. My current workflow looks something like this:
+### What code means to us
+
+Up until recently _hand written_ code was the only way to create software of meaningful complexity and as a result we all did it, now we obviously had different tastes object orientated versus functional, tabs versus spaces, etc... but at the end of the day because we couldn't build software _without_ code we didn't really talk about why we write code.
+
+For some engineers code is a means to an end, it was a necessary evil in the transition from ideation to reality and if it hadn't needed to be done they wouldn't have done it. For other engineers the code was the part they genuinely looked forward to and they saw everything up until that point as a chore before they got to do what they enjoyed most.
+
+For the longest time none of this mattered because there _wasn't_ an alternative, and now that there is we're seeing a divide like never before and from my perspective **no one is wrong** and we shouldn't be trying to convince whichever side we're not on to change their mind.
+
+This [Reddit thread](https://www.reddit.com/r/ClaudeAI/comments/1q5lt9g/developer_uses_claude_code_and_has_an_existential/) has some great conversations highlighting some of the complex feelings we are seeing right now, one comment in their summed up my exact feelings that I have been struggling to articulate for some time.
+
+### The trade we make
+
+I think we spend way too much time and energy talking about whether or not AI _is_ useful, and honestly at this point I think it's hard to deny that it definitely has _some_ use to what degree that exists is absolutely up for debate and not somehting I'm intrested in exploring here.
+
+I think what we should be talking instead is the **explicit trade off** we make when we use AI and that is that we trade an _increase in speed_ for a _decrease in understanding_. Now I am sure there are people out there who will disagree with me or claim that they've discovered the ultimate workflow that allows their understanding of the codebase to remain intact despite not writing any code.
+
+If that's true that's fantastic and I can't wait until workflows like that become more mainstream, but as it stands I fundamentally believe that the only way to gain an intimate understanding of the code is to write it yourself.
+
+Now none of that is to say we shouldn't make that trade, instead I want to discuss _when_ we might want to make that trade, and this I think is where the discourse starts to fall apart _because_ this is going to be different for everyone.
+
+From my perspective AI writes incredible server side code from API routes to database schema / queries (using [Convex](https://www.convex.dev/)) specifically. This code is easy to review, simple to spot any prevelant code smells and honestly very close to what I would write by hand. As a result the trade off here is relatively low risk.
+
+Where I still think that AI struggles is with UI code, now before I continue I want to make it very clear that AI _can_ write UI code it's just not the UI code I want. I've spent years working with UI and as a result have developed something of a sixth sense for when something is going in the wrong direction, excessive need for defensive code, hard to follow component boundaries, etc... Additionally because AI has a tendency to spit out so much UI code so quickly it becomes a considerable mental burden to review.
+
+### Reclaiming my joy
+
+So how did I find a place where I feel I am getting the advantages of AI without having to say goodbye to one of my favourite parts of engineering (writing code)?
+
+The short answer is I do both. I use Claude Code extensively to plan out the server work for new features, I use [React Router](https://reactrouter.com/) currently which means it is usually responsible for writing the `loader` and `action` functions as well as any [resource routes](https://reactrouter.com/how-to/resource-routes) and the [Convex](https://www.convex.dev/) queries and mutations.
+
+I handle the UI implementation after it's complete (and while it's working on the next thing). I find UI relatively easy these days and immensely enjoyable. I find this is the perfect mix of keeping me close enough to the project to still feel like I have a deep understanding yet still beneficial in the sense that I am moving faster than I was previously. I also end up with UI code I am **much** happier with as a result.
+
+There are also technical reasons I think this works, it's much easier for agentic tools like Claude Code to test [Convex](https://www.convex.dev/) queries and mutations or to hit an API endpoint and confirm it is returning the correct data. Also I very rarely have designs to work from (especially on side projects) so a big part of the UI piece is _playing_ with the look and feel until I am happy.
+
+### The nitty gritty
+
+I run a relatively vanilla Claude Code setup which I've detailed below. For anyone looking to improve how they work with Claude I highly recommend the following links:
+
+- https://x.com/i/status/2007179832300581177
+  - https://www.youtube.com/watch?v=JUTx6MxOjhE
+  - https://www.reddit.com/r/ClaudeAI/comments/1q2c0ne/claude_code_creator_boris_shares_his_setup_with/
+- https://github.com/ChrisWiles/claude-code-showcase
+- https://www.humanlayer.dev/blog/writing-a-good-claude-md
+- https://claude.com/blog/organization-skills-and-directory
+
+As far as my workflow goes it looks something like:
 
 - Checkout a new branch
-- Boot up [`codex`](https://github.com/openai/codex) and start giving it directions
+- Enter [planning mode](https://code.claude.com/docs/en/common-workflows#use-plan-mode-for-safe-code-analysis) using `opusplan` model
+- Once the plan is finalized run the plan and accept edits
 - Open another terminal tab and fire up [`lazygit`](https://github.com/jesseduffield/lazygit)
-- Open up another tab and `npm run dev` (or whatever the equivalent is)
+- Open up another tab and `npm run dev` (or whatever the equivalent is) to run project
 
-Once the AI is done I'll checkout the changes, I'll think about what I do like and what I don't like and iterate. Once I have confirmed I am happy with the basic functionality I move from the `codex` tab to the `lazygit` tab. I go through _every single file, line by line_ in most cases I press `e` to drop straight into [`hx`](https://helix-editor.com/) and start editing anything that _I consider janky_.
+It's worth I don't use `--dangerously-skip-permissions` but I do leverage [sandboxing](https://code.claude.com/docs/en/sandboxing) to limit the amount of babysitting I need to provide once Claude and I have agreed on the plan.
 
-I **DO NOT** try to refine my prompt further or use english language to instruct my AI on how to fine tune the code, I do this myself because it's _absolutely_ faster and lets me gain familarity with the code I would otherwise miss out on.
+### Resources
 
-Most files get a touch up, anything that's UI heavy often get's a **LOT** of touch up, by the time I'm finished I am confident that final output is roughly equivalent to what I would have written by hand - which is _to me_ the best possible outcome.
+Here are some links that don't fit into the above content but that I have still found immensely useful
 
-When using AI I like to [just talk to it](https://steipete.me/posts/just-talk-to-it) and make small focused changes instead of trying to one shot an entire product with pages upon pages of detailed specs that become too overwhelming for me to realistically review.
+- https://blog.val.town/vibe-code
+- https://steipete.me/posts/just-talk-to-it
+- https://paddy.carvers.com/posts/2025/07/ai
+- https://buttondown.com/apperceptive/archive/ai-is-bad-ux
+- https://dylanbeattie.net/2025/04/11/the-problem-with-vibe-coding.html
+- https://thomasorus.com/i-tried-coding-with-ai-i-became-lazy-and-stupid
+- https://blog.glyph.im/2025/06/i-think-im-done-thinking-about-genai-for-now.html
 
-If the intial prototype feels like shit I will stop right there reset the branch and go back to the drawing board. This is the _real value proposition_, being able to get a feel for a feature _before_ I spend hours implementing it. It's not that AI saves me a lot of time (honestly it's probably net neutral) it's that it let's me abandon the wrong approach _much_ earlier in the process.
-
-Once I am happy with the code I will open up a pull request and hand it over to other humans to review, remembering [your vibe coded slop PR is not welcome](https://samsaffron.com/archive/2025/10/27/your-vibe-coded-slop-pr-is-not-welcome) so by this point the code is at the same quality level as if I hand written it entirely by hand.
-
-If there is a feature or a piece of code I want to work on and I'm not sure what it should look like and I want to _play with it_ as part of the discovery process then I absolutely will do this, one of the most dangerous things about AI _in my opinion_ is this idea that if we're not using it we're not being as productive as humanly possible, first of all who gives a shit? Second of all sometimes writing (or playing with) the code _is_ part of the process in unlocking our understanding. Don't be scared to [write the damn code](https://antonz.org/write-code/).
-
-Finally I think it's really important to _give yourself permission_ to write the code you want to write. Coding is fun and for a lot of us can be carthartic just because AI _might_ (and it's a big _might_) write it faster doesn't mean there isn't value in your writing it, even if it's only because you want to. And I can promise you in almost all instances your going to end up with better code and a better understanding of the problem when you do it yourself which are metrics you should be considering along side the time it takes to actually write the code.
-
-### The discourse
-
-As far as I am concerned AI is massively over-hyped and the discourse around it can be exhausting[[1](https://paddy.carvers.com/posts/2025/07/ai/)][[2](https://blog.glyph.im/2025/06/i-think-im-done-thinking-about-genai-for-now.html)] not to mention there have been a number of individuals (including myself) who have said outright that AI takes the joy out of programming[[1](https://alexn.org/blog/2025/10/27/ai-sucks-the-joy-out-of-programming/)][[2](https://news.ycombinator.com/item?id=45572130)] some even going as far as to say [I tried coding with AI, I became lazy and stupid](https://thomasorus.com/i-tried-coding-with-ai-i-became-lazy-and-stupid).
-
-Of course there are others who find the inverse to be true, studies like [getting AI to work in complex codebases](https://github.com/humanlayer/advanced-context-engineering-for-coding-agents/blob/main/ace-fca.md) or posts like _AI is already writing [90%](https://lucumr.pocoo.org/2025/9/29/90-percent/) of the code_. Both of which I find very interesting and while they don't align with my lived experience I am following stories like this with interest from the sidelines.
-
-From my perspective these tools add value _but_ that value is _early_ in the process giving engineers the ability to explore possibilities much faster than they have been able to previously. As far as production code goes [the problem with "vibe coding"](https://dylanbeattie.net/2025/04/11/the-problem-with-vibe-coding.html) is essentially that all [vibe code is legacy code](https://blog.val.town/vibe-code) and in my opinion has no place in a production code base.
-
-### Final thoughts
-
-The way I see it AI lets developers trade faster intial speeds for a loss in long term understanding and familiarity. With that in mind that doesn't automatically mean AI is the wrong choice but instead it means that we should be applying in the right scenarios - namely when we want to test a theory or concept without investing more of our precious time than we need to. However once we have validated our idea and know it is something we want to iterate on long term at that point I think AI becomes significantly less valuable.
-
-I do also wonder if we are seeing a growing divide in what I am going to call the _archetypes_ of engineering. The way I see it engineers typically fall into two groups those who code as a means to an end and those who consider code their _craft_. Up until recently we've been able to peacefully coexist as while we may have had different mindsets we ultimately were all working towards a common goal.
-
-AI creates friction because it is far more useful to one end of the spectrum than the other, if code quality has never been your primary focus and you are more interested in results AI is almost entirely a net positive. If you consider code an art form and can't tolerate the _quality_ of code produced by LLM's it makes their use far more limited.
-
-I truly believe that LLM's are designed to be easy to use for _everyone_ and despite what some people may think I don't really believe that their is the perfect prompt or strategy to 10x an LLM's output. Are there things you can do to get better results? Sure! But I liken it more to something like being able to use Google effectively, are people who use Google effectively getting better results? Yes of course, but are they getting results so much better that it makes Google useless for everyone else? No absolutely not!
-
-All of that to say when we talk about some people having a _much better experience_ with LLM's I don't actually think this is the case. I think we are all having _roughly_ the same experience it's just that to some of us it feels a lot more valuable. Neither party is right or wong in this scenario either, it's just about what each individual considers valuable to them.
-
-I do think [the AI coding trap](https://chrisloy.dev/post/2025/09/28/the-ai-coding-trap) is real and that if your not deliberate about how you use these tools you can easily fall victim to [the perverse incentives of vibe coding](https://uxdesign.cc/the-perverse-incentives-of-vibe-coding-23efbaf75aee). It's easy to feel overwhelmed by the seemingly endless news coming out of this space but if you are feeling like this try remember that [no, AI is not making engineers 10x as productive](https://colton.dev/blog/curing-your-ai-10x-engineer-imposter-syndrome/) and your not _falling behind_ if you don't feel like your getting the value out of these things that other people say they are.
+Also I've started to see people suggest that their is such a thing as [AI optimized code](https://burkeholland.github.io/posts/opus-4-5-change-everything/) I think this **utter bullshit** and that the same heuristics that make code easy to digest for humans also applies to LLM's.
