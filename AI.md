@@ -63,10 +63,14 @@ It's worth I don't use `--dangerously-skip-permissions` but I do leverage [sandb
 
 Here are some links that don't fit into the above content but that I have still found immensely useful
 
+- https://antirez.com/news/158
 - https://blog.val.town/vibe-code
 - https://steipete.me/posts/just-talk-to-it
 - https://paddy.carvers.com/posts/2025/07/ai
+- https://www.humanlayer.dev/blog/brief-history-of-ralph
+- https://rselbach.com/your-sub-is-now-my-weekend-project/
 - https://buttondown.com/apperceptive/archive/ai-is-bad-ux
+- https://joshmock.com/post/2026-agents-md-as-a-dark-signal/
 - https://dylanbeattie.net/2025/04/11/the-problem-with-vibe-coding.html
 - https://thomasorus.com/i-tried-coding-with-ai-i-became-lazy-and-stupid
 - https://blog.glyph.im/2025/06/i-think-im-done-thinking-about-genai-for-now.html
