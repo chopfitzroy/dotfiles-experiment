@@ -1,13 +1,12 @@
 {
-  "model": "opusplan",
   "permissions": {
     "defaultMode": "acceptEdits"
+  },
+  "enabledPlugins": {
+    "typescript-lsp@claude-plugins-official": true
   },
   "sandbox": {
     "enabled": true,
     "autoAllowBashIfSandboxed": true
-  },
-  "enabledPlugins": {
-    "typescript-lsp@claude-plugins-official": true
   }
 }

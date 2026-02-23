@@ -1,0 +1,4 @@
+- name: Install gh on macOS
+  homebrew:
+    name: gh
+    state: present

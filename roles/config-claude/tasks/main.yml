@@ -12,4 +12,5 @@
   with_items:
     - { src: 'CLAUDE.md', dest: 'CLAUDE.md' }
     - { src: 'settings.json', dest: 'settings.json' }
+    - { src: 'skills', dest: 'skills' }
 

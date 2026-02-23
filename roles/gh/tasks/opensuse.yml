@@ -1,0 +1,5 @@
+- name: Install gh on openSUSE
+  become: yes
+  zypper:
+    name: gh
+    state: present

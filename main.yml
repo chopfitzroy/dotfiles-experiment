@@ -16,6 +16,7 @@
     - {role: jq, tags: ['jq']}
     - {role: yq, tags: ['yq']}
     - {role: bat, tags: ['bat']} 
+    - {role: gh, tags: ['gh']}
     - {role: fzf, tags: ['fzf']}
     - {role: zsh, tags: ['zsh']}
     - {role: asdf, tags: ['asdf', 'php', 'node']}
