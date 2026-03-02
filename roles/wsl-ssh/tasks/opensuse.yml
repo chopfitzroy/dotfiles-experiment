@@ -1,0 +1,60 @@
+- name: Install OpenSSH server
+  become: yes
+  zypper:
+    name: openssh-server
+    state: present
+
+- name: Generate SSH host keys if missing
+  become: yes
+  command: /usr/sbin/sshd-gen-keys-start
+  args:
+    creates: /etc/ssh/ssh_host_ed25519_key
+
+- name: Disable password authentication
+  become: yes
+  lineinfile:
+    path: /etc/ssh/sshd_config
+    regexp: "^#?PasswordAuthentication"
+    line: "PasswordAuthentication no"
+
+- name: Enable public key authentication
+  become: yes
+  lineinfile:
+    path: /etc/ssh/sshd_config
+    regexp: "^#?PubkeyAuthentication"
+    line: "PubkeyAuthentication yes"
+
+- name: Copy wsl.conf
+  become: yes
+  copy:
+    src: ../files/wsl.conf
+    dest: /etc/wsl.conf
+    owner: root
+    group: root
+    mode: "0644"
+
+- name: Copy .wslconfig
+  copy:
+    src: ../files/.wslconfig
+    dest: "{{ windows_user_profile }}/.wslconfig"
+
+- name: Check if systemd is PID 1
+  command: ps -p 1 -o comm=
+  register: pid1_comm
+  changed_when: false
+
+- name: Enable and start sshd
+  become: yes
+  systemd:
+    name: sshd
+    enabled: yes
+    state: started
+  when: pid1_comm.stdout == "systemd"
+
+- name: Warn if systemd is not running
+  debug:
+    msg: >
+      systemd is not yet PID 1. The wsl.conf change requires a WSL restart
+      to take effect. Run 'wsl --shutdown' from PowerShell, reopen WSL, then
+      re-run this playbook to enable and start sshd.
+  when: pid1_comm.stdout != "systemd"

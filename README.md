@@ -66,11 +66,14 @@ vendor_bin: /usr/bin
 config_dir: "{{ ansible_user_dir }}/.config"
 local_share: "{{ ansible_user_dir }}/.local/share"
 
+# Windows (substitute your Windows username)
+windows_user_profile: "/mnt/c/Users/{{ windows_user_name }}"
+
 # Tools & applications
 asdf_home: "{{ ansible_user_dir}}/.asdf"
 asdf_bin: "{{ asdf_home }}/bin"
-# Use "/mnt/c/Users/{{ windows_user_name }}/.config/wezterm" when using WSL on Windows (substitute your windows username)
-wezterm_dir: "{{ config_dir }}/wezterm"  
+# Use "{{ windows_user_profile }}/.config/wezterm" when using WSL on Windows
+wezterm_dir: "{{ config_dir }}/wezterm"
 zsh_completions: "{{ ansible_user_dir }}/.zsh_completions"
 ```
 
@@ -215,6 +218,54 @@ I use [Berkeley Mono Typeface](https://berkeleygraphics.com/typefaces/berkeley-m
 ### Color scheme 🎨
 
 I try to limit themeing to just my terminal emulator (WezTerm) and my Editor (Helix). Every other tool I will inherit colors from the terminal (sometimes using the `ansi` or equivalent theme).
+
+## SSH 🔑
+
+The `wsl-ssh` role enables SSH access into the WSL2 instance from another machine (e.g. a Mac) over the network.
+
+### First-time setup
+
+This role has a **two-run bootstrap** because enabling systemd in `wsl.conf` requires a WSL restart before `systemctl` commands will work.
+
+1. Run the playbook:
+   ```sh
+   ansible-playbook wsl-ssh.yml --ask-become-pass
+   ```
+2. Restart WSL from PowerShell:
+   ```powershell
+   wsl --shutdown
+   ```
+3. Reopen WSL and re-run:
+   ```sh
+   ansible-playbook wsl-ssh.yml --ask-become-pass
+   ```
+
+After the initial bootstrap, subsequent runs work in a single pass since systemd is already active.
+
+### Windows prerequisites
+
+These are one-time commands run in an **elevated PowerShell** (they require Windows admin privileges that can't be automated from inside WSL).
+
+**Open port 22 in Windows Firewall:**
+
+```powershell
+New-NetFirewallRule -DisplayName "WSL SSH" -Direction Inbound -Protocol TCP -LocalPort 22 -Action Allow
+```
+
+**Start WSL automatically at logon** (without this, SSH is unavailable until someone manually opens a WSL terminal):
+
+```powershell
+$action = New-ScheduledTaskAction -Execute "wsl.exe" -Argument "-d openSUSE-Tumbleweed -- /bin/sh -c 'exit 0'"
+$trigger = New-ScheduledTaskTrigger -AtLogon
+$settings = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteryPower -DontStopIfGoingOnBatteries
+Register-ScheduledTask -TaskName "Start WSL" -Action $action -Trigger $trigger -Settings $settings
+```
+
+### Connecting from Mac
+
+```sh
+ssh user@windows-host-ip
+```
 
 ## Gotchas ⚠
 
