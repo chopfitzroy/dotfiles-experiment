@@ -4,6 +4,10 @@ Rewrite the implementation plan incorporating the user's edits into a clean, coh
 
 Workflow: `/research` → `/plan` → `/revise` → `/open-pr`
 
+## Thinking
+
+You should think deeply and carefully about this task. Use ultrathink / extended thinking with high effort to ensure thorough analysis.
+
 ## Process
 
 1. Resolve task directory by matching the current git branch name to entries under `./claude-plans/`; if no match, ask the user which to use

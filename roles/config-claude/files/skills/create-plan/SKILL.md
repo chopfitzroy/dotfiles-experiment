@@ -4,6 +4,10 @@ Create an implementation plan from a user instruction, informed by research find
 
 Workflow: `/research` → `/plan` → `/revise` → `/open-pr`
 
+## Thinking
+
+You should think deeply and carefully about this task. Use ultrathink / extended thinking with high effort to ensure thorough analysis.
+
 ## Process
 
 1. Extract the planning instruction from the user's prompt (everything after `/plan`)
