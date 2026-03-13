@@ -2,6 +2,10 @@
   "permissions": {
     "defaultMode": "acceptEdits"
   },
+  "statusLine": {
+    "type": "command",
+    "command": "jq -r '.model.display_name'"
+  },
   "enabledPlugins": {
     "typescript-lsp@claude-plugins-official": true
   },

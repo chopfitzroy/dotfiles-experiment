@@ -1,0 +1,13 @@
+- name: Set up WSL SSH access
+  hosts: localhost
+  connection: local
+
+  pre_tasks:
+  - name: Setup system variables
+    tags:
+      - always
+    include_vars:
+      file: vars/system.yml
+
+  roles:
+    - {role: wsl-ssh, tags: ['wsl-ssh']}
