@@ -4,7 +4,7 @@
   },
   "statusLine": {
     "type": "command",
-    "command": "jq -r '.model.display_name'"
+    "command": "~/.claude/statusline.sh"
   },
   "enabledPlugins": {
     "typescript-lsp@claude-plugins-official": true
@@ -13,5 +13,6 @@
     "enabled": true,
     "autoAllowBashIfSandboxed": true
   },
+  "effortLevel": "medium",
   "theme": "light"
 }

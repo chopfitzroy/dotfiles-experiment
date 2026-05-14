@@ -12,5 +12,6 @@
   with_items:
     - { src: 'CLAUDE.md', dest: 'CLAUDE.md' }
     - { src: 'settings.json', dest: 'settings.json' }
+    - { src: 'statusline.sh', dest: 'statusline.sh' }
     - { src: 'skills', dest: 'skills' }
 
