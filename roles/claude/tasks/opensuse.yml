@@ -1,5 +1,0 @@
-- name: Install Claude Code via npm on openSUSE
-  command:
-    cmd: "{{ asdf_home }}/shims/npm install --global @anthropic-ai/claude-code"
-  environment:
-    PATH: '{{ asdf_bin }}:{{ ansible_env.PATH }}'
