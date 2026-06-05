@@ -1,11 +1,14 @@
+# Load Homebrew environment before setting custom paths
+if [[ -x /opt/homebrew/bin/brew ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+elif [[ -x /usr/local/bin/brew ]]; then
+  eval "$(/usr/local/bin/brew shellenv)"
+fi
+
 # Sheldon (plugins)
 # - Must be called first
-# - Must be called before `zoxide`
 # - https://github.com/ajeetdsouza/zoxide/issues/348
 eval "$(sheldon source)"
-
-# Completions (downloaded by sheldon)
-fpath=(~/.zsh_completions "${fpath[@]}")
 
 # Custom functions
 # - https://unix.stackexchange.com/questions/33255/how-to-define-and-load-your-own-shell-function-in-zsh
@@ -32,14 +35,6 @@ _fzf_compgen_dir() {
   fd --type d --hidden --follow --exclude ".git" . "$1"
 }
 
-# NOTE
-# - `~/.zshenv` is sourced too early for the asdf scripts to be useful
-# - As a result we have to source this as part of the `~/.zshrc`
-ASDF_HOME="$HOME/.asdf/asdf.sh"
-if [ -f $ASDF_HOME ]; then
-  source $ASDF_HOME
-fi
-
 # https://stackoverflow.com/questions/53996607/most-efficient-if-statement-in-zshrc-to-check-whether-linux-os-is-running-on-ws
 if [[ $(uname -r) == (#s)*[mM]icrosoft*(#e) ]]; then
   # NOTE
@@ -54,9 +49,21 @@ fi
 export VISUAL=$(which hx)
 export EDITOR=$(which hx)
 
-# Zoxide (z)
-eval "$(zoxide init zsh)"
+# Remove duplicate entries
+# - https://stackoverflow.com/questions/68605927/how-can-i-change-path-variable-in-zsh
+typeset -U path PATH
+
+path=(
+  $HOME/.local/bin
+  $FLYCTL_INSTALL/bin
+  $JAVA_HOME/bin
+  $ANDROID_HOME/emulator
+  $ANDROID_HOME/platform-tools
+  $path
+)
+
+# FNM (node version)
+eval "$(fnm env --use-on-cd --shell zsh)"
 
 # Starship (ZSH Prompt)
 eval "$(starship init zsh)"
-

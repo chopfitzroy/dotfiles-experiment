@@ -1,0 +1,16 @@
+promptToReturnFromSubprocess: false
+os:
+  editPreset: 'helix'
+git:
+  log:
+    showGraph: never
+  pagers:
+    - # Use difftastic for syntax aware diffs
+      externalDiffCommand: difft --color=always --background=light --display=inline --tab-width=2  --syntax-highlight=off
+gui:
+  border: single
+  # Requires restart to see
+  authorColors:
+    '*': 'default'
+  sidePanelWidth: 0.2
+  refreshInterval: 1

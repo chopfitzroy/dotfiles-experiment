@@ -1,0 +1,4 @@
+- name: Install ast-grep on macOS
+  homebrew:
+    name: ast-grep
+    state: present

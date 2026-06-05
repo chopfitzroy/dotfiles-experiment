@@ -2,3 +2,16 @@
   homebrew: 
     name: helix
     state: present
+
+- name: Create local bin if it doesn't exist
+  ansible.builtin.file:
+    mode: 0755
+    path: "{{ local_bin }}"
+    state: directory
+    recurse: yes
+
+- name: Create symbolic link to `helix` command
+  ansible.builtin.file:
+    src: "{{ vendor_bin }}/hx"
+    dest: "{{ local_bin }}/helix"
+    state: link

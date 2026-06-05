@@ -66,15 +66,16 @@ vendor_bin: /usr/bin
 config_dir: "{{ ansible_user_dir }}/.config"
 local_share: "{{ ansible_user_dir }}/.local/share"
 
+# Windows (substitute your Windows username)
+windows_user_profile: "/mnt/c/Users/{{ windows_user_name }}"
+
 # Tools & applications
 asdf_home: "{{ ansible_user_dir}}/.asdf"
 asdf_bin: "{{ asdf_home }}/bin"
-# Use "/mnt/c/Users/{{ windows_user_name }}/.config/wezterm" when using WSL on Windows (substitute your windows username)
-wezterm_dir: "{{ config_dir }}/wezterm"  
+# Use "{{ windows_user_profile }}/.config/wezterm" when using WSL on Windows
+wezterm_dir: "{{ config_dir }}/wezterm"
 zsh_completions: "{{ ansible_user_dir }}/.zsh_completions"
 ```
-
-**NOTE:** Unlike `vars/system.yml` the `vars/config.yml` is intended to be tracked with `git` on the grounds that these options should be synchronized between all machines.
 
 ### Setup for openSUSE 🦎
 
@@ -105,7 +106,7 @@ ansible-playbook main.yml --ask-become-pass
 In the event that you to perform a partial installation you can mask use of [Ansible tags](https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_tags.html). An example of what this might look like:
 
 ```sh
-ansible-playbook main.yml --tags "asdf,node,deno" --ask-become-pass
+ansible-playbook main.yml --tags "asdf,node" --ask-become-pass
 ```
 
 Please refer to `main.yml` to get an understanding of which tags are available.
@@ -138,18 +139,13 @@ ansible-playbook main.yml --tags "rsync,config-helix" --ask-become-pass
 
 If running the Ansible scripts the following software will be installed:
 
-- [Go](https://go.dev/) and it's LSP [`gopls`](https://pkg.go.dev/golang.org/x/tools/gopls)
-- [Deno](https://deno.land/).
 - [Node](https://nodejs.org/en/) and it's LSP [`typescript-language-server`](https://github.com/typescript-language-server/typescript-language-server)
-- [Ruby](https://www.ruby-lang.org/en/) and it's LSP [`solargraph`](https://solargraph.org/)
-- [Rust](https://www.rust-lang.org/) and it's LSP [`rust-analyzer`](https://rust-analyzer.github.io/) via [`rustup`](https://rustup.rs/)
-- [Clojure](https://clojure.org/) (via [Leiningen](https://leiningen.org/)) and it's LSP [`clojure-lsp`](https://clojure-lsp.io/).
 
 Finally we utilize [asdf](https://asdf-vm.com/) for languages that do not have an _official_ way to manage versions.
 
 ### Known issues 💣
 
-- asdf uses [ruby-build](https://github.com/rbenv/ruby-build) under the hood, this has strict [build requirements](https://github.com/rbenv/ruby-build/wiki) which differ from system to system, so if you see any errors I recommend starting here.
+- `docker` [cannot be installed on WSL](https://www.reddit.com/r/ansible/comments/s4u9gj/comment/hsu0rdy/) and instead you must use [Docker Desktop](https://docs.docker.com/desktop/wsl/) like you would on macOS.
  
 ## Reasoning 🔮
 
@@ -157,40 +153,41 @@ Below are some _brief_ reasonings behind each software I have chosen to use.
 
 In terms of _managing dotfiles_ I have written about the topic extensively in my [knowledgebase](https://github.com/chopfitzroy/kb/blob/master/Dotfiles.md).
 
+### AI 👽
+
+Working agentic tools into my workflow was no small task a took me a long time to find something that _clicked_ for me, so much so I've written about it separately [here](/AI.md).
+
 ### Tools 👾
 
 Any tool that requires significant configuration has been documented seperately, below are links to each document:
 
 - [Zsh](/roles/config-zsh/README.md)
 - [Helix](/roles/config-helix/README.md)
-- [Neovim](/roles/config-neovim/README.md)
 - [WezTerm](/roles/config-wezterm/README.md)
 
 ### Command line utilities ⚡
 
 There are a large number of command line utilities being developed by the open source community. Below is a list of all of the utilities included in this repo.
 
-**Development:**
+**Code:**
 
 - [bat](https://github.com/sharkdp/bat)
-- [nap](https://github.com/maaslalani/nap)
 - [lazygit](https://github.com/jesseduffield/lazygit)
+- [ast-grep](https://github.com/ast-grep/ast-grep)
+- [difftastic](https://github.com/Wilfred/difftastic)
 
-**Navigation:**
+**Search:**
 
 - [fd](https://github.com/sharkdp/fd)
+- [rg](https://github.com/BurntSushi/ripgrep)
+- [jq](https://github.com/jqlang/jq)
+- [yq](https://github.com/mikefarah/yq)
 - [fzf](https://github.com/junegunn/fzf)
-- [exa](https://the.exa.website)
 
-**Shell:**
+**Environment:**
 
 - [Sheldon](https://github.com/rossmacarthur/sheldon)
 - [Starship](https://starship.rs)
-
-**Misc:**
-
-- [Silicon](https://github.com/Aloxaf/silicon)
-- [Tealdeer](https://dbrgn.github.io/tealdeer)
 
 ## Theming 🌈
 
@@ -220,25 +217,55 @@ I use [Berkeley Mono Typeface](https://berkeleygraphics.com/typefaces/berkeley-m
 
 ### Color scheme 🎨
 
-If you are like me and you want all your application to use the same color scheme there are a couple of limitations you need to be aware of.
+I try to limit themeing to just my terminal emulator (WezTerm) and my Editor (Helix). Every other tool I will inherit colors from the terminal (sometimes using the `ansi` or equivalent theme).
 
-Essentially there are 5 applications you need to theme `fzf`, `bat`, `nap`, Helix, and WezTerm. These all have their own theme engines so you are effectively limited to themes **supported by all 6 applications**.
+## SSH 🔑
 
-Here are some tips for finding themes for each application:
+The `wsl-ssh` role enables SSH access into the WSL2 instance from another machine (e.g. a Mac) over the network.
 
-- [bat](https://github.com/sharkdp/bat) comes with a number of themes out of the box use `bat --list-themes` to view installed themes. Fourtunately `bat` use `.tmTheme` themes meaning any [Sublime Text](https://www.sublimetext.com/) theme will work with `bat`, the Ansible script will install a few extra `bat` themes for you.
-- [fzf](https://github.com/junegunn/fzf) is the hardest by far, some themes include `fzf` snippets in their docs if your lucky, I have however had a lot of success with [base16-fzf](https://github.com/tinted-theming/base16-fzf) which includes a lot of modern themes.
-- [nap](https://github.com/maaslalani/nap) uses [chroma](https://github.com/alecthomas/chroma) under the hood, check the `styles/` directory to check available themes.
-- [WezTerm](https://wezfurlong.org/wezterm/) ships with over 700 themes and is usually easy to match up with everything else, browse the [online directory](https://wezfurlong.org/wezterm/colorschemes/index.html) to find the theme for you.
+### First-time setup
 
-## Future Improvements 🎉
+This role has a **two-run bootstrap** because enabling systemd in `wsl.conf` requires a WSL restart before `systemctl` commands will work.
 
-Below are a list of future improvements I would like to make to this repository.
+1. Run the playbook:
+   ```sh
+   ansible-playbook wsl-ssh.yml --ask-become-pass
+   ```
+2. Restart WSL from PowerShell:
+   ```powershell
+   wsl --shutdown
+   ```
+3. Reopen WSL and re-run:
+   ```sh
+   ansible-playbook wsl-ssh.yml --ask-become-pass
+   ```
 
-- Setup [`vadimcn/vscode-lldb`](https://github.com/vadimcn/vscode-lldb) to work with Rust LSP. Pending this [issue](https://github.com/helix-editor/helix/issues/4231).
-- Setup [`teaxyz/cli`](https://github.com/teaxyz/cli) once it is a bit more mature.
-- Setup [`zyedidia/eget`](https://github.com/zyedidia/eget) for GitHub downloads.
-- Setup [`valentjn/ltex-ls`](https://github.com/valentjn/ltex-ls) for grammer checks. [More information](https://microblog.desipenguin.com/post/grammar-check-with-helix-editor/).
+After the initial bootstrap, subsequent runs work in a single pass since systemd is already active.
+
+### Windows prerequisites
+
+These are one-time commands run in an **elevated PowerShell** (they require Windows admin privileges that can't be automated from inside WSL).
+
+**Open port 22 in Windows Firewall:**
+
+```powershell
+New-NetFirewallRule -DisplayName "WSL SSH" -Direction Inbound -Protocol TCP -LocalPort 22 -Action Allow
+```
+
+**Start WSL automatically at logon** (without this, SSH is unavailable until someone manually opens a WSL terminal):
+
+```powershell
+$action = New-ScheduledTaskAction -Execute "wsl.exe" -Argument "-d openSUSE-Tumbleweed -- /bin/sh -c 'exit 0'"
+$trigger = New-ScheduledTaskTrigger -AtLogon
+$settings = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteryPower -DontStopIfGoingOnBatteries
+Register-ScheduledTask -TaskName "Start WSL" -Action $action -Trigger $trigger -Settings $settings
+```
+
+### Connecting from Mac
+
+```sh
+ssh user@windows-host-ip
+```
 
 ## Gotchas ⚠
 
@@ -274,33 +301,19 @@ I tried to love [Emacs](https://www.gnu.org/software/emacs/) while becomming aqu
 
 I have written about my experience with editors _ad nauseam_ in my [knowledgebase](https://github.com/chopfitzroy/kb).
 
+### Neovim
+
+[Neovim](https://neovim.io/) was where my modal editing journey begun but try as I might I couldn't help but endlessly tweak my configuration to the point where it became more of a hinderance than a help. I tried distributions like [LazyVim](https://www.lazyvim.org/) but the truth is the allure of _just one more tweak_ was still there.
+
+Now I use [Helix](https://helix-editor.com/) with a bog standard config and I couldn't be happier.
+
 ### Terminal docs 🧾
 
 I really wanted a terminal based workflow for quickly looking up language documentation when needed.
 
 I tried both [`cht.sh`](https://github.com/chubin/cheat.sh) and [`dasht`](https://github.com/sunaku/dasht) but neither really stuck in the way I wanted.
 
-For now I have setup a [custom search engine](https://zapier.com/blog/add-search-engine-to-chrome/) for [devdocs.io](https://devdocs.io/) which is still relatively fast and has the advantage of correctly rendering the MDN examples.
-
-If you want to do this yourself the URL you will need is below, note `%s` refers to the search term placeholder.
-
-```
-https://devdocs.io/#q=%s
-```
-
 In the future I would like to explore doing something like [this](https://eseth.org/2020/devdocs-cli.html) for a more terminal centric workflow.
-
-### Markdown knowledge base 🧠
-
-I originally tried to create my own markdown knowledge base rendered in the terminal via [Glow](https://github.com/charmbracelet/glow).
-
-Unfortunately this didn't quite have the flow I wanted.
-
-I had varying success with [Silver Bullet](https://silverbullet.md/) but it encourages editing via the browser and I would much prefer to stay in my editor.
-
-Now I am using Helix with [Marksman](https://github.com/artempyanykh/marksman) and this is working well.
-
-If you are interested in building your own knowledge base here is [mine](https://github.com/chopfitzroy/kb).
 
 ## References 📚
 

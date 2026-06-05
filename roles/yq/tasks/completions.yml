@@ -1,0 +1,19 @@
+- name: Ensure Zsh completions directory exists for yq
+  file:
+    path: "{{ zsh_completions }}"
+    state: directory
+    mode: "0755"
+
+- name: Generate yq Zsh completion script
+  command:
+    cmd: yq completion zsh
+  register: yq_completion_output
+  changed_when: false
+  when: not ansible_check_mode
+
+- name: Install yq Zsh completion
+  copy:
+    content: "{{ yq_completion_output.stdout }}"
+    dest: "{{ zsh_completions }}/_yq"
+    mode: "0644"
+  when: not ansible_check_mode

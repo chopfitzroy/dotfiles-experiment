@@ -1,0 +1,11 @@
+# @NOTE found this package in related issue
+# - https://github.com/helix-editor/helix/issues/7155
+- name: Install `vscode-langservers-extracted` via node
+  command:
+    cmd: "{{ asdf_home }}/shims/npm install --global vscode-langservers-extracted"
+  # @NOTE
+  # - `asdf` needs to be on the path for this to install
+  # - Unfortunately it is not on the path for a clean install
+  environment: 
+    PATH: '{{ asdf_bin }}:{{ ansible_env.PATH }}'
+

@@ -1,0 +1,66 @@
+# Merge origin/main preferring the incoming changes (-X theirs) for every file
+# except the ones listed, which are rebuilt as normal 3-way merges to resolve
+# by hand. Our branch's unique changes are kept; only same-line conflicts take
+# theirs.
+#
+# Usage: git_merge_theirs_except <file> [<file>...]
+
+if [ $# -eq 0 ]
+then
+    printf "\nPlease provide at least one file path to resolve manually."
+    return 1
+fi
+
+# Auto-merge everything, taking the incoming side on conflicts; leave the
+# merge open so we can fix up the listed files by hand.
+git merge --no-ff --no-commit -X theirs origin/main || return 1
+
+# Nothing to merge (origin/main already contained in HEAD) — bail out cleanly.
+if ! git rev-parse -q --verify MERGE_HEAD >/dev/null
+then
+    printf "\nNothing to merge from origin/main (already up to date)."
+    return 0
+fi
+
+local base
+base=$(git merge-base HEAD MERGE_HEAD) || return 1
+
+local tmp
+tmp=$(mktemp -d) || return 1
+
+# Rebuild each listed file as a real 3-way merge, overriding the auto-resolved
+# version the merge just staged.
+local file
+local -a conflicted=()
+for file in "$@"
+do
+    if ! git cat-file -e "HEAD:$file" 2>/dev/null && ! git cat-file -e "MERGE_HEAD:$file" 2>/dev/null
+    then
+        printf "\nSkipping %s — not present in HEAD or origin/main." "$file"
+        continue
+    fi
+
+    git show "$base:$file"      > "$tmp/base"   2>/dev/null
+    git show "HEAD:$file"       > "$tmp/ours"   2>/dev/null
+    git show "MERGE_HEAD:$file" > "$tmp/theirs" 2>/dev/null
+
+    # Conflict markers for overlapping hunks, auto-merge for the rest.
+    if git merge-file -p "$tmp/ours" "$tmp/base" "$tmp/theirs" > "$file"
+    then
+        git add "$file"
+    else
+        conflicted+=("$file")
+    fi
+done
+
+rm -rf "$tmp"
+
+if [ ${#conflicted} -ne 0 ]
+then
+    printf "\nConflicts left in: %s" "${conflicted[*]}"
+    printf "\nResolve them, then: git add <files> && git commit"
+    printf "\nTo bail out instead: git merge --quit && git reset --hard HEAD"
+    printf "\n(plain 'git merge --abort' will refuse — the markers are working-tree edits)"
+else
+    printf "\nListed files merged cleanly and staged — review them, then: git commit"
+fi

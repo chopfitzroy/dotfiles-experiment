@@ -1,0 +1,5 @@
+- name: Install ripgrep on openSUSE
+  become: yes
+  zypper:
+    name: ripgrep
+    state: present

@@ -1,0 +1,19 @@
+- name: Ensure Zsh completions directory exists for starship
+  file:
+    path: "{{ zsh_completions }}"
+    state: directory
+    mode: "0755"
+
+- name: Generate starship Zsh completion script
+  command:
+    cmd: starship completions zsh
+  register: starship_completion_output
+  changed_when: false
+  when: not ansible_check_mode
+
+- name: Install starship Zsh completion
+  copy:
+    content: "{{ starship_completion_output.stdout }}"
+    dest: "{{ zsh_completions }}/_starship"
+    mode: "0644"
+  when: not ansible_check_mode

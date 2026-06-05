@@ -1,0 +1,19 @@
+- name: Ensure Zsh completions directory exists for bat
+  file:
+    path: "{{ zsh_completions }}"
+    state: directory
+    mode: "0755"
+
+- name: Generate bat Zsh completion script
+  command:
+    cmd: bat --completion zsh
+  register: bat_completion_output
+  changed_when: false
+  when: not ansible_check_mode
+
+- name: Install bat Zsh completion
+  copy:
+    content: "{{ bat_completion_output.stdout }}"
+    dest: "{{ zsh_completions }}/_bat"
+    mode: "0644"
+  when: not ansible_check_mode

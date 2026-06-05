@@ -1,0 +1,4 @@
+- name: Install beads via bash script
+  shell: curl -fsSL https://raw.githubusercontent.com/steveyegge/beads/main/scripts/install.sh | bash
+  args:
+    creates: "{{ local_bin }}/bd"

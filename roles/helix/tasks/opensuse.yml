@@ -1,15 +1,11 @@
-- name: Install Helix on openSUSE
-  become: yes
-  community.general.zypper:
-    name: helix
-    state: present
-
 # See comments on package page
 # - https://build.opensuse.org/package/show/openSUSE:Factory/helix
-- name: Install Helix runtime files on openSUSE
+- name: Install Helix on openSUSE
   become: yes
-  community.general.zypper:
-    name: helix-runtime
+  zypper:
+    name: 
+      - helix
+      - helix-runtime
     state: present
 
 - name: Create local bin if it doesn't exist
@@ -25,3 +21,8 @@
     dest: "{{ local_bin }}/hx"
     state: link
 
+- name: Create symbolic link to `helix` command
+  ansible.builtin.file:
+    src: "{{ local_bin }}/hx"
+    dest: "{{ local_bin }}/helix"
+    state: link

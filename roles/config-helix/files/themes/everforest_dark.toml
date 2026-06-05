@@ -1,0 +1,11 @@
+inherits = "everforest_dark"
+
+"ui.window" = { fg = "bg4", bg = "bg_override" }
+"ui.background" = { bg = "bg_override" }
+"ui.background.separator" = { fg = "fg" }
+
+[palette]
+
+# For whatever reason this is the color the WezTerm theme renders
+# So we match that here to remove a _seam_ between the two colors
+bg_override = "#2f383e"

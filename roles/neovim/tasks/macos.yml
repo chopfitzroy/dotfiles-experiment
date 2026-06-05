@@ -1,4 +1,0 @@
-- name: Install Neovim on macOS
-  homebrew: 
-    name: neovim
-    state: present

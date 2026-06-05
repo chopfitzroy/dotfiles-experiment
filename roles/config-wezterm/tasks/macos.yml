@@ -1,0 +1,5 @@
+- name: Create symlink to WezTerm directory 
+  file:
+    src: "{{ role_path }}/files"
+    dest: "{{ config_dir }}/wezterm"
+    state: link

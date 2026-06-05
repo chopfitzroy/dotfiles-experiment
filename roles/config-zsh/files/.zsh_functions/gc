@@ -1,0 +1,24 @@
+local summary ticket time
+
+read "summary?Summary of changes: "
+if [ -z "$summary" ]
+then
+    printf "\nPlease provide a summary of changes."
+    return 1
+fi
+
+read "ticket?Ticket URL: "
+if [ -z "$ticket" ]
+then
+    printf "\nPlease provide a ticket URL."
+    return 1
+fi
+
+read "time?Time spent (use the @1h15m format): "
+if [ -z "$time" ]
+then
+    printf "\nPlease provide the time spent."
+    return 1
+fi
+
+git commit -m "$summary $ticket $time"
