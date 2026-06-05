@@ -5,12 +5,6 @@ elif [[ -x /usr/local/bin/brew ]]; then
   eval "$(/usr/local/bin/brew shellenv)"
 fi
 
-# Load asdf before setting custom paths
-ASDF_HOME="$HOME/.asdf/asdf.sh"
-if [ -f $ASDF_HOME ]; then
-  source $ASDF_HOME
-fi
-
 # Sheldon (plugins)
 # - Must be called first
 # - https://github.com/ajeetdsouza/zoxide/issues/348
@@ -67,6 +61,9 @@ path=(
   $ANDROID_HOME/platform-tools
   $path
 )
+
+# FNM (node version)
+eval "$(fnm env --use-on-cd --shell zsh)"
 
 # Starship (ZSH Prompt)
 eval "$(starship init zsh)"
